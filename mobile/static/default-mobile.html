@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/output.css">
+    <link rel="stylesheet" href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css">
+</head>
+
+<body>
+    <main>
+        <section class="bg-defaultBg bg-right bg-cover pt-16 pb-10">
+            <div class="relative mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl">
+                <img src="../assets/images/person-default.png" class="absolute right-0 h-auto -scale-x-100" alt="person"
+                    width="288" height="190" loading="lazy">
+                <div class="pt-16">
+                    <h2 class="text-zinc-900 font-bold">Unveil the Beauty of the World Every Day</h2>
+                    <h3 class="text-zinc-400 text-xs mb-4">Travel Without Limits Browse, Book, Explore</h3>
+                    <div class="bg-white h-[520px]"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="relative mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-20">
+            <h2 class="text-zinc-900 font-bold">Popular Destinations</h2>
+            <h3 class="text-zinc-600 text-xs mt-1">Navigate the Globe with Confidence</h3>
+            <!-- Slider main container -->
+            <div class="swiper swiper-popular-destination-mobile mt-8">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="relative swiper-slide !w-fit">
+                        <a href="" class="flex rounded-xl overflow-hidden">
+                            <img src="../assets/images/popular-destionation-card.jpg" class="h-52 object-cover" alt="@title" width="172" height="208" loading="lazy">
+                        </a>
+                        <h2 class="absolute left-3 bottom-3 text-white text-sm">Colosseum</h2>
+                    </div>
+                                        <div class="relative swiper-slide !w-fit">
+                        <a href="" class="flex rounded-xl overflow-hidden">
+                            <img src="../assets/images/popular-destionation-card.jpg" class="h-52 object-cover" alt="@title" width="172" height="208" loading="lazy">
+                        </a>
+                        <h2 class="absolute left-3 bottom-3 text-white text-sm">Colosseum</h2>
+                    </div>
+                                        <div class="relative swiper-slide !w-fit">
+                        <a href="" class="flex rounded-xl overflow-hidden">
+                            <img src="../assets/images/popular-destionation-card.jpg" class="h-52 object-cover" alt="@title" width="172" height="208" loading="lazy">
+                        </a>
+                        <h2 class="absolute left-3 bottom-3 text-white text-sm">Colosseum</h2>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+    <script src="https://cdn.basiscore.net/basisfly.com/js/swiper-bundle.min.js"></script>
+    <script>
+        var swiperPopularDestinationMobile = new Swiper(".swiper-popular-destination-mobile", {
+            slidesPerView: 1.3,
+            speed: 400,
+            centeredSlides: false,
+            spaceBetween: 12,
+            grabCursor: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            loop: true,
+        });
+    </script>
+
+</body>
+
+</html>
