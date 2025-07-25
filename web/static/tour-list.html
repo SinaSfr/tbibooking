@@ -8,9 +8,9 @@
   </head>
   <body>
     <main>
-      <section class="bg-primary-50 py-6">
+      <section class="bg-primary-50 py-8">
         <div class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl">
-          <h1 class="font-bold text-primary-800 mb-3">Istanbul</h1>
+          <h1 class="font-bold text-[36px] text-primary-800">Istanbul</h1>
           <div class="text-sm text-primary-700">Home / tour / tour Istanbul</div>
         </div>
       </section>
@@ -18,21 +18,95 @@
         <div class="absolute bg-specialcolor-2 inset-0 w-full h-full"></div>
       </section>
 
-      <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-4">
-        <div class="flex items-center justify-between mb-4">
-          <a href="" class="text-sm font-medium text-primary-800">Other tour</a>
-          <button id="filterOpenBtn" class="flex items-center gap-3 bg-primary-50 rounded-[32px] text-sm font-medium text-primary-800 py-4 px-3">
-            filter
-            <svg width="24" height="24" class="flex-shrink-0">
-              <use xlink:href="../assets/images/sprite-icons.svg#icon-filter"></use>
-            </svg>
-          </button>
-          <div class="filters-panel fixed z-30 bottom-0 left-0 h-full w-full bg-primary-50 px-3 py-5 overflow-y-auto transform translate-y-full transition-transform duration-300 ease-in-out">
-            <button id="filterCloseBtn" class="block bg-primary-800 p-3 rounded-lg mb-4 ml-auto">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-              </svg>
-            </button>
+      <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-20">
+          <a href="" class="text-2xl font-medium text-primary-800">Tour list</a>
+        <div class="flex gap-3 mt-6">
+          <div class="flex-1 tourL-tour-list grid grid-cols-3 gap-3">
+            <!-- items -->
+            <a href="" class="tourL-tour-card block rounded-xl overflow-hidden" data-price="1421$" data-days="4 days and 3 night" data-airline="turkish-airline.png" data-airline-name="turkish-airline">
+              <img src="../assets/images/popular-destionation-card.jpg" class="w-full h-44" alt="@title" width="260" height="176" loading="lazy" />
+              <div class="bg-white p-4 border-x border-b border-solid border-zinc-400">
+                <h2 class="text-zinc-900 font-bold mb-1">Treurer Olive Grove & Grand House - Adults Only + Flight</h2>
+                <h3 class="text-xs text-zinc-900 mb-1">Algaida</h3>
+                <span></span>
+                <div class="flex items-center gap-1 text-zinc-900 text-sm mb-1">
+                  <svg width="19" height="19" class="flex-shrink-0">
+                    <use xlink:href="../assets/images/sprite-icons.svg#icon-hotel"></use>
+                  </svg>
+                  5 Stars - 10/10 Exceptional (9)
+                </div>
+                <div class="flex items-center gap-1 text-zinc-900 text-sm mb-2">
+                  <svg width="19" height="19" class="flex-shrink-0">
+                    <use xlink:href="../assets/images/sprite-icons.svg#icon-airplane"></use>
+                  </svg>
+                  Leipzig(LEJ)-Palma de mallorca
+                </div>
+                <div>
+                  <div class="text-zinc-900 font-bold text-xl">1,421 $</div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-zinc-900 text-xs">Per traveler</span>
+                    <img src="../assets/images/turkish-airline.png" class="h-auto" alt="" width="70" height="30" loading="lazy" />
+                  </div>
+                </div>
+                <button class="bg-primary-50 text-primary-900 border border-solid border-primary-900 rounded-[40px] px-6 py-3 mt-2">Details</button>
+              </div>
+            </a>
+            <a href="" class="tourL-tour-card block rounded-xl overflow-hidden" data-price="141$" data-days="5 days and 4 night" data-airline="slogan-card.png" data-airline-name="iran-airline">
+              <img src="../assets/images/popular-destionation-card.jpg" class="w-full h-44" alt="@title" width="260" height="176" loading="lazy" />
+              <div class="bg-white p-4 border-x border-b border-solid border-zinc-400">
+                <h2 class="text-zinc-900 font-bold mb-1">Treurer Olive Grove & Grand House - Adults Only + Flight</h2>
+                <h3 class="text-xs text-zinc-900 mb-1">Algaida</h3>
+                <div class="flex items-center gap-1 text-zinc-900 text-sm mb-1">
+                  <svg width="19" height="19" class="flex-shrink-0">
+                    <use xlink:href="../assets/images/sprite-icons.svg#icon-hotel"></use>
+                  </svg>
+                  5 Stars - 10/10 Exceptional (9)
+                </div>
+                <div class="flex items-center gap-1 text-zinc-900 text-sm mb-2">
+                  <svg width="19" height="19" class="flex-shrink-0">
+                    <use xlink:href="../assets/images/sprite-icons.svg#icon-airplane"></use>
+                  </svg>
+                  Leipzig(LEJ)-Palma de mallorca
+                </div>
+                <div>
+                  <div class="text-zinc-900 font-bold text-xl">1,421 $</div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-zinc-900 text-xs">Per traveler</span>
+                    <img src="../assets/images/turkish-airline.png" class="h-auto" alt="" width="70" height="30" loading="lazy" />
+                  </div>
+                </div>
+                <button class="bg-primary-50 text-primary-900 border border-solid border-primary-900 rounded-[40px] px-6 py-4 mt-2">Details</button>
+              </div>
+            </a>
+            <a href="" class="tourL-tour-card block rounded-xl overflow-hidden" data-price="141$" data-days="5 days and 4 night" data-airline="slogan-card.png" data-airline-name="iran-airline">
+              <img src="../assets/images/popular-destionation-card.jpg" class="w-full h-44" alt="@title" width="260" height="176" loading="lazy" />
+              <div class="bg-white p-4 border-x border-b border-solid border-zinc-400">
+                <h2 class="text-zinc-900 font-bold mb-1">Treurer Olive Grove & Grand House - Adults Only + Flight</h2>
+                <h3 class="text-xs text-zinc-900 mb-1">Algaida</h3>
+                <div class="flex items-center gap-1 text-zinc-900 text-sm mb-1">
+                  <svg width="19" height="19" class="flex-shrink-0">
+                    <use xlink:href="../assets/images/sprite-icons.svg#icon-hotel"></use>
+                  </svg>
+                  5 Stars - 10/10 Exceptional (9)
+                </div>
+                <div class="flex items-center gap-1 text-zinc-900 text-sm mb-2">
+                  <svg width="19" height="19" class="flex-shrink-0">
+                    <use xlink:href="../assets/images/sprite-icons.svg#icon-airplane"></use>
+                  </svg>
+                  Leipzig(LEJ)-Palma de mallorca
+                </div>
+                <div>
+                  <div class="text-zinc-900 font-bold text-xl">1,421 $</div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-zinc-900 text-xs">Per traveler</span>
+                    <img src="../assets/images/turkish-airline.png" class="h-auto" alt="" width="70" height="30" loading="lazy" />
+                  </div>
+                </div>
+                <button class="bg-primary-50 text-primary-900 border border-solid border-primary-900 rounded-[40px] px-6 py-4 mt-2">Details</button>
+              </div>
+            </a>
+          </div>
+          <aside class="sticky h-fit top-0 w-[328px] rounded-2xl bg-primary-50 px-3 py-5">
             <div class="flex items-center justify-between mb-3">
               <h2 class="font-bold text-zinc-900">Required filters</h2>
               <button id="clearFiltersBtn" class="text-red-600">Remove all filters</button>
@@ -88,65 +162,7 @@
                 <!-- days-filter -->
               </div>
             </div>
-          </div>
-        </div>
-        <div class="tourL-tour-list flex flex-col gap-3">
-          <!-- items -->
-          <a href="" class="tourL-tour-card block rounded-xl overflow-hidden" data-price="1421$" data-days="4 days and 3 night" data-airline="turkish-airline.png" data-airline-name="turkish-airline">
-            <img src="../assets/images/popular-destionation-card.jpg" class="w-full h-44" alt="@title" width="260" height="176" loading="lazy" />
-            <div class="bg-white p-4 border-x border-b border-solid border-zinc-400">
-              <h2 class="text-zinc-900 font-bold mb-1">Treurer Olive Grove & Grand House - Adults Only + Flight</h2>
-              <h3 class="text-xs text-zinc-900 mb-1">Algaida</h3>
-              <span></span>
-              <div class="flex items-center gap-1 text-zinc-900 text-sm mb-1">
-                <svg width="19" height="19" class="flex-shrink-0">
-                  <use xlink:href="../assets/images/sprite-icons.svg#icon-hotel"></use>
-                </svg>
-                5 Stars - 10/10 Exceptional (9)
-              </div>
-              <div class="flex items-center gap-1 text-zinc-900 text-sm mb-2">
-                <svg width="19" height="19" class="flex-shrink-0">
-                  <use xlink:href="../assets/images/sprite-icons.svg#icon-airplane"></use>
-                </svg>
-                Leipzig(LEJ)-Palma de mallorca
-              </div>
-              <div>
-                <div class="text-zinc-900 font-bold text-xl">1,421 $</div>
-                <div class="flex items-center justify-between">
-                  <span class="text-zinc-900 text-xs">Per traveler</span>
-                  <img src="../assets/images/turkish-airline.png" class="h-auto" alt="" width="70" height="30" loading="lazy" />
-                </div>
-              </div>
-              <button class="bg-primary-50 text-primary-900 border border-solid border-primary-900 rounded-[40px] px-6 py-3 mt-2">Details</button>
-            </div>
-          </a>
-          <a href="" class="tourL-tour-card block rounded-xl overflow-hidden" data-price="141$" data-days="5 days and 4 night" data-airline="slogan-card.png" data-airline-name="iran-airline">
-            <img src="../assets/images/popular-destionation-card.jpg" class="w-full h-44" alt="@title" width="260" height="176" loading="lazy" />
-            <div class="bg-white p-4 border-x border-b border-solid border-zinc-400">
-              <h2 class="text-zinc-900 font-bold mb-1">Treurer Olive Grove & Grand House - Adults Only + Flight</h2>
-              <h3 class="text-xs text-zinc-900 mb-1">Algaida</h3>
-              <div class="flex items-center gap-1 text-zinc-900 text-sm mb-1">
-                <svg width="19" height="19" class="flex-shrink-0">
-                  <use xlink:href="../assets/images/sprite-icons.svg#icon-hotel"></use>
-                </svg>
-                5 Stars - 10/10 Exceptional (9)
-              </div>
-              <div class="flex items-center gap-1 text-zinc-900 text-sm mb-2">
-                <svg width="19" height="19" class="flex-shrink-0">
-                  <use xlink:href="../assets/images/sprite-icons.svg#icon-airplane"></use>
-                </svg>
-                Leipzig(LEJ)-Palma de mallorca
-              </div>
-              <div>
-                <div class="text-zinc-900 font-bold text-xl">1,421 $</div>
-                <div class="flex items-center justify-between">
-                  <span class="text-zinc-900 text-xs">Per traveler</span>
-                  <img src="../assets/images/turkish-airline.png" class="h-auto" alt="" width="70" height="30" loading="lazy" />
-                </div>
-              </div>
-              <button class="bg-primary-50 text-primary-900 border border-solid border-primary-900 rounded-[40px] px-6 py-4 mt-2">Details</button>
-            </div>
-          </a>
+          </aside>
         </div>
 
         <ul class="flex items-center justify-center gap-2 mt-20 direction-ltr">

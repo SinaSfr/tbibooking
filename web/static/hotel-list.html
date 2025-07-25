@@ -8,26 +8,78 @@
   </head>
   <body>
     <main>
-      <section class="bg-primary-50 py-6">
+      <section class="bg-primary-50 py-8">
         <div class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl">
-          <h1 class="font-bold text-primary-800 mb-3">Istanbul</h1>
+          <h1 class="font-bold text-[36px] text-primary-800">Istanbul</h1>
           <div class="text-sm text-primary-700">Home / tour / tour Istanbul</div>
         </div>
       </section>
-      <section class="relative bg-tourListBg bg-center bg-cover h-80">
+      <section class="relative bg-hotelListBg bg-center bg-cover h-80">
         <div class="absolute bg-specialcolor-2 inset-0 w-full h-full"></div>
       </section>
 
-      <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-4">
-        <div class="flex items-center justify-between mb-4">
-          <a href="" class="text-sm font-medium text-primary-800">Other tour</a>
-          <button id="filterOpenBtn" class="flex items-center gap-3 bg-primary-50 rounded-[32px] text-sm font-medium text-primary-800 py-4 px-3">
-            filter
-            <svg width="24" height="24" class="flex-shrink-0">
-              <use xlink:href="../assets/images/sprite-icons.svg#icon-filter"></use>
-            </svg>
-          </button>
-          <div class="filters-panel fixed z-30 bottom-0 left-0 h-full w-full bg-primary-50 px-3 py-5 overflow-y-auto transform translate-y-full transition-transform duration-300 ease-in-out">
+      <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-20">
+          <a href="" class="text-2xl font-medium text-primary-800">Hotel list</a>
+
+        <div class="flex gap-3 mt-6">
+          <div class="flex-1 hotel-card-wrapper grid grid-cols-3 gap-3">
+            <!-- Slides -->
+            <div>
+              <a href="" class="hotel-card block rounded-xl overflow-hidden" data-hotel="Chiang" data-price="490$" data-rating="4" data-servies="H.B">
+                <img src="../assets/images/popular-destionation-card.jpg" class="w-full h-44" alt="@title" width="260" height="176" loading="lazy" />
+                <div class="flex flex-col gap-2 bg-white p-4 border-x border-b border-solid border-zinc-400 divide-y divide-zinc-400">
+                  <div>
+                    <div class="flex items-center gap-1 text-sm font-medium text-zinc-600 p-2 bg-white shadow-boxStar rounded mb-2">
+                      <svg width="24" height="24" class="flex-shrink-0">
+                        <use xlink:href="../assets/images/sprite-icons.svg#icon-golden-star"></use>
+                      </svg>
+                      4 star
+                    </div>
+                    <h2 class="text-zinc-900 font-bold text-xl mb-1">Chiang Mai</h2>
+                    <div class="flex items-center text-zinc-500 text-sm">
+                      <svg width="24" height="24" class="flex-shrink-0">
+                        <use xlink:href="../assets/images/sprite-icons.svg#icon-blue-location"></use>
+                      </svg>
+                      Thailand
+                    </div>
+                  </div>
+                  <div class="text-zinc-500 text-sm pt-2">Visit the temples and the Chiang Mai Night Bazaar, a huge huge market located on Chiang Klan Road.</div>
+                  <div class="flex items-center justify-between pt-2">
+                    <button class="bg-primary-50 text-primary-900 border border-solid border-primary-900 rounded-[40px] px-6 py-4">Details</button>
+                    <div class="text-zinc-900 font-bold text-2xl">$ 490</div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div>
+              <a href="" class="hotel-card block rounded-xl overflow-hidden" data-hotel="cazab" data-price="470" data-rating="3" data-servies="B.B">
+                <img src="../assets/images/popular-destionation-card.jpg" class="w-full h-44" alt="@title" width="260" height="176" loading="lazy" />
+                <div class="flex flex-col gap-2 bg-white p-4 border-x border-b border-solid border-zinc-400 divide-y divide-zinc-400">
+                  <div>
+                    <div class="flex items-center gap-1 text-sm font-medium text-zinc-600 p-2 bg-white shadow-boxStar rounded mb-2">
+                      <svg width="24" height="24" class="flex-shrink-0">
+                        <use xlink:href="../assets/images/sprite-icons.svg#icon-golden-star"></use>
+                      </svg>
+                      4 star
+                    </div>
+                    <h2 class="text-zinc-900 font-bold text-xl mb-1">cazab</h2>
+                    <div class="flex items-center text-zinc-500 text-sm">
+                      <svg width="24" height="24" class="flex-shrink-0">
+                        <use xlink:href="../assets/images/sprite-icons.svg#icon-blue-location"></use>
+                      </svg>
+                      Thailand
+                    </div>
+                  </div>
+                  <div class="text-zinc-500 text-sm pt-2">Visit the temples and the Chiang Mai Night Bazaar, a huge huge market located on Chiang Klan Road.</div>
+                  <div class="flex items-center justify-between pt-2">
+                    <button class="bg-primary-50 text-primary-900 border border-solid border-primary-900 rounded-[40px] px-6 py-4">Details</button>
+                    <div class="text-zinc-900 font-bold text-2xl">$ 470</div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <aside class="sticky top-0 h-fit w-[328px] bg-primary-50 px-3 py-5 rounded-2xl">
             <button id="filterCloseBtn" class="block bg-primary-800 p-3 rounded-lg mb-4 ml-auto">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
@@ -35,22 +87,71 @@
             </button>
             <div class="flex items-center justify-between mb-3">
               <h2 class="font-bold text-zinc-900">Required filters</h2>
-              <button id="clearFiltersBtn" class="text-red-600">Remove all filters</button>
+              <button id="clearFiltersBtnHotel" class="text-red-600">Remove all filters</button>
             </div>
             <div class="bg-white rounded-xl px-3 pt-3 pb-6">
               <div class="accordion-toggle flex items-center justify-between pr-5">
-                <h3 class="text-zinc-800 font-medium">Airline</h3>
+                <h3 class="text-zinc-900 font-bold">Hotel Name</h3>
                 <svg width="11" height="10" class="chevron-icon transition-transform duration-300 flex-shrink-0">
                   <use xlink:href="../assets/images/sprite-icons.svg#icon-chevron-down"></use>
                 </svg>
               </div>
-              <div class="airline-filter accordion-content flex flex-col gap-9 pl-7 mt-6 overflow-hidden transition-all duration-300 ease-in-out max-h-0">
-                <!-- airline -->
+              <div class="accordion-content mt-5 overflow-hidden transition-all duration-300 ease-in-out max-h-0">
+                <input
+                  type="text"
+                  id="hotelNameFilter"
+                  class="w-full py-4 px-5 border border-solid border-zinc-400 rounded-xl text-zinc-900 placeholder-zinc-900"
+                  aria-label="hotelNameFilter"
+                  placeholder="Search Hotel"
+                />
+              </div>
+            </div>
+            <div class="bg-white rounded-xl px-3 pt-3 pb-6 mt-3">
+              <div class="accordion-toggle flex items-center justify-between pr-5">
+                <h3 class="text-zinc-900 font-bold">Star rating</h3>
+                <svg width="11" height="10" class="chevron-icon transition-transform duration-300 flex-shrink-0">
+                  <use xlink:href="../assets/images/sprite-icons.svg#icon-chevron-down"></use>
+                </svg>
+              </div>
+              <div class="accordion-content grid grid-cols-4 gap-1 mt-5 overflow-hidden transition-all duration-300 ease-in-out max-h-0">
+                <div data-star="2" class="star-filter-option flex items-center justify-center h-9 border border-solid border-primary-900 rounded-lg">2</div>
+                <div data-star="3" class="star-filter-option flex items-center justify-center h-9 border border-solid border-primary-900 rounded-lg">3</div>
+                <div data-star="4" class="star-filter-option flex items-center justify-center h-9 border border-solid border-primary-900 rounded-lg">4</div>
+              </div>
+            </div>
+            <div class="bg-white rounded-xl px-3 pt-3 pb-6 mt-3">
+              <div class="accordion-toggle flex items-center justify-between pr-5">
+                <h3 class="text-zinc-900 font-bold">Hotel Services</h3>
+                <svg width="11" height="10" class="chevron-icon transition-transform duration-300 flex-shrink-0">
+                  <use xlink:href="../assets/images/sprite-icons.svg#icon-chevron-down"></use>
+                </svg>
+              </div>
+              <div class="accordion-content flex flex-col gap-9 pl-5 mt-5 overflow-hidden transition-all duration-300 ease-in-out max-h-0">
+                <div class="flex items-center gap-5">
+                  <input type="checkbox" name="services" id="service-ro" value="R.O" class="w-5 h-5 custom-checkbox" />
+                  <label for="service-ro" class="text-zinc-500 text-sm cursor-pointer">Room Only (R.O)</label>
+                </div>
+                <div class="flex items-center gap-5">
+                  <input type="checkbox" name="services" id="service-bb" value="B.B" class="w-5 h-5 custom-checkbox" />
+                  <label for="service-bb" class="text-zinc-500 text-sm cursor-pointer">Bed & Breakfast (B.B)</label>
+                </div>
+                <div class="flex items-center gap-5">
+                  <input type="checkbox" name="services" id="service-hb" value="H.B" class="w-5 h-5 custom-checkbox" />
+                  <label for="service-hb" class="text-zinc-500 text-sm cursor-pointer">Half Board (H.B)</label>
+                </div>
+                <div class="flex items-center gap-5">
+                  <input type="checkbox" name="services" id="service-fb" value="F.B" class="w-5 h-5 custom-checkbox" />
+                  <label for="service-fb" class="text-zinc-500 text-sm cursor-pointer">Full Board (F.B)</label>
+                </div>
+                <div class="flex items-center gap-5">
+                  <input type="checkbox" name="services" id="service-ai" value="A.I" class="w-5 h-5 custom-checkbox" />
+                  <label for="service-ai" class="text-zinc-500 text-sm cursor-pointer">All Inclusive (A.I)</label>
+                </div>
               </div>
             </div>
             <div class="bg-white rounded-xl p-3 mt-3">
               <div class="accordion-toggle flex items-center justify-between pr-5">
-                <h3 class="text-zinc-800 font-medium">Price range</h3>
+                <h3 class="text-zinc-900 font-bold">Price range</h3>
                 <svg width="11" height="10" class="chevron-icon transition-transform duration-300 flex-shrink-0">
                   <use xlink:href="../assets/images/sprite-icons.svg#icon-chevron-down"></use>
                 </svg>
@@ -68,85 +169,16 @@
                     </span>
                   </div>
 
-                  <div class="slider-wrapper relative h-8">
-                    <div class="absolute top-4 left-0 right-0 h-1 bg-zinc-200 rounded-full z-0"></div>
+                  <div class="slider-wrapper-hotel relative h-8">
+                    <div class="absolute top-4 left-0 right-0 h-1 bg-secondary-100 rounded-full z-0"></div>
                     <input type="range" id="minRange" min="0" max="100" value="0" class="absolute w-full top-0 pointer-events-none appearance-none bg-transparent" />
                     <input type="range" id="maxRange" min="0" max="100" value="100" class="absolute w-full top-0 pointer-events-none appearance-none bg-transparent" />
-                    <div id="rangeTrack" class="absolute h-1 rounded-full top-4 z-10 bg-primary-800"></div>
+                    <div id="rangeTrack" class="absolute h-1 rounded-full top-4 z-10 bg-secondary-800"></div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="bg-white rounded-xl px-3 pt-3 pb-6 mt-3">
-              <div class="accordion-toggle flex items-center justify-between pr-5">
-                <h3 class="text-zinc-800 font-medium">Number of tour days</h3>
-                <svg width="11" height="10" class="chevron-icon transition-transform duration-300 flex-shrink-0">
-                  <use xlink:href="../assets/images/sprite-icons.svg#icon-chevron-down"></use>
-                </svg>
-              </div>
-              <div class="days-filter accordion-content flex flex-col gap-11 pl-7 mt-6 overflow-hidden transition-all duration-300 ease-in-out max-h-0">
-                <!-- days-filter -->
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="tourL-tour-list flex flex-col gap-3">
-          <!-- items -->
-          <a href="" class="tourL-tour-card block rounded-xl overflow-hidden" data-price="1421$" data-days="4 days and 3 night" data-airline="turkish-airline.png" data-airline-name="turkish-airline">
-            <img src="../assets/images/popular-destionation-card.jpg" class="w-full h-44" alt="@title" width="260" height="176" loading="lazy" />
-            <div class="bg-white p-4 border-x border-b border-solid border-zinc-400">
-              <h2 class="text-zinc-900 font-bold mb-1">Treurer Olive Grove & Grand House - Adults Only + Flight</h2>
-              <h3 class="text-xs text-zinc-900 mb-1">Algaida</h3>
-              <span></span>
-              <div class="flex items-center gap-1 text-zinc-900 text-sm mb-1">
-                <svg width="19" height="19" class="flex-shrink-0">
-                  <use xlink:href="../assets/images/sprite-icons.svg#icon-hotel"></use>
-                </svg>
-                5 Stars - 10/10 Exceptional (9)
-              </div>
-              <div class="flex items-center gap-1 text-zinc-900 text-sm mb-2">
-                <svg width="19" height="19" class="flex-shrink-0">
-                  <use xlink:href="../assets/images/sprite-icons.svg#icon-airplane"></use>
-                </svg>
-                Leipzig(LEJ)-Palma de mallorca
-              </div>
-              <div>
-                <div class="text-zinc-900 font-bold text-xl">1,421 $</div>
-                <div class="flex items-center justify-between">
-                  <span class="text-zinc-900 text-xs">Per traveler</span>
-                  <img src="../assets/images/turkish-airline.png" class="h-auto" alt="" width="70" height="30" loading="lazy" />
-                </div>
-              </div>
-              <button class="bg-primary-50 text-primary-900 border border-solid border-primary-900 rounded-[40px] px-6 py-3 mt-2">Details</button>
-            </div>
-          </a>
-          <a href="" class="tourL-tour-card block rounded-xl overflow-hidden" data-price="141$" data-days="5 days and 4 night" data-airline="slogan-card.png" data-airline-name="iran-airline">
-            <img src="../assets/images/popular-destionation-card.jpg" class="w-full h-44" alt="@title" width="260" height="176" loading="lazy" />
-            <div class="bg-white p-4 border-x border-b border-solid border-zinc-400">
-              <h2 class="text-zinc-900 font-bold mb-1">Treurer Olive Grove & Grand House - Adults Only + Flight</h2>
-              <h3 class="text-xs text-zinc-900 mb-1">Algaida</h3>
-              <div class="flex items-center gap-1 text-zinc-900 text-sm mb-1">
-                <svg width="19" height="19" class="flex-shrink-0">
-                  <use xlink:href="../assets/images/sprite-icons.svg#icon-hotel"></use>
-                </svg>
-                5 Stars - 10/10 Exceptional (9)
-              </div>
-              <div class="flex items-center gap-1 text-zinc-900 text-sm mb-2">
-                <svg width="19" height="19" class="flex-shrink-0">
-                  <use xlink:href="../assets/images/sprite-icons.svg#icon-airplane"></use>
-                </svg>
-                Leipzig(LEJ)-Palma de mallorca
-              </div>
-              <div>
-                <div class="text-zinc-900 font-bold text-xl">1,421 $</div>
-                <div class="flex items-center justify-between">
-                  <span class="text-zinc-900 text-xs">Per traveler</span>
-                  <img src="../assets/images/turkish-airline.png" class="h-auto" alt="" width="70" height="30" loading="lazy" />
-                </div>
-              </div>
-              <button class="bg-primary-50 text-primary-900 border border-solid border-primary-900 rounded-[40px] px-6 py-4 mt-2">Details</button>
-            </div>
-          </a>
+          </aside>
         </div>
 
         <ul class="flex items-center justify-center gap-2 mt-20 direction-ltr">
@@ -171,7 +203,6 @@
           </li>
         </ul>
       </section>
-
       <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-20">
         <div class="mb-8">
           <h2 class="text-xl font-bold text-zinc-900 mb-3">Travel istanbul</h2>
