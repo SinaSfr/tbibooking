@@ -36,6 +36,11 @@
 
 
   --special-1: #000E19;
+  --special-2: #00000080;
+  --special-3: #A8BAF9;
+  --special-4: #D4F6C0;
+  --special-5: #A8E2EF;
+  --special-6: #434A54;
 
 
 
@@ -104,4 +109,8 @@
     white-space: nowrap;
     border-width: 0;
     clip: rect(0, 0, 0, 0);
+  }
+
+  .slide-auto-width {
+    width: auto !important;
   }

@@ -7,9 +7,6 @@ module.exports = {
     extend: {
       backgroundImage: {
         'fade-white': 'linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 84.28%)',
-        'white-shadow': 'linear-gradient(360deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);',
-        'fade-black': 'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);',
-        'soft-black-bottom': 'linear-gradient(180deg, rgba(0, 0, 0, 0) 54.62%, rgba(0, 0, 0, 0.8) 100%);',
         defaultBg: "var(--default-bg)",
         tourListBg: "var(--tourlist-bg)",
         articleListBg: "var(--articlelist-bg)",
@@ -17,6 +14,9 @@ module.exports = {
         articleBg: "var(--article-bg)",
         footerBg: "var(--footer-bg)",
         contactBg: "var(--contact-bg)"
+      },
+      boxShadow: {
+        'boxStar': '0 0 15px 0 rgba(0, 0, 0, 0.1)',
       },
       colors: {
         primary: {
@@ -52,6 +52,8 @@ module.exports = {
           2: "var(--special-2)",
           3: "var(--special-3)",
           4: "var(--special-4)",
+          5: "var(--special-5)",
+          6: "var(--special-6)",
        },
 
       }
