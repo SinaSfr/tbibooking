@@ -1166,7 +1166,8 @@
     --special-5: #a8e2ef;
     --special-6: #434a54;
     ---bg: url('');
-    --default-bg: url('../images/default-back.jpg');
+    --defaultMob-bg: url('../images/default-back-mobile.jpg');
+    --defaultPc-bg: url('../images/default-back-pc.jpg');
     --tourlist-bg: url('../images/tour-list-back.jpg');
     --articlelist-bg: url('../images/article-list-back.png');
     --hotellist-bg: url('../images/hotel-list-back.jpg');
@@ -1181,7 +1182,7 @@
   
     font-weight: 400;
   
-    src: url('../fonts/Dana-Regular.ttf') format('truetype');
+    src: url('../_fonts/Dana-Regular.woff') format('woff');
   }
   
   @font-face {
@@ -1193,7 +1194,7 @@
   
     font-weight: 500;
   
-    src: url('../fonts/Dana-Medium.ttf') format('truetype');
+    src: url('../_fonts/Dana-Medium.woff') format('woff');
   }
   
   @font-face {
@@ -1205,8 +1206,20 @@
   
     font-weight: 700;
   
-    src: url('../fonts/Dana-Bold.ttf') format('truetype');
+    src: url('../_fonts/Dana-Bold.woff') format('woff');
   }
+
+  @font-face {
+  font-display: swap;
+
+  font-family: 'ReenieBeanie';
+
+  font-style: normal;
+
+  font-weight: 700;
+
+  src: url('../fonts/ReenieBeanie-Regular.ttf') format('truetype');
+}
   
   .h1-tag {
     position: absolute;
@@ -1218,103 +1231,6 @@
     white-space: nowrap;
     border-width: 0;
     clip: rect(0, 0, 0, 0);
-  }
-  
-  .slide-auto-width {
-    width: auto !important;
-  }
-  
-  .slider-wrapper input[type='range']::-webkit-slider-thumb {
-    background: #115887;
-    pointer-events: auto;
-    -webkit-appearance: none;
-    appearance: none;
-    width: 16px;
-    height: 17px;
-    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20'><circle cx='10' cy='10' r='10' fill='%23115887'/><circle cx='10' cy='10' r='7' fill='%23B8D8E6'/></svg>")
-      no-repeat center;
-    background-size: cover;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    position: relative;
-    z-index: 30;
-    margin-top: 8px;
-  }
-  
-  .slider-wrapper input[type='range']::-moz-range-thumb {
-    pointer-events: auto;
-    width: 16px;
-    height: 17px;
-    background: #115887;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    position: relative;
-    z-index: 20;
-  }
-  
-  .slider-wrapper-hotel input[type='range']::-webkit-slider-thumb {
-    background: #fe9001;
-    pointer-events: auto;
-    -webkit-appearance: none;
-    appearance: none;
-    width: 16px;
-    height: 17px;
-    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20'><circle cx='10' cy='10' r='10' fill='%23FE9001'/><circle cx='10' cy='10' r='7' fill='white'/></svg>")
-      no-repeat center;
-    background-size: cover;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    position: relative;
-    z-index: 30;
-    margin-top: 8px;
-  }
-  
-  .slider-wrapper-hotel input[type='range']::-moz-range-thumb {
-    pointer-events: auto;
-    width: 16px;
-    height: 17px;
-    background: #fe9001;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    position: relative;
-    z-index: 20;
-  }
-  
-  .custom-checkbox {
-    -moz-appearance: none;
-         appearance: none;
-    -webkit-appearance: none;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #71717A;
-    border-radius: 0.25rem;
-    background-color: white;
-    position: relative;
-    cursor: pointer;
-    transition: background-color 0.3s, border-color 0.3s;
-  }
-  
-  .custom-checkbox:checked {
-    background-color: #FE9001;
-    border-color: #FE9001;
-  }
-  
-  .custom-checkbox:checked::after {
-    content: '';
-    position: absolute;
-    top: 2px;
-    left: 1px;
-    width: 16px;
-    height: 12px;
-    background-image: url("data:image/svg+xml,%3Csvg width='16' height='12' viewBox='0 0 16 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.3252 5.26099L6.125 10.061L14.6875 1.5' stroke='white' stroke-width='2'/%3E%3C/svg%3E");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    pointer-events: none;
   }
   
   .hover\:scale-105:hover {

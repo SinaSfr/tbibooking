@@ -1,526 +1,605 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="../assets/css/output.css" />
-    <link rel="stylesheet" href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css" />
-  </head>
+<html lang="en" dir="ltr">
 
-  <body>
-    <main>
-      <section class="bg-defaultBg bg-right bg-cover pt-16 pb-10">
-        <div class="relative mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl">
-          <img src="../assets/images/person-default.png" class="absolute right-0 h-auto -scale-x-100" alt="person" width="288" height="190" loading="lazy" />
-          <div class="pt-16">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="../assets/css/output.css" />
+  <link rel="stylesheet" href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css" />
+</head>
+
+<body>
+  <main>
+    <section class="bg-defaultBg bg-center bg-cover pt-16 pb-10">
+      <div class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl">
+        <div class="pt-16">
+          <div class="relative">
             <h2 class="text-zinc-900 font-bold">Unveil the Beauty of the World Every Day</h2>
             <h3 class="text-zinc-400 text-xs mb-4">Travel Without Limits Browse, Book, Explore</h3>
-            <div class="bg-white h-[520px]"></div>
+          </div>
+          <div class="bg-white h-[520px]"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="relative mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-20">
+      <h2 class="text-zinc-900 font-bold">Popular Destinations</h2>
+      <h3 class="text-zinc-600 text-xs mt-1">Navigate the Globe with Confidence</h3>
+      <!-- Slider main container -->
+      <div class="swiper swiper-popular-destination-mobile mt-8">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="relative swiper-slide slide-auto-width rounded-xl overflow-hidden">
+            <div class="bg-fade-black absolute inset-0 w-full h-full"></div>
+            <a href="" class="flex">
+              <img src="../assets/images/popular-destionation-card.jpg" class="h-52 object-cover" alt="@title"
+                width="172" height="208" loading="lazy" />
+            </a>
+            <h2 class="absolute left-3 bottom-3 text-white text-sm">Colosseum</h2>
+          </div>
+          <div class="relative swiper-slide slide-auto-width">
+            <a href="" class="flex rounded-xl overflow-hidden">
+              <img src="../assets/images/popular-destionation-card.jpg" class="h-52 object-cover" alt="@title"
+                width="172" height="208" loading="lazy" />
+            </a>
+            <h2 class="absolute left-3 bottom-3 text-white text-sm">Colosseum</h2>
+          </div>
+          <div class="relative swiper-slide slide-auto-width">
+            <a href="" class="flex rounded-xl overflow-hidden">
+              <img src="../assets/images/popular-destionation-card.jpg" class="h-52 object-cover" alt="@title"
+                width="172" height="208" loading="lazy" />
+            </a>
+            <h2 class="absolute left-3 bottom-3 text-white text-sm">Colosseum</h2>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="relative mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-20">
-        <h2 class="text-zinc-900 font-bold">Popular Destinations</h2>
-        <h3 class="text-zinc-600 text-xs mt-1">Navigate the Globe with Confidence</h3>
-        <!-- Slider main container -->
-        <div class="swiper swiper-popular-destination-mobile mt-8">
-          <!-- Additional required wrapper -->
-          <div class="swiper-wrapper">
-            <!-- Slides -->
-            <div class="relative swiper-slide slide-auto-width rounded-xl overflow-hidden">
-              <div class="bg-fade-black absolute inset-0 w-full h-full"></div>
-              <a href="" class="flex">
-                <img src="../assets/images/popular-destionation-card.jpg" class="h-52 object-cover" alt="@title" width="172" height="208" loading="lazy" />
-              </a>
-              <h2 class="absolute left-3 bottom-3 text-white text-sm">Colosseum</h2>
-            </div>
-            <div class="relative swiper-slide slide-auto-width">
-              <a href="" class="flex rounded-xl overflow-hidden">
-                <img src="../assets/images/popular-destionation-card.jpg" class="h-52 object-cover" alt="@title" width="172" height="208" loading="lazy" />
-              </a>
-              <h2 class="absolute left-3 bottom-3 text-white text-sm">Colosseum</h2>
-            </div>
-            <div class="relative swiper-slide slide-auto-width">
-              <a href="" class="flex rounded-xl overflow-hidden">
-                <img src="../assets/images/popular-destionation-card.jpg" class="h-52 object-cover" alt="@title" width="172" height="208" loading="lazy" />
-              </a>
-              <h2 class="absolute left-3 bottom-3 text-white text-sm">Colosseum</h2>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-7">
-        <h2 class="text-zinc-900 font-bold mb-3">Our Featured Tours</h2>
-        <ul class="flex items-center gap-2 overflow-x-auto whitespace-nowrap scrollbar-thin">
-          <li class="text-xs text-zinc-900 rounded-[50px] px-6 py-4 bg-zinc-200">destination1</li>
-          <li class="text-xs text-zinc-900 rounded-[50px] px-6 py-4 bg-zinc-200">destination1</li>
-          <li class="text-xs text-zinc-900 rounded-[50px] px-6 py-4 bg-zinc-200">destination1</li>
-        </ul>
-        <!-- Slider main container -->
-        <div class="swiper swiper-featured-tours-mobile mt-8">
-          <!-- Additional required wrapper -->
-          <div class="swiper-wrapper">
-            <!-- Slides -->
-            <div class="swiper-slide">
-              <a href="" class="block rounded-xl overflow-hidden">
-                <img src="../assets/images/popular-destionation-card.jpg" class="w-full h-44" alt="@title" width="260" height="176" loading="lazy" />
-                <div class="bg-white p-4 border-x border-b border-solid border-zinc-400">
-                  <h2 class="text-zinc-900 font-bold mb-1">Treurer Olive Grove & Grand House - Adults Only + Flight</h2>
-                  <h3 class="text-xs text-zinc-900 mb-1">Algaida</h3>
-                  <div class="flex items-center gap-1 text-zinc-900 text-sm mb-1">
-                    <svg width="19" height="19" class="flex-shrink-0">
-                      <use xlink:href="../assets/images/sprite-icons.svg#icon-hotel"></use>
-                    </svg>
-                    5 Stars - 10/10 Exceptional (9)
-                  </div>
-                  <div class="flex items-center gap-1 text-zinc-900 text-sm mb-2">
-                    <svg width="19" height="19" class="flex-shrink-0">
-                      <use xlink:href="../assets/images/sprite-icons.svg#icon-airplane"></use>
-                    </svg>
-                    Leipzig(LEJ)-Palma de mallorca
-                  </div>
-                  <div>
-                    <div class="text-zinc-900 font-bold text-xl">1,421 $</div>
-                    <div class="flex items-center justify-between">
-                      <span class="text-zinc-900 text-xs">Per traveler</span>
-                      <img src="../assets/images/turkish-airline.png" class="h-auto" alt="" width="70" height="30" loading="lazy" />
-                    </div>
-                  </div>
-                  <button class="bg-primary-50 text-primary-900 border border-solid border-primary-900 rounded-[40px] px-6 py-3 mt-2">Details</button>
+    <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-7">
+      <h2 class="text-zinc-900 font-bold mb-3">Our Featured Tours</h2>
+      <ul class="flex items-center gap-2 overflow-x-auto whitespace-nowrap scrollbar-thin">
+        <li class="text-xs text-zinc-900 rounded-[50px] px-6 py-4 bg-zinc-200">destination1</li>
+        <li class="text-xs text-zinc-900 rounded-[50px] px-6 py-4 bg-zinc-200">destination1</li>
+        <li class="text-xs text-zinc-900 rounded-[50px] px-6 py-4 bg-zinc-200">destination1</li>
+      </ul>
+      <!-- Slider main container -->
+      <div class="swiper swiper-featured-tours-mobile mt-8">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <a href="" class="block rounded-xl overflow-hidden">
+              <img src="../assets/images/popular-destionation-card.jpg" class="w-full h-44" alt="@title" width="260"
+                height="176" loading="lazy" />
+              <div class="bg-white p-4 border-x border-b border-solid border-zinc-400">
+                <h2 class="text-zinc-900 font-bold mb-1">Treurer Olive Grove & Grand House - Adults Only + Flight</h2>
+                <h3 class="text-xs text-zinc-900 mb-1">Algaida</h3>
+                <div class="flex items-center gap-1 text-zinc-900 text-sm mb-1">
+                  <svg width="19" height="19" class="flex-shrink-0">
+                    <use xlink:href="../assets/images/sprite-icons.svg#icon-hotel"></use>
+                  </svg>
+                  5 Stars - 10/10 Exceptional (9)
                 </div>
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a href="" class="block rounded-xl overflow-hidden">
-                <img src="../assets/images/popular-destionation-card.jpg" class="w-full h-44" alt="@title" width="260" height="176" loading="lazy" />
-                <div class="bg-white p-4 border-x border-b border-solid border-zinc-400">
-                  <h2 class="text-zinc-900 font-bold mb-1">Treurer Olive Grove & Grand House - Adults Only + Flight</h2>
-                  <h3 class="text-xs text-zinc-900 mb-1">Algaida</h3>
-                  <div class="flex items-center gap-1 text-zinc-900 text-sm mb-1">
-                    <svg width="19" height="19" class="flex-shrink-0">
-                      <use xlink:href="../assets/images/sprite-icons.svg#icon-hotel"></use>
-                    </svg>
-                    5 Stars - 10/10 Exceptional (9)
-                  </div>
-                  <div class="flex items-center gap-1 text-zinc-900 text-sm mb-2">
-                    <svg width="19" height="19" class="flex-shrink-0">
-                      <use xlink:href="../assets/images/sprite-icons.svg#icon-airplane"></use>
-                    </svg>
-                    Leipzig(LEJ)-Palma de mallorca
-                  </div>
-                  <div>
-                    <div class="text-zinc-900 font-bold text-xl">1,421 $</div>
-                    <div class="flex items-center justify-between">
-                      <span class="text-zinc-900 text-xs">Per traveler</span>
-                      <img src="../assets/images/turkish-airline.png" class="h-auto" alt="" width="70" height="30" loading="lazy" />
-                    </div>
-                  </div>
-                  <button class="bg-primary-50 text-primary-900 border border-solid border-primary-900 rounded-[40px] px-6 py-4 mt-2">Details</button>
+                <div class="flex items-center gap-1 text-zinc-900 text-sm mb-2">
+                  <svg width="19" height="19" class="flex-shrink-0">
+                    <use xlink:href="../assets/images/sprite-icons.svg#icon-airplane"></use>
+                  </svg>
+                  Leipzig(LEJ)-Palma de mallorca
                 </div>
-              </a>
-            </div>
-          </div>
-        </div>
-        <a href="" class="flex justify-center items-center gap-2 w-full h-12 bg-primary-900 rounded-xl text-white font-bold mt-7">
-          <svg width="24" height="24" class="flex-shrink-0">
-            <use xlink:href="../assets/images/sprite-icons.svg#icon-category"></use>
-          </svg>
-          Load More Tours
-        </a>
-      </section>
-
-      <section class="relative mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-7 rounded-[32px] overflow-hidden">
-        <img src="../assets/images/number-back.jpg" class="w-full h-[432px] object-cover" alt="number-back" width="288" height="432" loading="lazy" />
-        <div class="absolute inset-0 w-full h-full bg-specialcolor-2"></div>
-        <div class="absolute flex flex-col justify-between gap-6 items-center inset-0 py-3">
-          <div class="flex flex-col items-center gap-3">
-            <h2 class="text-white font-bold text-xl counter" data-target="168000">+0</h2>
-            <h3 class="text-sm font-medium text-white">Happy Clients</h3>
-          </div>
-          <div class="flex flex-col items-center gap-3">
-            <h2 class="text-white font-bold text-xl counter" data-target="95000">+0</h2>
-            <h3 class="text-sm font-medium text-white">Destinations</h3>
-          </div>
-          <div class="flex flex-col items-center gap-3">
-            <h2 class="text-white font-bold text-xl counter" data-target="540">0</h2>
-            <h3 class="text-sm font-medium text-white">Global Branch</h3>
-          </div>
-          <div class="flex flex-col items-center gap-3">
-            <h2 class="text-white font-bold text-xl counter" data-target="120">0</h2>
-            <h3 class="text-sm font-medium text-white">Campaigns</h3>
-          </div>
-        </div>
-      </section>
-
-      <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-7">
-        <h2 class="text-zinc-900 font-bold mb-2">Our Featured Hotel</h2>
-        <div class="relative">
-          <ul class="flex items-center gap-2 overflow-x-auto whitespace-nowrap scrollbar-thin mb-8">
-            <li id="cityFilter" class="filter-option flex items-center justify-center gap-5 text-xs text-zinc-900 rounded-[50px] px-6 py-4 bg-zinc-200">
-              City
-              <svg width="11" height="10" class="flex-shrink-0">
-                <use xlink:href="../assets/images/sprite-icons.svg#icon-chevron-down"></use>
-              </svg>
-              <div id="cityDropdownMenu" class="flex-col gap-3 absolute z-30 top-full right-0 left-0 mx-auto mt-2 w-64 py-4 px-3 rounded-md shadow-lg bg-white border hidden">
-                <!-- آیتم‌های شهر به صورت داینامیک اینجا اضافه می‌شن -->
+                <div>
+                  <div class="text-zinc-900 font-bold text-xl">1,421 $</div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-zinc-900 text-xs">Per traveler</span>
+                    <img src="../assets/images/turkish-airline.png" class="h-auto" alt="" width="70" height="30"
+                      loading="lazy" />
+                  </div>
+                </div>
+                <button
+                  class="bg-primary-50 text-primary-900 border border-solid border-primary-900 rounded-[40px] px-6 py-3 mt-2">Details</button>
               </div>
-            </li>
-            <li id="ratingFilter" class="filter-option flex items-center justify-center gap-5 text-xs text-zinc-900 rounded-[50px] px-6 py-4 bg-zinc-200">
-              Review / Rating
-              <svg width="11" height="10" class="flex-shrink-0">
-                <use xlink:href="../assets/images/sprite-icons.svg#icon-chevron-down"></use>
-              </svg>
-
-              <div id="ratingDropdownMenu" class="flex-col gap-3 absolute z-30 top-full right-0 left-0 mx-auto mt-2 w-64 py-4 px-3 rounded-md shadow-lg bg-white border hidden">
-                <!-- گزینه‌های ۱ تا ۵ ستاره -->
-
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="" class="block rounded-xl overflow-hidden">
+              <img src="../assets/images/popular-destionation-card.jpg" class="w-full h-44" alt="@title" width="260"
+                height="176" loading="lazy" />
+              <div class="bg-white p-4 border-x border-b border-solid border-zinc-400">
+                <h2 class="text-zinc-900 font-bold mb-1">Treurer Olive Grove & Grand House - Adults Only + Flight</h2>
+                <h3 class="text-xs text-zinc-900 mb-1">Algaida</h3>
+                <div class="flex items-center gap-1 text-zinc-900 text-sm mb-1">
+                  <svg width="19" height="19" class="flex-shrink-0">
+                    <use xlink:href="../assets/images/sprite-icons.svg#icon-hotel"></use>
+                  </svg>
+                  5 Stars - 10/10 Exceptional (9)
+                </div>
+                <div class="flex items-center gap-1 text-zinc-900 text-sm mb-2">
+                  <svg width="19" height="19" class="flex-shrink-0">
+                    <use xlink:href="../assets/images/sprite-icons.svg#icon-airplane"></use>
+                  </svg>
+                  Leipzig(LEJ)-Palma de mallorca
+                </div>
+                <div>
+                  <div class="text-zinc-900 font-bold text-xl">1,421 $</div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-zinc-900 text-xs">Per traveler</span>
+                    <img src="../assets/images/turkish-airline.png" class="h-auto" alt="" width="70" height="30"
+                      loading="lazy" />
+                  </div>
+                </div>
+                <button
+                  class="bg-primary-50 text-primary-900 border border-solid border-primary-900 rounded-[40px] px-6 py-4 mt-2">Details</button>
               </div>
-            </li>
-            <li id="priceFilter" class="filter-option flex items-center justify-center gap-5 text-xs text-zinc-900 rounded-[50px] px-6 py-4 bg-zinc-200">
-              Price range
-              <svg width="11" height="10" class="flex-shrink-0">
-                <use xlink:href="../assets/images/sprite-icons.svg#icon-chevron-down"></use>
-              </svg>
-              <div id="priceDropdownMenu" class="flex-col gap-3 absolute z-30 top-full right-0 left-0 mx-auto mt-2 w-64 py-4 px-3 rounded-md shadow-lg bg-white border hidden">
-                <div class="group price-option cursor-pointer p-1 border-b border-gray-100" data-price="high-to-low">
-                  <span class="flex items-center gap-3 text-sm font-bold transition-all duration-300 group-hover:text-primary-500">
-                    <span class="price-check-icon flex items-center justify-center w-4 h-4 border border-primary-100 rounded">
-                      <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3.48177 9.33333L5.38153 10.7582C5.81022 11.0797 6.41615 11.0061 6.75548 10.5914L12.1484 4" stroke="white" stroke-width="2" stroke-linecap="round"></path>
-                      </svg>
-                    </span>
-                    Price: High to Low
-                  </span>
-                </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <a href=""
+        class="flex justify-center items-center gap-2 w-full h-12 bg-primary-900 rounded-xl text-white font-bold mt-7">
+        <svg width="24" height="24" class="flex-shrink-0">
+          <use xlink:href="../assets/images/sprite-icons.svg#icon-category"></use>
+        </svg>
+        Load More Tours
+      </a>
+    </section>
 
-                <div class="group price-option cursor-pointer p-1 border-b border-gray-100" data-price="low-to-high">
-                  <span class="flex items-center gap-3 text-sm font-bold transition-all duration-300 group-hover:text-primary-500">
-                    <span class="price-check-icon flex items-center justify-center w-4 h-4 border border-primary-100 rounded">
-                      <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3.48177 9.33333L5.38153 10.7582C5.81022 11.0797 6.41615 11.0061 6.75548 10.5914L12.1484 4" stroke="white" stroke-width="2" stroke-linecap="round"></path>
-                      </svg>
-                    </span>
-                    Price: Low to High
-                  </span>
-                </div>
+    <section class="relative mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-7 rounded-[32px] overflow-hidden">
+      <img src="../assets/images/number-back.jpg" class="w-full h-[432px] object-cover" alt="number-back" width="288"
+        height="432" loading="lazy" />
+      <div class="absolute inset-0 w-full h-full bg-specialcolor-2"></div>
+      <div class="absolute flex flex-col justify-between gap-6 items-center inset-0 py-3">
+        <div class="flex flex-col items-center gap-3">
+          <h2 class="text-white font-bold text-xl counter" data-target="168000">+0</h2>
+          <h3 class="text-sm font-medium text-white">Happy Clients</h3>
+        </div>
+        <div class="flex flex-col items-center gap-3">
+          <h2 class="text-white font-bold text-xl counter" data-target="95000">+0</h2>
+          <h3 class="text-sm font-medium text-white">Destinations</h3>
+        </div>
+        <div class="flex flex-col items-center gap-3">
+          <h2 class="text-white font-bold text-xl counter" data-target="540">0</h2>
+          <h3 class="text-sm font-medium text-white">Global Branch</h3>
+        </div>
+        <div class="flex flex-col items-center gap-3">
+          <h2 class="text-white font-bold text-xl counter" data-target="120">0</h2>
+          <h3 class="text-sm font-medium text-white">Campaigns</h3>
+        </div>
+      </div>
+    </section>
 
-                <div class="group price-option cursor-pointer p-1 border-b border-gray-100" data-price="best-price">
-                  <span class="flex items-center gap-3 text-sm font-bold transition-all duration-300 group-hover:text-primary-500">
-                    <span class="price-check-icon flex items-center justify-center w-4 h-4 border border-primary-100 rounded">
-                      <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3.48177 9.33333L5.38153 10.7582C5.81022 11.0797 6.41615 11.0061 6.75548 10.5914L12.1484 4" stroke="white" stroke-width="2" stroke-linecap="round"></path>
-                      </svg>
-                    </span>
-                    Best Deals
-                  </span>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-
-          <!-- Additional required wrapper -->
-          <div class="hotel-card-wrapper flex flex-col gap-3">
-            <!-- Slides -->
-            <div>
-              <a href="" class="hotel-card block rounded-xl overflow-hidden" data-hotel="Chiang" data-price="490$" data-rating="4">
-                <img src="../assets/images/popular-destionation-card.jpg" class="w-full h-44" alt="@title" width="260" height="176" loading="lazy" />
-                <div class="flex flex-col gap-2 bg-white p-4 border-x border-b border-solid border-zinc-400 divide-y divide-zinc-400">
-                  <div>
-                    <div class="flex items-center gap-1 text-sm font-medium text-zinc-600 p-2 bg-white shadow-boxStar rounded mb-2">
-                      <svg width="24" height="24" class="flex-shrink-0">
-                        <use xlink:href="../assets/images/sprite-icons.svg#icon-golden-star"></use>
-                      </svg>
-                      4 star
-                    </div>
-                    <h2 class="text-zinc-900 font-bold text-xl mb-1">Chiang Mai</h2>
-                    <div class="flex items-center text-zinc-500 text-sm">
-                      <svg width="24" height="24" class="flex-shrink-0">
-                        <use xlink:href="../assets/images/sprite-icons.svg#icon-blue-location"></use>
-                      </svg>
-                      Thailand
-                    </div>
-                  </div>
-                  <div class="text-zinc-500 text-sm pt-2">Visit the temples and the Chiang Mai Night Bazaar, a huge huge market located on Chiang Klan Road.</div>
-                  <div class="flex items-center justify-between pt-2">
-                    <button class="bg-primary-50 text-primary-900 border border-solid border-primary-900 rounded-[40px] px-6 py-4">Details</button>
-                    <div class="text-zinc-900 font-bold text-2xl">$ 490</div>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div>
-              <a href="" class="hotel-card block rounded-xl overflow-hidden" data-hotel="Thailand" data-price="470" data-rating="4">
-                <img src="../assets/images/popular-destionation-card.jpg" class="w-full h-44" alt="@title" width="260" height="176" loading="lazy" />
-                <div class="flex flex-col gap-2 bg-white p-4 border-x border-b border-solid border-zinc-400 divide-y divide-zinc-400">
-                  <div>
-                    <div class="flex items-center gap-1 text-sm font-medium text-zinc-600 p-2 bg-white shadow-boxStar rounded mb-2">
-                      <svg width="24" height="24" class="flex-shrink-0">
-                        <use xlink:href="../assets/images/sprite-icons.svg#icon-golden-star"></use>
-                      </svg>
-                      4 star
-                    </div>
-                    <h2 class="text-zinc-900 font-bold text-xl mb-1">Chiang Mai</h2>
-                    <div class="flex items-center text-zinc-500 text-sm">
-                      <svg width="24" height="24" class="flex-shrink-0">
-                        <use xlink:href="../assets/images/sprite-icons.svg#icon-blue-location"></use>
-                      </svg>
-                      Thailand
-                    </div>
-                  </div>
-                  <div class="text-zinc-500 text-sm pt-2">Visit the temples and the Chiang Mai Night Bazaar, a huge huge market located on Chiang Klan Road.</div>
-                  <div class="flex items-center justify-between pt-2">
-                    <button class="bg-primary-50 text-primary-900 border border-solid border-primary-900 rounded-[40px] px-6 py-4">Details</button>
-                    <div class="text-zinc-900 font-bold text-2xl">$ 470</div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-      
-      </section>
-
-      <section class="flex flex-col gap-2 mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-7">
-        <div class="relative rounded-2xl overflow-hidden">
-          <img src="../assets/images/slogan-card.png" class="w-full h-56 object-cover" alt="" width="288" height="224" loading="lazy" />
-          <div class="absolute top-5 left-0 right-0 mx-auto w-[73%]">
-            <div class="bg-secondary-500 px-3 rounded mb-1">
-              <h2 class="font-bold text-2xl">Buy 1, Get 1 Free Attractions</h2>
-            </div>
-            <div class="w-max bg-secondary-500 px-3 py-1 rounded mb-3">
-              <h3 class="font-bold">Limited Offers</h3>
-            </div>
-            <a href="" class="w-max flex justify-center bg-secondary-600 text-zinc-900 px-4 rounded-[50px]">View More</a>
-          </div>
-        </div>
-        <div class="relative rounded-2xl overflow-hidden">
-          <img src="../assets/images/slogan-card.png" class="w-full h-56 object-cover" alt="" width="288" height="224" loading="lazy" />
-          <div class="absolute top-5 left-0 right-0 mx-auto w-[73%]">
-            <div class="bg-secondary-500 px-3 rounded mb-1">
-              <h2 class="font-bold text-2xl">Buy 1, Get 1 Free Attractions</h2>
-            </div>
-            <div class="w-max bg-secondary-500 px-3 py-1 rounded mb-3">
-              <h3 class="font-bold">Limited Offers</h3>
-            </div>
-            <a href="" class="w-max flex justify-center bg-secondary-600 text-zinc-900 px-4 rounded-[50px]">View More</a>
-          </div>
-        </div>
-        <div class="relative rounded-2xl overflow-hidden">
-          <img src="../assets/images/slogan-card.png" class="w-full h-56 object-cover" alt="" width="288" height="224" loading="lazy" />
-          <div class="absolute top-5 left-0 right-0 mx-auto w-[73%]">
-            <div class="bg-secondary-500 px-3 rounded mb-1">
-              <h2 class="font-bold text-2xl">Buy 1, Get 1 Free Attractions</h2>
-            </div>
-            <div class="w-max bg-secondary-500 px-3 py-1 rounded mb-3">
-              <h3 class="font-bold">Limited Offers</h3>
-            </div>
-            <a href="" class="w-max flex justify-center bg-secondary-600 text-zinc-900 px-4 rounded-[50px]">View More</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-7">
-        <div class="flex flex-col items-center">
-          <img src="../assets/images/roaming-tales.jpg" class="h-6 object-cover" alt="roaming-tales" width="142" height="25" loading="lazy" />
-          <h2 class="text-zinc-900 font-bold text-xl mt-5 mb-5">Travel Blog</h2>
-        </div>
-        <div class="text-xs text-zinc-500 text-center leading-5">
-          We share our experiences, tips and travel stories to inspire and guide our readers in their own wanderlust adventures. From hidden gems to popular destinations, we showcase the beauty and diversity of
-          the world, and promote responsible and sustainable travel.
-        </div>
-        <!-- Slider main container -->
-        <div class="swiper swiper-travel-blog-mobile mt-8">
-          <!-- Additional required wrapper -->
-          <div class="swiper-wrapper">
-            <!-- Slides -->
-            <div class="swiper-slide">
-              <a href="" class="block rounded-xl overflow-hidden">
-                <div class="relative">
-                  <img src="../assets/images/popular-destionation-card.jpg" class="w-full h-60" alt="@title" width="260" height="240" loading="lazy" />
-                  <div class="absolute top-3 left-3 bg-white text-sm font-medium px-6 py-4 rounded-[50px]">Discovery</div>
-                </div>
-                <div class="relative z-10 bg-white p-4 border border-solid border-zinc-300 rounded-3xl -mt-6">
-                  <div>
-                    <div class="flex items-center gap-4 mb-2">
-                      <div class="flex items-center gap-2 text-xs text-zinc-900">
-                        <svg width="16" height="16" class="flex-shrink-0">
-                          <use xlink:href="../assets/images/sprite-icons.svg#icon-calender-blog"></use>
-                        </svg>
-                        18 Sep 2024
-                      </div>
-                      <div class="flex items-center gap-2 text-xs text-zinc-900">
-                        <svg width="16" height="16" class="flex-shrink-0">
-                          <use xlink:href="../assets/images/sprite-icons.svg#icon-clock-blog"></use>
-                        </svg>
-                        6 mins
-                      </div>
-                    </div>
-                    <h2 class="text-zinc-900 font-bold">Discovering Hidden Gems: 10 Off- the-Beaten-Path Travel Tips</h2>
-                  </div>
-                  <button class="bg-primary-50 text-primary-900 border border-solid border-primary-900 rounded-[40px] px-6 py-4 mt-3">Keep Reading</button>
-                </div>
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a href="" class="block rounded-xl overflow-hidden">
-                <div class="relative">
-                  <img src="../assets/images/popular-destionation-card.jpg" class="w-full h-60" alt="@title" width="260" height="240" loading="lazy" />
-                  <div class="absolute top-3 left-3 bg-white text-sm font-medium px-6 py-4 rounded-[50px]">Discovery</div>
-                </div>
-                <div class="relative z-10 bg-white p-4 border border-solid border-zinc-300 rounded-3xl -mt-6">
-                  <div>
-                    <div class="flex items-center gap-4 mb-2">
-                      <div class="flex items-center gap-2 text-xs text-zinc-900">
-                        <svg width="16" height="16" class="flex-shrink-0">
-                          <use xlink:href="../assets/images/sprite-icons.svg#icon-calender-blog"></use>
-                        </svg>
-                        18 Sep 2024
-                      </div>
-                      <div class="flex items-center gap-2 text-xs text-zinc-900">
-                        <svg width="16" height="16" class="flex-shrink-0">
-                          <use xlink:href="../assets/images/sprite-icons.svg#icon-clock-blog"></use>
-                        </svg>
-                        6 mins
-                      </div>
-                    </div>
-                    <h2 class="text-zinc-900 font-bold">Discovering Hidden Gems: 10 Off- the-Beaten-Path Travel Tips</h2>
-                  </div>
-                  <button class="bg-primary-50 text-primary-900 border border-solid border-primary-900 rounded-[40px] px-6 py-4 mt-3">Keep Reading</button>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-7">
-        <img src="../assets/images/persons.png" class="h-[392px]" alt="persons" width="268" height="392" loading="lazy" />
-        <div class="relative bg-specialcolor-3 rounded-[32px]">
-          <img src="../assets/images/hachur.png" class="absolute z-10 bottom-0 w-full h-96 object-cover" alt="hachur" width="288" height="432" loading="lazy" />
-          <div class="relative z-20 flex flex-col gap-2 px-8 py-9">
-            <h2 class="text-zinc-900 text-2xl font-bold">24/7 Support</h2>
-            <div class="text-zinc-900 text-sm">
-              We are here to help, before,
-              <br />
-              during, and even after your trip.
-            </div>
-            <div class="flex flex-col gap-2 items-center">
-              <img src="../assets/images/support-one.png" alt="support-one" class="w-full border border-solid border-white rounded-[32px] h-40 object-cover" width="226" height="160" />
-              <img src="../assets/images/support-two.png" alt="support-two" class="w-full border border-solid border-white rounded-[32px] h-52 object-cover" width="226" height="208" />
-            </div>
-          </div>
-        </div>
-        <div class="relative bg-specialcolor-4 rounded-[32px] mt-2">
-          <img src="../assets/images/airplane.png" class="absolute bottom-0 h-60" alt="airplane" width="400" height="235" loading="lazy" />
-          <div class="relative z-10 flex flex-col gap-7 pl-6 pr-3 py-10">
-            <h2 class="text-zinc-900 text-2xl font-bold">Best Price</h2>
-            <div class="text-zinc-900 text-sm">Price match within 48 hours of order confirmation</div>
-            <a href="" class="bg-primary-50 self-start text-primary-900 border border-solid border-primary-900 rounded-[40px] px-6 py-3 mt-3">Booking Now</a>
-          </div>
-        </div>
-        <div class="relative bg-specialcolor-5 rounded-[32px] mt-2">
-          <img src="../assets/images/beach.png" class="absolute bottom-0 h-44" alt="airplane" width="276" height="173" loading="lazy" />
-          <div class="relative z-10 flex flex-col gap-7 px-4 py-8">
-            <h2 class="text-zinc-900 font-bold">Save your time!</h2>
-            <div class="text-zinc-900 font-bold">Explore, Book, Soar: Your Journey Awaits!</div>
-            <a href="" class="bg-primary-50 self-start text-primary-900 border border-solid border-primary-900 rounded-[40px] px-6 py-3 mt-3">Booking Now</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-7">
-        <img src="../assets/images/let-us.jpg" class="h-4" alt="let-us" width="211" height="15" loading="lazy" />
-        <h2 class="text-zinc-900 font-bold">
-          Perfect
-          <span class="text-secondary-800">Vacation</span>
-          <br />
-          come True
-        </h2>
-        <div class="flex flex-col mt-9 gap-14">
-          <div class="flex flex-col gap-2">
-            <img src="../assets/images/earth-plane.png" class="w-12 h-12 object-cover" alt="earth-plane" width="48" height="48" loading="lazy" />
-            <h2 class="text-zinc-900 font-bold text-xl">Airline Tickets</h2>
-            <div class="text-zinc-600 text-sm leading-5">Our travel agency specializes in providing our customers with the best deals on airline tickets.</div>
-          </div>
-          <div class="flex flex-col gap-2">
-            <img src="../assets/images/earth-plane.png" class="w-12 h-12 object-cover" alt="earth-plane" width="48" height="48" loading="lazy" />
-            <h2 class="text-zinc-900 font-bold text-xl">Ocean Cruises</h2>
-            <div class="text-zinc-600 text-sm leading-5">Luxurious and comfortable way of travel, and passengers can enjoy stunning views of the sea.</div>
-          </div>
-          <div class="flex flex-col gap-2">
-            <img src="../assets/images/earth-plane.png" class="w-12 h-12 object-cover" alt="earth-plane" width="48" height="48" loading="lazy" />
-            <h2 class="text-zinc-900 font-bold text-xl">Means of Transport</h2>
-            <div class="text-zinc-600 text-sm leading-5">Our travel agency offers a variety of means of transport to get you around your destination safely.</div>
-          </div>
-          <div class="flex flex-col gap-2">
-            <img src="../assets/images/earth-plane.png" class="w-12 h-12 object-cover" alt="earth-plane" width="48" height="48" loading="lazy" />
-            <h2 class="text-zinc-900 font-bold text-xl">Travel itineraries</h2>
-            <div class="text-zinc-600 text-sm leading-5">Our team of experts will take care of all the planning and logistics, providing you with a detailed itinerary.</div>
-          </div>
-          <div class="flex flex-col gap-2">
-            <img src="../assets/images/earth-plane.png" class="w-12 h-12 object-cover" alt="earth-plane" width="48" height="48" loading="lazy" />
-            <h2 class="text-zinc-900 font-bold text-xl">Travel Insurance</h2>
-            <div class="text-zinc-600 text-sm leading-5">Travel insurance is an essential part of any trip, providing peace of mind and protection.</div>
-          </div>
-          <div class="flex flex-col gap-2">
-            <img src="../assets/images/earth-plane.png" class="w-12 h-12 object-cover" alt="earth-plane" width="48" height="48" loading="lazy" />
-            <h2 class="text-zinc-900 font-bold text-xl">Local Guide</h2>
-            <div class="text-zinc-600 text-sm leading-5">We can connect you with guides who will take you off the best path and show you their city.</div>
-          </div>
-        </div>
-      </section>
-
-      <section class="flex items-center mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-7 mb-20">
-        <div class="flex items-center">
-          <img src="../assets/images/frame.jpg" class="w-1/5 h-[356px] object-cover object-left" alt="offer" width="57" height="356" loading="lazy" />
-          <div class="w-4/5 relative">
-            <div class="absolute bg-specialcolor-6 inset-0 w-full h-full opacity-50"></div>
-            <img src="../assets/images/offer.jpg" class="h-[356px] object-cover" alt="offer" width="288" height="356" loading="lazy" />
-          </div>
-        </div>
-        <div class="absolute px-6">
-          <h2 class="text-xs text-white mb-5">Exclusive travel deals</h2>
-          <div class="text-xl font-bold text-white mb-12">Book your dream vacation today!</div>
-          <a href="" class="inline-flex items-center gap-5 bg-secondary-600 px-6 py-3 rounded-[50px]">
-            View More
-            <svg width="11" height="11" class="flex-shrink-0">
-              <use xlink:href="../assets/images/sprite-icons.svg#icon-chevron-right"></use>
+    <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-7">
+      <h2 class="text-zinc-900 font-bold mb-2">Our Featured Hotel</h2>
+      <div class="relative">
+        <ul class="flex items-center gap-2 overflow-x-auto whitespace-nowrap scrollbar-thin mb-8">
+          <li id="cityFilter"
+            class="filter-option flex items-center justify-center gap-5 text-xs text-zinc-900 rounded-[50px] px-6 py-4 bg-zinc-200">
+            City
+            <svg width="11" height="10" class="flex-shrink-0">
+              <use xlink:href="../assets/images/sprite-icons.svg#icon-chevron-down"></use>
             </svg>
+            <div id="cityDropdownMenu"
+              class="flex-col gap-3 absolute z-30 top-full right-0 left-0 mx-auto mt-2 w-64 py-4 px-3 rounded-md shadow-lg bg-white border hidden">
+              <!-- آیتم‌های شهر به صورت داینامیک اینجا اضافه می‌شن -->
+            </div>
+          </li>
+          <li id="ratingFilter"
+            class="filter-option flex items-center justify-center gap-5 text-xs text-zinc-900 rounded-[50px] px-6 py-4 bg-zinc-200">
+            Review / Rating
+            <svg width="11" height="10" class="flex-shrink-0">
+              <use xlink:href="../assets/images/sprite-icons.svg#icon-chevron-down"></use>
+            </svg>
+
+            <div id="ratingDropdownMenu"
+              class="flex-col gap-3 absolute z-30 top-full right-0 left-0 mx-auto mt-2 w-64 py-4 px-3 rounded-md shadow-lg bg-white border hidden">
+              <!-- گزینه‌های ۱ تا ۵ ستاره -->
+
+            </div>
+          </li>
+          <li id="priceFilter"
+            class="filter-option flex items-center justify-center gap-5 text-xs text-zinc-900 rounded-[50px] px-6 py-4 bg-zinc-200">
+            Price range
+            <svg width="11" height="10" class="flex-shrink-0">
+              <use xlink:href="../assets/images/sprite-icons.svg#icon-chevron-down"></use>
+            </svg>
+            <div id="priceDropdownMenu"
+              class="flex-col gap-3 absolute z-30 top-full right-0 left-0 mx-auto mt-2 w-64 py-4 px-3 rounded-md shadow-lg bg-white border hidden">
+              <div class="group price-option cursor-pointer p-1 border-b border-gray-100" data-price="high-to-low">
+                <span
+                  class="flex items-center gap-3 text-sm font-bold transition-all duration-300 group-hover:text-primary-500">
+                  <span
+                    class="price-check-icon flex items-center justify-center w-4 h-4 border border-primary-100 rounded">
+                    <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M3.48177 9.33333L5.38153 10.7582C5.81022 11.0797 6.41615 11.0061 6.75548 10.5914L12.1484 4"
+                        stroke="white" stroke-width="2" stroke-linecap="round"></path>
+                    </svg>
+                  </span>
+                  Price: High to Low
+                </span>
+              </div>
+
+              <div class="group price-option cursor-pointer p-1 border-b border-gray-100" data-price="low-to-high">
+                <span
+                  class="flex items-center gap-3 text-sm font-bold transition-all duration-300 group-hover:text-primary-500">
+                  <span
+                    class="price-check-icon flex items-center justify-center w-4 h-4 border border-primary-100 rounded">
+                    <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M3.48177 9.33333L5.38153 10.7582C5.81022 11.0797 6.41615 11.0061 6.75548 10.5914L12.1484 4"
+                        stroke="white" stroke-width="2" stroke-linecap="round"></path>
+                    </svg>
+                  </span>
+                  Price: Low to High
+                </span>
+              </div>
+
+              <div class="group price-option cursor-pointer p-1 border-b border-gray-100" data-price="best-price">
+                <span
+                  class="flex items-center gap-3 text-sm font-bold transition-all duration-300 group-hover:text-primary-500">
+                  <span
+                    class="price-check-icon flex items-center justify-center w-4 h-4 border border-primary-100 rounded">
+                    <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M3.48177 9.33333L5.38153 10.7582C5.81022 11.0797 6.41615 11.0061 6.75548 10.5914L12.1484 4"
+                        stroke="white" stroke-width="2" stroke-linecap="round"></path>
+                    </svg>
+                  </span>
+                  Best Deals
+                </span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Additional required wrapper -->
+      <div class="hotel-card-wrapper flex flex-col gap-3">
+        <!-- Slides -->
+        <div>
+          <a href="" class="hotel-card block rounded-xl overflow-hidden" data-hotel="Chiang" data-price="490$"
+            data-rating="4">
+            <img src="../assets/images/popular-destionation-card.jpg" class="w-full h-44" alt="@title" width="260"
+              height="176" loading="lazy" />
+            <div
+              class="flex flex-col gap-2 bg-white p-4 border-x border-b border-solid border-zinc-400 divide-y divide-zinc-400">
+              <div>
+                <div
+                  class="flex items-center gap-1 text-sm font-medium text-zinc-600 p-2 bg-white shadow-boxStar rounded mb-2">
+                  <svg width="24" height="24" class="flex-shrink-0">
+                    <use xlink:href="../assets/images/sprite-icons.svg#icon-golden-star"></use>
+                  </svg>
+                  4 star
+                </div>
+                <h2 class="text-zinc-900 font-bold text-xl mb-1">Chiang Mai</h2>
+                <div class="flex items-center text-zinc-500 text-sm">
+                  <svg width="24" height="24" class="flex-shrink-0">
+                    <use xlink:href="../assets/images/sprite-icons.svg#icon-blue-location"></use>
+                  </svg>
+                  Thailand
+                </div>
+              </div>
+              <div class="text-zinc-500 text-sm pt-2">Visit the temples and the Chiang Mai Night Bazaar, a huge huge
+                market located on Chiang Klan Road.</div>
+              <div class="flex items-center justify-between pt-2">
+                <button
+                  class="bg-primary-50 text-primary-900 border border-solid border-primary-900 rounded-[40px] px-6 py-4">Details</button>
+                <div class="text-zinc-900 font-bold text-2xl">$ 490</div>
+              </div>
+            </div>
           </a>
         </div>
-      </section>
-    </main>
+        <div>
+          <a href="" class="hotel-card block rounded-xl overflow-hidden" data-hotel="Thailand" data-price="470"
+            data-rating="4">
+            <img src="../assets/images/popular-destionation-card.jpg" class="w-full h-44" alt="@title" width="260"
+              height="176" loading="lazy" />
+            <div
+              class="flex flex-col gap-2 bg-white p-4 border-x border-b border-solid border-zinc-400 divide-y divide-zinc-400">
+              <div>
+                <div
+                  class="flex items-center gap-1 text-sm font-medium text-zinc-600 p-2 bg-white shadow-boxStar rounded mb-2">
+                  <svg width="24" height="24" class="flex-shrink-0">
+                    <use xlink:href="../assets/images/sprite-icons.svg#icon-golden-star"></use>
+                  </svg>
+                  4 star
+                </div>
+                <h2 class="text-zinc-900 font-bold text-xl mb-1">Chiang Mai</h2>
+                <div class="flex items-center text-zinc-500 text-sm">
+                  <svg width="24" height="24" class="flex-shrink-0">
+                    <use xlink:href="../assets/images/sprite-icons.svg#icon-blue-location"></use>
+                  </svg>
+                  Thailand
+                </div>
+              </div>
+              <div class="text-zinc-500 text-sm pt-2">Visit the temples and the Chiang Mai Night Bazaar, a huge huge
+                market located on Chiang Klan Road.</div>
+              <div class="flex items-center justify-between pt-2">
+                <button
+                  class="bg-primary-50 text-primary-900 border border-solid border-primary-900 rounded-[40px] px-6 py-4">Details</button>
+                <div class="text-zinc-900 font-bold text-2xl">$ 470</div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
 
-    <script src="../assets/js/tbibooking-core.js"></script>
-    <script src="https://cdn.basiscore.net/basisfly.com/js/swiper-bundle.min.js"></script>
-    <script>
-      var swiperFeaturedHotelsMobile = new Swiper('.swiper-featured-hotels-mobile', {
-        slidesPerView: 1.1,
-        speed: 400,
-        centeredSlides: false,
-        spaceBetween: 12,
-        grabCursor: true,
-        autoplay: {
-          delay: 3500,
-          disableOnInteraction: false,
-        },
-        loop: true,
-      });
-      var swiperTravelBlogMobile = new Swiper('.swiper-travel-blog-mobile', {
-        slidesPerView: 1.1,
-        speed: 400,
-        centeredSlides: false,
-        spaceBetween: 12,
-        grabCursor: true,
-        autoplay: {
-          delay: 3500,
-          disableOnInteraction: false,
-        },
-        loop: true,
-      });
-    </script>
-  </body>
+    </section>
+
+    <section class="flex flex-col gap-2 mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-7">
+      <div class="relative rounded-2xl overflow-hidden">
+        <img src="../assets/images/slogan-card.png" class="w-full h-56 object-cover" alt="" width="288" height="224"
+          loading="lazy" />
+        <div class="absolute top-5 left-0 right-0 mx-auto w-[73%]">
+          <div class="bg-secondary-500 px-3 rounded mb-1">
+            <h2 class="font-bold text-2xl">Buy 1, Get 1 Free Attractions</h2>
+          </div>
+          <div class="w-max bg-secondary-500 px-3 py-1 rounded mb-3">
+            <h3 class="font-bold">Limited Offers</h3>
+          </div>
+          <a href="" class="w-max flex justify-center bg-secondary-600 text-zinc-900 px-4 rounded-[50px]">View More</a>
+        </div>
+      </div>
+      <div class="relative rounded-2xl overflow-hidden">
+        <img src="../assets/images/slogan-card.png" class="w-full h-56 object-cover" alt="" width="288" height="224"
+          loading="lazy" />
+        <div class="absolute top-5 left-0 right-0 mx-auto w-[73%]">
+          <div class="bg-secondary-500 px-3 rounded mb-1">
+            <h2 class="font-bold text-2xl">Buy 1, Get 1 Free Attractions</h2>
+          </div>
+          <div class="w-max bg-secondary-500 px-3 py-1 rounded mb-3">
+            <h3 class="font-bold">Limited Offers</h3>
+          </div>
+          <a href="" class="w-max flex justify-center bg-secondary-600 text-zinc-900 px-4 rounded-[50px]">View More</a>
+        </div>
+      </div>
+      <div class="relative rounded-2xl overflow-hidden">
+        <img src="../assets/images/slogan-card.png" class="w-full h-56 object-cover" alt="" width="288" height="224"
+          loading="lazy" />
+        <div class="absolute top-5 left-0 right-0 mx-auto w-[73%]">
+          <div class="bg-secondary-500 px-3 rounded mb-1">
+            <h2 class="font-bold text-2xl">Buy 1, Get 1 Free Attractions</h2>
+          </div>
+          <div class="w-max bg-secondary-500 px-3 py-1 rounded mb-3">
+            <h3 class="font-bold">Limited Offers</h3>
+          </div>
+          <a href="" class="w-max flex justify-center bg-secondary-600 text-zinc-900 px-4 rounded-[50px]">View More</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-7">
+      <div class="flex flex-col items-center">
+        <p class="text-secondary-800 text-3xl font-reeniebeanie">Roaming Tales</p>
+        <h2 class="text-zinc-900 font-bold text-xl mt-5 mb-5">Travel Blog</h2>
+      </div>
+      <div class="text-xs text-zinc-500 text-center leading-5">
+        We share our experiences, tips and travel stories to inspire and guide our readers in their own wanderlust
+        adventures. From hidden gems to popular destinations, we showcase the beauty and diversity of
+        the world, and promote responsible and sustainable travel.
+      </div>
+      <!-- Slider main container -->
+      <div class="swiper swiper-travel-blog-mobile mt-8">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <a href="" class="block rounded-xl overflow-hidden">
+              <div class="relative">
+                <img src="../assets/images/popular-destionation-card.jpg" class="w-full h-60" alt="@title" width="260"
+                  height="240" loading="lazy" />
+                <div class="absolute top-3 left-3 bg-white text-sm font-medium px-6 py-4 rounded-[50px]">Discovery</div>
+              </div>
+              <div class="relative z-10 bg-white p-4 border border-solid border-zinc-300 rounded-3xl -mt-6">
+                <div>
+                  <div class="flex items-center gap-4 mb-2">
+                    <div class="flex items-center gap-2 text-xs text-zinc-900">
+                      <svg width="16" height="16" class="flex-shrink-0">
+                        <use xlink:href="../assets/images/sprite-icons.svg#icon-calender-blog"></use>
+                      </svg>
+                      18 Sep 2024
+                    </div>
+                    <div class="flex items-center gap-2 text-xs text-zinc-900">
+                      <svg width="16" height="16" class="flex-shrink-0">
+                        <use xlink:href="../assets/images/sprite-icons.svg#icon-clock-blog"></use>
+                      </svg>
+                      6 mins
+                    </div>
+                  </div>
+                  <h2 class="text-zinc-900 font-bold">Discovering Hidden Gems: 10 Off- the-Beaten-Path Travel Tips</h2>
+                </div>
+                <button
+                  class="bg-primary-50 text-primary-900 border border-solid border-primary-900 rounded-[40px] px-6 py-4 mt-3">Keep
+                  Reading</button>
+              </div>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="" class="block rounded-xl overflow-hidden">
+              <div class="relative">
+                <img src="../assets/images/popular-destionation-card.jpg" class="w-full h-60" alt="@title" width="260"
+                  height="240" loading="lazy" />
+                <div class="absolute top-3 left-3 bg-white text-sm font-medium px-6 py-4 rounded-[50px]">Discovery</div>
+              </div>
+              <div class="relative z-10 bg-white p-4 border border-solid border-zinc-300 rounded-3xl -mt-6">
+                <div>
+                  <div class="flex items-center gap-4 mb-2">
+                    <div class="flex items-center gap-2 text-xs text-zinc-900">
+                      <svg width="16" height="16" class="flex-shrink-0">
+                        <use xlink:href="../assets/images/sprite-icons.svg#icon-calender-blog"></use>
+                      </svg>
+                      18 Sep 2024
+                    </div>
+                    <div class="flex items-center gap-2 text-xs text-zinc-900">
+                      <svg width="16" height="16" class="flex-shrink-0">
+                        <use xlink:href="../assets/images/sprite-icons.svg#icon-clock-blog"></use>
+                      </svg>
+                      6 mins
+                    </div>
+                  </div>
+                  <h2 class="text-zinc-900 font-bold">Discovering Hidden Gems: 10 Off- the-Beaten-Path Travel Tips</h2>
+                </div>
+                <button
+                  class="bg-primary-50 text-primary-900 border border-solid border-primary-900 rounded-[40px] px-6 py-4 mt-3">Keep
+                  Reading</button>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-7">
+      <img src="../assets/images/persons.png" class="h-[392px]" alt="persons" width="268" height="392" loading="lazy" />
+      <div class="relative bg-specialcolor-3 rounded-[32px]">
+        <img src="../assets/images/hachur.png" class="absolute z-10 bottom-0 w-full h-96 object-cover" alt="hachur"
+          width="288" height="432" loading="lazy" />
+        <div class="relative z-20 flex flex-col gap-2 px-8 py-9">
+          <h2 class="text-zinc-900 text-2xl font-bold">24/7 Support</h2>
+          <div class="text-zinc-900 text-sm">
+            We are here to help, before,
+            <br />
+            during, and even after your trip.
+          </div>
+          <div class="flex flex-col gap-2 items-center">
+            <img src="../assets/images/support-one.png" alt="support-one"
+              class="w-full border border-solid border-white rounded-[32px] h-40 object-cover" width="226"
+              height="160" />
+            <img src="../assets/images/support-two.png" alt="support-two"
+              class="w-full border border-solid border-white rounded-[32px] h-52 object-cover" width="226"
+              height="208" />
+          </div>
+        </div>
+      </div>
+      <div class="relative bg-specialcolor-4 rounded-[32px] mt-2">
+        <img src="../assets/images/airplane.png" class="absolute bottom-0 h-60" alt="airplane" width="400" height="235"
+          loading="lazy" />
+        <div class="relative z-10 flex flex-col gap-7 pl-6 pr-3 py-10">
+          <h2 class="text-zinc-900 text-2xl font-bold">Best Price</h2>
+          <div class="text-zinc-900 text-sm">Price match within 48 hours of order confirmation</div>
+          <a href=""
+            class="bg-primary-50 self-start text-primary-900 border border-solid border-primary-900 rounded-[40px] px-6 py-3 mt-3">Booking
+            Now</a>
+        </div>
+      </div>
+      <div class="relative bg-specialcolor-5 rounded-[32px] mt-2">
+        <img src="../assets/images/beach.png" class="absolute bottom-0 h-44" alt="airplane" width="276" height="173"
+          loading="lazy" />
+        <div class="relative z-10 flex flex-col gap-7 px-4 py-8">
+          <h2 class="text-zinc-900 font-bold">Save your time!</h2>
+          <div class="text-zinc-900 font-bold">Explore, Book, Soar: Your Journey Awaits!</div>
+          <a href=""
+            class="bg-primary-50 self-start text-primary-900 border border-solid border-primary-900 rounded-[40px] px-6 py-3 mt-3">Booking
+            Now</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-7">
+      <p class="text-secondary-800 font-reeniebeanie">Let us help you plan your next adventure</p>
+      <h2 class="text-zinc-900 font-bold">
+        Perfect
+        <span class="text-secondary-800">Vacation</span>
+        <br />
+        come True
+      </h2>
+      <div class="flex flex-col mt-9 gap-14">
+        <div class="flex flex-col gap-2">
+          <img src="../assets/images/earth-plane.png" class="w-12 h-12 object-cover" alt="earth-plane" width="48"
+            height="48" loading="lazy" />
+          <h2 class="text-zinc-900 font-bold text-xl">Airline Tickets</h2>
+          <div class="text-zinc-600 text-sm leading-5">Our travel agency specializes in providing our customers with the
+            best deals on airline tickets.</div>
+        </div>
+        <div class="flex flex-col gap-2">
+          <img src="../assets/images/earth-plane.png" class="w-12 h-12 object-cover" alt="earth-plane" width="48"
+            height="48" loading="lazy" />
+          <h2 class="text-zinc-900 font-bold text-xl">Ocean Cruises</h2>
+          <div class="text-zinc-600 text-sm leading-5">Luxurious and comfortable way of travel, and passengers can enjoy
+            stunning views of the sea.</div>
+        </div>
+        <div class="flex flex-col gap-2">
+          <img src="../assets/images/earth-plane.png" class="w-12 h-12 object-cover" alt="earth-plane" width="48"
+            height="48" loading="lazy" />
+          <h2 class="text-zinc-900 font-bold text-xl">Means of Transport</h2>
+          <div class="text-zinc-600 text-sm leading-5">Our travel agency offers a variety of means of transport to get
+            you around your destination safely.</div>
+        </div>
+        <div class="flex flex-col gap-2">
+          <img src="../assets/images/earth-plane.png" class="w-12 h-12 object-cover" alt="earth-plane" width="48"
+            height="48" loading="lazy" />
+          <h2 class="text-zinc-900 font-bold text-xl">Travel itineraries</h2>
+          <div class="text-zinc-600 text-sm leading-5">Our team of experts will take care of all the planning and
+            logistics, providing you with a detailed itinerary.</div>
+        </div>
+        <div class="flex flex-col gap-2">
+          <img src="../assets/images/earth-plane.png" class="w-12 h-12 object-cover" alt="earth-plane" width="48"
+            height="48" loading="lazy" />
+          <h2 class="text-zinc-900 font-bold text-xl">Travel Insurance</h2>
+          <div class="text-zinc-600 text-sm leading-5">Travel insurance is an essential part of any trip, providing
+            peace of mind and protection.</div>
+        </div>
+        <div class="flex flex-col gap-2">
+          <img src="../assets/images/earth-plane.png" class="w-12 h-12 object-cover" alt="earth-plane" width="48"
+            height="48" loading="lazy" />
+          <h2 class="text-zinc-900 font-bold text-xl">Local Guide</h2>
+          <div class="text-zinc-600 text-sm leading-5">We can connect you with guides who will take you off the best
+            path and show you their city.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="flex items-center mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-7 mb-20">
+      <div class="flex items-center">
+        <img src="../assets/images/frame.jpg" class="w-1/5 h-[356px] object-cover object-left" alt="offer" width="57"
+          height="356" loading="lazy" />
+        <div class="w-4/5 relative">
+          <div class="absolute bg-specialcolor-6 inset-0 w-full h-full opacity-50"></div>
+          <img src="../assets/images/offer.jpg" class="h-[356px] object-cover" alt="offer" width="288" height="356"
+            loading="lazy" />
+        </div>
+      </div>
+      <div class="absolute px-6">
+        <h2 class="text-xs text-white mb-5">Exclusive travel deals</h2>
+        <div class="text-xl font-bold text-white mb-12">Book your dream vacation today!</div>
+        <a href="" class="inline-flex items-center gap-5 bg-secondary-600 px-6 py-3 rounded-[50px]">
+          View More
+          <svg width="11" height="11" class="flex-shrink-0">
+            <use xlink:href="../assets/images/sprite-icons.svg#icon-chevron-right"></use>
+          </svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <script src="../assets/js/tbibooking-core.js"></script>
+  <script src="https://cdn.basiscore.net/basisfly.com/js/swiper-bundle.min.js"></script>
+  <script>
+    var swiperFeaturedHotelsMobile = new Swiper('.swiper-featured-hotels-mobile', {
+      slidesPerView: 1.1,
+      speed: 400,
+      centeredSlides: false,
+      spaceBetween: 12,
+      grabCursor: true,
+      autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+      },
+      loop: true,
+    });
+    var swiperTravelBlogMobile = new Swiper('.swiper-travel-blog-mobile', {
+      slidesPerView: 1.1,
+      speed: 400,
+      centeredSlides: false,
+      spaceBetween: 12,
+      grabCursor: true,
+      autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+      },
+      loop: true,
+    });
+  </script>
+</body>
+
 </html>

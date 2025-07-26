@@ -42,7 +42,7 @@
   --special-6: #434a54;
 
   ---bg: url('');
-  --default-bg: url('../images/default-back.jpg');
+  --default-bg: url('../images/default-back-pc.jpg');
   --tourlist-bg: url('../images/tour-list-back.jpg');
   --articlelist-bg: url('../images/article-list-back.png');
   --hotellist-bg: url('../images/hotel-list-back.jpg');
@@ -68,6 +68,14 @@
   font-style: normal;
   font-weight: 700;
   src: url('../fonts/Dana-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'ReenieBeanie';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/ReenieBeanie-Regular.ttf') format('truetype');
 }
 
 .h1-tag {
@@ -175,4 +183,21 @@
   background-repeat: no-repeat;
   background-position: center;
   pointer-events: none;
+}
+
+@keyframes float-circle {
+  0% {
+    transform: rotate(0deg) translate(6px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translate(6px) rotate(-360deg);
+  }
+}
+
+
+section.gallery-about > img:nth-child(2),
+section.gallery-about > img:nth-child(3),
+section.gallery-about > img:nth-child(4),
+section.gallery-about > img:nth-child(5) {
+  animation: float-circle 6s linear infinite;
 }

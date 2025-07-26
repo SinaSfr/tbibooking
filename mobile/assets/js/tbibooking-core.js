@@ -218,37 +218,46 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  function applyFilters() {
-    if (!hotelWrapper) return;
-    let filteredCards = hotelCards.filter(card => {
-      const city = card.dataset.hotel;
-      const rating = parseInt(card.dataset.rating) || 0;
-      const price = extractPriceNumber(card.dataset.price);
+function applyFilters() {
+  if (!hotelWrapper) return;
 
-      const cityMatch = activeCityFilters.size === 0 || activeCityFilters.has(city);
-      const ratingMatch = activeRatingFilters.size === 0 || activeRatingFilters.has(rating);
+  let filteredCards = hotelCards.filter(card => {
+    const city = card.dataset.hotel;
+    const rating = parseInt(card.dataset.rating) || 0;
+    const price = extractPriceNumber(card.dataset.price);
 
-      let priceMatch = true;
-      if (activePriceFilter === 'best-price') {
-        priceMatch = price < 300;
-      }
+    const cityMatch = activeCityFilters.size === 0 || activeCityFilters.has(city);
+    const ratingMatch = activeRatingFilters.size === 0 || activeRatingFilters.has(rating);
 
-      return cityMatch && ratingMatch && priceMatch;
-    });
-
-    hotelCards.forEach(card => card.style.display = 'none');
-
-    if (activePriceFilter === 'high-to-low') {
-      filteredCards.sort((a, b) => extractPriceNumber(b.dataset.price) - extractPriceNumber(a.dataset.price));
-    } else if (activePriceFilter === 'low-to-high') {
-      filteredCards.sort((a, b) => extractPriceNumber(a.dataset.price) - extractPriceNumber(b.dataset.price));
+    let priceMatch = true;
+    if (activePriceFilter === 'best-price') {
+      priceMatch = price < 300;
     }
 
-    filteredCards.forEach(card => {
-      card.style.display = 'block';
-      hotelWrapper.appendChild(card);
-    });
+    return cityMatch && ratingMatch && priceMatch;
+  });
+
+  hotelCards.forEach(card => {
+    card.style.display = 'none';
+  });
+
+  // اگر ترتیب مهم نیست، از این استفاده کن:
+  filteredCards.forEach(card => {
+    card.style.display = 'block';
+  });
+
+  // اگر می‌خوای مرتب‌سازی انجام بدی، اینو جدا انجام بده:
+  if (activePriceFilter === 'high-to-low') {
+    filteredCards.sort((a, b) => extractPriceNumber(b.dataset.price) - extractPriceNumber(a.dataset.price));
+  } else if (activePriceFilter === 'low-to-high') {
+    filteredCards.sort((a, b) => extractPriceNumber(a.dataset.price) - extractPriceNumber(b.dataset.price));
   }
+
+  // فقط در صورت نیاز ترتیب کارت‌ها در DOM رو عوض کن
+  filteredCards.forEach(card => {
+    hotelWrapper.appendChild(card);
+  });
+}
 
   if (cityMenu) {
     cityMenu.addEventListener('click', e => {

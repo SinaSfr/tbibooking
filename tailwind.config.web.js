@@ -1,26 +1,21 @@
 module.exports = {
-  content: [
-    './web/**/*.html',       
-    './web/assets/js/**/*.js'
-  ],
+  content: ["./web/**/*.html", "./web/assets/js/**/*.js"],
   theme: {
     extend: {
       backgroundImage: {
-        'fade-black': 'linear-gradient(180.6deg, rgba(0, 0, 0, 0) 76.12%, rgba(0, 0, 0, 0.7) 99.48%)',
+        "fade-black":
+          "linear-gradient(180.6deg, rgba(0, 0, 0, 0) 76.12%, rgba(0, 0, 0, 0.7) 99.48%)",
         defaultBg: "var(--default-bg)",
         tourListBg: "var(--tourlist-bg)",
         articleListBg: "var(--articlelist-bg)",
         hotelListBg: "var(--hotellist-bg)",
-        articleBg: "var(--article-bg)",
-        footerBg: "var(--footer-bg)",
-        contactBg: "var(--contact-bg)"
       },
       boxShadow: {
-        'boxStar': '0 0 15px 0 rgba(0, 0, 0, 0.1)',
+        boxStar: "0 0 15px 0 rgba(0, 0, 0, 0.1)",
       },
       colors: {
         primary: {
-           DEFAULT: "var(--primary)",
+          DEFAULT: "var(--primary)",
           50: "var(--primary-50)",
           100: "var(--primary-100)",
           200: "var(--primary-200)",
@@ -34,7 +29,7 @@ module.exports = {
           950: "var(--primary-950)",
         },
         secondary: {
-           DEFAULT: "var(--secondary)",
+          DEFAULT: "var(--secondary)",
           50: "var(--secondary-50)",
           100: "var(--secondary-100)",
           200: "var(--secondary-200)",
@@ -54,11 +49,12 @@ module.exports = {
           4: "var(--special-4)",
           5: "var(--special-5)",
           6: "var(--special-6)",
-       },
-
-      }
+        },
+      },
+      fontFamily: {
+        reeniebeanie: ["ReenieBeanie", "cursive"],
+      },
     },
   },
   plugins: [],
 };
-
