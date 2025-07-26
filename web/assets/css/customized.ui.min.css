@@ -292,7 +292,7 @@
     /* 1 */
     border-color: inherit;
     /* 2 */
-    border-collapse: collapse;
+
     /* 3 */
   }
   
@@ -532,7 +532,7 @@
   iframe,
   embed,
   object {
-    display: block;
+    /* display: block; */
     /* 1 */
     vertical-align: middle;
     /* 2 */
@@ -542,11 +542,11 @@
   Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
   */
   
-  img,
+  /* img,
   video {
     max-width: 100%;
     height: auto;
-  }
+  } */
   
   /* Make elements with the HTML hidden attribute stay hidden by default */
   
@@ -927,6 +927,7 @@
     border-color: rgb(243 244 246 / var(--tw-border-opacity, 1));
   }
   
+  
   .border-primary-100 {
     border-color: var(--primary-100);
   }
@@ -944,6 +945,10 @@
     border-color: rgb(63 63 70 / var(--tw-border-opacity, 1));
   }
   
+  .bg-primary{
+    background-color: var(--primary);
+  }
+
   .bg-primary-500 {
     background-color: var(--primary-500);
   }
@@ -952,6 +957,10 @@
     background-color: var(--primary-900);
   }
   
+  .bg-secondary {
+    background-color: var(--secondary);
+  }
+
   .bg-secondary-800 {
     background-color: var(--secondary-800);
   }

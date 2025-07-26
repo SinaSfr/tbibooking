@@ -4,9 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function checkAllResourcesLoaded() {
     const resources = performance.getEntriesByType('resource');
-    const loadedFiles = resources
-      .map((res) => res.name.split('/').pop())
-      .filter((name) => requiredFiles.includes(name));
+    const loadedFiles = resources.map((res) => res.name.split('/').pop()).filter((name) => requiredFiles.includes(name));
 
     return requiredFiles.every((file) => loadedFiles.includes(file));
   }
@@ -29,6 +27,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 input.placeholder = '';
               });
             });
+            let r = document.querySelector('.flighttype-field');
+            r.classList.add('flighttype-dropDown');
             const scripts = container.getElementsByTagName('script');
             for (let i = 0; i < scripts.length; i++) {
               const scriptTag = document.createElement('script');
@@ -221,12 +221,12 @@ document.addEventListener('DOMContentLoaded', function () {
   function generateCityFilterOptions() {
     if (!cityMenu) return;
     const cities = new Set();
-    hotelCards.forEach(card => {
+    hotelCards.forEach((card) => {
       const city = card.dataset.hotel;
       if (city) cities.add(city.trim());
     });
     cityMenu.innerHTML = '';
-    cities.forEach(city => {
+    cities.forEach((city) => {
       const option = document.createElement('div');
       option.className = 'group city-option cursor-pointer p-1 border-b border-gray-100';
       option.dataset.city = city;
@@ -278,46 +278,46 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-function applyFilters() {
-  if (!hotelWrapper) return;
+  function applyFilters() {
+    if (!hotelWrapper) return;
 
-  let filteredCards = hotelCards.filter(card => {
-    const city = card.dataset.hotel;
-    const rating = parseInt(card.dataset.rating) || 0;
-    const price = extractPriceNumber(card.dataset.price);
+    let filteredCards = hotelCards.filter((card) => {
+      const city = card.dataset.hotel;
+      const rating = parseInt(card.dataset.rating) || 0;
+      const price = extractPriceNumber(card.dataset.price);
 
-    const cityMatch = activeCityFilters.size === 0 || activeCityFilters.has(city);
-    const ratingMatch = activeRatingFilters.size === 0 || activeRatingFilters.has(rating);
+      const cityMatch = activeCityFilters.size === 0 || activeCityFilters.has(city);
+      const ratingMatch = activeRatingFilters.size === 0 || activeRatingFilters.has(rating);
 
-    let priceMatch = true;
-    if (activePriceFilter === 'best-price') {
-      priceMatch = price < 300;
+      let priceMatch = true;
+      if (activePriceFilter === 'best-price') {
+        priceMatch = price < 300;
+      }
+
+      return cityMatch && ratingMatch && priceMatch;
+    });
+
+    hotelCards.forEach((card) => {
+      card.style.display = 'none';
+    });
+
+    filteredCards.forEach((card) => {
+      card.style.display = 'block';
+    });
+
+    if (activePriceFilter === 'high-to-low') {
+      filteredCards.sort((a, b) => extractPriceNumber(b.dataset.price) - extractPriceNumber(a.dataset.price));
+    } else if (activePriceFilter === 'low-to-high') {
+      filteredCards.sort((a, b) => extractPriceNumber(a.dataset.price) - extractPriceNumber(b.dataset.price));
     }
 
-    return cityMatch && ratingMatch && priceMatch;
-  });
-
-  hotelCards.forEach(card => {
-    card.style.display = 'none';
-  });
-
-  filteredCards.forEach(card => {
-    card.style.display = 'block';
-  });
-
-  if (activePriceFilter === 'high-to-low') {
-    filteredCards.sort((a, b) => extractPriceNumber(b.dataset.price) - extractPriceNumber(a.dataset.price));
-  } else if (activePriceFilter === 'low-to-high') {
-    filteredCards.sort((a, b) => extractPriceNumber(a.dataset.price) - extractPriceNumber(b.dataset.price));
+    filteredCards.forEach((card) => {
+      hotelWrapper.appendChild(card);
+    });
   }
 
-  filteredCards.forEach(card => {
-    hotelWrapper.appendChild(card);
-  });
-}
-
   if (cityMenu) {
-    cityMenu.addEventListener('click', e => {
+    cityMenu.addEventListener('click', (e) => {
       e.stopPropagation();
       const option = e.target.closest('.city-option');
       if (!option) return;
@@ -338,7 +338,7 @@ function applyFilters() {
   }
 
   if (ratingMenu) {
-    ratingMenu.addEventListener('click', e => {
+    ratingMenu.addEventListener('click', (e) => {
       e.stopPropagation();
       const option = e.target.closest('.rating-option');
       if (!option) return;
@@ -359,7 +359,7 @@ function applyFilters() {
   }
 
   if (cityFilter) {
-    cityFilter.addEventListener('click', e => {
+    cityFilter.addEventListener('click', (e) => {
       e.stopPropagation();
       if (cityMenu) {
         cityMenu.classList.toggle('hidden');
@@ -373,7 +373,7 @@ function applyFilters() {
   }
 
   if (ratingFilter) {
-    ratingFilter.addEventListener('click', e => {
+    ratingFilter.addEventListener('click', (e) => {
       e.stopPropagation();
       if (ratingMenu) {
         ratingMenu.classList.toggle('hidden');
@@ -388,7 +388,7 @@ function applyFilters() {
 
   let priceMenuOpen = false;
   if (priceButton) {
-    priceButton.addEventListener('click', e => {
+    priceButton.addEventListener('click', (e) => {
       e.stopPropagation();
       if (priceMenu) {
         priceMenuOpen = !priceMenuOpen;
@@ -401,7 +401,7 @@ function applyFilters() {
     });
   }
 
-  document.addEventListener('click', e => {
+  document.addEventListener('click', (e) => {
     if (cityFilter && cityMenu && !cityFilter.contains(e.target) && !cityMenu.contains(e.target)) {
       cityMenu.classList.add('hidden');
     }
@@ -415,11 +415,11 @@ function applyFilters() {
   });
 
   if (priceOptions) {
-    priceOptions.forEach(option => {
-      option.addEventListener('click', e => {
+    priceOptions.forEach((option) => {
+      option.addEventListener('click', (e) => {
         e.stopPropagation();
         if (priceMenu) {
-          priceMenu.querySelectorAll('.price-check-icon').forEach(icon => {
+          priceMenu.querySelectorAll('.price-check-icon').forEach((icon) => {
             icon.classList.remove('bg-primary-500', 'text-white');
           });
         }
@@ -622,7 +622,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-
 document.addEventListener('DOMContentLoaded', () => {
   const hotelCards = document.querySelectorAll('.hotel-card');
   const hotelNameFilterInput = document.getElementById('hotelNameFilter');
@@ -658,7 +657,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function filterCards() {
-    hotelCards.forEach(card => {
+    hotelCards.forEach((card) => {
       const price = parsePrice(card.dataset.price || '0');
       const star = card.dataset.rating;
       const service = card.dataset.servies;
@@ -680,7 +679,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  starOptions.forEach(option => {
+  starOptions.forEach((option) => {
     option.addEventListener('click', () => {
       const star = option.dataset.star;
       if (selectedStars.has(star)) {
@@ -696,10 +695,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  serviceCheckboxes.forEach(checkbox => {
+  serviceCheckboxes.forEach((checkbox) => {
     checkbox.addEventListener('change', () => {
       selectedServices.clear();
-      serviceCheckboxes.forEach(cb => {
+      serviceCheckboxes.forEach((cb) => {
         if (cb.checked) selectedServices.add(cb.value);
       });
       filterCards();
@@ -733,33 +732,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const clearFiltersBtnHotel = document.getElementById('clearFiltersBtnHotel');
 
-if (clearFiltersBtnHotel) {
-  clearFiltersBtnHotel.addEventListener('click', () => {
-    if (hotelNameFilterInput) {
-      hotelNameFilterInput.value = '';
-      selectedHotelName = '';
-    }
+  if (clearFiltersBtnHotel) {
+    clearFiltersBtnHotel.addEventListener('click', () => {
+      if (hotelNameFilterInput) {
+        hotelNameFilterInput.value = '';
+        selectedHotelName = '';
+      }
 
-    selectedStars.clear();
-    starOptions.forEach(option => {
-      option.classList.remove('bg-secondary-800', 'text-white');
-      option.classList.add('border-primary-900', 'border', 'border-solid');
+      selectedStars.clear();
+      starOptions.forEach((option) => {
+        option.classList.remove('bg-secondary-800', 'text-white');
+        option.classList.add('border-primary-900', 'border', 'border-solid');
+      });
+
+      selectedServices.clear();
+      serviceCheckboxes.forEach((cb) => (cb.checked = false));
+
+      minInput.value = 0;
+      maxInput.value = 100;
+      updatePriceRange();
+
+      filterCards();
     });
-
-    selectedServices.clear();
-    serviceCheckboxes.forEach(cb => cb.checked = false);
-
-    minInput.value = 0;
-    maxInput.value = 100;
-    updatePriceRange();
-
-    filterCards();
-  });
-}
+  }
 });
 
-
-document.querySelectorAll('.accordion-toggle').forEach(toggle => {
+document.querySelectorAll('.accordion-toggle').forEach((toggle) => {
   toggle.addEventListener('click', () => {
     const content = toggle.nextElementSibling;
     const icon = toggle.querySelector('.chevron-icon');

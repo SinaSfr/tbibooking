@@ -577,8 +577,8 @@ body {
 
 .appearance-none {
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .grid-cols-3 {
@@ -921,17 +921,17 @@ body {
 
 .object-cover {
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .object-bottom {
   -o-object-position: bottom;
-     object-position: bottom;
+  object-position: bottom;
 }
 
 .object-left {
   -o-object-position: left;
-     object-position: left;
+  object-position: left;
 }
 
 .p-1 {
@@ -1338,11 +1338,11 @@ body {
 
 .custom-checkbox {
   -moz-appearance: none;
-       appearance: none;
+  appearance: none;
   -webkit-appearance: none;
   width: 20px;
   height: 20px;
-  border: 2px solid #71717A;
+  border: 2px solid #71717a;
   border-radius: 0.25rem;
   background-color: white;
   position: relative;
@@ -1351,8 +1351,8 @@ body {
 }
 
 .custom-checkbox:checked {
-  background-color: #FE9001;
-  border-color: #FE9001;
+  background-color: #fe9001;
+  border-color: #fe9001;
 }
 
 .custom-checkbox:checked::after {
@@ -1393,14 +1393,14 @@ section.gallery-about > img:nth-child(5) {
 }
 
 .hover\:scale-90:hover {
-  --tw-scale-x: .9;
-  --tw-scale-y: .9;
+  --tw-scale-x: 0.9;
+  --tw-scale-y: 0.9;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .hover\:scale-95:hover {
-  --tw-scale-x: .95;
-  --tw-scale-y: .95;
+  --tw-scale-x: 0.95;
+  --tw-scale-y: 0.95;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -1565,4 +1565,434 @@ section.gallery-about > img:nth-child(5) {
   .xl\:flex-shrink-0 {
     flex-shrink: 0;
   }
+}
+
+.Basis_Calendar {
+  font-family: 'Dana' !important;
+}
+
+.Basis_Calendar .selected_date {
+  background: var(--secondary) !important;
+}
+.confirm-date-content button:hover {
+  background: var(--secondary);
+}
+.confirm-date-content button {
+  background: var(--primary);
+  color: #fff;
+}
+.calendar-apply-date:hover {
+  background: var(--secondary);
+}
+.calendar-apply-date {
+  background: var(--primary);
+  color: #fff;
+}
+.Basis_Calendar .selected_day {
+  background: var(--secondary);
+}
+.day.days_available {
+  background: var(--primary);
+}
+.calendar-switch {
+  color: var(--primary);
+}
+.Basis_Calendar .section_next_month,
+.Basis_Calendar .section_prev_month {
+  color: var(--primary);
+}
+.Basis_Calendar .current_day::after {
+  border-color: var(--secondary) transparent transparent;
+}
+.Basis_Calendar .month_day_list table td:not(.disable_day, .empty_day, .expire_day):hover {
+  border-color: var(--primary);
+}
+.Basis_Calendar .current_day {
+  background: var(--primary) !important;
+  color: #fff !important;
+}
+.Basis_Calendar_Box {
+  font-family: 'Dana' !important;
+  margin-top: 1rem;
+}
+.calendar-apply-date,
+.calendar-switch,
+.calendar-today,
+.calendar-footer input::placeholder {
+  font-family: 'Dana' !important;
+}
+.calendar-footer input,
+.calendar-footer ::placeholder {
+  font-family: 'Dana';
+}
+
+.search-box-container input,
+.search-box-container select,
+.search-box-container button {
+  font-family: 'Dana' !important;
+}
+
+#search-box {
+  background-color: #fafafa;
+  border-radius: 24px;
+  padding: 34px 16px;
+}
+
+.search-nav {
+  margin-bottom: 32px !important;
+}
+.reservation-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.reservation-item li {
+  padding: 4px 19px !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  height: auto !important;
+  border-radius: 50px;
+  margin: 0 !important;
+  transition: all 300ms ease;
+}
+
+.reservation-item li:hover {
+  background-color: #fe9001;
+  color: white;
+}
+
+.reservation-item li:hover span {
+  color: white;
+}
+
+.reservation-item li .module-name {
+  font-size: 14px;
+}
+
+.reservation-item li .module-name:hover {
+  color: white;
+}
+
+.active-module {
+  background-color: #fe9001 !important;
+}
+
+.active-module .module-name {
+  color: #fff !important;
+}
+
+.reservation-item li .module-icon {
+  display: none;
+}
+
+.reserve-field.passengers-field,
+.reserve-field.departure-route,
+.reserve-field.departure-route .click-content {
+  width: auto !important;
+  flex: 1;
+}
+
+.reserve-field.departure-route,
+.reserve-field.destination-route {
+  height: 55px !important;
+}
+
+.reserve-field.departure-date,
+.click-content,
+.reserve-field.passengers-field,
+.reserve-field.return-date {
+  background-color: #ffffff !important;
+  height: 55px !important;
+  border-radius: 12px;
+  padding: 16px 8px !important;
+  border: 1px solid #a1a1aa;
+}
+
+.Basis_Date_Box {
+  flex: 1;
+  width: auto !important;
+}
+
+.flight-routes,
+.reserve-field.departure-route {
+  height: 55px !important;
+}
+
+.Basis_Date_Box,
+.form-search.formflight,
+.flight-routes,
+.Flightclass-Passenger,
+#insuranceSearch,
+#flightHotelSearch div:first-of-type,
+#tourSearch,
+#hotelSearch {
+  gap: 0.25rem !important;
+  align-items: center !important;
+}
+
+.Basis_Date_Box .reserve-field.departure-date,
+.Basis_Date_Box .reserve-field.return-date,
+.flight-routes,
+.Flightclass-Passenger,
+.Flightclass-Passenger .reserve-field.flightclass-field {
+  flex: 1;
+}
+
+.reserve-field.departure-date div:first-of-type,
+.reserve-field.return-date div:first-of-type {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0 !important;
+  gap: 0.5rem;
+}
+
+.reserve-field.departure-date label,
+.reserve-field.return-date label {
+  width: auto;
+  flex: 1;
+}
+
+.reserve-field.departure-date label span,
+.reserve-field.return-date label span,
+.click-content label span {
+  font-size: 16px !important;
+  color: #18181b;
+  font-weight: 500;
+}
+
+.Basis_Date.start_date,
+.Basis_Date.end_date {
+  position: static !important;
+  padding: 0 !important;
+  font-size: 12px;
+  color: #52525b;
+  flex: 1;
+}
+
+.reserve-field.departure-route label svg,
+.reserve-field.departure-route p,
+.reserve-field.destination-route label svg,
+.reserve-field.destination-route p,
+.reserve-field.departure-date label svg,
+.reserve-field.departure-date p,
+.reserve-field.return-date label svg,
+.reserve-field.return-date p,
+.reserve-field.passengers-field div:first-of-type label:first-of-type {
+  display: none !important;
+}
+
+.reserve-search {
+  height: 48px !important;
+  width: auto !important;
+}
+
+.click-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.click-content label {
+  width: auto !important;
+}
+
+.departure,
+.destination {
+  font-size: 12px;
+  color: #52525b;
+}
+
+.search-flight,
+.search-hotel,
+.search-flighthotel,
+.search-tour,
+.search-insurance {
+  width: 91px !important;
+  background-color: #013d68 !important;
+  height: 48px !important;
+  color: white !important;
+  margin-left: 2px !important;
+  border-radius: 50px;
+  transition: all 300ms ease;
+}
+
+.search-flight svg,
+.search-hotel svg,
+.search-flighthotel svg,
+.search-tour svg,
+.search-insurance svg {
+  display: none;
+}
+
+.passenger-counts.child-count,
+.passenger-counts.infant-count {
+  display: block !important;
+}
+
+.passenger-counts.adult-count,
+.passenger-counts.child-count {
+  margin-left: 0 !important;
+}
+
+.reserve-field.passengers-field div.border-type-1.h-full.rounded-type-1.px-2:first-child {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 !important;
+}
+.reserve-field.passengers-field div.border-type-1.h-full.rounded-type-1.px-2:first-child div:first-of-type {
+  display: flex;
+}
+
+.reserve-field.passengers-field div:first-of-type div.cursor-pointer:first-of-type {
+  gap: 0.5rem !important;
+}
+
+.flighttype-field.flighttype-dropDown {
+  position: absolute !important;
+  right: 0;
+  top: -76px;
+  width: 135px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  padding: 14px 24px;
+  margin-bottom: 10px;
+  border-radius: 50px;
+  background: #e4e4e7;
+}
+
+.flighttype-dropDown-text {
+  margin-bottom: 0 !important;
+}
+
+.flighttype-field-icon {
+  position: static !important;
+  display: block !important;
+}
+
+.Flightclass-Passenger {
+  flex-direction: row-reverse;
+}
+
+.reserve-field.flightclass-field {
+  background-color: #ffffff !important;
+  height: 55px !important;
+  border-radius: 12px;
+  padding: 16px 8px !important;
+  border: 1px solid #a1a1aa;
+}
+
+.reserve-field.flightclass-field div:first-of-type {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 12px;
+}
+
+.Flightclass-Passenger .reserve-field.flightclass-field div:first-of-type label {
+  width: auto !important;
+}
+
+.Flightclass-Passenger .reserve-field.flightclass-field div:first-of-type label svg:first-of-type {
+  display: none;
+}
+
+.reserve-field.flightclass-field div:first-of-type label span {
+  display: none;
+}
+
+.reserve-field.flightclass-field div:first-of-type .clr,
+.passengerbox.hidden-box .clr {
+  position: absolute;
+}
+
+.down-icon {
+  width: 11px;
+  height: 11px !important;
+  margin-top: 0 !important;
+}
+
+.searchList {
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  left: 0;
+}
+
+.ul-list ul li {
+  text-align: center !important;
+}
+
+.ul-list ul li:not(:last-child) {
+  border-bottom: 1px solid #ffebee;
+}
+
+.ul-list ul li:hover {
+  background-color: #002f51;
+  color: white !important;
+  transition: all 300ms ease;
+}
+
+.passengerbox.hidden-box {
+  width: 310px !important;
+  position: absolute !important;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  padding: 24px 16px !important;
+  top: 100%;
+  border: 1px solid #b8d8e6;
+  border-radius: 8px;
+  overflow-x: hidden !important;
+}
+
+.passenger-item.adult-passenger-item,
+.passenger-item.child-passenger-item,
+.passenger-item.infant-passenger-item,
+.passenger-item.room-passenger-item,
+.passengerbox.hidden-box .passenger-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.confirm-passenger {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
+  background-color: var(--primary-500);
+  border-radius: 8px;
+  font-weight: 800;
+  height: 40px !important;
+  transition: all 300ms ease;
+}
+
+.minus-count div,
+.plus-count div {
+  width: 24px !important;
+  height: 24px !important;
+  background: #feb404;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 4px;
+}
+
+.plus-count span,
+.minus-count span {
+  color: #1e2128;
+  font-size: 24px !important;
+}
+
+.minus-count,
+.plus-count {
+  width: auto !important;
+  height: auto !important;
+  line-height: normal !important;
 }
