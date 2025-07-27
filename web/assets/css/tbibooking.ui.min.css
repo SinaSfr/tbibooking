@@ -1,6 +1,6 @@
 @import url(./customized.ui.min.css);
 body {
-  font-family: 'Dana';
+  font-family: "Dana";
 }
 
 .container {
@@ -544,31 +544,43 @@ body {
 
 .translate-x-full {
   --tw-translate-x: 100%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .translate-y-full {
   --tw-translate-y: 100%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .rotate-180 {
   --tw-rotate: 180deg;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .scale-y-0 {
   --tw-scale-y: 0;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .scale-y-100 {
   --tw-scale-y: 1;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .transform {
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .cursor-pointer {
@@ -748,6 +760,11 @@ body {
   border-radius: 0.75rem;
 }
 
+.rounded-b-xl {
+    border-bottom-right-radius: 0.75rem /* 12px */;
+    border-bottom-left-radius: 0.75rem /* 12px */;
+}
+
 .rounded-b-\[100px\] {
   border-bottom-right-radius: 100px;
   border-bottom-left-radius: 100px;
@@ -900,7 +917,11 @@ body {
 }
 
 .bg-fade-black {
-  background-image: linear-gradient(180.6deg, rgba(0, 0, 0, 0) 76.12%, rgba(0, 0, 0, 0.7) 99.48%);
+  background-image: linear-gradient(
+    180.6deg,
+    rgba(0, 0, 0, 0) 76.12%,
+    rgba(0, 0, 0, 0.7) 99.48%
+  );
 }
 
 .bg-hotelListBg {
@@ -913,6 +934,10 @@ body {
 
 .bg-cover {
   background-size: cover;
+}
+
+.bg-fixed {
+    background-attachment: fixed;
 }
 
 .bg-center {
@@ -1064,6 +1089,14 @@ body {
 
 .pt-3 {
   padding-top: 0.75rem;
+}
+
+.pt-24 {
+  padding-top: 6rem;
+}
+
+.pt-36 {
+  padding-top: 9rem;
 }
 
 .pt-52 {
@@ -1221,19 +1254,25 @@ body {
 .shadow-boxStar {
   --tw-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
   --tw-shadow-colored: 0 0 15px 0 var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .shadow-lg {
-  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color),
+    0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .shadow-md {
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color),
+    0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .outline-none {
@@ -1242,7 +1281,9 @@ body {
 }
 
 .filter {
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+    var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate)
+    var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .transition-all {
@@ -1276,7 +1317,7 @@ body {
   width: auto !important;
 }
 
-.slider-wrapper input[type='range']::-webkit-slider-thumb {
+.slider-wrapper input[type="range"]::-webkit-slider-thumb {
   background: #115887;
   pointer-events: auto;
   -webkit-appearance: none;
@@ -1294,7 +1335,7 @@ body {
   margin-top: 8px;
 }
 
-.slider-wrapper input[type='range']::-moz-range-thumb {
+.slider-wrapper input[type="range"]::-moz-range-thumb {
   pointer-events: auto;
   width: 16px;
   height: 17px;
@@ -1306,7 +1347,7 @@ body {
   z-index: 20;
 }
 
-.slider-wrapper-hotel input[type='range']::-webkit-slider-thumb {
+.slider-wrapper-hotel input[type="range"]::-webkit-slider-thumb {
   background: #fe9001;
   pointer-events: auto;
   -webkit-appearance: none;
@@ -1324,7 +1365,7 @@ body {
   margin-top: 8px;
 }
 
-.slider-wrapper-hotel input[type='range']::-moz-range-thumb {
+.slider-wrapper-hotel input[type="range"]::-moz-range-thumb {
   pointer-events: auto;
   width: 16px;
   height: 17px;
@@ -1356,7 +1397,7 @@ body {
 }
 
 .custom-checkbox:checked::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 2px;
   left: 1px;
@@ -1389,19 +1430,25 @@ section.gallery-about > img:nth-child(5) {
 .hover\:scale-105:hover {
   --tw-scale-x: 1.05;
   --tw-scale-y: 1.05;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .hover\:scale-90:hover {
   --tw-scale-x: 0.9;
   --tw-scale-y: 0.9;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .hover\:scale-95:hover {
   --tw-scale-x: 0.95;
   --tw-scale-y: 0.95;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .hover\:border-primary-500:hover {
@@ -1460,12 +1507,15 @@ section.gallery-about > img:nth-child(5) {
 .hover\:shadow-2xl:hover {
   --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .hover\:grayscale:hover {
   --tw-grayscale: grayscale(100%);
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+    var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate)
+    var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .group:hover .group-hover\:visible {
@@ -1478,20 +1528,29 @@ section.gallery-about > img:nth-child(5) {
 
 .group:hover .group-hover\:translate-x-0 {
   --tw-translate-x: 0px;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .group:hover .group-hover\:translate-y-0 {
   --tw-translate-y: 0px;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .group:hover .group-hover\:rotate-180 {
   --tw-rotate: 180deg;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.group:hover .group-hover\:divide-secondary-600 > :not([hidden]) ~ :not([hidden]) {
+.group:hover
+  .group-hover\:divide-secondary-600
+  > :not([hidden])
+  ~ :not([hidden]) {
   border-color: var(--secondary-600);
 }
 
@@ -1542,7 +1601,9 @@ section.gallery-about > img:nth-child(5) {
 
 .group:hover .group-hover\:sepia {
   --tw-sepia: sepia(100%);
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+    var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate)
+    var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 @media not all and (min-width: 1280px) {
@@ -1568,7 +1629,7 @@ section.gallery-about > img:nth-child(5) {
 }
 
 .Basis_Calendar {
-  font-family: 'Dana' !important;
+  font-family: "Dana" !important;
 }
 
 .Basis_Calendar .selected_date {
@@ -1604,7 +1665,10 @@ section.gallery-about > img:nth-child(5) {
 .Basis_Calendar .current_day::after {
   border-color: var(--secondary) transparent transparent;
 }
-.Basis_Calendar .month_day_list table td:not(.disable_day, .empty_day, .expire_day):hover {
+.Basis_Calendar
+  .month_day_list
+  table
+  td:not(.disable_day, .empty_day, .expire_day):hover {
   border-color: var(--primary);
 }
 .Basis_Calendar .current_day {
@@ -1612,24 +1676,24 @@ section.gallery-about > img:nth-child(5) {
   color: #fff !important;
 }
 .Basis_Calendar_Box {
-  font-family: 'Dana' !important;
-  margin-top: 1rem;
+  font-family: "Dana" !important;
+  margin-top: 2rem;
 }
 .calendar-apply-date,
 .calendar-switch,
 .calendar-today,
 .calendar-footer input::placeholder {
-  font-family: 'Dana' !important;
+  font-family: "Dana" !important;
 }
 .calendar-footer input,
 .calendar-footer ::placeholder {
-  font-family: 'Dana';
+  font-family: "Dana";
 }
 
 .search-box-container input,
 .search-box-container select,
 .search-box-container button {
-  font-family: 'Dana' !important;
+  font-family: "Dana" !important;
 }
 
 #search-box {
@@ -1699,6 +1763,10 @@ section.gallery-about > img:nth-child(5) {
   height: 55px !important;
 }
 
+.reserve-field.destination-route .click-content{
+  padding-left: 1.5rem !important;
+}
+
 .reserve-field.departure-date,
 .click-content,
 .reserve-field.passengers-field,
@@ -1713,6 +1781,19 @@ section.gallery-about > img:nth-child(5) {
 .Basis_Date_Box {
   flex: 1;
   width: auto !important;
+}
+
+.Wrapper-ExteraHoteldate .Basis_Date_Box {
+  width: 100% !important;
+}
+
+.Wrapper-ExteraHoteldate .reserve-field.departure-date label,
+.Wrapper-ExteraHoteldate .reserve-field.return-date label {
+  display: none;
+}
+
+.Basis_Date_ExteraHoteldate {
+  padding: 8px 16px !important;
 }
 
 .flight-routes,
@@ -1755,6 +1836,13 @@ section.gallery-about > img:nth-child(5) {
   flex: 1;
 }
 
+#r-hotel .reserve-field.departure-date label,
+#r-hotel .reserve-field.return-date label,
+.multicity-flight-form .reserve-field.departure-date label,
+.multicity-flight-form .reserve-field.return-date label {
+  flex: unset;
+}
+
 .reserve-field.departure-date label span,
 .reserve-field.return-date label span,
 .click-content label span {
@@ -1780,7 +1868,7 @@ section.gallery-about > img:nth-child(5) {
 .reserve-field.departure-date p,
 .reserve-field.return-date label svg,
 .reserve-field.return-date p,
-.reserve-field.passengers-field div:first-of-type label:first-of-type {
+.reserve-field.passengers-field > div:first-of-type label:first-of-type {
   display: none !important;
 }
 
@@ -1828,6 +1916,28 @@ section.gallery-about > img:nth-child(5) {
   display: none;
 }
 
+.search-flight:hover,
+.search-hotel:hover,
+.search-flighthotel:hover,
+.search-tour:hover,
+.search-service:hover,
+.search-insurance:hover {
+  background-color: var(--secondary-800) !important;
+}
+
+.exchangeRoute {
+  background-color: #fff !important;
+  border-radius: 100%;
+  width: 3rem !important;
+  height: 3rem !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #d4d4d8;
+  right: -24px !important;
+  top: 3px !important;
+}
+
 .passenger-counts.child-count,
 .passenger-counts.infant-count {
   display: block !important;
@@ -1838,18 +1948,23 @@ section.gallery-about > img:nth-child(5) {
   margin-left: 0 !important;
 }
 
-.reserve-field.passengers-field div.border-type-1.h-full.rounded-type-1.px-2:first-child {
+.reserve-field.passengers-field
+  div.border-type-1.h-full.rounded-type-1.px-2:first-child {
   display: flex;
   align-items: center;
   gap: 12px;
   padding: 0 !important;
 }
-.reserve-field.passengers-field div.border-type-1.h-full.rounded-type-1.px-2:first-child div:first-of-type {
+.reserve-field.passengers-field
+  div.border-type-1.h-full.rounded-type-1.px-2:first-child
+  div:first-of-type {
   display: flex;
 }
 
-.reserve-field.passengers-field div:first-of-type div.cursor-pointer:first-of-type {
-  gap: 0.5rem !important;
+.reserve-field.passengers-field
+  div:first-of-type
+  div.cursor-pointer:first-of-type {
+  gap: 0.25rem !important;
 }
 
 .flighttype-field.flighttype-dropDown {
@@ -1896,11 +2011,18 @@ section.gallery-about > img:nth-child(5) {
   padding: 0 12px;
 }
 
-.Flightclass-Passenger .reserve-field.flightclass-field div:first-of-type label {
+.Flightclass-Passenger
+  .reserve-field.flightclass-field
+  div:first-of-type
+  label {
   width: auto !important;
 }
 
-.Flightclass-Passenger .reserve-field.flightclass-field div:first-of-type label svg:first-of-type {
+.Flightclass-Passenger
+  .reserve-field.flightclass-field
+  div:first-of-type
+  label
+  svg:first-of-type {
   display: none;
 }
 
@@ -1966,11 +2088,18 @@ section.gallery-about > img:nth-child(5) {
   align-items: center;
   justify-content: center;
   margin-top: 24px;
-  background-color: var(--primary-500);
+  background-color: var(--primary-900);
+  color: white;
   border-radius: 8px;
   font-weight: 800;
   height: 40px !important;
   transition: all 300ms ease;
+}
+
+.multicity-flight-form .add-routs:hover,
+.confirm-passenger:hover {
+  background-color: var(--secondary-800);
+  color: white !important;
 }
 
 .minus-count div,
@@ -1988,6 +2117,7 @@ section.gallery-about > img:nth-child(5) {
 .minus-count span {
   color: #1e2128;
   font-size: 24px !important;
+  padding-top: 0.25rem;
 }
 
 .minus-count,
@@ -1995,4 +2125,164 @@ section.gallery-about > img:nth-child(5) {
   width: auto !important;
   height: auto !important;
   line-height: normal !important;
+}
+
+.FlightClass.hidden-box {
+  padding: 8px;
+  border-radius: 0.25rem;
+  border: 1px solid #737373;
+  background-color: #fff;
+  width: 100%;
+  top: 16px;
+}
+
+.FlightClass.hidden-box li {
+  line-height: 2rem;
+  font-size: 1rem;
+  text-align: left;
+  display: block;
+  margin: 5px 0;
+  border: unset;
+  padding: 6px;
+}
+
+.search-box-container .active-r-btn,
+.active-FlightClass {
+  border-radius: 8px !important;
+  background-color: #013d68 !important;
+}
+
+.flighttype-items {
+  background-color: #fff3e0;
+  border-radius: 8px;
+  padding: 8px;
+  margin-bottom: 30px !important;
+  top: 100%;
+  left: 0;
+}
+
+#oneway,
+#backtoback,
+#multi {
+  padding: 8px !important;
+  text-align: left !important;
+}
+
+#oneway:hover,
+#backtoback:hover,
+#multi:hover,
+.FlightClass.hidden-box li:hover {
+  background-color: #013d68;
+  border-radius: 8px !important;
+}
+
+.flighttype-field.flighttype-dropDown .flighttype-items li:hover {
+  transition: all 300ms ease;
+  background-color: #013d68;
+}
+
+#oneway:hover span,
+#backtoback:hover span,
+#multi:hover span,
+.FlightClass.hidden-box li:hover span,
+.search-box-container .active-r-btn span,
+.active-FlightClass span {
+  color: white !important;
+}
+
+.passenger-item.child-passenger-item ul,
+.passenger-item.adult-passenger-item ul,
+.passenger-item.infant-passenger-item ul,
+.passenger-item.room-passenger-item ul,
+.passengerbox.hidden-box .passenger-item ul {
+  height: auto !important;
+  line-height: normal !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.second-room-type,
+.deleteRoom {
+  display: none !important;
+}
+
+.createChildDropdown .select-age {
+  border: 1px solid var(--primary-400);
+  border-radius: 8px;
+  outline: none;
+  height: 48px !important;
+}
+
+.birthdate-year,
+.birthdate-month,
+.birthdate-day {
+  border: 1px solid var(--primary-400);
+  border-radius: 8px;
+  outline: none;
+}
+
+.search-box-container .birthdate-dates div::after {
+  top: 0.4em !important;
+}
+
+.multicity-flight-form .route-content:first-of-type div.route-minus-btn,
+.multicity-flight-form .route-content:nth-child(2) div.route-minus-btn,
+.remove-routs {
+  display: none !important;
+}
+
+.multicity-flight-form .add-routs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 176px !important;
+  height: 48px !important;
+  color: #18181b !important;
+  background-color: var(--secondary-200) !important;
+  margin-right: auto !important;
+  font-size: 14px !important;
+  border-radius: 50px;
+  transition: all 300ms ease;
+}
+
+.multicity-flight-form .add-routs:hover {
+  background-color: var(--primary-900) !important;
+  color: white !important;
+}
+.multicity-flight-form .add-routs svg {
+  display: none;
+}
+
+.multiroute-fields > .reserve-field {
+  width: auto !important;
+  margin-left: auto;
+  height: auto !important;
+}
+
+.multicity-flight-form .Flightclass-Passenger {
+  flex: 0.5;
+}
+
+.multicity-flight-form .route-minus-btn {
+  top: 0;
+  right: 0;
+  width: auto !important;
+  position: absolute;
+  display: flex;
+  line-height: normal !important;
+}
+
+.route-minus-btn span {
+  display: none;
+}
+
+.removeroute-icon {
+  width: 24px !important;
+  height: 24px !important;
+}
+
+.exchangeRoute svg {
+  width: 24px !important;
+  height: 24px !important;
 }

@@ -1,0 +1,77 @@
+<basis core="dbsource" source="basiscore" name="db" mid="5" lid="1" usedforid="[##cms.cms.ownerid##]">
+    <member name="info" type="view" />
+</basis>
+<header class="mx-auto max-lg:w-[92%] max-xl:w-[97%] xl:max-w-7xl">
+    <section>
+        <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2 h-16">
+                <svg class="flex-shrink-0 cursor-pointer bars3" width="48" height="49" viewBox="0 0 48 49" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M32 32.5H16C15.448 32.5 15 32.053 15 31.5C15 30.947 15.448 30.5 16 30.5H32C32.552 30.5 33 30.947 33 31.5C33 32.053 32.552 32.5 32 32.5Z"
+                        fill="#013D68" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M32 18.5H16C15.448 18.5 15 18.053 15 17.5C15 16.947 15.448 16.5 16 16.5H32C32.552 16.5 33 16.947 33 17.5C33 18.053 32.552 18.5 32 18.5Z"
+                        fill="#013D68" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M32 25.5H16C15.448 25.5 15 25.053 15 24.5C15 23.947 15.448 23.5 16 23.5H32C32.552 23.5 33 23.947 33 24.5C33 25.053 32.552 25.5 32 25.5Z"
+                        fill="#013D68" />
+                </svg>
+                <div
+                    class="Login_Information p-1 relative group z-10 flex items-center text-sm text-center rounded-lg bg-secondary-900">
+                    <basis core="call" file="authentication/modal" lid="2"></basis>
+                </div>
+            </div>
+
+            <a href="/">
+                <img src="[##cms.cms.cdn##]/images/logo.png" alt="logo-header" width="124" height="27" loading="lazy"
+                    class="transition-all duration-300 hover:scale-90" />
+            </a>
+        </div>
+        <!-- header menu -->
+        <div
+            class="header-menu bg-white fixed z-50 translate-x-[1024px] inset-0 w-full transition-all duration-300 overflow-scroll">
+            <div>
+                <div class="flex items-center justify-between py-3 mx-auto w-[90%]">
+                    <a href="/"><img src="[##cms.cms.cdn##]/images/logo.png" alt="logo-header" width="150" height="34"
+                            loading="lazy" class="transition-all duration-300 hover:scale-105" /></a>
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" class="cursor-pointer header-menu-close"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M24.8129 23.5001L29.7277 18.5853C30.0908 18.2222 30.0908 17.6354 29.7277 17.2723C29.3646 16.9092 28.7778 16.9092 28.4148 17.2723L23.5 22.1871L18.5852 17.2723C18.2222 16.9092 17.6354 16.9092 17.2723 17.2723C16.9092 17.6354 16.9092 18.2222 17.2723 18.5853L22.187 23.5001L17.2723 28.415C16.9092 28.778 16.9092 29.3649 17.2723 29.7279C17.4534 29.909 17.6911 30 17.9288 30C18.1665 30 18.4042 29.909 18.5852 29.7279L23.5 24.8132L28.4148 29.7279C28.5958 29.909 28.8335 30 29.0712 30C29.3089 30 29.5466 29.909 29.7277 29.7279C30.0908 29.3649 30.0908 28.778 29.7277 28.415L24.8129 23.5001Z"
+                            fill="#000" />
+                    </svg>
+                </div>
+            </div>
+            <div class="pb-5 bg-white w-[90%] mx-auto">
+                <nav class="pt-2">
+                    <ul class="text-sm divide-y divide-primary-50">
+                        <li class="py-3"><a href="/" class="text-zinc-900">صفحه اصلی</a></li>
+                        <li class="">
+                            <div class="flex items-center justify-between cursor-pointer toggle-dropdown">
+                                <a href="" class="ttext-zinc-900">تورهای گردشگران</a>
+                                <svg width="48" class="transition-all duration-300 dropdown-icon" height="48"
+                                    viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M31 20.5L24 27.5L17 20.5" stroke="#181C47" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <!-- submenu -->
+                            <ul
+                                class="flex flex-col overflow-hidden transition-all duration-300 bg-white divide-y opacity-0 divide-primary-50 max-h-0">
+                                <li class="px-10 py-2"><a href="" class="text-zinc-900">ویزای شینگن</a></li>
+                                <li class="px-10 py-2"><a href="">ویزای شینگن</a></li>
+                                <li class="px-10 py-2"><a href="">ویزای شینگن</a></li>
+                            </ul>
+                            <!-- submenu end -->
+                        </li>
+                        <li class="flex items-center py-3">
+                            <a href="" class="w-full text-zinc-900">خدمات ویزا</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- header menu -->
+    </section>
+</header>

@@ -5,13 +5,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <basis core="call" file="style.inc" />
+    <basis core="call" file="style.inc" lid="2" />
 </head>
 
 <body>
-    <!-- <basis core="call" file="header.inc" lid="1"/> -->
+    <basis core="call" file="header.inc" lid="2" />
     <main>
-        <section class="bg-defaultBg bg-cover pt-52 pb-32 module-banner">
+        <section class="bg-defaultBg bg-cover bg-center bg-fixed pt-36 pb-32 module-banner">
             <div class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl">
                 <div>
                     <h2 class="text-zinc-900 font-bold text-[36px] leading-10 mb-4">
@@ -278,7 +278,7 @@
                         class="w-full h-44 object-cover transition-all duration-300 group-hover:sepia" alt="@title"
                         width="260" height="176" loading="lazy" />
                     <div
-                        class="flex flex-col gap-2 bg-white p-4 border-x border-b border-solid border-zinc-400 divide-y divide-zinc-400 transition-all duration-300 group-hover:border-secondary-600 group-hover:divide-secondary-600">
+                        class="flex flex-col gap-2 bg-white rounded-b-xl p-4 border-x border-b border-solid border-zinc-400 divide-y divide-zinc-400 transition-all duration-300 group-hover:border-secondary-600 group-hover:divide-secondary-600">
                         <div>
                             <div
                                 class="flex items-center gap-1 text-sm font-medium text-zinc-600 p-2 bg-white shadow-boxStar rounded mb-2">
@@ -466,7 +466,7 @@
         </section>
 
         <section class="relative mt-20">
-            <img src="[##cms.cms.cdn##]/images/dotted-line.png" class="absolute -z-10 bottom-10 h-[424px]" alt=""
+            <img src="[##cms.cms.cdn##]/images/dotted-line.png" class="w-full absolute -z-10 bottom-10 h-[424px]" alt=""
                 width="1920" height="424" loading="lazy">
             <div class="flex items-center mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl">
                 <div class="flex items-center gap-5">
@@ -493,7 +493,7 @@
                     </div>
                     <div class="flex flex-col gap-5">
                         <div class="relative bg-specialcolor-4 rounded-[32px] w-[75%]">
-                            <img src="[##cms.cms.cdn##]/images/airplane.png" class="absolute bottom-0 h-60"
+                            <img src="[##cms.cms.cdn##]/images/airplane.png" class="w-full absolute bottom-0 h-60"
                                 alt="airplane" width="400" height="235" loading="lazy" />
                             <div class="relative z-10 flex flex-col gap-7 px-14 py-10">
                                 <h2 class="text-zinc-900 text-2xl font-bold">Best Price</h2>
@@ -615,7 +615,7 @@
             </div>
         </section>
     </main>
-    <basis core="call" file="footer.inc" />
+    <basis core="call" file="footer.inc" lid="2" />
 </body>
 
 </html>
