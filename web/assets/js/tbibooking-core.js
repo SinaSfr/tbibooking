@@ -1,49 +1,57 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
   const isDesktop = window.innerWidth > 1024;
-  const requiredFiles = isDesktop ? ['tbibooking.ui.min.css'] : ['tbibooking-mob.ui.min.css'];
+  const requiredFiles = isDesktop
+    ? ["tbibooking.ui.min.css"]
+    : ["tbibooking-mob.ui.min.css"];
 
   function checkAllResourcesLoaded() {
-    const resources = performance.getEntriesByType('resource');
-    const loadedFiles = resources.map((res) => res.name.split('/').pop()).filter((name) => requiredFiles.includes(name));
+    const resources = performance.getEntriesByType("resource");
+    const loadedFiles = resources
+      .map((res) => res.name.split("/").pop())
+      .filter((name) => requiredFiles.includes(name));
 
     return requiredFiles.every((file) => loadedFiles.includes(file));
   }
 
-  if (document.getElementById('search-box')) {
+  if (document.getElementById("search-box")) {
     function fetchEngine() {
       try {
         const xhrobj = new XMLHttpRequest();
-        xhrobj.open('GET', 'search-engine.bc');
+        xhrobj.open("GET", "search-engine.bc");
         xhrobj.send();
 
         xhrobj.onreadystatechange = function () {
           if (this.readyState == 4 && this.status == 200) {
-            const container = document.getElementById('search-box');
+            const container = document.getElementById("search-box");
             container.innerHTML = xhrobj.responseText;
 
-            ['.Basis_Date.end_date', '.Basis_Date.start_date'].forEach((selector) => {
-              const dateInputs = document.querySelectorAll(selector);
-              dateInputs.forEach((input) => {
-                input.placeholder = '';
-              });
-            });
-            let r = document.querySelector('.flighttype-field');
-            r.classList.add('flighttype-dropDown');
-            const scripts = container.getElementsByTagName('script');
+            [".Basis_Date.end_date", ".Basis_Date.start_date"].forEach(
+              (selector) => {
+                const dateInputs = document.querySelectorAll(selector);
+                dateInputs.forEach((input) => {
+                  input.placeholder = "";
+                });
+              }
+            );
+            let r = document.querySelector(".flighttype-field");
+            r.classList.add("flighttype-dropDown");
+            const scripts = container.getElementsByTagName("script");
             for (let i = 0; i < scripts.length; i++) {
-              const scriptTag = document.createElement('script');
+              const scriptTag = document.createElement("script");
               if (scripts[i].src) {
                 scriptTag.src = scripts[i].src;
                 scriptTag.async = false;
               } else {
                 scriptTag.text = scripts[i].textContent;
               }
-              document.head.appendChild(scriptTag).parentNode.removeChild(scriptTag);
+              document.head
+                .appendChild(scriptTag)
+                .parentNode.removeChild(scriptTag);
             }
           }
         };
       } catch (error) {
-        console.error('مشکلی پیش آمده است. لطفا صبور باشید', error);
+        console.error("مشکلی پیش آمده است. لطفا صبور باشید", error);
       }
     }
 
@@ -58,39 +66,39 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-  const headerMenu = document.querySelector('.header-menu');
-  const headerMenuClose = document.querySelector('.header-menu-close');
-  const bars3 = document.querySelector('.bars3');
+document.addEventListener("DOMContentLoaded", function () {
+  const headerMenu = document.querySelector(".header-menu");
+  const headerMenuClose = document.querySelector(".header-menu-close");
+  const bars3 = document.querySelector(".bars3");
 
   if (headerMenu && headerMenuClose && bars3) {
     if (window.innerWidth >= 1024) {
-      headerMenuClose.addEventListener('click', function () {
-        headerMenu.style.visibility = 'hidden';
-        headerMenu.style.opacity = '0';
-        document.body.classList.remove('overflow-hidden');
+      headerMenuClose.addEventListener("click", function () {
+        headerMenu.style.visibility = "hidden";
+        headerMenu.style.opacity = "0";
+        document.body.classList.remove("overflow-hidden");
       });
 
-      bars3.addEventListener('click', function () {
-        headerMenu.style.visibility = 'visible';
-        headerMenu.style.opacity = '1';
-        document.body.classList.add('overflow-hidden');
+      bars3.addEventListener("click", function () {
+        headerMenu.style.visibility = "visible";
+        headerMenu.style.opacity = "1";
+        document.body.classList.add("overflow-hidden");
       });
     } else {
-      headerMenuClose.addEventListener('click', function () {
-        headerMenu.style.transform = 'translateX(1024px)';
-        document.body.classList.remove('overflow-hidden');
+      headerMenuClose.addEventListener("click", function () {
+        headerMenu.style.transform = "translateX(1024px)";
+        document.body.classList.remove("overflow-hidden");
       });
 
-      bars3.addEventListener('click', function () {
-        headerMenu.style.transform = 'translateX(0)';
-        document.body.classList.add('overflow-hidden');
+      bars3.addEventListener("click", function () {
+        headerMenu.style.transform = "translateX(0)";
+        document.body.classList.add("overflow-hidden");
       });
     }
   }
 
-  const toggleDropdowns = document.querySelectorAll('.toggle-dropdown');
-  const dropdownIcons = document.querySelectorAll('.dropdown-icon');
+  const toggleDropdowns = document.querySelectorAll(".toggle-dropdown");
+  const dropdownIcons = document.querySelectorAll(".dropdown-icon");
 
   if (toggleDropdowns.length && dropdownIcons.length) {
     toggleDropdowns.forEach((toggle, index) => {
@@ -99,68 +107,78 @@ document.addEventListener('DOMContentLoaded', function () {
 
       if (!submenu || !dropdownIcon) return;
 
-      toggle.addEventListener('click', function () {
-        dropdownIcon.classList.toggle('rotate-180');
+      toggle.addEventListener("click", function () {
+        dropdownIcon.classList.toggle("rotate-180");
 
         if (submenu.style.maxHeight) {
           submenu.style.maxHeight = null;
-          submenu.style.opacity = '0';
+          submenu.style.opacity = "0";
         } else {
-          submenu.style.maxHeight = submenu.scrollHeight * 30 + 'px';
-          submenu.style.opacity = '1';
+          submenu.style.maxHeight = submenu.scrollHeight * 30 + "px";
+          submenu.style.opacity = "1";
         }
       });
     });
   }
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-  const faqBoxes = document.querySelectorAll('.faq-box');
+document.addEventListener("DOMContentLoaded", function () {
+  const faqBoxes = document.querySelectorAll(".faq-box");
 
   faqBoxes.forEach((box) => {
-    const answer = box.querySelector('.faq-answer');
+    const answer = box.querySelector(".faq-answer");
 
-    box.addEventListener('click', function () {
-      const isOpen = answer.classList.contains('scale-y-100');
+    box.addEventListener("click", function () {
+      const isOpen = answer.classList.contains("scale-y-100");
 
       faqBoxes.forEach((otherBox) => {
         if (otherBox !== box) {
-          const otherAnswer = otherBox.querySelector('.faq-answer');
-          otherAnswer.classList.remove('opacity-100', 'scale-y-100', 'max-h-96', 'mt-2');
-          otherAnswer.classList.add('opacity-0', 'scale-y-0', 'max-h-0');
-          otherBox.style.backgroundColor = '';
-          otherBox.style.border = '';
+          const otherAnswer = otherBox.querySelector(".faq-answer");
+          otherAnswer.classList.remove(
+            "opacity-100",
+            "scale-y-100",
+            "max-h-96",
+            "mt-2"
+          );
+          otherAnswer.classList.add("opacity-0", "scale-y-0", "max-h-0");
+          otherBox.style.backgroundColor = "";
+          otherBox.style.border = "";
         }
       });
 
       if (isOpen) {
-        answer.classList.remove('opacity-100', 'scale-y-100', 'max-h-96', 'mt-2');
-        answer.classList.add('opacity-0', 'scale-y-0', 'max-h-0');
-        box.style.backgroundColor = '';
-        box.style.border = '';
+        answer.classList.remove(
+          "opacity-100",
+          "scale-y-100",
+          "max-h-96",
+          "mt-2"
+        );
+        answer.classList.add("opacity-0", "scale-y-0", "max-h-0");
+        box.style.backgroundColor = "";
+        box.style.border = "";
       } else {
-        answer.classList.remove('opacity-0', 'scale-y-0', 'max-h-0');
-        answer.classList.add('opacity-100', 'scale-y-100', 'max-h-96', 'mt-2');
-        box.style.backgroundColor = '#FFF8E3';
-        box.style.border = '2px solid #FFE189';
+        answer.classList.remove("opacity-0", "scale-y-0", "max-h-0");
+        answer.classList.add("opacity-100", "scale-y-100", "max-h-96", "mt-2");
+        box.style.backgroundColor = "#FFF8E3";
+        box.style.border = "2px solid #FFE189";
       }
     });
   });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  const counters = document.querySelectorAll('.counter');
+document.addEventListener("DOMContentLoaded", () => {
+  const counters = document.querySelectorAll(".counter");
   if (!counters.length) return;
 
   const formatWithK = (num) => {
     if (num >= 1000) {
-      return '+' + Math.round(num / 1000) + 'k';
+      return "+" + Math.round(num / 1000) + "k";
     }
-    return '+' + Math.round(num).toString();
+    return "+" + Math.round(num).toString();
   };
 
   const animateCounter = (counter) => {
-    const target = +counter.getAttribute('data-target');
+    const target = +counter.getAttribute("data-target");
     let current = 0;
     const duration = 200;
     const increment = target / duration;
@@ -197,16 +215,22 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // filter hotel-card
-document.addEventListener('DOMContentLoaded', function () {
-  const cityMenu = document.getElementById('cityDropdownMenu');
-  const ratingMenu = document.getElementById('ratingDropdownMenu');
-  const priceMenu = document.getElementById('priceDropdownMenu');
-  const priceButton = document.getElementById('priceFilter');
-  const priceOptions = priceMenu ? priceMenu.querySelectorAll('.price-option') : [];
-  const hotelCards = Array.from(document.querySelectorAll('.hotel-card'));
-  const hotelWrapper = document.querySelector('.hotel-card-wrapper');
-  const cityFilter = document.querySelector('.filter-option[data-filter="city"]') || document.getElementById('cityFilter');
-  const ratingFilter = document.querySelector('.filter-option[data-filter="rating"]') || document.getElementById('ratingFilter');
+document.addEventListener("DOMContentLoaded", function () {
+  const cityMenu = document.getElementById("cityDropdownMenu");
+  const ratingMenu = document.getElementById("ratingDropdownMenu");
+  const priceMenu = document.getElementById("priceDropdownMenu");
+  const priceButton = document.getElementById("priceFilter");
+  const priceOptions = priceMenu
+    ? priceMenu.querySelectorAll(".price-option")
+    : [];
+  const hotelCards = Array.from(document.querySelectorAll(".hotel-card"));
+  const hotelWrapper = document.querySelector(".hotel-card-wrapper");
+  const cityFilter =
+    document.querySelector('.filter-option[data-filter="city"]') ||
+    document.getElementById("cityFilter");
+  const ratingFilter =
+    document.querySelector('.filter-option[data-filter="rating"]') ||
+    document.getElementById("ratingFilter");
 
   const activeCityFilters = new Set();
   const activeRatingFilters = new Set();
@@ -214,7 +238,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function extractPriceNumber(priceString) {
     if (!priceString) return 0;
-    const numericValue = priceString.replace(/[^0-9.]/g, '');
+    const numericValue = priceString.replace(/[^0-9.]/g, "");
     return parseFloat(numericValue) || 0;
   }
 
@@ -225,10 +249,11 @@ document.addEventListener('DOMContentLoaded', function () {
       const city = card.dataset.hotel;
       if (city) cities.add(city.trim());
     });
-    cityMenu.innerHTML = '';
+    cityMenu.innerHTML = "";
     cities.forEach((city) => {
-      const option = document.createElement('div');
-      option.className = 'group city-option cursor-pointer p-1 border-b border-gray-100';
+      const option = document.createElement("div");
+      option.className =
+        "group city-option cursor-pointer p-1 border-b border-gray-100";
       option.dataset.city = city;
       option.innerHTML = `
         <span class="flex items-center gap-3 text-sm font-bold transition-all duration-300 group-hover:text-primary-500">
@@ -247,13 +272,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function generateRatingFilterOptions() {
     if (!ratingMenu) return;
-    ratingMenu.innerHTML = '';
+    ratingMenu.innerHTML = "";
     for (let i = 1; i <= 5; i++) {
-      const option = document.createElement('div');
-      option.className = 'group rating-option cursor-pointer p-1 border-b border-gray-100';
+      const option = document.createElement("div");
+      option.className =
+        "group rating-option cursor-pointer p-1 border-b border-gray-100";
       option.dataset.rating = i;
 
-      let starsHTML = '';
+      let starsHTML = "";
       for (let j = 0; j < i; j++) {
         starsHTML += `
           <svg width="24" height="24" class="flex-shrink-0">
@@ -286,11 +312,13 @@ document.addEventListener('DOMContentLoaded', function () {
       const rating = parseInt(card.dataset.rating) || 0;
       const price = extractPriceNumber(card.dataset.price);
 
-      const cityMatch = activeCityFilters.size === 0 || activeCityFilters.has(city);
-      const ratingMatch = activeRatingFilters.size === 0 || activeRatingFilters.has(rating);
+      const cityMatch =
+        activeCityFilters.size === 0 || activeCityFilters.has(city);
+      const ratingMatch =
+        activeRatingFilters.size === 0 || activeRatingFilters.has(rating);
 
       let priceMatch = true;
-      if (activePriceFilter === 'best-price') {
+      if (activePriceFilter === "best-price") {
         priceMatch = price < 300;
       }
 
@@ -298,17 +326,25 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     hotelCards.forEach((card) => {
-      card.style.display = 'none';
+      card.style.display = "none";
     });
 
     filteredCards.forEach((card) => {
-      card.style.display = 'block';
+      card.style.display = "block";
     });
 
-    if (activePriceFilter === 'high-to-low') {
-      filteredCards.sort((a, b) => extractPriceNumber(b.dataset.price) - extractPriceNumber(a.dataset.price));
-    } else if (activePriceFilter === 'low-to-high') {
-      filteredCards.sort((a, b) => extractPriceNumber(a.dataset.price) - extractPriceNumber(b.dataset.price));
+    if (activePriceFilter === "high-to-low") {
+      filteredCards.sort(
+        (a, b) =>
+          extractPriceNumber(b.dataset.price) -
+          extractPriceNumber(a.dataset.price)
+      );
+    } else if (activePriceFilter === "low-to-high") {
+      filteredCards.sort(
+        (a, b) =>
+          extractPriceNumber(a.dataset.price) -
+          extractPriceNumber(b.dataset.price)
+      );
     }
 
     filteredCards.forEach((card) => {
@@ -317,20 +353,20 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   if (cityMenu) {
-    cityMenu.addEventListener('click', (e) => {
+    cityMenu.addEventListener("click", (e) => {
       e.stopPropagation();
-      const option = e.target.closest('.city-option');
+      const option = e.target.closest(".city-option");
       if (!option) return;
 
       const selectedCity = option.dataset.city;
-      const icon = option.querySelector('.city-check-icon');
+      const icon = option.querySelector(".city-check-icon");
 
       if (activeCityFilters.has(selectedCity)) {
         activeCityFilters.delete(selectedCity);
-        if (icon) icon.classList.remove('bg-primary-500', 'text-white');
+        if (icon) icon.classList.remove("bg-primary-500", "text-white");
       } else {
         activeCityFilters.add(selectedCity);
-        if (icon) icon.classList.add('bg-primary-500', 'text-white');
+        if (icon) icon.classList.add("bg-primary-500", "text-white");
       }
 
       applyFilters();
@@ -338,20 +374,20 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   if (ratingMenu) {
-    ratingMenu.addEventListener('click', (e) => {
+    ratingMenu.addEventListener("click", (e) => {
       e.stopPropagation();
-      const option = e.target.closest('.rating-option');
+      const option = e.target.closest(".rating-option");
       if (!option) return;
 
       const selectedRating = parseInt(option.dataset.rating);
-      const icon = option.querySelector('.rating-check-icon');
+      const icon = option.querySelector(".rating-check-icon");
 
       if (activeRatingFilters.has(selectedRating)) {
         activeRatingFilters.delete(selectedRating);
-        if (icon) icon.classList.remove('bg-primary-500', 'text-white');
+        if (icon) icon.classList.remove("bg-primary-500", "text-white");
       } else {
         activeRatingFilters.add(selectedRating);
-        if (icon) icon.classList.add('bg-primary-500', 'text-white');
+        if (icon) icon.classList.add("bg-primary-500", "text-white");
       }
 
       applyFilters();
@@ -359,13 +395,13 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   if (cityFilter) {
-    cityFilter.addEventListener('click', (e) => {
+    cityFilter.addEventListener("click", (e) => {
       e.stopPropagation();
       if (cityMenu) {
-        cityMenu.classList.toggle('hidden');
-        if (!cityMenu.classList.contains('hidden')) {
-          if (ratingMenu) ratingMenu.classList.add('hidden');
-          if (priceMenu) priceMenu.classList.add('hidden');
+        cityMenu.classList.toggle("hidden");
+        if (!cityMenu.classList.contains("hidden")) {
+          if (ratingMenu) ratingMenu.classList.add("hidden");
+          if (priceMenu) priceMenu.classList.add("hidden");
           priceMenuOpen = false;
         }
       }
@@ -373,13 +409,13 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   if (ratingFilter) {
-    ratingFilter.addEventListener('click', (e) => {
+    ratingFilter.addEventListener("click", (e) => {
       e.stopPropagation();
       if (ratingMenu) {
-        ratingMenu.classList.toggle('hidden');
-        if (!ratingMenu.classList.contains('hidden')) {
-          if (cityMenu) cityMenu.classList.add('hidden');
-          if (priceMenu) priceMenu.classList.add('hidden');
+        ratingMenu.classList.toggle("hidden");
+        if (!ratingMenu.classList.contains("hidden")) {
+          if (cityMenu) cityMenu.classList.add("hidden");
+          if (priceMenu) priceMenu.classList.add("hidden");
           priceMenuOpen = false;
         }
       }
@@ -388,44 +424,59 @@ document.addEventListener('DOMContentLoaded', function () {
 
   let priceMenuOpen = false;
   if (priceButton) {
-    priceButton.addEventListener('click', (e) => {
+    priceButton.addEventListener("click", (e) => {
       e.stopPropagation();
       if (priceMenu) {
         priceMenuOpen = !priceMenuOpen;
-        priceMenu.classList.toggle('hidden', !priceMenuOpen);
+        priceMenu.classList.toggle("hidden", !priceMenuOpen);
         if (priceMenuOpen) {
-          if (cityMenu) cityMenu.classList.add('hidden');
-          if (ratingMenu) ratingMenu.classList.add('hidden');
+          if (cityMenu) cityMenu.classList.add("hidden");
+          if (ratingMenu) ratingMenu.classList.add("hidden");
         }
       }
     });
   }
 
-  document.addEventListener('click', (e) => {
-    if (cityFilter && cityMenu && !cityFilter.contains(e.target) && !cityMenu.contains(e.target)) {
-      cityMenu.classList.add('hidden');
+  document.addEventListener("click", (e) => {
+    if (
+      cityFilter &&
+      cityMenu &&
+      !cityFilter.contains(e.target) &&
+      !cityMenu.contains(e.target)
+    ) {
+      cityMenu.classList.add("hidden");
     }
-    if (ratingFilter && ratingMenu && !ratingFilter.contains(e.target) && !ratingMenu.contains(e.target)) {
-      ratingMenu.classList.add('hidden');
+    if (
+      ratingFilter &&
+      ratingMenu &&
+      !ratingFilter.contains(e.target) &&
+      !ratingMenu.contains(e.target)
+    ) {
+      ratingMenu.classList.add("hidden");
     }
-    if (priceButton && priceMenu && !priceButton.contains(e.target) && !priceMenu.contains(e.target)) {
-      priceMenu.classList.add('hidden');
+    if (
+      priceButton &&
+      priceMenu &&
+      !priceButton.contains(e.target) &&
+      !priceMenu.contains(e.target)
+    ) {
+      priceMenu.classList.add("hidden");
       priceMenuOpen = false;
     }
   });
 
   if (priceOptions) {
     priceOptions.forEach((option) => {
-      option.addEventListener('click', (e) => {
+      option.addEventListener("click", (e) => {
         e.stopPropagation();
         if (priceMenu) {
-          priceMenu.querySelectorAll('.price-check-icon').forEach((icon) => {
-            icon.classList.remove('bg-primary-500', 'text-white');
+          priceMenu.querySelectorAll(".price-check-icon").forEach((icon) => {
+            icon.classList.remove("bg-primary-500", "text-white");
           });
         }
 
-        const icon = option.querySelector('.price-check-icon');
-        if (icon) icon.classList.add('bg-primary-500', 'text-white');
+        const icon = option.querySelector(".price-check-icon");
+        if (icon) icon.classList.add("bg-primary-500", "text-white");
 
         activePriceFilter = option.dataset.price;
 
@@ -439,24 +490,24 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // filter tour-list card
-document.addEventListener('DOMContentLoaded', () => {
-  const cards = document.querySelectorAll('.tourL-tour-card');
-  const airlineFilterContainer = document.querySelector('.airline-filter');
-  const daysFilterContainer = document.querySelector('.days-filter');
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".tourL-tour-card");
+  const airlineFilterContainer = document.querySelector(".airline-filter");
+  const daysFilterContainer = document.querySelector(".days-filter");
 
-  const minInput = document.getElementById('minRange');
-  const maxInput = document.getElementById('maxRange');
-  const rangeTrack = document.getElementById('rangeTrack');
-  const minValText = document.getElementById('minValue');
-  const maxValText = document.getElementById('maxValue');
+  const minInput = document.getElementById("minRange");
+  const maxInput = document.getElementById("maxRange");
+  const rangeTrack = document.getElementById("rangeTrack");
+  const minValText = document.getElementById("minValue");
+  const maxValText = document.getElementById("maxValue");
 
-  const filterBtn = document.getElementById('filterOpenBtn');
-  const closeBtn = document.getElementById('filterCloseBtn');
-  const removeFiltersBtn = document.getElementById('clearFiltersBtn');
+  const filterBtn = document.getElementById("filterOpenBtn");
+  const closeBtn = document.getElementById("filterCloseBtn");
+  const removeFiltersBtn = document.getElementById("clearFiltersBtn");
 
-  const filterPanel = document.querySelector('.filters-panel');
+  const filterPanel = document.querySelector(".filters-panel");
 
-  const normalizeText = (text) => text.replace(/\s/g, '').toLowerCase();
+  const normalizeText = (text) => text.replace(/\s/g, "").toLowerCase();
 
   const uniqueAirlines = new Map();
   const uniqueDays = new Set();
@@ -477,10 +528,12 @@ document.addEventListener('DOMContentLoaded', () => {
   if (airlineFilterContainer) {
     uniqueAirlines.forEach((img, name) => {
       const id = `airline-${normalizeText(name)}`;
-      const wrapper = document.createElement('div');
-      wrapper.className = 'flex items-center gap-5';
+      const wrapper = document.createElement("div");
+      wrapper.className = "flex items-center gap-5";
       wrapper.innerHTML = `
-        <input type="radio" name="airline" id="${id}" value="${normalizeText(name)}" class="airline-input w-5 h-5" />
+        <input type="radio" name="airline" id="${id}" value="${normalizeText(
+        name
+      )}" class="airline-input w-5 h-5" />
         <label for="${id}" class="flex items-center gap-1 cursor-pointer">
           <img src="[##cms.cms.cdn##]/images/${img}" alt="${name}" width="60" height="30" loading="lazy" />
           <span class="text-zinc-500 text-xs">${name}</span>
@@ -493,10 +546,12 @@ document.addEventListener('DOMContentLoaded', () => {
   if (daysFilterContainer) {
     uniqueDays.forEach((days) => {
       const id = `days-${normalizeText(days)}`;
-      const wrapper = document.createElement('div');
-      wrapper.className = 'flex items-center gap-5';
+      const wrapper = document.createElement("div");
+      wrapper.className = "flex items-center gap-5";
       wrapper.innerHTML = `
-        <input type="radio" name="days" id="${id}" value="${normalizeText(days)}" class="days-input w-5 h-5" />
+        <input type="radio" name="days" id="${id}" value="${normalizeText(
+        days
+      )}" class="days-input w-5 h-5" />
         <label for="${id}" class="text-zinc-500 text-sm cursor-pointer">${days}</label>
       `;
       daysFilterContainer.appendChild(wrapper);
@@ -504,10 +559,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const parsePrice = (priceStr) => {
-    let clean = priceStr.replace(/[^\d]/g, '');
+    let clean = priceStr.replace(/[^\d]/g, "");
     return parseInt(clean, 10);
   };
-  const formatPrice = (val) => val.toLocaleString('en-US');
+  const formatPrice = (val) => val.toLocaleString("en-US");
 
   let REAL_MIN = 0;
   let REAL_MAX = 0;
@@ -515,7 +570,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let realMax = 0;
 
   const prices = Array.from(cards)
-    .map((card) => parsePrice(card.dataset.price || '0'))
+    .map((card) => parsePrice(card.dataset.price || "0"))
     .filter((p) => p > 0);
 
   if (prices.length) {
@@ -530,20 +585,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function filterCards() {
     cards.forEach((card) => {
-      const price = parsePrice(card.dataset.price || '0');
-      const airline = normalizeText(card.dataset.airlineName || '');
-      const days = normalizeText(card.dataset.days || '');
+      const price = parsePrice(card.dataset.price || "0");
+      const airline = normalizeText(card.dataset.airlineName || "");
+      const days = normalizeText(card.dataset.days || "");
 
       const matchPrice = price >= realMin && price <= realMax;
       const matchAirline = !selectedAirline || airline === selectedAirline;
       const matchDays = !selectedDay || days === selectedDay;
 
-      card.style.display = matchPrice && matchAirline && matchDays ? 'block' : 'none';
+      card.style.display =
+        matchPrice && matchAirline && matchDays ? "block" : "none";
     });
   }
 
   function updatePriceRange() {
-    if (!minInput || !maxInput || !rangeTrack || !minValText || !maxValText) return;
+    if (!minInput || !maxInput || !rangeTrack || !minValText || !maxValText)
+      return;
 
     let min = parseInt(minInput.value);
     let max = parseInt(maxInput.value);
@@ -564,14 +621,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (minInput && maxInput) {
-    minInput.addEventListener('input', updatePriceRange);
-    maxInput.addEventListener('input', updatePriceRange);
+    minInput.addEventListener("input", updatePriceRange);
+    maxInput.addEventListener("input", updatePriceRange);
     updatePriceRange();
   }
 
   if (airlineFilterContainer) {
-    airlineFilterContainer.addEventListener('change', (e) => {
-      if (e.target.classList.contains('airline-input')) {
+    airlineFilterContainer.addEventListener("change", (e) => {
+      if (e.target.classList.contains("airline-input")) {
         selectedAirline = e.target.checked ? e.target.value : null;
         filterCards();
       }
@@ -579,8 +636,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (daysFilterContainer) {
-    daysFilterContainer.addEventListener('change', (e) => {
-      if (e.target.classList.contains('days-input')) {
+    daysFilterContainer.addEventListener("change", (e) => {
+      if (e.target.classList.contains("days-input")) {
         selectedDay = e.target.checked ? e.target.value : null;
         filterCards();
       }
@@ -588,27 +645,31 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (filterBtn && filterPanel) {
-    filterBtn.addEventListener('click', () => {
-      filterPanel.classList.remove('translate-y-full');
+    filterBtn.addEventListener("click", () => {
+      filterPanel.classList.remove("translate-y-full");
     });
   }
 
   if (closeBtn && filterPanel) {
-    closeBtn.addEventListener('click', () => {
-      filterPanel.classList.add('translate-y-full');
+    closeBtn.addEventListener("click", () => {
+      filterPanel.classList.add("translate-y-full");
     });
   }
 
   if (removeFiltersBtn) {
-    removeFiltersBtn.addEventListener('click', () => {
+    removeFiltersBtn.addEventListener("click", () => {
       selectedAirline = null;
       selectedDay = null;
 
       if (airlineFilterContainer) {
-        airlineFilterContainer.querySelectorAll('input.airline-input').forEach((input) => (input.checked = false));
+        airlineFilterContainer
+          .querySelectorAll("input.airline-input")
+          .forEach((input) => (input.checked = false));
       }
       if (daysFilterContainer) {
-        daysFilterContainer.querySelectorAll('input.days-input').forEach((input) => (input.checked = false));
+        daysFilterContainer
+          .querySelectorAll("input.days-input")
+          .forEach((input) => (input.checked = false));
       }
 
       if (minInput && maxInput) {
@@ -622,19 +683,19 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  const hotelCards = document.querySelectorAll('.hotel-card');
-  const hotelNameFilterInput = document.getElementById('hotelNameFilter');
-  const starOptions = document.querySelectorAll('.star-filter-option');
+document.addEventListener("DOMContentLoaded", () => {
+  const hotelCards = document.querySelectorAll(".hotel-card");
+  const hotelNameFilterInput = document.getElementById("hotelNameFilter");
+  const starOptions = document.querySelectorAll(".star-filter-option");
   const serviceCheckboxes = document.querySelectorAll('input[name="services"]');
-  const minInput = document.getElementById('minRange');
-  const maxInput = document.getElementById('maxRange');
-  const rangeTrack = document.getElementById('rangeTrack');
-  const minValText = document.getElementById('minValue');
-  const maxValText = document.getElementById('maxValue');
+  const minInput = document.getElementById("minRange");
+  const maxInput = document.getElementById("maxRange");
+  const rangeTrack = document.getElementById("rangeTrack");
+  const minValText = document.getElementById("minValue");
+  const maxValText = document.getElementById("maxValue");
 
-  const parsePrice = (priceStr) => parseInt(priceStr.replace(/[^\d]/g, ''), 10);
-  const formatPrice = (val) => val.toLocaleString('en-US');
+  const parsePrice = (priceStr) => parseInt(priceStr.replace(/[^\d]/g, ""), 10);
+  const formatPrice = (val) => val.toLocaleString("en-US");
 
   let REAL_MIN = 0;
   let REAL_MAX = 0;
@@ -643,10 +704,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let selectedStars = new Set();
   let selectedServices = new Set();
-  let hotelNameFilter = '';
+  let hotelNameFilter = "";
 
   const prices = Array.from(hotelCards)
-    .map((card) => parsePrice(card.dataset.price || '0'))
+    .map((card) => parsePrice(card.dataset.price || "0"))
     .filter((p) => p > 0);
 
   if (prices.length) {
@@ -658,45 +719,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function filterCards() {
     hotelCards.forEach((card) => {
-      const price = parsePrice(card.dataset.price || '0');
+      const price = parsePrice(card.dataset.price || "0");
       const star = card.dataset.rating;
       const service = card.dataset.servies;
-      const name = card.dataset.hotel?.toLowerCase() || '';
+      const name = card.dataset.hotel?.toLowerCase() || "";
 
       const matchName = name.includes(hotelNameFilter);
       const matchStar = selectedStars.size === 0 || selectedStars.has(star);
-      const matchService = selectedServices.size === 0 || selectedServices.has(service);
+      const matchService =
+        selectedServices.size === 0 || selectedServices.has(service);
       const matchPrice = price >= realMin && price <= realMax;
 
-      card.style.display = matchName && matchStar && matchService && matchPrice ? 'block' : 'none';
+      card.style.display =
+        matchName && matchStar && matchService && matchPrice ? "block" : "none";
     });
   }
 
   if (hotelNameFilterInput) {
-    hotelNameFilterInput.addEventListener('input', () => {
+    hotelNameFilterInput.addEventListener("input", () => {
       hotelNameFilter = hotelNameFilterInput.value.trim().toLowerCase();
       filterCards();
     });
   }
 
   starOptions.forEach((option) => {
-    option.addEventListener('click', () => {
+    option.addEventListener("click", () => {
       const star = option.dataset.star;
       if (selectedStars.has(star)) {
         selectedStars.delete(star);
-        option.classList.remove('bg-secondary-800', 'text-white');
-        option.classList.add('border-primary-900', 'border', 'border-solid');
+        option.classList.remove("bg-secondary-800", "text-white");
+        option.classList.add("border-primary-900", "border", "border-solid");
       } else {
         selectedStars.add(star);
-        option.classList.add('bg-secondary-800', 'text-white');
-        option.classList.remove('border-primary-900', 'border', 'border-solid');
+        option.classList.add("bg-secondary-800", "text-white");
+        option.classList.remove("border-primary-900", "border", "border-solid");
       }
       filterCards();
     });
   });
 
   serviceCheckboxes.forEach((checkbox) => {
-    checkbox.addEventListener('change', () => {
+    checkbox.addEventListener("change", () => {
       selectedServices.clear();
       serviceCheckboxes.forEach((cb) => {
         if (cb.checked) selectedServices.add(cb.value);
@@ -725,24 +788,24 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (minInput && maxInput) {
-    minInput.addEventListener('input', updatePriceRange);
-    maxInput.addEventListener('input', updatePriceRange);
+    minInput.addEventListener("input", updatePriceRange);
+    maxInput.addEventListener("input", updatePriceRange);
     updatePriceRange();
   }
 
-  const clearFiltersBtnHotel = document.getElementById('clearFiltersBtnHotel');
+  const clearFiltersBtnHotel = document.getElementById("clearFiltersBtnHotel");
 
   if (clearFiltersBtnHotel) {
-    clearFiltersBtnHotel.addEventListener('click', () => {
+    clearFiltersBtnHotel.addEventListener("click", () => {
       if (hotelNameFilterInput) {
-        hotelNameFilterInput.value = '';
-        selectedHotelName = '';
+        hotelNameFilterInput.value = "";
+        selectedHotelName = "";
       }
 
       selectedStars.clear();
       starOptions.forEach((option) => {
-        option.classList.remove('bg-secondary-800', 'text-white');
-        option.classList.add('border-primary-900', 'border', 'border-solid');
+        option.classList.remove("bg-secondary-800", "text-white");
+        option.classList.add("border-primary-900", "border", "border-solid");
       });
 
       selectedServices.clear();
@@ -757,33 +820,105 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-document.querySelectorAll('.accordion-toggle').forEach((toggle) => {
-  toggle.addEventListener('click', () => {
+document.querySelectorAll(".accordion-toggle").forEach((toggle) => {
+  toggle.addEventListener("click", () => {
     const content = toggle.nextElementSibling;
-    const icon = toggle.querySelector('.chevron-icon');
+    const icon = toggle.querySelector(".chevron-icon");
 
-    content.classList.toggle('max-h-[500px]');
-    icon.classList.toggle('rotate-180');
+    content.classList.toggle("max-h-[500px]");
+    icon.classList.toggle("rotate-180");
   });
 });
 
+// fetch tour default
+document.addEventListener("DOMContentLoaded", function () {
+  const fetchContentTour = document.querySelector(".fetch-content-tour");
+  const tourLi = document.querySelectorAll(".tour-li");
+
+  if (fetchContentTour) {
+    async function firstContent() {
+      const firstDataId = tourLi[0].getAttribute("data-id");
+      fetchContentTour.innerHTML =
+        '<div class="flex justify-center mt-20"><span class="fetch-loader"></span></div>';
+      try {
+        const firstResponse = await fetch(
+          `/tour-load-items.bc?catid=${firstDataId}`
+        );
+        if (!firstResponse.ok) {
+          throw new Error(`HTTP error! Status: ${firstResponse.status}`);
+        }
+        const firstData = await firstResponse.text();
+        fetchContentTour.innerHTML = firstData;
+      } catch (error) {
+        console.error("Fetch failed:", error);
+        fetchContentTour.innerHTML =
+          "<p>Error loading data: " + error.message + "</p>";
+      }
+      if (tourLi.length > 0) {
+        tourLi[0].style.backgroundColor = "#FFF8E3";
+        tourLi[0].style.color = "#FD7523";
+        tourLi[0].style.border = "1px solid #FFE189";
+      }
+    }
+    firstContent();
+
+    tourLi.forEach((item) => {
+      item.addEventListener("click", function () {
+        tourLi.forEach((li) => {
+          li.style.backgroundColor = "";
+          li.style.color = "";
+          li.style.border = "";
+        });
+
+        item.style.backgroundColor = "#FFF8E3";
+        item.style.color = "#FD7523";
+        item.style.border = "1px solid #FFE189";
+
+        let cmsQuery = item.getAttribute("data-id");
+
+        async function secondContent() {
+          fetchContentTour.innerHTML =
+            '<div class="flex justify-center mt-20"><span class="fetch-loader"></span></div>';
+          try {
+            const firstResponse = await fetch(
+              `/tour-load-items.bc?catid=${cmsQuery}`
+            );
+            if (!firstResponse.ok) {
+              throw new Error(`HTTP error! Status: ${firstResponse.status}`);
+            }
+            const firstData = await firstResponse.text();
+            fetchContentTour.innerHTML = firstData;
+          } catch (error) {
+            fetchContentTour.innerHTML =
+              "<p>Error loading data: " + error.message + "</p>";
+          }
+        }
+        secondContent();
+      });
+    });
+  }
+});
+
 // swipers
-if (document.querySelector('.swiper-popular-destination-mobile')) {
-  var swiperPopularDestinationMobile = new Swiper('.swiper-popular-destination-mobile', {
-    slidesPerView: 1.3,
-    speed: 400,
-    centeredSlides: false,
-    spaceBetween: 12,
-    grabCursor: true,
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
-    },
-    loop: true,
-  });
+if (document.querySelector(".swiper-popular-destination-mobile")) {
+  var swiperPopularDestinationMobile = new Swiper(
+    ".swiper-popular-destination-mobile",
+    {
+      slidesPerView: 1.3,
+      speed: 400,
+      centeredSlides: false,
+      spaceBetween: 12,
+      grabCursor: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      loop: true,
+    }
+  );
 }
-if (document.querySelector('.swiper-featured-tours-mobile')) {
-  var swiperFeaturedToursMobile = new Swiper('.swiper-featured-tours-mobile', {
+if (document.querySelector(".swiper-featured-tours-mobile")) {
+  var swiperFeaturedToursMobile = new Swiper(".swiper-featured-tours-mobile", {
     slidesPerView: 1.1,
     speed: 400,
     centeredSlides: false,

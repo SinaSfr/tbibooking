@@ -1,0 +1,68 @@
+<basis core="dbsource" source="basiscore" lid="1" mid="20" name="db" catid="[##cms.query.catid##]">
+    <member name="our-featured-tours" type="list" link="tour.bc" propertyid="8181,10000503,10000504" perpage="8"
+        order="ord" size="260x176" />
+</basis>
+<basis core="dbsource" source="basiscore" mid="20" name="list" lid="1" schemaid="987" term="[##cms.query.term##]">
+    <member name="airline" type="list" request="spelist" />
+</basis>
+<basis core="inlinesource" name="joining">
+    <member name="list" lefttblcol="db.tour-list.prp_10000504" righttblcol="list.airline.name" format="join"
+        jointype="leftjoin" />
+</basis>
+
+
+
+
+<basis core="list" datamembername="joining.list">
+    <layout>
+        <div class="grid grid-cols-4 gap-3 mt-10">
+            <!-- items -->
+            @child
+        </div>
+        <a href=""
+            class="group relative z-10 overflow-hidden flex justify-center items-center gap-2 mx-auto w-48 h-12 bg-primary-900 rounded-xl text-white font-bold mt-24">
+            <svg width="24" height="24" class="flex-shrink-0">
+                <use xlink:href="/images/sprite-icons.svg#icon-category"></use>
+            </svg>
+            Load More Tours
+            <span
+                class="absolute bottom-0 left-0 w-48 transition-all duration-300 ease-out translate-x-full translate-y-full rounded h-14 -z-10 bg-secondary-900 group-hover:translate-x-0 group-hover:translate-y-0"></span>
+        </a>
+    </layout>
+    <face filter="link is null">
+        <a href="/tour.bc?id=@id" class="group block rounded-xl overflow-hidden">
+            <img src="[##cms.cms.cdn##]/images/popular-destionation-card.jpg"
+                class="w-full h-44 transition-all duration-300 group-hover:sepia" alt="@title" width="260" height="176"
+                loading="lazy" />
+            <div
+                class="bg-white p-4 rounded-b-xl border-x border-b border-solid border-zinc-400 transition-all duration-300 group-hover:border-secondary-600">
+                <h2 class="text-zinc-900 font-bold mb-1">@title</h2>
+                <h3 class="text-xs text-zinc-900 mb-1">Algaida</h3>
+                <div class="flex items-center gap-1 text-zinc-900 text-sm mb-1">
+                    <svg width="19" height="19" class="flex-shrink-0">
+                        <use xlink:href="/images/sprite-icons.svg#icon-hotel"></use>
+                    </svg>
+                    5 Stars - 10/10 Exceptional (9)
+                </div>
+                <div class="flex items-center gap-1 text-zinc-900 text-sm mb-2">
+                    <svg width="19" height="19" class="flex-shrink-0">
+                        <use xlink:href="/images/sprite-icons.svg#icon-airplane"></use>
+                    </svg>
+                    Leipzig(LEJ)-Palma de mallorca
+                </div>
+                <div>
+                    <div class="text-zinc-900 font-bold text-xl">1,421 $</div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-zinc-900 text-xs">Per traveler</span>
+                        <img src="[##cms.cms.cdn##]/images/turkish-airline.png" class="h-auto" alt="" width="70"
+                            height="30" loading="lazy" />
+                    </div>
+                </div>
+                <button
+                    class="bg-primary-50 text-primary-900 border border-solid border-primary-900 rounded-[40px] px-6 py-3 mt-2 transition-all duration-300 group-hover:bg-secondary-50 group-hover:border-secondary-900 group-hover:text-secondary-900">
+                    Details
+                </button>
+            </div>
+        </a>
+    </face>
+</basis>
