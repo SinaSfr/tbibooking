@@ -855,9 +855,8 @@ document.addEventListener("DOMContentLoaded", function () {
           "<p>Error loading data: " + error.message + "</p>";
       }
       if (tourLi.length > 0) {
-        tourLi[0].style.backgroundColor = "#FFF8E3";
-        tourLi[0].style.color = "#FD7523";
-        tourLi[0].style.border = "1px solid #FFE189";
+        tourLi[0].style.backgroundColor = "#013D68";
+        tourLi[0].style.color = "#fff";
       }
     }
     firstContent();
@@ -867,12 +866,10 @@ document.addEventListener("DOMContentLoaded", function () {
         tourLi.forEach((li) => {
           li.style.backgroundColor = "";
           li.style.color = "";
-          li.style.border = "";
         });
 
-        item.style.backgroundColor = "#FFF8E3";
-        item.style.color = "#FD7523";
-        item.style.border = "1px solid #FFE189";
+        item.style.backgroundColor = "#013D68";
+        item.style.color = "#fff";
 
         let cmsQuery = item.getAttribute("data-id");
 

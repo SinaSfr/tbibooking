@@ -1540,11 +1540,6 @@ section.gallery-about > img:nth-child(5) {
   top: 44px !important;
 }
 
-.passenger-counts.child-count,
-.passenger-counts.infant-count {
-  display: block !important;
-}
-
 .passenger-counts.adult-count,
 .passenger-counts.child-count {
   margin-left: 0 !important;

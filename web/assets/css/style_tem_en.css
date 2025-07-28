@@ -1,0 +1,677 @@
+@import url(./customized.ui.min.css);
+@font-face {
+  font-display: swap;
+  font-family: "fontawesome";
+  font-style: normal;
+  font-weight: normal;
+  font-display: block;
+  src: url("../_fonts/fontawesome-webfont.eot");
+  src: url("../_fonts/fontawesome-webfont.eot") format("embedded-opentype"),
+    url("../_fonts/fontawesome-webfont.ttf") format("truetype"),
+    url("../_fonts/fontawesome-webfont.svg") format("svg");
+}
+@font-face {
+  font-family: "fontawesome";
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url("../fonts/fontAwesome-solid.eot");
+  src: url("../fonts/fontAwesome-solid.eot") format("embedded-opentype"),
+    url("../fonts/fontAwesome-solid.ttf") format("truetype"),
+    url("../fonts/fontAwesome-solid.svg") format("svg");
+}
+@font-face {
+  font-display: swap;
+  font-family: "IRANSansWebEnNum";
+  font-style: normal;
+  font-weight: lighter;
+  src: url("../_fonts/IRANSansWeb_Medium.eot");
+  src: url("../_fonts/IRANSansWeb_Medium.eot?#iefix")
+      format("embedded-opentype");
+}
+@font-face {
+  font-display: swap;
+  font-family: "flaticon";
+  src: url("../fonts/fontFlaticon.ttf") format("truetype"),
+    url("../fonts/fontFlaticon.eot?#iefix") format("embedded-opentype");
+}
+i[class^="flaticon-"]:before,
+i[class*=" flaticon-"]:before {
+  font-family: flaticon !important;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+input,
+select,
+button {
+  font-family: inherit;
+}
+.flaticon-phone-call:before {
+  content: "\f136";
+}
+.background-color_1 {
+  background-color: var(--primary);
+}
+.background-color_2 {
+  background: var(--primary);
+}
+.background-color_3 {
+  background-color: #363215;
+}
+.background-color_white {
+  background-color: #fff;
+}
+.color_1 {
+  color: var(--primary);
+}
+.color_2 {
+  color: #000;
+}
+.color_3 {
+  color: #363215;
+}
+.color_white {
+  color: #fff;
+}
+.color_grey {
+  color: #040a10;
+}
+.color_grey_ {
+  color: #4d4d4d;
+}
+.btn_1,
+.exchange-icon:hover {
+  background-color: #000;
+  color: #fff;
+}
+.Basis_Calendar .month_day_list table td:hover,
+.Basis_Calendar .selected_date,
+.btn_1:hover,
+.tlt-table,
+.tour-info-tlt,
+fieldset hr {
+  background-color: #000;
+}
+.login_module_prev:hover {
+  color: #000;
+  border-color: #000;
+}
+#Login_box .shine-hover,
+.details-btn:hover,
+.item-tour:hover {
+  color: #fff;
+  background-color: var(--primary);
+}
+#Login_box .shine-hover {
+  border: 1px solid var(--primary);
+}
+#Login_box .shine-hover:hover,
+.Basis_Calendar .selected_day,
+.ui-datepicker .ui-datepicker-buttonpane button,
+.ui-datepicker table thead th,
+.ui-datepicker-buttonpane .ui-datepicker-current:focus,
+.ui-datepicker-today .ui-state-highlight {
+  background-color: var(--primary);
+}
+.login_info i {
+  color: var(--primary) !important;
+}
+.radioButton:checked + label span::after {
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+.airport_filter,
+.airport_filter_des,
+.filter-container:not(:last-child),
+.searched-flight {
+  border-bottom: 1px dashed var(--primary);
+}
+.btn-item button,
+.flight-duration-stop:before {
+  background-color: var(--secondary);
+  border: 1px solid var(--secondary);
+}
+.confirm,
+.details-btn {
+  border: 1px solid var(--primary);
+}
+.details-row-middle_1 {
+  border-left: 2px dashed var(--primary);
+}
+.details-circle::after,
+.details-circle::before {
+  border: 2px;
+}
+.Basis_Calendar .month_change i:hover,
+.flight-summary-info .dash i,
+.flight_type .active,
+.flight_type li:hover,
+.name-tour,
+.section-input_list input[type="checkbox"]:checked + label span.checkbox::after,
+.section-input_list input[type="radio"]:checked + label span.checkbox::after,
+.sort-items li.active,
+.sort-items li:hover,
+.ui-datepicker .ui-datepicker-next span,
+.ui-datepicker .ui-datepicker-prev span,
+.ui-datepicker th {
+  color: var(--primary);
+}
+.section-input_list
+  input[type="checkbox"]:checked
+  + label
+  span.checkbox::before,
+.section-input_list input[type="radio"]:checked + label span.checkbox::before {
+  border-color: var(--primary);
+}
+.angle-content .three,
+.rangevalFirst,
+.rangevalFirst_2,
+.rangevalFirst_2 span,
+.rangevalSecond,
+.rangevalSecond_2,
+.rangevalSecond_2 span,
+.section-container .dash,
+.tour-completion-info i {
+  color: #000;
+}
+.confirm:hover {
+  background-color: #fff;
+  color: var(--primary);
+}
+.minus-btn {
+  background-color: var(--primary);
+  box-shadow: #d1bcdc 0 -3px 0 0 inset;
+}
+.plus-btn {
+  background-image: linear-gradient(#9aca0f, #73b828);
+  box-shadow: rgba(0, 0, 0, 0.15) 0 3px 3px 0, #0a9346 0 -3px 0 0 inset;
+}
+.after-btn:hover,
+.before-btn:hover {
+  background-color: var(--primary);
+  color: #fff;
+  border: 1px solid var(--primary);
+}
+.after-btn:hover i::before,
+.before-btn:hover i::before {
+  color: #fff;
+}
+.close-research {
+  border: 1px solid var(--primary);
+  color: var(--primary);
+}
+.btn-item button:hover {
+  background-color: #fff !important;
+  color: #000 !important;
+  box-shadow: 0 10px 13px -10px #0c2d33;
+}
+.searched-item button:hover {
+  background-color: #000;
+  box-shadow: 0 10px 13px -10px #0c2d33;
+}
+.exchange-icon {
+  border: 1px solid #000;
+  color: #000;
+}
+.Basis_Calendar .current_day,
+.progress-bar {
+  background-color: var(--primary) !important;
+}
+.loading-container:hover .loading {
+  border-color: transparent #000;
+}
+.loading {
+  border-color: transparent var(--primary);
+  background: #dedde8;
+}
+.close-content .fa-times::before {
+  color: #000 !important;
+}
+.ui-datepicker-buttonpane .ui-datepicker-current:hover,
+.ui-datepicker-buttonpane .ui-state-default:focus,
+.ui-datepicker-buttonpane .ui-state-default:hover,
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active {
+  border: 1px;
+  background-color: #000 !important;
+}
+.side-tour i {
+  color: #faa944;
+}
+.row-other-inf {
+  border-right: 3px solid #000;
+}
+.loading-img img {
+  margin: 0 auto;
+  width: 100%;
+}
+.loading-img {
+  margin-top: 0.2em;
+}
+.after-btn i {
+  padding-right: 0.1em;
+}
+.before-btn i {
+  padding-left: 0.1em;
+}
+.after-btn,
+.before-btn {
+  padding: 0.5em 0.2em;
+}
+.next-prev-container {
+  font-size: 14px;
+}
+.flight-duration-stop::before {
+  background-color: var(--primary);
+  border: 1px solid var(--primary);
+}
+.bottom-content .action-loading,
+.login-btn,
+.next-btn,
+.select-passnger {
+  background-color: var(--primary);
+}
+.next-btn:hover {
+  background-color: var(--secondary);
+  color: #fff;
+}
+.prev-passengers {
+  color: var(--primary);
+}
+.passengers-prev-title svg,
+.prev-passengers svg {
+  fill: var(--primary);
+}
+.prev-passengers:hover {
+  color: var(--secondary) !important;
+}
+.prev-passengers:hover svg {
+  fill: var(--secondary);
+}
+.prev-passengers svg {
+  display: inline;
+}
+.details-item-title,
+.login-title i,
+.nav-details li.active,
+.nav-details li:hover,
+.passenger-title {
+  color: var(--primary);
+}
+.nav-details li::before {
+  border-top: 3px solid var(--primary);
+}
+.brief-container .head-items .title,
+.buyer-type ul li.active,
+.buyer-type ul li:hover {
+  background-color: var(--primary);
+  color: #fff;
+}
+.buyer-type ul li {
+  border: 1px solid var(--primary);
+  color: #000;
+}
+.inside-title {
+  border-left: 3px solid var(--primary);
+}
+.duration-details {
+  border-bottom: 2px dashed #000;
+}
+.details-head {
+  text-align: left;
+}
+.answer-info::before,
+.question-info-view::before {
+  background: #000;
+}
+#section-detail .details-item .logo-details,
+#section-detail .details-item .class-details {
+  float: left;
+}
+.result-items.tour .flight-part .details-container .details-content {
+  text-align: left;
+}
+.duration-details::after,
+.duration-details::before {
+  background-color: #000;
+}
+.article-context h2,
+.call-action span,
+.img-ph-act,
+.info_header {
+  color: var(--primary) !important;
+}
+#OpinionSubmit,
+.active_tab,
+.download-button-wrapp button {
+  background: var(--primary) !important;
+  color: #fff !important;
+}
+#OpinionSubmit,
+.info_header {
+  border: 1px solid var(--primary) !important;
+}
+.section_info_header {
+  border-bottom: 1px solid var(--primary) !important;
+}
+.SecurityCodeLeft span {
+  background-color: var(--primary) !important;
+  color: var(--secondary) !important;
+}
+.main-topImg-section {
+  background-image: url(../images/hotel-view-banner.jpg) !important;
+}
+.drop-share .inner-drop-share ul li a i {
+  font-weight: normal;
+}
+.section-menu .nav-bar > li:not(.last) {
+  border-left: unset;
+}
+.header .nav-bar > li > .sub-menu li:not(:last-child) {
+  border-bottom: unset;
+}
+#hotel-resize .side-bar .fa-phone-volume {
+  color: #fff;
+}
+.call-mobile {
+  padding: 0;
+}
+.each-right-box a:hover i,
+.each-right-box a:hover {
+  color: var(--primary);
+}
+.news-frm input.submit:hover {
+  background: var(--primary);
+}
+.replyComment a:hover,
+#OpinionSubmit:hover {
+  background: var(--secondary) !important;
+}
+.userIcon {
+  border: 4px solid var(--primary);
+}
+.replyComment a {
+  background: var(--primary);
+  border: 1px solid var(--primary);
+}
+.note-content textarea,
+.package-info-item input,
+.package-info-item select {
+  font-family: inherit;
+}
+.fa-spoon::before {
+  font-weight: normal;
+}
+.fa-hotel::before {
+  content: "\f236";
+}
+.fa-map-marked::before {
+  content: "\f278";
+  font-weight: normal;
+}
+.fa-telegram-plane::before {
+  content: "\f1d8";
+}
+.fa-facebook-f::before {
+  content: "\f082";
+}
+.fa-suitcase-rolling::before {
+  content: "\f0f2";
+}
+.fa-location-check::before {
+  content: "\f124";
+}
+.col3-second-part-header a {
+  left: unset;
+  top: 0 !important;
+}
+.second-part-header {
+  background: unset;
+  box-shadow: unset;
+  height: auto;
+}
+.Form_User-btn {
+  background: var(--primary) !important;
+}
+.Link-Register,
+.Link-ResendMail,
+.Link-Login-Prev {
+  color: #888 !important;
+}
+.link-login {
+  margin-right: 0;
+}
+.mm-spn li::before {
+  left: unset;
+  border-right: unset;
+}
+.mm-spn.mm-spn--navbar::before {
+  left: unset;
+  border-left: unset;
+}
+.mm-spn li .fa {
+  margin-left: 0;
+  border-left: unset;
+  padding-left: 0;
+}
+.btnstyle:hover {
+  color: var(--primary);
+}
+.fa,
+.fas,
+.fal {
+  font-family: "fontawesome";
+  font-weight: 900;
+}
+.fa-calendar-check::before {
+  font-family: "fontawesome";
+}
+.fa-calendar-check {
+  font-style: normal;
+}
+.content {
+  clear: both;
+}
+.SecurityCodeLeft span:hover {
+  background-color: var(--secondary) !important;
+  color: var(--primary) !important;
+}
+.fa-whatsapp::before {
+  content: "\f232";
+  font-family: "fontawesome";
+  font-weight: 400;
+}
+.fa-telegram-plane::before {
+  content: "\f1d8";
+  font-family: "fontawesome";
+  font-weight: 400;
+}
+.fa-facebook-f::before {
+  content: "\f082";
+  font-family: "fontawesome";
+  font-weight: 400;
+}
+.fa-twitter::before {
+  content: "\f099";
+  font-family: "fontawesome";
+  font-weight: 400;
+}
+#OpinioUser-box input,
+#OpinioUser-box textarea,
+.input-form select {
+  font-family: "Dana";
+}
+.SecurityCodeLeft span::before {
+  color: #fff;
+}
+.SecurityCodeLeft a img {
+  vertical-align: middle;
+  display: inline;
+}
+.social-art-footer li i:hover {
+  color: var(--secondary);
+}
+.Panel-Dashboard_link::before,
+.Logout_link::before {
+  content: unset;
+}
+.before-btn,
+.after-btn {
+  font-size: 13px;
+}
+.invoice-condition-closed i {
+  display: block;
+}
+.section-input_list span.checkbox::after {
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+}
+.search_form {
+  z-index: 1;
+}
+.search_form button {
+  background: #e9e9ed;
+}
+.search_form button:hover {
+  background: lightgray;
+}
+.coupon-content{
+    flex-wrap: nowrap;
+}
+.coupon-content input {
+  font-family: inherit;
+}
+.fa,
+.fab,
+.far,
+.fas {
+  font-family: "fontawesome";
+  font-style: normal;
+}
+.currency-selected {
+  line-height: 33px;
+  font-size: 0.75rem;
+  text-align: center;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+@media (max-width: 1024px) {
+  .btnstyle {
+    padding: 0;
+  }
+  .col3-second-part-header {
+    padding: 0 1.75rem;
+    margin-right: auto !important;
+  }
+  .col3-second-part-header i.not-login {
+    display: none;
+  }
+  .col3-second-part-header a {
+    float: none;
+  }
+  .container-login-content {
+    right: unset;
+  }
+  .clr {
+    clear: both;
+  }
+  .container-login .visible {
+    display: block;
+  }
+  .container-login .unvisible {
+    display: none;
+  }
+  .Login-options.not-login-section svg,
+  .Login-options.not-login-section i {
+    display: none;
+  }
+  .top-menu img {
+    width: 110px;
+    height: auto;
+    margin: 10px auto;
+  }
+  .background-color_2 {
+    background-color: var(--primary);
+  }
+  .background-color_2:hover {
+    background-color: var(--secondary) !important;
+  }
+  .Wrapper-logininfo button:hover {
+    background-color: var(--primary) !important;
+  }
+  .fa-user::before {
+    content: "\f007";
+    font-family: "fontawesome";
+    font-weight: 900;
+    font-style: normal;
+  }
+  .fa-lock::before {
+    content: "\f023";
+    font-family: "fontawesome";
+    font-weight: 900;
+    font-style: normal;
+  }
+  .fa-hand-point-left::before {
+    content: "\f0a5";
+    font-family: "fontawesome";
+    font-weight: 900;
+    font-style: normal;
+  }
+  .fa-redo-alt::before {
+    content: "\f2f9";
+    font-family: "fontawesome";
+    font-weight: 900;
+    font-style: normal;
+    color: var(--primary);
+  }
+  .refresh-img {
+    cursor: pointer;
+  }
+  .Link-profile svg {
+    display: none;
+  }
+  .UserInfo {
+    width: auto !important;
+    color: #fff !important;
+  }
+  .UserInfo .info-name {
+    margin: 0 3px;
+  }
+  .Link-profile {
+    padding: 0;
+  }
+  .p-absolute {
+    position: absolute;
+  }
+  .p-relative {
+    position: relative;
+  }
+  .section-login input {
+    font-family: "Dana";
+  }
+  .login_info .label {
+    font-size: 14px;
+    line-height: 38px;
+    text-align: center;
+  }
+}
+#OpinionSubmit,
+#opinionForm input {
+  font-family: "RokhFaNum-Regular";
+}
+#tabs li span:hover,
+.breadcrumbs a:hover {
+  color: var(--primary);
+}
+
+.loading-img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+}

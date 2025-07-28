@@ -2,7 +2,7 @@
     <member name="info" type="view" />
 </basis>
 <basis core="group" if="'[##cms.cms.page_index##]' = 'نمایه پیش فرض'">
-    <header>
+    <header class="header-landing-items">
         <section class="relative z-30 bg-white mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl">
             <div class="flex items-center justify-between">
                 <div class="w-full h-20">
@@ -16,48 +16,48 @@
                         </div>
                         <nav class="flex flex-1 h-full">
                             <ul class="flex items-center justify-between w-full">
-                                <li class="flex">
-                                    <a href="/Articles"
+                                <li class="flex landing-item cursor-pointer" data-id="flight" data-nav="flight" onclick="check_searchHistory('flight'); check_landing('flight')">
+                                    <span
                                         class="transition-all duration-300 text-zinc-900 hover:text-secondary-900">
-                                        Flight</a>
+                                        Flight</span>
+                                </li>
+                                <svg width="6" height="10">
+                                    <use xlink:href="/images/sprite-icons.svg#icon-between-header"></use>
+                                </svg>
+                                <li class="flex landing-item cursor-pointer" data-id="hotel" data-nav="hotel" onclick="check_searchHistory('hotel'); check_landing('hotel')">
+                                    <span
+                                        class="transition-all duration-300 text-zinc-900 hover:text-secondary-900">
+                                        Hotel</span>
+                                </li>
+                                <svg width="6" height="10">
+                                    <use xlink:href="/images/sprite-icons.svg#icon-between-header"></use>
+                                </svg>
+                                <li class="flex landing-item cursor-pointer" data-id="flighthotel" data-nav="flighthotel" onclick="check_searchHistory('flighthotel'); check_landing('flighthotel')">
+                                    <span
+                                        class="transition-all duration-300 text-zinc-900 hover:text-secondary-900">
+                                        Flight + Hotel</span>
+                                </li>
+                                <svg width="6" height="10">
+                                    <use xlink:href="/images/sprite-icons.svg#icon-between-header"></use>
+                                </svg>
+                                <li class="flex landing-item cursor-pointer" data-id="tour" data-nav="tour" onclick="check_searchHistory('tour'); check_landing('tour')">
+                                    <span
+                                        class="transition-all duration-300 text-zinc-900 hover:text-secondary-900">
+                                        Tour</span>
+                                </li>
+                                <svg width="6" height="10">
+                                    <use xlink:href="/images/sprite-icons.svg#icon-between-header"></use>
+                                </svg>
+                                <li class="flex landing-item cursor-pointer" data-id="insurance" data-nav="insurance" onclick="check_searchHistory('insurance'); check_landing('insurance')">
+                                    <span
+                                        class="transition-all duration-300 text-zinc-900 hover:text-secondary-900">
+                                        Insurance</span>
                                 </li>
                                 <svg width="6" height="10">
                                     <use xlink:href="/images/sprite-icons.svg#icon-between-header"></use>
                                 </svg>
                                 <li class="flex">
-                                    <a href="/Articles"
-                                        class="transition-all duration-300 text-zinc-900 hover:text-secondary-900">
-                                        Hotel</a>
-                                </li>
-                                <svg width="6" height="10">
-                                    <use xlink:href="/images/sprite-icons.svg#icon-between-header"></use>
-                                </svg>
-                                <li class="flex">
-                                    <a href="/Articles"
-                                        class="transition-all duration-300 text-zinc-900 hover:text-secondary-900">
-                                        Flight + Hotel</a>
-                                </li>
-                                <svg width="6" height="10">
-                                    <use xlink:href="/images/sprite-icons.svg#icon-between-header"></use>
-                                </svg>
-                                <li class="flex">
-                                    <a href="/Articles"
-                                        class="transition-all duration-300 text-zinc-900 hover:text-secondary-900">
-                                        Tour</a>
-                                </li>
-                                <svg width="6" height="10">
-                                    <use xlink:href="/images/sprite-icons.svg#icon-between-header"></use>
-                                </svg>
-                                <li class="flex">
-                                    <a href="/Articles"
-                                        class="transition-all duration-300 text-zinc-900 hover:text-secondary-900">
-                                        Insurance</a>
-                                </li>
-                                <svg width="6" height="10">
-                                    <use xlink:href="/images/sprite-icons.svg#icon-between-header"></use>
-                                </svg>
-                                <li class="flex">
-                                    <a href="/Articles"
+                                    <a href="/travel-magazine"
                                         class="transition-all duration-300 text-zinc-900 hover:text-secondary-900">
                                         Travel Magazine</a>
                                 </li>
@@ -102,8 +102,6 @@
                         <div
                             class="Login_Information cursor-pointer flex items-center relative z-10 px-6 py-3 text-white text-sm bg-primary-900 rounded transition-all duration-300 hover:bg-secondary-800">
                             <basis core="call" file="authentication/modal" lid="2"></basis>
-                            <span>Login/ rigester</span>
-
                         </div>
                     </div>
                 </div>
