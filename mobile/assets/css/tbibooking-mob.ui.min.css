@@ -366,6 +366,10 @@ body {
   height: 89px;
 }
 
+.min-h-\[657px\] {
+  min-height: 657px;
+}
+
 .h-auto {
   height: auto;
 }

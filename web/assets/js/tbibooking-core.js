@@ -835,6 +835,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const content = document.querySelector(".content-inner");
   const button = document.querySelector(".see-more");
 
+  if (!content || !button) return;
+
   const collapsedHeight = 80;
   let expanded = false;
 
@@ -864,10 +866,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const fallbackSrc = "/images/no-img.jpg";
+const fallbackSrc = "/images/no-img.jpg";
 
-  document.querySelectorAll("img").forEach((img) => {
+function applyImageFallbacks(context = document) {
+  context.querySelectorAll("img").forEach((img) => {
     if (!img.getAttribute("src")) {
       img.setAttribute("src", fallbackSrc);
     }
@@ -877,6 +879,10 @@ document.addEventListener("DOMContentLoaded", function () {
       this.src = fallbackSrc;
     };
   });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  applyImageFallbacks();
 });
 
 // fetch tour default
@@ -884,11 +890,42 @@ document.addEventListener("DOMContentLoaded", function () {
   const fetchContentTour = document.querySelector(".fetch-content-tour");
   const tourLi = document.querySelectorAll(".tour-li");
 
+  let swiperInstance = null;
+
+  function initSwiperIfMobile() {
+    const swiperEl = document.querySelector(".swiper-featured-tours-mobile");
+    if (window.innerWidth <= 1024 && swiperEl) {
+      if (swiperInstance) {
+        swiperInstance.destroy(true, true);
+        swiperInstance = null;
+      }
+      swiperInstance = new Swiper(".swiper-featured-tours-mobile", {
+        slidesPerView: 1.1,
+        speed: 400,
+        centeredSlides: false,
+        spaceBetween: 12,
+        grabCursor: true,
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: false,
+        },
+        loop: true,
+      });
+    }
+  }
+
+  function updateLoadMoreLink(catid) {
+    const loadMoreLink = document.querySelector(".load-more-tours");
+    if (loadMoreLink) {
+      loadMoreLink.setAttribute("href", `/tour-list.bc?catid=${catid}`);
+    }
+  }
+
   if (fetchContentTour) {
     async function firstContent() {
       const firstDataId = tourLi[0].getAttribute("data-id");
       fetchContentTour.innerHTML =
-        '<div class="flex justify-center mt-20"><span class="fetch-loader"></span></div>';
+        '<div class="w-full flex justify-center mt-10"><span class="fetch-loader"></span></div>';
       try {
         const firstResponse = await fetch(
           `/tour-load-items.bc?catid=${firstDataId}`
@@ -898,6 +935,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         const firstData = await firstResponse.text();
         fetchContentTour.innerHTML = firstData;
+
+        applyImageFallbacks(fetchContentTour);
+        initSwiperIfMobile();
+        updateLoadMoreLink(firstDataId);
       } catch (error) {
         console.error("Fetch failed:", error);
         fetchContentTour.innerHTML =
@@ -908,6 +949,7 @@ document.addEventListener("DOMContentLoaded", function () {
         tourLi[0].style.color = "#fff";
       }
     }
+
     firstContent();
 
     tourLi.forEach((item) => {
@@ -924,7 +966,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         async function secondContent() {
           fetchContentTour.innerHTML =
-            '<div class="flex justify-center mt-20"><span class="fetch-loader"></span></div>';
+            '<div class="w-full flex justify-center mt-10"><span class="fetch-loader"></span></div>';
           try {
             const firstResponse = await fetch(
               `/tour-load-items.bc?catid=${cmsQuery}`
@@ -934,11 +976,16 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             const firstData = await firstResponse.text();
             fetchContentTour.innerHTML = firstData;
+
+            applyImageFallbacks(fetchContentTour);
+            initSwiperIfMobile();
+            updateLoadMoreLink(cmsQuery);
           } catch (error) {
             fetchContentTour.innerHTML =
               "<p>Error loading data: " + error.message + "</p>";
           }
         }
+
         secondContent();
       });
     });
@@ -1064,7 +1111,7 @@ if (document.querySelector(".swiper-popular-destination-mobile")) {
   var swiperPopularDestinationMobile = new Swiper(
     ".swiper-popular-destination-mobile",
     {
-      slidesPerView: 1.3,
+      slidesPerView: "auto",
       speed: 400,
       centeredSlides: false,
       spaceBetween: 12,
@@ -1077,20 +1124,7 @@ if (document.querySelector(".swiper-popular-destination-mobile")) {
     }
   );
 }
-if (document.querySelector(".swiper-featured-tours-mobile")) {
-  var swiperFeaturedToursMobile = new Swiper(".swiper-featured-tours-mobile", {
-    slidesPerView: 1.1,
-    speed: 400,
-    centeredSlides: false,
-    spaceBetween: 12,
-    grabCursor: true,
-    autoplay: {
-      delay: 3500,
-      disableOnInteraction: false,
-    },
-    loop: true,
-  });
-}
+
 if (document.querySelector(".swiper-featured-hotels-mobile")) {
   var swiperFeaturedHotelsMobile = new Swiper(
     ".swiper-featured-hotels-mobile",
