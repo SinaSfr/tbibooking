@@ -1,16 +1,93 @@
+<basis core="dbsource" source="basiscore" lid="2" mid="20" name="popular-destinations">
+  <member name="cat" type="tree" request="cat" parentid="215684" order="ord"></member>
+</basis>
+
+<basis core="dbsource" source="basiscore" lid="2" mid="20" name="our-featured-tours">
+  <member name="cat" type="tree" request="cat" parentid="215685" order="ord"></member>
+</basis>
+
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="exclusive-travel-deals">
+  <member name="cat" type="tree" request="cat" parentid="215731" order="ord"></member>
+</basis>
+
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="215728">
+  <member name="perfect-come-True" type="list" link="article.bc" propertyid="" perpage="6" order="ord" size="48x48" />
+</basis>
+
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="215733">
+  <member name="popular-articles" type="list" link="article.bc" propertyid="3087996" perpage="3" order="ord"
+    size="421x224" />
+</basis>
+
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="215692">
+  <member name="our-featured-hotels" type="list" link="hotel.bc" propertyid="7244,3087993,3087994,3087995" perpage="6"
+    order="ord" size="260x176" />
+</basis>
+
+<basis core="dbsource" source="basiscore" lid="2" mid="20" name="db" catid="215693">
+  <member name="travel-blog" type="list" link="article.bc.bc" propertyid="" perpage="6" order="ord" size="418x240" />
+</basis>
+
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" usedforid="2376392">
+  <member name="our-service" type="view" />
+</basis>
+
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, viewport-fit=cover" />
+
+  <!-- Title & Description -->
+  <title>Tbibooking | Book Flights & Hotels Online | International Travel Deals</title>
+
+  <meta name="description"
+    content="Tbibooking is your trusted travel partner for booking international flights, hotels, and holiday packages. Explore top destinations like Istanbul, Antalya, Dubai, Paris, and more with unbeatable deals." />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="[##cms.request.:scheme##]://[##cms.request.full-url##]" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="" />
+  <meta property="og:description"
+    content="Discover affordable flights, luxury hotels, and exclusive travel packages with Tbibooking. Your gateway to global adventures." />
+  <meta property="og:url" content="[##cms.request.:scheme##]://[##cms.request.full-url##]" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Tbibooking Travel Agency" />
+  <meta property="og:image" content="https://Tbibooking.com/images/custom_image_1200x630.png" />
+  <meta property="og:image:alt" content="Tbibooking logo - Your trusted travel agency" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:type" content="image/png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@" />
+  <meta name="twitter:creator" content="" />
+  <meta name="twitter:title" content="" />
+  <meta name="twitter:description" content="" />
+  <meta name="twitter:image" content="https://Tbibooking.com/images/custom_image_1200x630.png" />
+
+  <!-- SEO Robots -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- PWA support -->
+  <basis core="call" file="pwa.inc" lid="2" />
+
+  <!-- Preload high-priority image -->
+  <link rel="preload" as="image" imagesrcset="image address" fetchpriority="high" />
+
+  <!-- Common styles -->
   <link rel="stylesheet" href="[##cms.cms.cdn##]/_css/swiper-bundle.min.css" />
-    <basis core="call" file="style.inc" pageindex="[##cms.cms.pageindex##]" lid="2"/>
+  <basis core="call" file="style.inc" pageindex="[##cms.cms.pageindex##]" lid="2" />
 </head>
 
 <body>
-    <basis core="call" file="header.inc" pageindex="[##cms.cms.pageindex##]" lid="2"/>
+  <basis core="call" file="header.inc" pageindex="[##cms.cms.pageindex##]" lid="2" />
   <main>
     <section class="bg-defaultBg bg-center bg-cover pt-16 pb-10">
       <div class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl">
@@ -19,13 +96,13 @@
             <h2 class="text-zinc-900 font-bold">Unveil the Beauty of the World Every Day</h2>
             <h3 class="text-zinc-400 text-xs mb-4">Travel Without Limits Browse, Book, Explore</h3>
           </div>
-            <div class="search-banner">
-              <div class="search-box-container mobile-search-box">
-                <div id="search-box" class="dir-ltr">
-                  <div class="flex justify-center"><span class="loader"></span></div>
-                </div>
+          <div class="search-banner">
+            <div class="search-box-container en mobile-search-box">
+              <div id="search-box" class="dir-ltr">
+                <div class="flex justify-center"><span class="loader"></span></div>
               </div>
             </div>
+          </div>
         </div>
       </div>
     </section>
@@ -35,111 +112,62 @@
       <h3 class="text-zinc-600 text-xs mt-1">Navigate the Globe with Confidence</h3>
       <!-- Slider main container -->
       <div class="swiper swiper-popular-destination-mobile mt-8">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-          <!-- Slides -->
-          <div class="relative swiper-slide slide-auto-width rounded-xl overflow-hidden">
-            <div class="bg-fade-black absolute inset-0 w-full h-full"></div>
-            <a href="" class="flex">
-              <img src="[##cms.cms.cdn##]/images/popular-destionation-card.jpg" class="h-52 object-cover" alt="@title"
-                width="172" height="208" loading="lazy" />
-            </a>
-            <h2 class="absolute left-3 bottom-3 text-white text-sm">Colosseum</h2>
-          </div>
-          <div class="relative swiper-slide slide-auto-width">
-            <a href="" class="flex rounded-xl overflow-hidden">
-              <img src="[##cms.cms.cdn##]/images/popular-destionation-card.jpg" class="h-52 object-cover" alt="@title"
-                width="172" height="208" loading="lazy" />
-            </a>
-            <h2 class="absolute left-3 bottom-3 text-white text-sm">Colosseum</h2>
-          </div>
-          <div class="relative swiper-slide slide-auto-width">
-            <a href="" class="flex rounded-xl overflow-hidden">
-              <img src="[##cms.cms.cdn##]/images/popular-destionation-card.jpg" class="h-52 object-cover" alt="@title"
-                width="172" height="208" loading="lazy" />
-            </a>
-            <h2 class="absolute left-3 bottom-3 text-white text-sm">Colosseum</h2>
-          </div>
-        </div>
+        <basis core="tree" datamembername="popular-destinations.cat" idcol="catid" parentidcol="parentid"
+          nullvalue="215684">
+          <layout>
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              @child
+            </div>
+          </layout>
+          <face filter="link is null">
+            <div class="relative swiper-slide slide-auto-width rounded-xl overflow-hidden">
+              <div class="bg-fade-black absolute inset-0 w-full h-full"></div>
+              <a href="/tour-list.bc?catid=@catid" class="flex">
+                <img src="@image" class="h-52 object-cover" alt="@title" width="172" height="208" loading="lazy" />
+              </a>
+              <h2 class="absolute left-3 bottom-3 text-white text-sm">@title</h2>
+            </div>
+          </face>
+          <face>
+            <div class="relative swiper-slide slide-auto-width rounded-xl overflow-hidden">
+              <div class="bg-fade-black absolute inset-0 w-full h-full"></div>
+              <a href="/@link" class="flex">
+                <img src="@image" class="h-52 object-cover" alt="@title" width="172" height="208" loading="lazy" />
+              </a>
+              <h2 class="absolute left-3 bottom-3 text-white text-sm">@title</h2>
+            </div>
+          </face>
+        </basis>
+
+
       </div>
     </section>
 
     <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-7">
       <h2 class="text-zinc-900 font-bold mb-3">Our Featured Tours</h2>
-      <ul class="flex items-center gap-2 overflow-x-auto whitespace-nowrap scrollbar-thin">
-        <li class="text-xs text-zinc-900 rounded-[50px] px-6 py-4 bg-zinc-200">destination1</li>
-        <li class="text-xs text-zinc-900 rounded-[50px] px-6 py-4 bg-zinc-200">destination1</li>
-        <li class="text-xs text-zinc-900 rounded-[50px] px-6 py-4 bg-zinc-200">destination1</li>
-      </ul>
+      <basis core="tree" datamembername="our-featured-tours.cat" idcol="catid" parentidcol="parentid"
+        nullvalue="215685">
+        <layout>
+          <ul class="flex items-center gap-2 overflow-x-auto whitespace-nowrap scrollbar-thin">
+            @child
+          </ul>
+        </layout>
+        <face>
+          <li class="tour-li text-xs text-zinc-900 rounded-[50px] px-6 py-4 bg-zinc-200" data-id="@catid">
+            @title
+          </li>
+        </face>
+      </basis>
+
       <!-- Slider main container -->
       <div class="swiper swiper-featured-tours-mobile mt-8">
+
         <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-          <!-- Slides -->
-          <div class="swiper-slide">
-            <a href="" class="block rounded-xl overflow-hidden">
-              <img src="[##cms.cms.cdn##]/images/popular-destionation-card.jpg" class="w-full h-44" alt="@title"
-                width="260" height="176" loading="lazy" />
-              <div class="bg-white p-4 border-x border-b border-solid border-zinc-400">
-                <h2 class="text-zinc-900 font-bold mb-1">Treurer Olive Grove & Grand House - Adults Only + Flight</h2>
-                <h3 class="text-xs text-zinc-900 mb-1">Algaida</h3>
-                <div class="flex items-center gap-1 text-zinc-900 text-sm mb-1">
-                  <svg width="19" height="19" class="flex-shrink-0">
-                    <use xlink:href="/images/sprite-icons.svg#icon-hotel"></use>
-                  </svg>
-                  5 Stars - 10/10 Exceptional (9)
-                </div>
-                <div class="flex items-center gap-1 text-zinc-900 text-sm mb-2">
-                  <svg width="19" height="19" class="flex-shrink-0">
-                    <use xlink:href="/images/sprite-icons.svg#icon-airplane"></use>
-                  </svg>
-                  Leipzig(LEJ)-Palma de mallorca
-                </div>
-                <div>
-                  <div class="text-zinc-900 font-bold text-xl">1,421 $</div>
-                  <div class="flex items-center justify-between">
-                    <span class="text-zinc-900 text-xs">Per traveler</span>
-                    <img src="[##cms.cms.cdn##]/images/turkish-airline.png" class="h-auto" alt="" width="70" height="30"
-                      loading="lazy" />
-                  </div>
-                </div>
-                <button
-                  class="bg-primary-50 text-primary-900 border border-solid border-primary-900 rounded-[40px] px-6 py-3 mt-2">Details</button>
-              </div>
-            </a>
-          </div>
-          <div class="swiper-slide">
-            <a href="" class="block rounded-xl overflow-hidden">
-              <img src="[##cms.cms.cdn##]/images/popular-destionation-card.jpg" class="w-full h-44" alt="@title"
-                width="260" height="176" loading="lazy" />
-              <div class="bg-white p-4 border-x border-b border-solid border-zinc-400">
-                <h2 class="text-zinc-900 font-bold mb-1">Treurer Olive Grove & Grand House - Adults Only + Flight</h2>
-                <h3 class="text-xs text-zinc-900 mb-1">Algaida</h3>
-                <div class="flex items-center gap-1 text-zinc-900 text-sm mb-1">
-                  <svg width="19" height="19" class="flex-shrink-0">
-                    <use xlink:href="/images/sprite-icons.svg#icon-hotel"></use>
-                  </svg>
-                  5 Stars - 10/10 Exceptional (9)
-                </div>
-                <div class="flex items-center gap-1 text-zinc-900 text-sm mb-2">
-                  <svg width="19" height="19" class="flex-shrink-0">
-                    <use xlink:href="/images/sprite-icons.svg#icon-airplane"></use>
-                  </svg>
-                  Leipzig(LEJ)-Palma de mallorca
-                </div>
-                <div>
-                  <div class="text-zinc-900 font-bold text-xl">1,421 $</div>
-                  <div class="flex items-center justify-between">
-                    <span class="text-zinc-900 text-xs">Per traveler</span>
-                    <img src="[##cms.cms.cdn##]/images/turkish-airline.png" class="h-auto" alt="" width="70" height="30"
-                      loading="lazy" />
-                  </div>
-                </div>
-                <button
-                  class="bg-primary-50 text-primary-900 border border-solid border-primary-900 rounded-[40px] px-6 py-4 mt-2">Details</button>
-              </div>
-            </a>
-          </div>
+        <div class="swiper-wrapper fetch-content-tour">
+
+
         </div>
       </div>
       <a href=""
@@ -187,7 +215,7 @@
             </svg>
             <div id="cityDropdownMenu"
               class="flex-col gap-3 absolute z-30 top-full right-0 left-0 mx-auto mt-2 w-64 py-4 px-3 rounded-md shadow-lg bg-white border hidden">
-              <!-- آیتم‌های شهر به صورت داینامیک اینجا اضافه می‌شن -->
+              <!-- city -->
             </div>
           </li>
           <li id="ratingFilter"
@@ -199,7 +227,7 @@
 
             <div id="ratingDropdownMenu"
               class="flex-col gap-3 absolute z-30 top-full right-0 left-0 mx-auto mt-2 w-64 py-4 px-3 rounded-md shadow-lg bg-white border hidden">
-              <!-- گزینه‌های ۱ تا ۵ ستاره -->
+              <!-- star -->
 
             </div>
           </li>
@@ -260,76 +288,47 @@
         </ul>
       </div>
 
-      <!-- Additional required wrapper -->
-      <div class="hotel-card-wrapper flex flex-col gap-3">
-        <!-- Slides -->
-        <div>
-          <a href="" class="hotel-card block rounded-xl overflow-hidden" data-hotel="Chiang" data-price="490$"
-            data-rating="4">
-            <img src="[##cms.cms.cdn##]/images/popular-destionation-card.jpg" class="w-full h-44" alt="@title"
+      <basis core="list" datamembername="db.our-featured-hotels">
+        <layout>
+          <div class="hotel-card-wrapper flex flex-col gap-3">
+            <!-- items -->
+            @child
+          </div>
+        </layout>
+        <face>
+          <a href="/@link" class="hotel-card block rounded-xl overflow-hidden" data-hotel="@prp_3087994" data-price="@prp_3087995"
+            data-rating="@prp_3087993">
+            <img src="@00260X00176prp" class="w-full h-44 object-cover" alt="@title"
               width="260" height="176" loading="lazy" />
             <div
-              class="flex flex-col gap-2 bg-white p-4 border-x border-b border-solid border-zinc-400 divide-y divide-zinc-400">
+              class="flex flex-col gap-2 bg-white rounded-b-xl p-4 border-x border-b border-solid border-zinc-400 divide-y divide-zinc-400">
               <div>
                 <div
                   class="flex items-center gap-1 text-sm font-medium text-zinc-600 p-2 bg-white shadow-boxStar rounded mb-2">
                   <svg width="24" height="24" class="flex-shrink-0">
                     <use xlink:href="/images/sprite-icons.svg#icon-golden-star"></use>
                   </svg>
-                  4 star
+                  @prp_3087993 star
                 </div>
-                <h2 class="text-zinc-900 font-bold text-xl mb-1">Chiang Mai</h2>
+                <h2 class="text-zinc-900 font-bold text-xl mb-1">@title</h2>
                 <div class="flex items-center text-zinc-500 text-sm">
                   <svg width="24" height="24" class="flex-shrink-0">
                     <use xlink:href="/images/sprite-icons.svg#icon-blue-location"></use>
                   </svg>
-                  Thailand
+                  @prp_3087994
                 </div>
               </div>
-              <div class="text-zinc-500 text-sm pt-2">Visit the temples and the Chiang Mai Night Bazaar, a huge huge
-                market located on Chiang Klan Road.</div>
+              <div class="text-zinc-500 text-sm pt-2 line-clamp-5">@prp_7244</div>
               <div class="flex items-center justify-between pt-2">
                 <button
                   class="bg-primary-50 text-primary-900 border border-solid border-primary-900 rounded-[40px] px-6 py-4">Details</button>
-                <div class="text-zinc-900 font-bold text-2xl">$ 490</div>
+                <div class="text-zinc-900 font-bold text-2xl">$ @prp_3087995</div>
               </div>
             </div>
           </a>
-        </div>
-        <div>
-          <a href="" class="hotel-card block rounded-xl overflow-hidden" data-hotel="Thailand" data-price="470"
-            data-rating="4">
-            <img src="[##cms.cms.cdn##]/images/popular-destionation-card.jpg" class="w-full h-44" alt="@title"
-              width="260" height="176" loading="lazy" />
-            <div
-              class="flex flex-col gap-2 bg-white p-4 border-x border-b border-solid border-zinc-400 divide-y divide-zinc-400">
-              <div>
-                <div
-                  class="flex items-center gap-1 text-sm font-medium text-zinc-600 p-2 bg-white shadow-boxStar rounded mb-2">
-                  <svg width="24" height="24" class="flex-shrink-0">
-                    <use xlink:href="/images/sprite-icons.svg#icon-golden-star"></use>
-                  </svg>
-                  4 star
-                </div>
-                <h2 class="text-zinc-900 font-bold text-xl mb-1">Chiang Mai</h2>
-                <div class="flex items-center text-zinc-500 text-sm">
-                  <svg width="24" height="24" class="flex-shrink-0">
-                    <use xlink:href="/images/sprite-icons.svg#icon-blue-location"></use>
-                  </svg>
-                  Thailand
-                </div>
-              </div>
-              <div class="text-zinc-500 text-sm pt-2">Visit the temples and the Chiang Mai Night Bazaar, a huge huge
-                market located on Chiang Klan Road.</div>
-              <div class="flex items-center justify-between pt-2">
-                <button
-                  class="bg-primary-50 text-primary-900 border border-solid border-primary-900 rounded-[40px] px-6 py-4">Details</button>
-                <div class="text-zinc-900 font-bold text-2xl">$ 470</div>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
+        </face>
+      </basis>
+
 
     </section>
 
@@ -480,8 +479,8 @@
         </div>
       </div>
       <div class="relative bg-specialcolor-4 rounded-[32px] mt-2">
-        <img src="[##cms.cms.cdn##]/images/airplane.png" class="w-full absolute bottom-0 h-60" alt="airplane" width="288"
-          height="235" loading="lazy" />
+        <img src="[##cms.cms.cdn##]/images/airplane.png" class="w-full absolute bottom-0 h-60" alt="airplane"
+          width="288" height="235" loading="lazy" />
         <div class="relative z-10 flex flex-col gap-7 pl-6 pr-3 py-10">
           <h2 class="text-zinc-900 text-2xl font-bold">Best Price</h2>
           <div class="text-zinc-900 text-sm">Price match within 48 hours of order confirmation</div>
@@ -581,34 +580,7 @@
   </main>
 
   <script src="[##cms.cms.cdn##]/_js/swiper-bundle.11.2.5.min.js"></script>
-  <script>
-    var swiperFeaturedHotelsMobile = new Swiper('.swiper-featured-hotels-mobile', {
-      slidesPerView: 1.1,
-      speed: 400,
-      centeredSlides: false,
-      spaceBetween: 12,
-      grabCursor: true,
-      autoplay: {
-        delay: 3500,
-        disableOnInteraction: false,
-      },
-      loop: true,
-    });
-    var swiperTravelBlogMobile = new Swiper('.swiper-travel-blog-mobile', {
-      slidesPerView: 1.1,
-      speed: 400,
-      centeredSlides: false,
-      spaceBetween: 12,
-      grabCursor: true,
-      autoplay: {
-        delay: 3500,
-        disableOnInteraction: false,
-      },
-      loop: true,
-    });
-  </script>
-
-  <basis core="call" file="footer.inc" pageindex="[##cms.cms.pageindex##]" lid="2"/>
+  <basis core="call" file="footer.inc" pageindex="[##cms.cms.pageindex##]" lid="2" />
 </body>
 
 </html>

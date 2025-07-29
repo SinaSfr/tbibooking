@@ -830,6 +830,55 @@ document.querySelectorAll(".accordion-toggle").forEach((toggle) => {
   });
 });
 
+// see-more
+document.addEventListener("DOMContentLoaded", function () {
+  const content = document.querySelector(".content-inner");
+  const button = document.querySelector(".see-more");
+
+  const collapsedHeight = 80;
+  let expanded = false;
+
+  const fullHeight = content.scrollHeight;
+
+  if (fullHeight <= collapsedHeight) {
+    button.style.display = "none";
+    content.style.height = "auto";
+  } else {
+    content.style.height = collapsedHeight + "px";
+    content.style.overflow = "hidden";
+    content.style.transition = "height 0.5s ease";
+
+    button.style.display = "inline-block";
+    button.textContent = "مشاهده بیشتر";
+
+    button.addEventListener("click", function () {
+      if (!expanded) {
+        content.style.height = fullHeight + "px";
+        button.textContent = "نمایش کمتر";
+      } else {
+        content.style.height = collapsedHeight + "px";
+        button.textContent = "مشاهده بیشتر";
+      }
+      expanded = !expanded;
+    });
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const fallbackSrc = "/images/no-img.jpg";
+
+  document.querySelectorAll("img").forEach((img) => {
+    if (!img.getAttribute("src")) {
+      img.setAttribute("src", fallbackSrc);
+    }
+
+    img.onerror = function () {
+      this.onerror = null;
+      this.src = fallbackSrc;
+    };
+  });
+});
+
 // fetch tour default
 document.addEventListener("DOMContentLoaded", function () {
   const fetchContentTour = document.querySelector(".fetch-content-tour");
@@ -896,6 +945,120 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+// footer-form
+function uploadDocumentFooter(args) {
+  document.querySelector("#footer-form .Loading_Form").style.display = "block";
+  const captcha = document
+    .querySelector("#footer-form")
+    .querySelector("#captchaContainer input[name='captcha']").value;
+  const captchaid = document
+    .querySelector("#footer-form")
+    .querySelector("#captchaContainer input[name='captchaid']").value;
+  const stringJson = JSON.stringify(args.source?.rows[0]);
+  $bc.setSource("cms.uploadFooter", {
+    value: stringJson,
+    captcha: captcha,
+    captchaid: captchaid,
+    run: true,
+  });
+}
+
+function refreshCaptchaFooter(e) {
+  $bc.setSource("captcha.refreshFooter", true);
+}
+
+async function OnProcessedEditObjectFooter(args) {
+  var response = args.response;
+  var json = await response.json();
+  var errorid = json.errorid;
+  if (errorid == "6") {
+    document.querySelector("#footer-form .Loading_Form").style.display = "none";
+    document.querySelector("#footer-form .message-api").innerHTML =
+      "درخواست شما با موفقیت ثبت شد.";
+    document.querySelector("#footer-form .message-api").style.color =
+      "rgb(10 240 10)";
+  } else {
+    refreshCaptchaFooter();
+    setTimeout(() => {
+      document.querySelector("#footer-form .Loading_Form").style.display =
+        "none";
+      document.querySelector("#footer-form .message-api").innerHTML =
+        "خطایی رخ داده, لطفا مجدد اقدام کنید.";
+      document.querySelector("#footer-form .message-api").style.color =
+        "rgb(220 38 38)";
+    }, 2000);
+  }
+}
+
+async function RenderFormFooter() {
+  var inputElementVisa7 = document.querySelector(
+    " .email-footer input[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "Enter your email");
+}
+
+// about-form
+function uploadDocumentAbout(args) {
+  document.querySelector("#about-form .Loading_Form").style.display = "block";
+  const captcha = document
+    .querySelector("#about-form")
+    .querySelector("#captchaContainer input[name='captcha']").value;
+  const captchaid = document
+    .querySelector("#about-form")
+    .querySelector("#captchaContainer input[name='captchaid']").value;
+  const stringJson = JSON.stringify(args.source?.rows[0]);
+  $bc.setSource("cms.uploadAbout", {
+    value: stringJson,
+    captcha: captcha,
+    captchaid: captchaid,
+    run: true,
+  });
+}
+
+function refreshCaptchaAbout(e) {
+  $bc.setSource("captcha.refreshAbout", true);
+}
+
+async function OnProcessedEditObjectAbout(args) {
+  var response = args.response;
+  var json = await response.json();
+  var errorid = json.errorid;
+  if (errorid == "6") {
+    document.querySelector("#about-form .Loading_Form").style.display = "none";
+    document.querySelector("#about-form .message-api").innerHTML =
+      "درخواست شما با موفقیت ثبت شد.";
+    document.querySelector("#about-form .message-api").style.color =
+      "rgb(10 240 10)";
+  } else {
+    refreshCaptchaAbout();
+    setTimeout(() => {
+      document.querySelector("#about-form .Loading_Form").style.display =
+        "none";
+      document.querySelector("#about-form .message-api").innerHTML =
+        "خطایی رخ داده, لطفا مجدد اقدام کنید.";
+      document.querySelector("#about-form .message-api").style.color =
+        "rgb(220 38 38)";
+    }, 2000);
+  }
+}
+
+async function RenderFormAbout() {
+  var inputElementVisa7 = document.querySelector(
+    ".name-about input[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "Name");
+
+  var inputElementVisa7 = document.querySelector(
+    ".email-about input[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "Email");
+
+  var inputElementVisa7 = document.querySelector(
+    ".message-about textarea[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "Description");
+}
+
 // swipers
 if (document.querySelector(".swiper-popular-destination-mobile")) {
   var swiperPopularDestinationMobile = new Swiper(
@@ -916,6 +1079,37 @@ if (document.querySelector(".swiper-popular-destination-mobile")) {
 }
 if (document.querySelector(".swiper-featured-tours-mobile")) {
   var swiperFeaturedToursMobile = new Swiper(".swiper-featured-tours-mobile", {
+    slidesPerView: 1.1,
+    speed: 400,
+    centeredSlides: false,
+    spaceBetween: 12,
+    grabCursor: true,
+    autoplay: {
+      delay: 3500,
+      disableOnInteraction: false,
+    },
+    loop: true,
+  });
+}
+if (document.querySelector(".swiper-featured-hotels-mobile")) {
+  var swiperFeaturedHotelsMobile = new Swiper(
+    ".swiper-featured-hotels-mobile",
+    {
+      slidesPerView: 1.1,
+      speed: 400,
+      centeredSlides: false,
+      spaceBetween: 12,
+      grabCursor: true,
+      autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+      },
+      loop: true,
+    }
+  );
+}
+if (document.querySelector(".swiper-travel-blog-mobile")) {
+  var swiperTravelBlogMobile = new Swiper(".swiper-travel-blog-mobile", {
     slidesPerView: 1.1,
     speed: 400,
     centeredSlides: false,
