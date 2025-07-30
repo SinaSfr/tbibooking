@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover">
+  <!-- Title & Description -->
+  <title>[##cms.seo.title|(Tbibooking - Book Flights & Hotels Online - International Travel Deals)##]
+  </title>
+  <meta name="description"
+    content="[##cms.seo.description|(Tbibooking is your trusted travel partner for booking international flights, hotels, and holiday packages. Explore top destinations like Istanbul, Antalya, Dubai, Paris, and more with unbeatable deals.)##]">
+  <!-- Title & Description -->
+  <basis core="dbsource" source="hosting" name="tag" urlid="[##cms.seo.urlid##]">
+    <member type="list" name="list" request="taglist" preview=""></member>
+  </basis>
+  <basis core="print" datamembername="tag.list">
+    <face filter="key = 'canonical'">
+      <link rel="canonical" href="@value" />
+    </face>
+    <face>
+      <meta property="@key" content="@value" />
+    </face>
+  </basis>
+  <!-- pwa metatags -->
+  <basis core="call" file="pwa.inc" pageindex="[##cms.cms.pageindex##]" lid="2" />
+  <!-- common styles for all page -->
+  <basis core="call" file="style.inc" pageindex="[##cms.cms.pageindex##]" lid="2" />
+</head>
+
+<body>
+  <basis core="call" file="header.inc" pageindex="[##cms.cms.pageindex##]" lid="2" />
+  <main>
+    <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-3">
+      <h1 class="font-bold text-primary-900 mb-3">About us</h1>
+      <div class="text-sm text-primary-600 mb-4">
+        <a href="">Home</a>
+        / Blog
+      </div>
+      <p class="text-3xl text-secondary-800 font-reeniebeanie">Explore the world with us, one adventure at a time.</p>
+      <p class="text-zinc-900 font-bold mt-6">
+        The perfect
+        <span class="text-secondary-800">vacation</span>
+        <br />
+        come true with our
+        <br />
+        Travel Agency
+      </p>
+      <basis core="print" datamembername="db.offices">
+        <face>
+          <div class="text-zinc-600 text-xs mt-2 content-inner">
+            @prp_8142
+          </div>
+        </face>
+      </basis>
+
+      <button
+        class="see-more flex items-center justify-center w-28 h-12 text-sm bg-secondary-600 rounded-full mt-2">More
+        info</button>
+    </section>
+
+    <section class="gallery-about relative mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-24">
+      <img src="[##cms.cms.cdn##]/images/pic-one.jpg" class="w-full rounded-3xl z-10 relative" alt="pic-one" width="312"
+        height="208" loading="lazy" />
+      <img src="[##cms.cms.cdn##]/images/pic-top-right.jpg"
+        class="absolute -right-2 -top-6 rounded-2xl h-20 object-cover" alt="pic-top-right" width="118" height="80"
+        loading="lazy" />
+      <img src="[##cms.cms.cdn##]/images/pic-top-left.jpg"
+        class="absolute -top-16 left-16 rounded-2xl h-12 object-cover" alt="pic-top-left" width="77" height="48"
+        loading="lazy" />
+      <img src="[##cms.cms.cdn##]/images/pic-bottom-left.jpg"
+        class="absolute z-10 -bottom-12 -left-3 rounded-2xl h-[89px] object-cover" alt="pic-bottom-left" width="89"
+        height="89" loading="lazy" />
+      <img src="[##cms.cms.cdn##]/images/pic-bottom-right.jpg"
+        class="absolute z-10 -bottom-2 -right-2 rounded-2xl h-12 object-cover" alt="pic-bottom-right" width="77"
+        height="48" loading="lazy" />
+    </section>
+
+    <section class="relative mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-24">
+      <div
+        class="flex flex-col gap-5 border border-solid border-zinc-700 rounded-[32px] py-8 px-3 divide-y divide-zinc-700">
+        <basis core="print" datamembername="db.info">
+          <layout>
+            <div>
+              <svg width="48" height="48" class="flex-shrink-0">
+                <use xlink:href="/images/sprite-icons.svg#icon-helpdesk-black"></use>
+              </svg>
+              <h2 class="text-zinc-900 mt-4">Need help? Call us</h2>
+              @child
+            </div>
+          </layout>
+          <face filter="TypeID in(240)">
+            <h3 class="text-zinc-900 font-bold text-2xl">@text</h3>
+            <a href="tel:@text" class="text-secondary-800">Call</a>
+          </face>
+        </basis>
+
+        <div class="pt-5">
+          <svg width="48" height="48" class="flex-shrink-0">
+            <use xlink:href="/images/sprite-icons.svg#icon-speaker-black"></use>
+          </svg>
+          <h2 class="text-zinc-900 mt-4">Follow us</h2>
+          <basis core="print" datamembername="db.info">
+            <layout>
+              <div class="flex items-center gap-2 mt-2">
+                @child
+              </div>
+            </layout>
+            <face filter="TypeID in('245') and text in('Instagram')">
+              <a href="@largetext" rel="noopener" aria-label="Instagram"
+                class="flex items-center justify-center w-11 h-11 border border-solid border-primary-950 rounded-full">
+                <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M13.9891 2.01172H7.00573C3.9724 2.01172 2.16406 3.82006 2.16406 6.85339V13.8284C2.16406 16.87 3.9724 18.6784 7.00573 18.6784H13.9808C17.0141 18.6784 18.8224 16.87 18.8224 13.8367V6.85339C18.8308 3.82006 17.0224 2.01172 13.9891 2.01172ZM10.4974 13.5784C8.71406 13.5784 7.26406 12.1284 7.26406 10.3451C7.26406 8.56172 8.71406 7.11172 10.4974 7.11172C12.2808 7.11172 13.7308 8.56172 13.7308 10.3451C13.7308 12.1284 12.2808 13.5784 10.4974 13.5784ZM15.4308 6.07839C15.3891 6.17839 15.3308 6.27006 15.2558 6.35339C15.1724 6.42839 15.0808 6.48672 14.9808 6.52839C14.8808 6.57006 14.7724 6.59506 14.6641 6.59506C14.4391 6.59506 14.2308 6.51172 14.0724 6.35339C13.9974 6.27006 13.9391 6.17839 13.8974 6.07839C13.8558 5.97839 13.8308 5.87006 13.8308 5.76172C13.8308 5.65339 13.8558 5.54506 13.8974 5.44506C13.9391 5.33672 13.9974 5.25339 14.0724 5.17006C14.2641 4.97839 14.5558 4.88672 14.8224 4.94506C14.8808 4.95339 14.9308 4.97006 14.9808 4.99506C15.0308 5.01172 15.0808 5.03672 15.1308 5.07006C15.1724 5.09506 15.2141 5.13672 15.2558 5.17006C15.3308 5.25339 15.3891 5.33672 15.4308 5.44506C15.4724 5.54506 15.4974 5.65339 15.4974 5.76172C15.4974 5.87006 15.4724 5.97839 15.4308 6.07839Z"
+                    fill="#18181B" />
+                </svg>
+              </a>
+            </face>
+            <face filter="TypeID in('245') and text in('Facebook')">
+              <a href="@largetext" rel="noopener" aria-label="Facebook"
+                class="flex items-center justify-center w-11 h-11 border border-solid border-primary-950 rounded-full">
+                <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M18.8307 13.8367C18.8307 16.87 17.0224 18.6784 13.989 18.6784H12.9974C12.539 18.6784 12.164 18.3034 12.164 17.845V13.0367C12.164 12.8117 12.3474 12.62 12.5724 12.62L14.039 12.595C14.1557 12.5867 14.2557 12.5034 14.2807 12.3867L14.5724 10.795C14.5974 10.645 14.4807 10.5034 14.3224 10.5034L12.5474 10.5284C12.314 10.5284 12.1307 10.3451 12.1224 10.1201L12.0891 8.07839C12.0891 7.94506 12.1974 7.8284 12.339 7.8284L14.339 7.79506C14.4807 7.79506 14.5891 7.68674 14.5891 7.54507L14.5557 5.54505C14.5557 5.40338 14.4474 5.29506 14.3057 5.29506L12.0557 5.3284C10.6724 5.3534 9.5724 6.48672 9.5974 7.87006L9.63906 10.1617C9.64739 10.395 9.46407 10.5784 9.23073 10.5867L8.23072 10.6034C8.08906 10.6034 7.98073 10.7117 7.98073 10.8534L8.00573 12.4367C8.00573 12.5784 8.11406 12.6867 8.25572 12.6867L9.25573 12.67C9.48907 12.67 9.67238 12.8534 9.68072 13.0784L9.75571 17.8284C9.76405 18.295 9.38905 18.6784 8.92238 18.6784H7.00572C3.97239 18.6784 2.16406 16.87 2.16406 13.8284V6.85339C2.16406 3.82006 3.97239 2.01172 7.00572 2.01172H13.989C17.0224 2.01172 18.8307 3.82006 18.8307 6.85339V13.8367Z"
+                    fill="#18181B" />
+                </svg>
+              </a>
+            </face>
+            <face filter="TypeID in('245') and text in('Twitter')">
+              <a href="@largetext" rel="noopener" aria-label="Twitter"
+                class="flex items-center justify-center w-11 h-11 border border-solid border-primary-950 rounded-full">
+                <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M12.2874 8.81434L19.5727 0.345703H17.8463L11.5205 7.6989L6.46803 0.345703H0.640625L8.28093 11.465L0.640625 20.3457H2.36712L9.0474 12.5805L14.3831 20.3457H20.2105L12.2874 8.81434ZM9.92273 11.563L9.14861 10.4558L2.9892 1.64537H5.64099L10.6117 8.75564L11.3858 9.86288L17.8471 19.1051H15.1954L9.92273 11.563Z"
+                    fill="#18181B" />
+                </svg>
+              </a>
+            </face>
+            <face filter="TypeID in('245') and text in('Youtube')">
+              <a href="@largetext" rel="noopener" aria-label="Youtube"
+                class="flex items-center justify-center w-11 h-11 border border-solid border-primary-950 rounded-full">
+                <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M8.82784 11.5817L13.9264 8.63451L8.82784 5.68735V11.5817ZM20.1842 3.88959C20.3119 4.35131 20.4003 4.97021 20.4593 5.75612C20.5281 6.54203 20.5575 7.21988 20.5575 7.80931L20.6165 8.63451C20.6165 10.7859 20.4593 12.3676 20.1842 13.3794C19.9386 14.2636 19.3688 14.8334 18.4847 15.079C18.023 15.2067 17.1781 15.2951 15.8814 15.354C14.6043 15.4228 13.4352 15.4523 12.3546 15.4523L10.7926 15.5112C6.67642 15.5112 4.11239 15.354 3.10053 15.079C2.21638 14.8334 1.6466 14.2636 1.401 13.3794C1.27329 12.9177 1.18488 12.2988 1.12594 11.5129C1.05717 10.727 1.0277 10.0492 1.0277 9.45972L0.96875 8.63451C0.96875 6.48309 1.12594 4.90145 1.401 3.88959C1.6466 3.00544 2.21638 2.43566 3.10053 2.19006C3.56225 2.06235 4.40711 1.97393 5.70386 1.91499C6.98096 1.84622 8.15 1.81676 9.23062 1.81676L10.7926 1.75781C14.9088 1.75781 17.4728 1.91499 18.4847 2.19006C19.3688 2.43566 19.9386 3.00544 20.1842 3.88959Z"
+                    fill="#18181B" />
+                </svg>
+              </a>
+            </face>
+          </basis>
+        </div>
+        <div class="pt-5">
+          <svg width="48" height="48" class="flex-shrink-0">
+            <use xlink:href="/images/sprite-icons.svg#icon-question-black"></use>
+          </svg>
+          <h2 class="text-zinc-900 mb-1 mt-4">Send us a message</h2>
+          <p class="text-zinc-900 text-xs leading-5 mb-1">Contact our agents about your booking, and we'll reply as soon
+            as possible.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-zinc-50 rounded-3xl py-6 px-4 mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl">
+      <div>
+        <p class="text-3xl text-secondary-800 font-reeniebeanie text-center">Plan your Next Trip</p>
+        <h2 class="text-zinc-900 text-xl font-bold mt-9 text-center">Get in Touch</h2>
+        <div class="text-zinc-600 text-center mt-4">Write to us for personalized travel advice or for information on
+          group travel</div>
+      </div>
+      <div>
+        <img src="[##cms.cms.cdn##]/images/logo.png" class="h-auto" alt="logo" width="153" height="51" loading="lazy" />
+        <basis core="print" datamembername="db.info">
+          <face filter="TypeID in(144)">
+            <div class="text-zinc-700 font-medium mt-3">@largetext</div>
+          </face>
+        </basis>
+        <div class="flex flex-col gap-3 mt-8">
+          <basis core="print" datamembername="db.info">
+            <face filter="TypeID in(244)">
+              <div class="flex gap-2 text-zinc-900">
+                <svg width="25" height="25" class="flex-shrink-0">
+                  <use xlink:href="/images/sprite-icons.svg#icon-location-black"></use>
+                </svg>
+                @largetext
+              </div>
+            </face>
+          </basis>
+
+          <basis core="print" datamembername="db.offices">
+            <face>
+              <div class="flex items-center gap-2 text-zinc-900">
+                <svg width="25" height="25" class="flex-shrink-0">
+                  <use xlink:href="/images/sprite-icons.svg#icon-clock-black"></use>
+                </svg>
+                @prp_3087482
+              </div>
+            </face>
+          </basis>
+
+          <basis core="print" datamembername="db.info">
+            <face filter="TypeID in(242)">
+              <div class="flex items-center gap-2 text-zinc-900">
+                <svg width="25" height="25" class="flex-shrink-0">
+                  <use xlink:href="/images/sprite-icons.svg#icon-mail-black"></use>
+                </svg>
+                @text
+              </div>
+            </face>
+          </basis>
+        </div>
+        <div class="flex flex-col about-form" id="about-form">
+
+          <basis core="schema" run="atclient"
+            schemaurl="/schema/domainform/E6DBD402-8C6B-421B-BAF5-225BB1BA1CC7/E616F7B4-F2F0-4046-819A-FE49F35DF795/en/Get-in-Touch"
+            displaymode="new" button="[data-btn-uploadAbout]" resultsourceid="upload.dataAbout"
+            OnRendered="RenderFormAbout"></basis>
+          <basis core="api" if="{##cms.uploadAbout.run|(false)##}" run="atclient"
+            url="/schema/domainform/E6DBD402-8C6B-421B-BAF5-225BB1BA1CC7/en/editobject" method="post"
+            body="object_edit={##cms.uploadAbout.value##}&captcha={##cms.uploadAbout.captcha##}&captchaid={##cms.uploadAbout.captchaid##}"
+            content-type="application/x-www-form-urlencoded" triggers='cms.uploadAbout'
+            OnProcessed="OnProcessedEditObjectAbout"></basis>
+          <basis core="callback" run="atclient" method="uploadDocumentAbout" triggers="upload.dataAbout">
+          </basis>
+
+          <div class="captcha-button flex flex-col items-center justify-center mt-1">
+            <div id="captchaContainer" class="captchaContainerclass captcha-sefaresh w-auto" data-bc-answer-container
+              data-bc-schema-info-multi="0" data-bc-schema-info-word="58" data-bc-schema-info-part="1"
+              data-bc-schema-info-part-0-type="text">
+              <basis core="dbsource" source="trust_login" name="captcha-about" run="atclient" triggers="captcha.refreshAbout">
+                <member name="code" type="scalar" request="captcha"></member>
+              </basis>
+              <basis datamembername="captcha-about.code" core="print" run="atclient">
+                <face>
+                  <script type="text/template">
+                                        <div class="d-inline-block">
+                                          <div class="flex justify-between gap-5">
+                                          <div class="float-right">
+                                            <input type="text" class="contactUsInput codeinputm" name="captcha" maxlength="4" placeholder="Security Code"/>
+                                            <input type="hidden" name="captchaid" value="@captcha@" />
+                                          </div>
+                                          <div class="flex items-center gap-4">
+                                              <img src="/@captcha@" loading="lazy" width="120" height="60" alt="captcha" class="w-16 h-auto" />
+                                              <svg class="inline-block align-middle cursor-pointer w-9 h-9" onclick="refreshCaptchaAbout()" width="24" height="24" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.1247 8.56165H18.1238C18.0007 8.56175 17.8788 8.5861 17.7651 8.63331C17.6514 8.68052 17.5481 8.74967 17.4611 8.8368C17.3741 8.92393 17.3052 9.02734 17.2581 9.14113C17.2111 9.25492 17.187 9.37685 17.1871 9.49997C17.1859 10.8143 16.8245 12.1032 16.1421 13.2265C15.4597 14.3498 14.4824 15.2646 13.3166 15.8714C12.1507 16.4782 10.8408 16.7538 9.52921 16.6683C8.21765 16.5827 6.95463 16.1393 5.87744 15.3862C2.63134 13.1132 1.83959 8.62309 4.11255 5.37696C6.38552 2.13083 10.8757 1.33899 14.1218 3.61204C14.6129 3.95501 15.0592 4.358 15.4504 4.81165H12.8121C12.5635 4.81165 12.325 4.91042 12.1492 5.08623C11.9734 5.26205 11.8746 5.5005 11.8746 5.74915C11.8746 5.99779 11.9734 6.23624 12.1492 6.41206C12.325 6.58787 12.5635 6.68665 12.8121 6.68665H17.1871C17.4358 6.68665 17.6742 6.58787 17.85 6.41206C18.0259 6.23624 18.1246 5.99779 18.1246 5.74915V1.37415C18.1246 1.12551 18.0259 0.887048 17.85 0.711233C17.6742 0.535418 17.4358 0.436646 17.1871 0.436646C16.9385 0.436646 16.7 0.535418 16.5242 0.711233C16.3484 0.887048 16.2496 1.12551 16.2496 1.37415V2.93536C15.9206 2.62321 15.5689 2.33596 15.1973 2.07598C14.2225 1.39342 13.1228 0.909542 11.9609 0.651979C10.7991 0.394417 9.59797 0.368213 8.42603 0.574863C7.25409 0.781513 6.13433 1.21697 5.13067 1.85637C4.12702 2.49578 3.25914 3.3266 2.57658 4.30141C1.19808 6.27013 0.658111 8.70582 1.07546 11.0727C1.49281 13.4395 2.83329 15.5436 4.80201 16.9221C6.31776 17.9898 8.12639 18.563 9.98041 18.5633C10.5144 18.5631 11.0474 18.5162 11.5732 18.4233C13.6714 18.0531 15.5722 16.9556 16.9417 15.3235C18.3112 13.6914 19.062 11.6289 19.0621 9.49833C19.0619 9.24983 18.963 9.01159 18.7873 8.83596C18.6115 8.66032 18.3732 8.56166 18.1247 8.56165Z" fill="#000"/></svg>
+                                          </div>
+
+                                      </div></div></script>
+                </face>
+              </basis>
+            </div>
+            <button
+              class="flex justify-center items-center gap-5 w-full h-12 text-zinc-900 transition-all duration-300 data-body-btn mt-2 bg-secondary-600 rounded-[50px] hover:bg-primary-200"
+              type="button" data-btn-uploadAbout>
+              <span class="">subscribe</span>
+              <svg width="11" height="10" class="flex-shrink-0">
+                <use xlink:href="/images/sprite-icons.svg#icon-chevron-right"></use>
+              </svg>
+            </button>
+
+          </div>
+          <div
+            class="Loading_Form hidden data-body-btn w-[126px] h-12 px-4 py-2 bg-secondary-800 rounded-2xl justify-center items-center gap-2.5">
+            <div id="ballsWaveG" class="text-base font-normal leading-normal ext-zinc-50">
+              <div id="ballsWaveG_1" class="ballsWaveG"></div>
+              <div id="ballsWaveG_2" class="ballsWaveG"></div>
+              <div id="ballsWaveG_3" class="ballsWaveG"></div>
+              <div id="ballsWaveG_4" class="ballsWaveG"></div>
+              <div id="ballsWaveG_5" class="ballsWaveG"></div>
+              <div id="ballsWaveG_6" class="ballsWaveG"></div>
+              <div id="ballsWaveG_7" class="ballsWaveG"></div>
+              <div id="ballsWaveG_8" class="ballsWaveG"></div>
+            </div>
+          </div>
+          <div class="mt-4 text-center text-secondary-500 message-api"></div>
+        </div>
+      </div>
+    </section>
+    <basis core="print" datamembername="db.info">
+      <layout>
+        <section class="relative -z-10 -mt-64 mb-20">
+          @child
+        </section>
+      </layout>
+      <face filter="prpID=91462">
+        <iframe defer title="Tbibooking location" class="w-full h-[600px] object-cover" width="320" height="600"
+          loading="lazy" target="_blank" allowfullscreen
+          src="https://maps.google.com/maps?q=@largetext,@text&z=14&output=embed"></iframe>
+      </face>
+    </basis>
+
+  </main>
+  <basis core="call" file="footer.inc" pageindex="[##cms.cms.pageindex##]" lid="2" />
+</body>
+
+</html>

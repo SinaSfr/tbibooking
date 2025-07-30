@@ -1,5 +1,10 @@
+<basis core="dbsource" source="basiscore" name="db" mid="10" lid="1" usedforid="2380151">
+    <member name="offices" type="list" propertyid="8142,3087482" />
+</basis>
+
+
 <basis core="group" if="'[##cms.cms.page_index##]' = 'نمایه پیش فرض'">
-    <footer class="bg-specialcolor-1 pb-4">
+    <footer class="footer-landing-items bg-specialcolor-1 pb-4">
         <div class="h-32 rounded-b-[100px] bg-white mb-6"></div>
         <div class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl px-6">
             <div class="flex items-center justify-between mt-16">
@@ -26,12 +31,17 @@
                             </face>
                         </basis>
 
-                        <div class="flex items-center gap-2 text-zinc-400">
-                            <svg width="25" height="25" class="flex-shrink-0">
-                                <use xlink:href="/images/sprite-icons.svg#icon-clock-zinc"></use>
-                            </svg>
-                            Hours: 8:00 - 17:00, Mon - Sat
-                        </div>
+                        <basis core="print" datamembername="db.offices">
+                            <face>
+                                <div class="flex items-center gap-2 text-zinc-400">
+                                    <svg width="25" height="25" class="flex-shrink-0">
+                                        <use xlink:href="/images/sprite-icons.svg#icon-clock-zinc"></use>
+                                    </svg>
+                                    Hours: @prp_3087482
+                                </div>
+                            </face>
+                        </basis>
+
                         <basis core="print" datamembername="db.info">
                             <face filter="TypeID in(242)">
                                 <div class="flex items-center gap-2 text-zinc-400">
@@ -50,35 +60,40 @@
                     <div>
                         <h2 class="text-white font-medium text-xl mb-4">Company</h2>
                         <div class="flex flex-col gap-5">
-                            <a href="" class="text-zinc-300 group transition-all duration-300 hover:text-secondary-800">
+                            <a href="/About-us"
+                                class="text-zinc-300 group transition-all duration-300 hover:text-secondary-800">
                                 <span class="relative">
                                     About Us
                                     <span
                                         class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-px bg-secondary-800 group-hover:w-full"></span>
                                 </span>
                             </a>
-                            <a href="" class="text-zinc-300 group transition-all duration-300 hover:text-secondary-800">
+                            <a href="/"
+                                class="text-zinc-300 group transition-all duration-300 hover:text-secondary-800">
                                 <span class="relative">
                                     Community Blog
                                     <span
                                         class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-px bg-secondary-800 group-hover:w-full"></span>
                                 </span>
                             </a>
-                            <a href="" class="text-zinc-300 group transition-all duration-300 hover:text-secondary-800">
+                            <a href="/"
+                                class="text-zinc-300 group transition-all duration-300 hover:text-secondary-800">
                                 <span class="relative">
                                     Jobs & Careers
                                     <span
                                         class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-px bg-secondary-800 group-hover:w-full"></span>
                                 </span>
                             </a>
-                            <a href="" class="text-zinc-300 group transition-all duration-300 hover:text-secondary-800">
+                            <a href="/"
+                                class="text-zinc-300 group transition-all duration-300 hover:text-secondary-800">
                                 <span class="relative">
                                     Contact Us
                                     <span
                                         class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-px bg-secondary-800 group-hover:w-full"></span>
                                 </span>
                             </a>
-                            <a href="" class="text-zinc-300 group transition-all duration-300 hover:text-secondary-800">
+                            <a href="/"
+                                class="text-zinc-300 group transition-all duration-300 hover:text-secondary-800">
                                 <span class="relative">
                                     Our Awards
                                     <span
@@ -89,43 +104,55 @@
                     </div>
                     <div>
                         <h2 class="text-white font-medium text-xl mb-4">Services</h2>
-                        <div class="flex flex-col gap-5">
-                            <a href="" class="text-zinc-300 group transition-all duration-300 hover:text-secondary-800">
-                                <span class="relative">
-                                    Tour Guide
-                                    <span
-                                        class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-px bg-secondary-800 group-hover:w-full"></span>
-                                </span>
-                            </a>
-                            <a href="" class="text-zinc-300 group transition-all duration-300 hover:text-secondary-800">
+                        <ul class="flex flex-col gap-5">
+                            <li>
+                                <a href="/"
+                                    class="text-zinc-300 group transition-all duration-300 hover:text-secondary-800">
+                                    <span class="relative">
+                                        Tour Guide
+                                        <span
+                                            class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-px bg-secondary-800 group-hover:w-full"></span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="landing-item text-zinc-300 group cursor-pointer transition-all duration-300 hover:text-secondary-800"
+                                data-id="tour" data-nav="tour"
+                                onclick="check_searchHistory('tour'); check_landing('tour')">
                                 <span class="relative">
                                     Tour Booking
                                     <span
                                         class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-px bg-secondary-800 group-hover:w-full"></span>
                                 </span>
-                            </a>
-                            <a href="" class="text-zinc-300 group transition-all duration-300 hover:text-secondary-800">
+                            </li>
+                            <li class="landing-item text-zinc-300 group cursor-pointer transition-all duration-300 hover:text-secondary-800"
+                                data-id="hotel" data-nav="hotel"
+                                onclick="check_searchHistory('hotel'); check_landing('hotel')">
                                 <span class="relative">
                                     Hotel Booking
                                     <span
                                         class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-px bg-secondary-800 group-hover:w-full"></span>
                                 </span>
-                            </a>
-                            <a href="" class="text-zinc-300 group transition-all duration-300 hover:text-secondary-800">
+                            </li>
+                            <li class="landing-item text-zinc-300 group cursor-pointer transition-all duration-300 hover:text-secondary-800"
+                                data-id="flight" data-nav="flight"
+                                onclick="check_searchHistory('flight'); check_landing('flight')">
                                 <span class="relative">
                                     Ticket Booking
                                     <span
                                         class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-px bg-secondary-800 group-hover:w-full"></span>
                                 </span>
-                            </a>
-                            <a href="" class="text-zinc-300 group transition-all duration-300 hover:text-secondary-800">
-                                <span class="relative">
-                                    Rental Services
-                                    <span
-                                        class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-px bg-secondary-800 group-hover:w-full"></span>
-                                </span>
-                            </a>
-                        </div>
+                            </li>
+                            <li>
+                                <a href="/"
+                                    class="text-zinc-300 group transition-all duration-300 hover:text-secondary-800">
+                                    <span class="relative">
+                                        Rental Services
+                                        <span
+                                            class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-px bg-secondary-800 group-hover:w-full"></span>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </section>
 
@@ -135,8 +162,8 @@
 
                         <basis core="schema" run="atclient"
                             schemaurl="/schema/domainform/E6DBD402-8C6B-421B-BAF5-225BB1BA1CC7/D7D5EB0B-0639-41A6-9AAF-006F32B60A78/en/newsletter"
-                            displaymode="new" button="[data-btn-uploadFooter]"
-                            resultsourceid="upload.dataFooter" OnRendered="RenderFormFooter"></basis>
+                            displaymode="new" button="[data-btn-uploadFooter]" resultsourceid="upload.dataFooter"
+                            OnRendered="RenderFormFooter"></basis>
                         <basis core="api" if="{##cms.uploadFooter.run|(false)##}" run="atclient"
                             url="/schema/domainform/E6DBD402-8C6B-421B-BAF5-225BB1BA1CC7/en/editobject" method="post"
                             body="object_edit={##cms.uploadFooter.value##}&captcha={##cms.uploadFooter.captcha##}&captchaid={##cms.uploadFooter.captchaid##}"
@@ -293,7 +320,7 @@
                             <h2 class="text-white">Send us a message</h2>
                             <p class="text-white text-xs leading-5 mb-1">Contact our agents about your booking, and
                                 we'll reply as soon as possible.</p>
-                            <a href="/Contact-us#form-about"
+                            <a href="/About-us#form-about"
                                 class="text-secondary-800 transition-all duration-300 hover:text-primary-400">Send</a>
                         </div>
                     </div>

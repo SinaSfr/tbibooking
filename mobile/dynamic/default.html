@@ -11,12 +11,13 @@
 </basis>
 
 <basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="215728">
-  <member name="perfect-come-True" type="list" link="article.bc" propertyid="" perpage="6" order="ord" size="48x48" />
+  <member name="perfect-come-True" type="list" link="article.bc" propertyid="7244" perpage="6" order="ord"
+    size="48x48" />
 </basis>
 
 <basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="215733">
   <member name="popular-articles" type="list" link="article.bc" propertyid="3087996" perpage="3" order="ord"
-    size="421x224" />
+    size="288x224" />
 </basis>
 
 <basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="215692">
@@ -24,12 +25,18 @@
     order="ord" size="260x176" />
 </basis>
 
-<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="215693">
-  <member name="travel-blog" type="list" link="article.bc" propertyid="" perpage="6" order="ord" size="418x240" />
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="travel-blog">
+  <member name="cat" type="tree" request="cat" parentid="[##cms.query.catid##]" order="ord"
+    postsql="select * from [travel-blog.cat] where catid in(215693)"></member>
 </basis>
 
-<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" usedforid="2376392">
-  <member name="our-service" type="view" />
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="215693">
+  <member name="travel-blog" type="list" link="article.bc" propertyid="7249,3087997,3087996" perpage="6" order="ord"
+    size="260x240" />
+</basis>
+
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" usedforid="2380227">
+  <member name="video" type="view" />
 </basis>
 
 
@@ -76,7 +83,7 @@
   <meta name="robots" content="index, follow" />
 
   <!-- PWA support -->
-  <basis core="call" file="pwa.inc" lid="2" />
+  <basis core="call" file="pwa.inc" lid="2" pageindex="[##cms.cms.pageindex##]" />
 
   <!-- Preload high-priority image -->
   <link rel="preload" as="image" imagesrcset="image address" fetchpriority="high" />
@@ -294,12 +301,19 @@
             <!-- items -->
             @child
           </div>
+          <a href="/our-featured-Hotel"
+            class="load-more-tours flex justify-center items-center gap-2 w-full h-12 bg-primary-900 rounded-xl text-white font-bold mt-7">
+            <svg width="24" height="24" class="flex-shrink-0">
+              <use xlink:href="/images/sprite-icons.svg#icon-category"></use>
+            </svg>
+            Load More Hotels
+          </a>
         </layout>
         <face>
-          <a href="/@link" class="hotel-card block rounded-xl overflow-hidden" data-hotel="@prp_3087994" data-price="@prp_3087995"
-            data-rating="@prp_3087993">
-            <img src="@00260X00176prp" class="w-full h-44 object-cover" alt="@title"
-              width="260" height="176" loading="lazy" />
+          <a href="/@link" class="hotel-card block rounded-xl overflow-hidden" data-hotel="@prp_3087994"
+            data-price="@prp_3087995" data-rating="@prp_3087993">
+            <img src="@00260X00176prp" class="w-full h-44 object-cover" alt="@title" width="260" height="176"
+              loading="lazy" />
             <div
               class="flex flex-col gap-2 bg-white rounded-b-xl p-4 border-x border-b border-solid border-zinc-400 divide-y divide-zinc-400">
               <div>
@@ -332,69 +346,93 @@
 
     </section>
 
-    <section class="flex flex-col gap-2 mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-7">
-      <div class="relative rounded-2xl overflow-hidden">
-        <img src="[##cms.cms.cdn##]/images/slogan-card.png" class="w-full h-56 object-cover" alt="" width="288"
-          height="224" loading="lazy" />
-        <div class="absolute top-5 left-0 right-0 mx-auto w-[73%]">
-          <div class="bg-secondary-500 px-3 rounded mb-1">
-            <h2 class="font-bold text-2xl">Buy 1, Get 1 Free Attractions</h2>
+    <basis core="list" datamembername="db.popular-articles">
+      <layout>
+        <section class="flex flex-col gap-2 mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-7">
+          @child
+        </section>
+      </layout>
+      <face filter="@prp_3087996 is null">
+        <div class="relative rounded-2xl overflow-hidden">
+          <img src="@00288X00224prp" class="w-full h-56 object-cover" alt="@title" width="288" height="224"
+            loading="lazy" />
+          <div class="absolute top-5 left-0 right-0 mx-auto w-[73%]">
+            <div class="bg-secondary-500 px-3 rounded mb-1">
+              <h2 class="font-bold text-2xl">@title</h2>
+            </div>
+            <a href="/@link" class="w-max flex justify-center bg-secondary-600 text-zinc-900 px-4 rounded-[50px]">View
+              More</a>
           </div>
-          <div class="w-max bg-secondary-500 px-3 py-1 rounded mb-3">
-            <h3 class="font-bold">Limited Offers</h3>
-          </div>
-          <a href="" class="w-max flex justify-center bg-secondary-600 text-zinc-900 px-4 rounded-[50px]">View More</a>
         </div>
-      </div>
-      <div class="relative rounded-2xl overflow-hidden">
-        <img src="[##cms.cms.cdn##]/images/slogan-card.png" class="w-full h-56 object-cover" alt="" width="288"
-          height="224" loading="lazy" />
-        <div class="absolute top-5 left-0 right-0 mx-auto w-[73%]">
-          <div class="bg-secondary-500 px-3 rounded mb-1">
-            <h2 class="font-bold text-2xl">Buy 1, Get 1 Free Attractions</h2>
+      </face>
+      <face>
+        <div class="relative rounded-2xl overflow-hidden">
+          <img src="@00288X00224prp" class="w-full h-56 object-cover" alt="@title" width="288" height="224"
+            loading="lazy" />
+          <div class="absolute top-5 left-0 right-0 mx-auto w-[73%]">
+            <div class="bg-secondary-500 px-3 rounded mb-1">
+              <h2 class="font-bold text-2xl">@title</h2>
+            </div>
+            <div class="w-max bg-secondary-500 px-3 py-1 rounded mb-3">
+              <h3 class="font-bold">@prp_3087996</h3>
+            </div>
+            <a href="/@link" class="w-max flex justify-center bg-secondary-600 text-zinc-900 px-4 rounded-[50px]">View
+              More</a>
           </div>
-          <div class="w-max bg-secondary-500 px-3 py-1 rounded mb-3">
-            <h3 class="font-bold">Limited Offers</h3>
-          </div>
-          <a href="" class="w-max flex justify-center bg-secondary-600 text-zinc-900 px-4 rounded-[50px]">View More</a>
         </div>
-      </div>
-      <div class="relative rounded-2xl overflow-hidden">
-        <img src="[##cms.cms.cdn##]/images/slogan-card.png" class="w-full h-56 object-cover" alt="" width="288"
-          height="224" loading="lazy" />
-        <div class="absolute top-5 left-0 right-0 mx-auto w-[73%]">
-          <div class="bg-secondary-500 px-3 rounded mb-1">
-            <h2 class="font-bold text-2xl">Buy 1, Get 1 Free Attractions</h2>
-          </div>
-          <div class="w-max bg-secondary-500 px-3 py-1 rounded mb-3">
-            <h3 class="font-bold">Limited Offers</h3>
-          </div>
-          <a href="" class="w-max flex justify-center bg-secondary-600 text-zinc-900 px-4 rounded-[50px]">View More</a>
-        </div>
-      </div>
-    </section>
+      </face>
+    </basis>
+
+    <basis core="print" datamembername="db.video">
+      <layout>
+        <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-7">
+          <div>@child</div>
+        </section>
+      </layout>
+      <face filter="TypeID in(128)">
+        <iframe width="1024" height="364" class="w-full rounded-xl h-[364px] object-cover" src="@text"
+          allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+      </face>
+    </basis>
 
     <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-7">
       <div class="flex flex-col items-center">
         <p class="text-secondary-800 text-3xl font-reeniebeanie">Roaming Tales</p>
         <h2 class="text-zinc-900 font-bold text-xl mt-5 mb-5">Travel Blog</h2>
       </div>
-      <div class="text-xs text-zinc-500 text-center leading-5">
-        We share our experiences, tips and travel stories to inspire and guide our readers in their own wanderlust
-        adventures. From hidden gems to popular destinations, we showcase the beauty and diversity of
-        the world, and promote responsible and sustainable travel.
-      </div>
+      <basis core="list" datamembername="travel-blog.cat">
+        <face>
+          <p class="text-xs text-zinc-500 text-center leading-5">
+            @urldescription
+          </p>
+        </face>
+      </basis>
+
       <!-- Slider main container -->
-      <div class="swiper swiper-travel-blog-mobile mt-8">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-          <!-- Slides -->
+      <basis core="list" datamembername="db.travel-blog">
+        <layout>
+          <div class="swiper swiper-travel-blog-mobile mt-8">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              @child
+            </div>
+          </div>
+          <a href="/travel-blog"
+            class="load-more-tours flex justify-center items-center gap-2 w-full h-12 bg-primary-900 rounded-xl text-white font-bold mt-7">
+            <svg width="24" height="24" class="flex-shrink-0">
+              <use xlink:href="/images/sprite-icons.svg#icon-category"></use>
+            </svg>
+            Load More Articles
+          </a>
+        </layout>
+        <face>
           <div class="swiper-slide">
-            <a href="" class="block rounded-xl overflow-hidden">
+            <a href="/@link" class="block rounded-xl overflow-hidden">
               <div class="relative">
-                <img src="[##cms.cms.cdn##]/images/popular-destionation-card.jpg" class="w-full h-60" alt="@title"
-                  width="260" height="240" loading="lazy" />
-                <div class="absolute top-3 left-3 bg-white text-sm font-medium px-6 py-4 rounded-[50px]">Discovery</div>
+                <img src="@00260X00240prp" class="w-full h-60" alt="@title" width="260" height="240" loading="lazy" />
+                <div class="absolute top-3 left-3 bg-white text-sm font-medium px-6 py-4 rounded-[50px]">@prp_3087996
+                </div>
               </div>
               <div class="relative z-10 bg-white p-4 border border-solid border-zinc-300 rounded-3xl -mt-6">
                 <div>
@@ -403,16 +441,17 @@
                       <svg width="16" height="16" class="flex-shrink-0">
                         <use xlink:href="/images/sprite-icons.svg#icon-calender-blog"></use>
                       </svg>
-                      18 Sep 2024
+                      @prp_7249
                     </div>
                     <div class="flex items-center gap-2 text-xs text-zinc-900">
                       <svg width="16" height="16" class="flex-shrink-0">
                         <use xlink:href="/images/sprite-icons.svg#icon-clock-blog"></use>
                       </svg>
-                      6 mins
+                      @prp_3087997
                     </div>
                   </div>
-                  <h2 class="text-zinc-900 font-bold">Discovering Hidden Gems: 10 Off- the-Beaten-Path Travel Tips</h2>
+                  <h2 class="text-zinc-900 font-bold">@title
+                  </h2>
                 </div>
                 <button
                   class="bg-primary-50 text-primary-900 border border-solid border-primary-900 rounded-[40px] px-6 py-4 mt-3">Keep
@@ -420,13 +459,11 @@
               </div>
             </a>
           </div>
+        </face>
+        <face filter="@prp_3087996 is null">
           <div class="swiper-slide">
-            <a href="" class="block rounded-xl overflow-hidden">
-              <div class="relative">
-                <img src="[##cms.cms.cdn##]/images/popular-destionation-card.jpg" class="w-full h-60" alt="@title"
-                  width="260" height="240" loading="lazy" />
-                <div class="absolute top-3 left-3 bg-white text-sm font-medium px-6 py-4 rounded-[50px]">Discovery</div>
-              </div>
+            <a href="/@link" class="block rounded-xl overflow-hidden">
+              <img src="@00260X00240prp" class="w-full h-60" alt="@title" width="260" height="240" loading="lazy" />
               <div class="relative z-10 bg-white p-4 border border-solid border-zinc-300 rounded-3xl -mt-6">
                 <div>
                   <div class="flex items-center gap-4 mb-2">
@@ -434,16 +471,17 @@
                       <svg width="16" height="16" class="flex-shrink-0">
                         <use xlink:href="/images/sprite-icons.svg#icon-calender-blog"></use>
                       </svg>
-                      18 Sep 2024
+                      @prp_7249
                     </div>
                     <div class="flex items-center gap-2 text-xs text-zinc-900">
                       <svg width="16" height="16" class="flex-shrink-0">
                         <use xlink:href="/images/sprite-icons.svg#icon-clock-blog"></use>
                       </svg>
-                      6 mins
+                      @prp_3087997
                     </div>
                   </div>
-                  <h2 class="text-zinc-900 font-bold">Discovering Hidden Gems: 10 Off- the-Beaten-Path Travel Tips</h2>
+                  <h2 class="text-zinc-900 font-bold">@title
+                  </h2>
                 </div>
                 <button
                   class="bg-primary-50 text-primary-900 border border-solid border-primary-900 rounded-[40px] px-6 py-4 mt-3">Keep
@@ -451,8 +489,11 @@
               </div>
             </a>
           </div>
-        </div>
-      </div>
+        </face>
+      </basis>
+
+
+
     </section>
 
     <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-7">
@@ -484,7 +525,7 @@
         <div class="relative z-10 flex flex-col gap-7 pl-6 pr-3 py-10">
           <h2 class="text-zinc-900 text-2xl font-bold">Best Price</h2>
           <div class="text-zinc-900 text-sm">Price match within 48 hours of order confirmation</div>
-          <a href=""
+          <a href="/best price"
             class="bg-primary-50 self-start text-primary-900 border border-solid border-primary-900 rounded-[40px] px-6 py-3 mt-3">Booking
             Now</a>
         </div>
@@ -495,7 +536,7 @@
         <div class="relative z-10 flex flex-col gap-7 px-4 py-8">
           <h2 class="text-zinc-900 font-bold">Save your time!</h2>
           <div class="text-zinc-900 font-bold">Explore, Book, Soar: Your Journey Awaits!</div>
-          <a href=""
+          <a href="/Save-your-time"
             class="bg-primary-50 self-start text-primary-900 border border-solid border-primary-900 rounded-[40px] px-6 py-3 mt-3">Booking
             Now</a>
         </div>
@@ -510,72 +551,70 @@
         <br />
         come True
       </h2>
-      <div class="flex flex-col mt-9 gap-14">
-        <div class="flex flex-col gap-2">
-          <img src="[##cms.cms.cdn##]/images/earth-plane.png" class="w-12 h-12 object-cover" alt="earth-plane"
-            width="48" height="48" loading="lazy" />
-          <h2 class="text-zinc-900 font-bold text-xl">Airline Tickets</h2>
-          <div class="text-zinc-600 text-sm leading-5">Our travel agency specializes in providing our customers with the
-            best deals on airline tickets.</div>
-        </div>
-        <div class="flex flex-col gap-2">
-          <img src="[##cms.cms.cdn##]/images/earth-plane.png" class="w-12 h-12 object-cover" alt="earth-plane"
-            width="48" height="48" loading="lazy" />
-          <h2 class="text-zinc-900 font-bold text-xl">Ocean Cruises</h2>
-          <div class="text-zinc-600 text-sm leading-5">Luxurious and comfortable way of travel, and passengers can enjoy
-            stunning views of the sea.</div>
-        </div>
-        <div class="flex flex-col gap-2">
-          <img src="[##cms.cms.cdn##]/images/earth-plane.png" class="w-12 h-12 object-cover" alt="earth-plane"
-            width="48" height="48" loading="lazy" />
-          <h2 class="text-zinc-900 font-bold text-xl">Means of Transport</h2>
-          <div class="text-zinc-600 text-sm leading-5">Our travel agency offers a variety of means of transport to get
-            you around your destination safely.</div>
-        </div>
-        <div class="flex flex-col gap-2">
-          <img src="[##cms.cms.cdn##]/images/earth-plane.png" class="w-12 h-12 object-cover" alt="earth-plane"
-            width="48" height="48" loading="lazy" />
-          <h2 class="text-zinc-900 font-bold text-xl">Travel itineraries</h2>
-          <div class="text-zinc-600 text-sm leading-5">Our team of experts will take care of all the planning and
-            logistics, providing you with a detailed itinerary.</div>
-        </div>
-        <div class="flex flex-col gap-2">
-          <img src="[##cms.cms.cdn##]/images/earth-plane.png" class="w-12 h-12 object-cover" alt="earth-plane"
-            width="48" height="48" loading="lazy" />
-          <h2 class="text-zinc-900 font-bold text-xl">Travel Insurance</h2>
-          <div class="text-zinc-600 text-sm leading-5">Travel insurance is an essential part of any trip, providing
-            peace of mind and protection.</div>
-        </div>
-        <div class="flex flex-col gap-2">
-          <img src="[##cms.cms.cdn##]/images/earth-plane.png" class="w-12 h-12 object-cover" alt="earth-plane"
-            width="48" height="48" loading="lazy" />
-          <h2 class="text-zinc-900 font-bold text-xl">Local Guide</h2>
-          <div class="text-zinc-600 text-sm leading-5">We can connect you with guides who will take you off the best
-            path and show you their city.</div>
-        </div>
-      </div>
+      <basis core="list" datamembername="db.perfect-come-True">
+        <layout>
+          <div class="flex flex-col mt-9 gap-14">
+            @child
+          </div>
+        </layout>
+        <face>
+          <div class="flex flex-col gap-2">
+            <img src="@00048X00048prp" class="w-12 h-12 object-cover" alt="@title" width="48" height="48"
+              loading="lazy" />
+            <h2 class="text-zinc-900 font-bold text-xl">@title</h2>
+            <div class="text-zinc-600 text-sm leading-5 line-clamp-3">@prp_7244</div>
+          </div>
+        </face>
+      </basis>
+
     </section>
 
     <section class="flex items-center mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-7 mb-20">
-      <div class="flex items-center">
-        <img src="[##cms.cms.cdn##]/images/frame.jpg" class="w-1/5 h-[356px] object-cover object-left" alt="offer"
-          width="57" height="356" loading="lazy" />
-        <div class="w-4/5 relative">
-          <div class="absolute bg-specialcolor-6 inset-0 w-full h-full opacity-50"></div>
-          <img src="[##cms.cms.cdn##]/images/offer.jpg" class="w-full h-[356px] object-cover" alt="offer" width="288"
-            height="356" loading="lazy" />
-        </div>
-      </div>
-      <div class="absolute px-6">
-        <h2 class="text-xs text-white mb-5">Exclusive travel deals</h2>
-        <div class="text-xl font-bold text-white mb-12">Book your dream vacation today!</div>
-        <a href="" class="inline-flex items-center gap-5 bg-secondary-600 px-6 py-3 rounded-[50px]">
-          View More
-          <svg width="11" height="11" class="flex-shrink-0">
-            <use xlink:href="/images/sprite-icons.svg#icon-chevron-right"></use>
-          </svg>
-        </a>
-      </div>
+      <basis core="list" datamembername="exclusive-travel-deals.cat">
+        <face filter="link is null">
+          <div class="flex items-center">
+            <img src="@image" class="w-1/5 h-[356px] object-cover object-left" alt="@title" width="57" height="356"
+              loading="lazy" />
+            <div class="w-4/5 relative">
+              <div class="absolute bg-specialcolor-6 inset-0 w-full h-full opacity-50"></div>
+              <img src="[##cms.cms.cdn##]/images/offer.jpg" class="w-full h-[356px] object-cover" alt="offer"
+                width="288" height="356" loading="lazy" />
+            </div>
+          </div>
+          <div class="absolute px-6">
+            <h2 class="text-xs text-white mb-5">@title</h2>
+            <div class="text-xl font-bold text-white mb-12">@urldescription</div>
+            <a href="/article-list.bc?catid=@catid"
+              class="inline-flex items-center gap-5 bg-secondary-600 px-6 py-3 rounded-[50px]">
+              View More
+              <svg width="11" height="11" class="flex-shrink-0">
+                <use xlink:href="/images/sprite-icons.svg#icon-chevron-right"></use>
+              </svg>
+            </a>
+          </div>
+        </face>
+        <face>
+          <div class="flex items-center">
+            <img src="@image" class="w-1/5 h-[356px] object-cover object-left" alt="@title" width="57" height="356"
+              loading="lazy" />
+            <div class="w-4/5 relative">
+              <div class="absolute bg-specialcolor-6 inset-0 w-full h-full opacity-50"></div>
+              <img src="[##cms.cms.cdn##]/images/offer.jpg" class="w-full h-[356px] object-cover" alt="offer"
+                width="288" height="356" loading="lazy" />
+            </div>
+          </div>
+          <div class="absolute px-6">
+            <h2 class="text-xs text-white mb-5">@title</h2>
+            <div class="text-xl font-bold text-white mb-12">@urldescription</div>
+            <a href="/@link" class="inline-flex items-center gap-5 bg-secondary-600 px-6 py-3 rounded-[50px]">
+              View More
+              <svg width="11" height="11" class="flex-shrink-0">
+                <use xlink:href="/images/sprite-icons.svg#icon-chevron-right"></use>
+              </svg>
+            </a>
+          </div>
+        </face>
+      </basis>
     </section>
   </main>
 

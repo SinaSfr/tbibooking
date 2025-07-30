@@ -67,6 +67,30 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
+  const isHomePage = window.location.pathname === "/";
+
+  const services = ["flight", "hotel", "tour", "insurance", "flighthotel"];
+
+  services.forEach((service) => {
+    const item = document.querySelector(`li[data-id="${service}"]`);
+
+    if (!item) return;
+
+    if (isHomePage) {
+      item.addEventListener("click", function () {
+        check_searchHistory(service);
+        check_landing(service);
+      });
+    } else {
+      item.addEventListener("click", function (e) {
+        e.preventDefault();
+        window.location.href = `/${service}`;
+      });
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
   const headerMenu = document.querySelector(".header-menu");
   const headerMenuClose = document.querySelector(".header-menu-close");
   const bars3 = document.querySelector(".bars3");
@@ -487,6 +511,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
   generateCityFilterOptions();
   generateRatingFilterOptions();
+});
+
+// filter article-card
+document.addEventListener("DOMContentLoaded", function () {
+  const searchInput = document.querySelector(".search-blog");
+  const searchButton = document.querySelector(".article-search-button");
+  const articleCards = document.querySelectorAll(".article-card");
+
+  if (!searchInput || !searchButton || articleCards.length === 0) return;
+
+  searchButton.addEventListener("click", function () {
+    const searchTerm = searchInput.value.toLowerCase();
+
+    articleCards.forEach((card) => {
+      const articleName = (
+        card.getAttribute("data-article") || ""
+      ).toLowerCase();
+
+      if (articleName.includes(searchTerm)) {
+        card.style.display = "";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  });
 });
 
 // filter tour-list card

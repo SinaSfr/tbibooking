@@ -47,11 +47,14 @@
                     <br />
                     Travel Agency
                 </p>
-                <div class="text-zinc-600 mt-2 content-inner">
-                    We are a team of experienced travel experts who specialize in planning and organizing unforgettable
-                    travel experiences for our clients with a wide range of travel services, including flight
-                    bookings, hotel reservations and more.
-                </div>
+                <basis core="print" datamembername="db.offices">
+                    <face>
+                        <div class="text-zinc-600 mt-2 content-inner">
+                            @prp_8142
+                        </div>
+                    </face>
+                </basis>
+
                 <button
                     class="see-more flex items-center justify-center w-28 h-12 text-sm bg-secondary-600 rounded-full mt-2 transition-all duration-300 hover:bg-primary-200">More
                     info</button>
@@ -59,18 +62,18 @@
 
             <section class="relative gallery-about">
                 <img src="[##cms.cms.cdn##]/images/pic-one.jpg" class="w-full rounded-3xl z-10 relative h-[351px]"
-                    alt="" width="526" height="351" loading="lazy" />
+                    alt="pic-one" width="526" height="351" loading="lazy" />
                 <img src="[##cms.cms.cdn##]/images/pic-top-right.jpg"
-                    class="absolute z-10 -right-8 -top-10 rounded-2xl h-32 object-cover" alt="" width="200" height="128"
+                    class="absolute z-10 -right-8 -top-10 rounded-2xl h-32 object-cover" alt="pic-top-right" width="200" height="128"
                     loading="lazy" />
                 <img src="[##cms.cms.cdn##]/images/pic-top-left.jpg"
-                    class="absolute z-10 -top-16 left-16 rounded-2xl h-20 object-cover" alt="" width="130" height="80"
+                    class="absolute z-10 -top-16 left-16 rounded-2xl h-20 object-cover" alt="pic-top-left" width="130" height="80"
                     loading="lazy" />
                 <img src="[##cms.cms.cdn##]/images/pic-bottom-left.jpg"
-                    class="absolute z-10 -bottom-2 -left-3 rounded-2xl h-36 object-cover" alt="" width="144"
+                    class="absolute z-10 -bottom-2 -left-3 rounded-2xl h-36 object-cover" alt="pic-bottom-left" width="144"
                     height="144" loading="lazy" />
                 <img src="[##cms.cms.cdn##]/images/pic-bottom-right.jpg"
-                    class="absolute z-10 bottom-7 -right-7 rounded-2xl h-20 object-cover" alt="" width="130" height="80"
+                    class="absolute z-10 bottom-7 -right-7 rounded-2xl h-20 object-cover" alt="pic-bottom-right" width="130" height="80"
                     loading="lazy" />
             </section>
         </div>
@@ -203,12 +206,17 @@
                             </face>
                         </basis>
 
-                        <div class="flex items-center gap-2 text-zinc-900">
-                            <svg width="25" height="25" class="flex-shrink-0">
-                                <use xlink:href="/images/sprite-icons.svg#icon-clock-black"></use>
-                            </svg>
-                            Hours: 8:00 - 17:00, Mon - Sat
-                        </div>
+                        <basis core="print" datamembername="db.offices">
+                            <face>
+                                <div class="flex items-center gap-2 text-zinc-900">
+                                    <svg width="25" height="25" class="flex-shrink-0">
+                                        <use xlink:href="/images/sprite-icons.svg#icon-clock-black"></use>
+                                    </svg>
+                                    @prp_3087482
+                                </div>
+                            </face>
+                        </basis>
+
                         <basis core="print" datamembername="db.info">
                             <face filter="TypeID in(242)">
                                 <div class="flex items-center gap-2 text-zinc-900">
@@ -239,11 +247,11 @@
                         <div id="captchaContainer" class="captchaContainerclass captcha-sefaresh w-auto"
                             data-bc-answer-container data-bc-schema-info-multi="0" data-bc-schema-info-word="58"
                             data-bc-schema-info-part="1" data-bc-schema-info-part-0-type="text">
-                            <basis core="dbsource" source="trust_login" name="captcha" run="atclient"
+                            <basis core="dbsource" source="trust_login" name="captcha-about" run="atclient"
                                 triggers="captcha.refreshAbout">
                                 <member name="code" type="scalar" request="captcha"></member>
                             </basis>
-                            <basis datamembername="captcha.code" core="print" run="atclient">
+                            <basis datamembername="captcha-about.code" core="print" run="atclient">
                                 <face>
                                     <script type="text/template">
                                         <div class="d-inline-block">

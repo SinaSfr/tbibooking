@@ -1,21 +1,19 @@
-<basis core="dbsource" source="basiscore" lid="2" mid="20" name="db" catid="[##cms.query.catid##]">
-    <member name="tour-list" type="list" link="tour.bc" propertyid="10000503,10000504,3087990,3087991,3087992,8181,8076"
-        perpage="8" pageno="[##cms.query.pagenum|(1)##]" order="ord" size="311x176" />
-    <member name="paging" type="list" request="paging" count="3" parentname="tour-list" />
-</basis>
-<basis core="dbsource" source="basiscore" mid="20" name="list" lid="2" schemaid="987" term="[##cms.query.term##]">
-    <member name="airline" type="list" request="spelist" />
-</basis>
-<basis core="inlinesource" name="joining">
-    <member name="list" lefttblcol="db.tour-list.prp_10000504" righttblcol="list.airline.name" format="join"
-        jointype="leftjoin" />
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="[##cms.query.catid##]">
+    <member name="article-list" type="list" link="article.bc" propertyid="7249,3087997,3087996" perpage="6" order="ord"
+        pageno="[##cms.query.pagenum|(1)##]" size="418x240" />
+    <member name="paging" type="list" request="paging" count="3" parentname="article-list" />
 </basis>
 
-<basis core="dbsource" source="basiscore" lid="2" mid="20" name="db" catid="[##cms.query.catid##]">
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="[##cms.query.catid##]">
     <member name="navigation" type="tree" request="navcatid" parentid="[##cms.query.catid##]" />
 </basis>
 <basis core="dbsource" source="basiscore" lid="2" mid="18" name="db" usedforid="[##cms.query.catid##]">
     <member name="scalar" type="scalar" typeid="150" />
+</basis>
+
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="215692">
+    <member name="our-featured-hotels" type="list" link="hotel.bc" propertyid="7244,3087993,3087994,3087995" perpage="6"
+        order="ord" size="418x176" />
 </basis>
 
 <basis core="dbsource" source="basiscore" lid="2" mid="1" name="exclusive-travel-deals">
@@ -26,11 +24,6 @@
     <member name="perfect-come-True" type="list" link="article.bc" propertyid="7244" perpage="6" order="ord"
         size="48x48" />
 </basis>
-
-<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" usedforid="[##cms.query.aid##]">
-    <member name="p-under" type="view" size="" propertyid="" />
-</basis>
-
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -71,6 +64,7 @@
                         <h1 class="font-bold text-[36px] text-primary-800">@column1</h1>
                     </face>
                 </basis>
+
                 <ul itemscope itemtype="https://schema.org/BreadcrumbList" class="flex items-center text-sm gap-1 mt-2">
                     <li class="inline-block font-normal" itemprop="itemListElement" itemscope
                         itemtype="https://schema.org/ListItem">
@@ -81,25 +75,25 @@
                     </li>
                     <span class="text-primary-700"> > </span>
                     <basis core="print" datamembername="db.navigation">
-                        <face filter="RowNumber=max(RowNumber) and parentcatid<>215100">
+                        <face filter="RowNumber=max(RowNumber) and parentcatid<>215101">
                             <li class="inline-block font-normal" itemprop="itemListElement" itemscope
                                 itemtype="https://schema.org/ListItem">
                                 <span itemprop="name" class="text-secondary-800">@title</span>
                                 <meta itemprop="position" content="@rownumber" />
                             </li>
                         </face>
-                        <face filter="link is null and parentcatid<>215100">
+                        <face filter="link is null and parentcatid<>215101">
                             <li class="flex gap-1 font-normal " itemprop="itemListElement" itemscope
                                 itemtype="https://schema.org/ListItem">
                                 <a class="text-primary-700 text-sm transition-all duration-300 hover:text-secondary-900"
-                                    itemprop="item" href="/tour-list.bc?catid=@parentcatid" aria-label="@title"><span
+                                    itemprop="item" href="/hotel-list.bc?catid=@parentcatid" aria-label="@title"><span
                                         itemprop="name">@title</span>
                                     <meta itemprop="position" content="@rownumber" />
                                 </a>
                                 <span class="text-primary-700"> > </span>
                             </li>
                         </face>
-                        <face filter="parentcatid<>215100">
+                        <face filter="parentcatid<>215101">
                             <li class="flex gap-1 font-normal " itemprop="itemListElement" itemscope
                                 itemtype="https://schema.org/ListItem">
                                 <a class="text-primary-700 text-sm transition-all duration-300 hover:text-secondary-900"
@@ -113,126 +107,122 @@
                         </face>
                     </basis>
                 </ul>
+
+                <div class="flex items-center gap-2 mt-9">
+                    <input type="text"
+                        class="search-blog w-[684px] py-4 px-5 border border-solid border-zinc-400 rounded-xl text-zinc-900 placeholder-zinc-900 outline-none"
+                        aria-label="Search-blog" placeholder="Search blog" />
+                    <button
+                        class="article-search-button flex items-center justify-center w-24 h-12 text-sm text-white bg-primary-900 rounded-full transition-all duration-300 hover:bg-secondary-900">Search</button>
+                </div>
             </div>
         </section>
-        <section class="relative bg-tourListBg bg-center bg-cover h-80">
-            <div class="absolute bg-specialcolor-2 inset-0 w-full h-full"></div>
-        </section>
 
-        <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-20">
-            <h2 class="text-2xl font-medium text-primary-800">Tour list</h2>
+        <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-5">
+            <div class="flex items-center justify-between">
+                <h2 class="text-2xl font-medium text-primary-800">News</h2>
+            </div>
 
-            <div class="flex gap-3 justify-between mt-6">
-                <basis core="list" datamembername="joining.list">
+            <div class="flex gap-3 mt-6">
+                <basis core="list" datamembername="db.article-list">
                     <layout>
-                        <div class="flex-1 tourL-tour-list grid grid-cols-3 gap-3">
+                        <div class="article-card-wrapper flex-1 grid grid-cols-3 gap-3">
                             <!-- items -->
                             @child
                         </div>
-                        <aside class="sticky h-fit top-0 w-[328px] rounded-2xl bg-primary-50 px-3 py-5">
-                            <div class="flex items-center justify-between mb-3">
-                                <h2 class="font-bold text-zinc-900">Required filters</h2>
-                                <button id="clearFiltersBtn" class="text-red-600">Remove all filters</button>
-                            </div>
-                            <div class="bg-white rounded-xl px-3 pt-3 pb-6">
-                                <div class="accordion-toggle flex items-center justify-between pr-5">
-                                    <h3 class="text-zinc-800 font-medium">Airline</h3>
-                                    <svg width="11" height="10"
-                                        class="chevron-icon transition-transform duration-300 flex-shrink-0">
-                                        <use xlink:href="/images/sprite-icons.svg#icon-chevron-down"></use>
-                                    </svg>
-                                </div>
-                                <div
-                                    class="airline-filter accordion-content flex flex-col gap-9 pl-7 mt-6 overflow-hidden transition-all duration-300 ease-in-out max-h-0">
-                                    <!-- airline -->
-                                </div>
-                            </div>
-                            <div class="bg-white rounded-xl p-3 mt-3">
-                                <div class="accordion-toggle flex items-center justify-between pr-5">
-                                    <h3 class="text-zinc-800 font-medium">Price range</h3>
-                                    <svg width="11" height="10"
-                                        class="chevron-icon transition-transform duration-300 flex-shrink-0">
-                                        <use xlink:href="/images/sprite-icons.svg#icon-chevron-down"></use>
-                                    </svg>
-                                </div>
-                                <div
-                                    class="mt-3 accordion-content overflow-hidden transition-all duration-300 ease-in-out max-h-0">
-                                    <div class="range-container">
-                                        <div class="range-values flex justify-between mb-3">
-                                            <span class="text-xs font-light">
-                                                <span id="minValue">۱۰۰,۰۰۰,۰۰۰</span>
-                                                $
-                                            </span>
-                                            <span class="text-xs font-light">
-                                                <span id="maxValue">100،100،100</span>
-                                                $
-                                            </span>
-                                        </div>
-
-                                        <div class="slider-wrapper relative h-8">
-                                            <div class="absolute top-4 left-0 right-0 h-1 bg-zinc-200 rounded-full z-0">
-                                            </div>
-                                            <input type="range" id="minRange" min="0" max="100" value="0"
-                                                class="absolute w-full top-0 pointer-events-none appearance-none bg-transparent" />
-                                            <input type="range" id="maxRange" min="0" max="100" value="100"
-                                                class="absolute w-full top-0 pointer-events-none appearance-none bg-transparent" />
-                                            <div id="rangeTrack"
-                                                class="absolute h-1 rounded-full top-4 z-10 bg-primary-800">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <aside class="sticky h-fit w-[328px] bg-primary-50 px-3 py-5 overflow-y-auto rounded-2xl">
+                            <h2 class="font-bold text-zinc-900 mb-3">Required filters</h2>
                             <div class="bg-white rounded-xl px-3 pt-3 pb-6 mt-3">
                                 <div class="accordion-toggle flex items-center justify-between pr-5">
-                                    <h3 class="text-zinc-800 font-medium">Number of tour days</h3>
+                                    <h3 class="text-zinc-900 font-medium">category</h3>
                                     <svg width="11" height="10"
                                         class="chevron-icon transition-transform duration-300 flex-shrink-0">
                                         <use xlink:href="/images/sprite-icons.svg#icon-chevron-down"></use>
                                     </svg>
                                 </div>
                                 <div
-                                    class="days-filter accordion-content flex flex-col gap-11 pl-7 mt-6 overflow-hidden transition-all duration-300 ease-in-out max-h-0">
-                                    <!-- days-filter -->
+                                    class="accordion-content flex flex-col gap-9 pl-5 mt-5 overflow-hidden transition-all duration-300 ease-in-out max-h-0">
+                                    <div class="flex items-center gap-5">
+                                        <input type="radio" name="" id="" value="" class="w-5 h-5" />
+                                        <label for="service-ro"
+                                            class="text-zinc-900 text-xs cursor-pointer">Flight</label>
+                                    </div>
                                 </div>
                             </div>
                         </aside>
                     </layout>
                     <else-layout>
-                        <p class="text-2xl font-medium text-primary-800">No tours found at the moment.</p>
+                        <p class="text-2xl font-medium text-primary-800">No articles found at the moment.</p>
                     </else-layout>
                     <face>
-                        <a href="/@db.tour-list.link" class="tourL-tour-card group block rounded-xl overflow-hidden"
-                            data-price="@db.tour-list.prp_8181" data-days="@prp_8076" data-airline="@list.airline.pic"
-                            data-airline-name="@list.airline.name">
-                            <img src="@db.tour-list.00311X00176prp" class="w-full h-44" alt="@db.tour-list.title"
-                                width="260" height="176" loading="lazy" />
-                            <div class="bg-white p-4 border-x border-b border-solid border-zinc-400">
-                                <h2 class="text-zinc-900 font-bold mb-1">@db.tour-list.title</h2>
-                                <h3 class="text-xs text-zinc-900 mb-1">@db.tour-list.prp_10000503</h3>
-                                <span></span>
-                                <div class="flex items-center gap-1 text-zinc-900 text-sm mb-1">
-                                    <svg width="19" height="19" class="flex-shrink-0">
-                                        <use xlink:href="/images/sprite-icons.svg#icon-hotel"></use>
-                                    </svg>
-                                    @db.tour-list.prp_3087990 Stars - @db.tour-list.prp_3087991
-                                </div>
-                                <div class="flex items-center gap-1 text-zinc-900 text-sm mb-2">
-                                    <svg width="19" height="19" class="flex-shrink-0">
-                                        <use xlink:href="/images/sprite-icons.svg#icon-airplane"></use>
-                                    </svg>
-                                    @db.tour-list.prp_3087992
-                                </div>
+                        <a href="/@link" class="article-card group block rounded-xl overflow-hidden"
+                            data-article="@title">
+                            <div class="relative">
+                                <img src="@00418X00240prp"
+                                    class="w-full h-60 object-cover transition-all duration-300 group-hover:sepia"
+                                    alt="@title" width="260" height="240" loading="lazy" />
+                                <div
+                                    class="absolute top-3 left-3 bg-white text-sm font-medium px-6 py-4 rounded-[50px]">
+                                    @prp_3087996</div>
+                            </div>
+                            <div
+                                class="relative z-10 bg-white p-4 border border-solid border-zinc-300 rounded-3xl -mt-6 transition-all duration-300 group-hover:border-secondary-600">
                                 <div>
-                                    <div class="text-zinc-900 font-bold text-xl">@db.tour-list.prp_8181</div>
-                                    <div class="flex items-center justify-between">
-                                        <span class="text-zinc-900 text-xs">Per traveler</span>
-                                        <img src="@list.airline.pic" class="h-8" alt="@list.airline.name" width="70"
-                                            height="30" loading="lazy" />
+                                    <div class="flex items-center gap-4 mb-2">
+                                        <div class="flex items-center gap-2 text-xs text-zinc-900">
+                                            <svg width="16" height="16" class="flex-shrink-0">
+                                                <use xlink:href="/images/sprite-icons.svg#icon-calender-blog">
+                                                </use>
+                                            </svg>
+                                            @prp_7249
+                                        </div>
+                                        <div class="flex items-center gap-2 text-xs text-zinc-900">
+                                            <svg width="16" height="16" class="flex-shrink-0">
+                                                <use xlink:href="/images/sprite-icons.svg#icon-clock-blog">
+                                                </use>
+                                            </svg>
+                                            @prp_3087997
+                                        </div>
                                     </div>
+                                    <h2 class="text-zinc-900 font-bold">@title</h2>
                                 </div>
                                 <button
-                                    class="bg-primary-50 text-primary-900 border border-solid border-primary-900 rounded-[40px] px-6 py-3 mt-2">Details</button>
+                                    class="bg-primary-50 text-primary-900 border border-solid border-primary-900 rounded-[40px] px-6 py-4 mt-3 transition-all duration-300 group-hover:bg-secondary-50 group-hover:border-secondary-900 group-hover:text-secondary-900">Keep
+                                    Reading</button>
+                            </div>
+                        </a>
+                    </face>
+                    <face filter="@prp_3087996 is null">
+                        <a href="/@link" class="article-card group block rounded-xl overflow-hidden"
+                            data-article="@title">
+                            <img src="@00418X00240prp"
+                                class="w-full h-60 object-cover transition-all duration-300 group-hover:sepia"
+                                alt="@title" width="260" height="240" loading="lazy" />
+
+                            <div
+                                class="relative z-10 bg-white p-4 border border-solid border-zinc-300 rounded-3xl -mt-6 transition-all duration-300 group-hover:border-secondary-600">
+                                <div>
+                                    <div class="flex items-center gap-4 mb-2">
+                                        <div class="flex items-center gap-2 text-xs text-zinc-900">
+                                            <svg width="16" height="16" class="flex-shrink-0">
+                                                <use xlink:href="/images/sprite-icons.svg#icon-calender-blog">
+                                                </use>
+                                            </svg>
+                                            @prp_7249
+                                        </div>
+                                        <div class="flex items-center gap-2 text-xs text-zinc-900">
+                                            <svg width="16" height="16" class="flex-shrink-0">
+                                                <use xlink:href="/images/sprite-icons.svg#icon-clock-blog">
+                                                </use>
+                                            </svg>
+                                            @prp_3087997
+                                        </div>
+                                    </div>
+                                    <h2 class="text-zinc-900 font-bold">@title</h2>
+                                </div>
+                                <button
+                                    class="bg-primary-50 text-primary-900 border border-solid border-primary-900 rounded-[40px] px-6 py-4 mt-3 transition-all duration-300 group-hover:bg-secondary-50 group-hover:border-secondary-900 group-hover:text-secondary-900">Keep
+                                    Reading</button>
                             </div>
                         </a>
                     </face>
@@ -338,19 +328,149 @@
             </div>
         </section>
 
-        <basis core="print" datamembername="db.p-under">
-            <layout>
-                <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-20">
-                    @child
-                </section>
-            </layout>
-            <face filter="TypeID in (150)">
-                <h2 class="text-xl font-bold text-zinc-900 mb-3">@text</h2>
-            </face>
-            <face filter="TypeID in (129)">
-                <div class="text-sm text-zinc-900 text-justify">@largetext</div>
-            </face>
-        </basis>
+        <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-28">
+            <div class="flex items-center justify-between mb-12">
+                <h2 class="text-zinc-900 text-[36px] font-bold">Our Featured Hotel</h2>
+                <ul class="flex items-center gap-2">
+                    <li id="cityFilter"
+                        class="filter-option relative flex items-center justify-center gap-5 text-xs text-zinc-900 rounded-[50px] px-6 py-4 bg-zinc-200 cursor-pointer">
+                        City
+                        <svg width="11" height="10" class="flex-shrink-0">
+                            <use xlink:href="/images/sprite-icons.svg#icon-chevron-down"></use>
+                        </svg>
+                        <div id="cityDropdownMenu"
+                            class="flex-col gap-3 absolute z-30 top-full right-0 left-0 mx-auto mt-2 w-64 py-4 px-3 rounded-md shadow-lg bg-white border hidden">
+                        </div>
+                    </li>
+                    <li id="ratingFilter"
+                        class="filter-option relative flex items-center justify-center gap-5 text-xs text-zinc-900 rounded-[50px] px-6 py-4 bg-zinc-200 cursor-pointer">
+                        Review / Rating
+                        <svg width="11" height="10" class="flex-shrink-0">
+                            <use xlink:href="/images/sprite-icons.svg#icon-chevron-down"></use>
+                        </svg>
+
+                        <div id="ratingDropdownMenu"
+                            class="flex-col gap-3 absolute z-30 top-full right-0 left-0 mx-auto mt-2 w-64 py-4 px-3 rounded-md shadow-lg bg-white border hidden">
+                            <!-- star -->
+                        </div>
+                    </li>
+                    <li id="priceFilter"
+                        class="filter-option relative flex items-center justify-center gap-5 text-xs text-zinc-900 rounded-[50px] px-6 py-4 bg-zinc-200 cursor-pointer">
+                        Price range
+                        <svg width="11" height="10" class="flex-shrink-0">
+                            <use xlink:href="/images/sprite-icons.svg#icon-chevron-down"></use>
+                        </svg>
+                        <div id="priceDropdownMenu"
+                            class="flex-col gap-3 absolute z-30 top-full right-0 mt-2 w-64 py-4 px-3 rounded-md shadow-lg bg-white border hidden">
+                            <div class="group price-option cursor-pointer p-1 border-b border-gray-100"
+                                data-price="high-to-low">
+                                <span
+                                    class="flex items-center gap-3 text-sm font-bold transition-all duration-300 group-hover:text-primary-500">
+                                    <span
+                                        class="price-check-icon flex items-center justify-center w-4 h-4 border border-primary-100 rounded">
+                                        <svg width="17" height="16" viewBox="0 0 17 16" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M3.48177 9.33333L5.38153 10.7582C5.81022 11.0797 6.41615 11.0061 6.75548 10.5914L12.1484 4"
+                                                stroke="white" stroke-width="2" stroke-linecap="round"></path>
+                                        </svg>
+                                    </span>
+                                    Price: High to Low
+                                </span>
+                            </div>
+
+                            <div class="group price-option cursor-pointer p-1 border-b border-gray-100"
+                                data-price="low-to-high">
+                                <span
+                                    class="flex items-center gap-3 text-sm font-bold transition-all duration-300 group-hover:text-primary-500">
+                                    <span
+                                        class="price-check-icon flex items-center justify-center w-4 h-4 border border-primary-100 rounded">
+                                        <svg width="17" height="16" viewBox="0 0 17 16" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M3.48177 9.33333L5.38153 10.7582C5.81022 11.0797 6.41615 11.0061 6.75548 10.5914L12.1484 4"
+                                                stroke="white" stroke-width="2" stroke-linecap="round"></path>
+                                        </svg>
+                                    </span>
+                                    Price: Low to High
+                                </span>
+                            </div>
+
+                            <div class="group price-option cursor-pointer p-1 border-b border-gray-100"
+                                data-price="best-price">
+                                <span
+                                    class="flex items-center gap-3 text-sm font-bold transition-all duration-300 group-hover:text-primary-500">
+                                    <span
+                                        class="price-check-icon flex items-center justify-center w-4 h-4 border border-primary-100 rounded">
+                                        <svg width="17" height="16" viewBox="0 0 17 16" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M3.48177 9.33333L5.38153 10.7582C5.81022 11.0797 6.41615 11.0061 6.75548 10.5914L12.1484 4"
+                                                stroke="white" stroke-width="2" stroke-linecap="round"></path>
+                                        </svg>
+                                    </span>
+                                    Best Deals
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <basis core="list" datamembername="db.our-featured-hotels">
+                <layout>
+                    <div class="hotel-card-wrapper grid grid-cols-3 gap-3">
+                        <!-- Slides -->
+                        @child
+                    </div>
+                    <a href="/our-featured-Hotel"
+                        class="group relative z-10 overflow-hidden flex justify-center items-center gap-2 mx-auto w-48 h-12 bg-primary-900 rounded-xl text-white font-bold mt-24">
+                        <svg width="24" height="24" class="flex-shrink-0">
+                            <use xlink:href="/images/sprite-icons.svg#icon-category"></use>
+                        </svg>
+                        Load More Hotels
+                        <span
+                            class="absolute bottom-0 left-0 w-48 transition-all duration-300 ease-out translate-x-full translate-y-full rounded h-14 -z-10 bg-secondary-900 group-hover:translate-x-0 group-hover:translate-y-0"></span>
+                    </a>
+                </layout>
+                <face>
+                    <a href="/@link"
+                        class="hotel-card group block rounded-xl border border-solid border-zinc-400 overflow-hidden"
+                        data-hotel="@prp_3087994" data-price="@prp_3087995" data-rating="@prp_3087993">
+                        <img src="@00418X00176prp"
+                            class="block w-full h-44 object-cover transition-all duration-300 group-hover:sepia"
+                            alt="@title" width="418" height="176" loading="lazy" />
+                        <div
+                            class="flex flex-col gap-2 bg-white rounded-b-xl p-4 divide-y divide-zinc-400 transition-all duration-300 group-hover:border-secondary-600 group-hover:divide-secondary-600">
+                            <div>
+                                <div
+                                    class="flex items-center gap-1 text-sm font-medium text-zinc-600 p-2 bg-white shadow-boxStar rounded mb-2">
+                                    <svg width="24" height="24" class="flex-shrink-0">
+                                        <use xlink:href="/images/sprite-icons.svg#icon-golden-star"></use>
+                                    </svg>
+                                    @prp_3087993 star
+                                </div>
+                                <h2 class="text-zinc-900 font-bold text-xl mb-1">@title</h2>
+                                <div class="flex items-center text-zinc-500 text-sm">
+                                    <svg width="24" height="24" class="flex-shrink-0">
+                                        <use xlink:href="/images/sprite-icons.svg#icon-blue-location"></use>
+                                    </svg>
+                                    @prp_3087994
+                                </div>
+                            </div>
+                            <div class="text-zinc-500 text-sm pt-2 line-clamp-3">@prp_7244</div>
+                            <div class="flex items-center justify-between pt-2">
+                                <button
+                                    class="bg-primary-50 text-primary-900 border border-solid border-primary-900 rounded-[40px] px-6 py-4 transition-all duration-300 group-hover:bg-secondary-50 group-hover:border-secondary-900 group-hover:text-secondary-900">
+                                    Details
+                                </button>
+                                <div class="text-zinc-900 font-bold text-2xl">$ @prp_3087995</div>
+                            </div>
+                        </div>
+                    </a>
+                </face>
+            </basis>
+        </section>
 
         <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-24">
             <p class="text-secondary-800 font-medium font-reeniebeanie text-3xl">Let us help you plan your next
@@ -445,7 +565,9 @@
             </basis>
         </section>
     </main>
+
     <basis core="call" file="footer.inc" lid="2" />
+
 </body>
 
 </html>
