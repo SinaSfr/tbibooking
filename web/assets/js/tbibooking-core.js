@@ -68,25 +68,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   const isHomePage = window.location.pathname === "/";
-
   const services = ["flight", "hotel", "tour", "insurance", "flighthotel"];
 
   services.forEach((service) => {
-    const item = document.querySelector(`li[data-id="${service}"]`);
-
-    if (!item) return;
-
-    if (isHomePage) {
-      item.addEventListener("click", function () {
-        check_searchHistory(service);
-        check_landing(service);
-      });
-    } else {
-      item.addEventListener("click", function (e) {
-        e.preventDefault();
-        window.location.href = `/${service}`;
-      });
-    }
+    const items = document.querySelectorAll(`li[data-id="${service}"]`);
+    items.forEach((item) => {
+      if (!isHomePage) {
+        item.addEventListener("click", function () {
+          check_searchHistory(service);
+          check_landing(service);
+        });
+      } else {
+        item.addEventListener("click", function (e) {
+          e.preventDefault();
+          window.location.href = `/${service}`;
+        });
+      }
+    });
   });
 });
 
@@ -268,17 +266,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function generateCityFilterOptions() {
     if (!cityMenu) return;
-    const cities = new Set();
+    const citySet = new Set();
+    const cityDisplayMap = new Map();
+  
     hotelCards.forEach((card) => {
-      const city = card.dataset.hotel;
-      if (city) cities.add(city.trim());
+      let city = card.dataset.hotel;
+      if (city) {
+        const normalizedCity = city.trim().toLowerCase();
+        if (!citySet.has(normalizedCity)) {
+          citySet.add(normalizedCity);
+          
+          cityDisplayMap.set(normalizedCity, city.trim());
+        }
+      }
     });
+
+    function capitalizeFirstLetter(str) {
+      if (!str) return "";
+      return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+    }
+  
     cityMenu.innerHTML = "";
-    cities.forEach((city) => {
+    citySet.forEach((normalizedCity) => {
+      const displayCity = capitalizeFirstLetter(cityDisplayMap.get(normalizedCity) || normalizedCity);
       const option = document.createElement("div");
-      option.className =
-        "group city-option cursor-pointer p-1 border-b border-gray-100";
-      option.dataset.city = city;
+      option.className = "group city-option cursor-pointer p-1 border-b border-gray-100";
+      option.dataset.city = normalizedCity;
       option.innerHTML = `
         <span class="flex items-center gap-3 text-sm font-bold transition-all duration-300 group-hover:text-primary-500">
           <span class="city-check-icon flex items-center justify-center w-4 h-4 border border-primary-100 rounded">
@@ -287,7 +300,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 stroke="white" stroke-width="2" stroke-linecap="round" />
             </svg>
           </span>
-          ${city}
+          ${displayCity}
         </span>
       `;
       cityMenu.appendChild(option);
@@ -332,20 +345,20 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!hotelWrapper) return;
 
     let filteredCards = hotelCards.filter((card) => {
-      const city = card.dataset.hotel;
+      const city = (card.dataset.hotel || "").toLowerCase();
       const rating = parseInt(card.dataset.rating) || 0;
       const price = extractPriceNumber(card.dataset.price);
-
+    
       const cityMatch =
         activeCityFilters.size === 0 || activeCityFilters.has(city);
       const ratingMatch =
         activeRatingFilters.size === 0 || activeRatingFilters.has(rating);
-
+    
       let priceMatch = true;
       if (activePriceFilter === "best-price") {
         priceMatch = price < 300;
       }
-
+    
       return cityMatch && ratingMatch && priceMatch;
     });
 
@@ -354,7 +367,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     filteredCards.forEach((card) => {
-      card.style.display = "block";
+      card.style.display = "flex";
     });
 
     if (activePriceFilter === "high-to-low") {
@@ -382,7 +395,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const option = e.target.closest(".city-option");
       if (!option) return;
 
-      const selectedCity = option.dataset.city;
+      const selectedCity = option.dataset.city.toLowerCase();
       const icon = option.querySelector(".city-check-icon");
 
       if (activeCityFilters.has(selectedCity)) {
@@ -544,11 +557,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const airlineFilterContainer = document.querySelector(".airline-filter");
   const daysFilterContainer = document.querySelector(".days-filter");
 
-  const minInput = document.getElementById("minRange");
-  const maxInput = document.getElementById("maxRange");
-  const rangeTrack = document.getElementById("rangeTrack");
-  const minValText = document.getElementById("minValue");
-  const maxValText = document.getElementById("maxValue");
+  const minInput = document.getElementById("minRange-tourL");
+  const maxInput = document.getElementById("maxRange-tourL");
+  const rangeTrack = document.getElementById("rangeTrack-tourL");
+  const minValText = document.getElementById("minValue-tourL");
+  const maxValText = document.getElementById("maxValue-tourL");
 
   const filterBtn = document.getElementById("filterOpenBtn");
   const closeBtn = document.getElementById("filterCloseBtn");
@@ -582,9 +595,9 @@ document.addEventListener("DOMContentLoaded", () => {
       wrapper.innerHTML = `
         <input type="radio" name="airline" id="${id}" value="${normalizeText(
         name
-      )}" class="airline-input w-5 h-5" />
+      )}" class="airline-input w-5 h-5 cursor-pointer" />
         <label for="${id}" class="flex items-center gap-1 cursor-pointer">
-          <img src="[##cms.cms.cdn##]/images/${img}" alt="${name}" width="60" height="30" loading="lazy" />
+          <img src="${img}" alt="${name}" width="60" height="30" loading="lazy" />
           <span class="text-zinc-500 text-xs">${name}</span>
         </label>
       `;
@@ -600,17 +613,17 @@ document.addEventListener("DOMContentLoaded", () => {
       wrapper.innerHTML = `
         <input type="radio" name="days" id="${id}" value="${normalizeText(
         days
-      )}" class="days-input w-5 h-5" />
+      )}" class="days-input w-5 h-5 cursor-pointer" />
         <label for="${id}" class="text-zinc-500 text-sm cursor-pointer">${days}</label>
       `;
       daysFilterContainer.appendChild(wrapper);
     });
   }
 
-  const parsePrice = (priceStr) => {
-    let clean = priceStr.replace(/[^\d]/g, "");
-    return parseInt(clean, 10);
-  };
+    const parsePrice = (priceStr) => {
+      let clean = priceStr.replace(/[^\d]/g, "");
+      return parseInt(clean, 10);
+    };
   const formatPrice = (val) => val.toLocaleString("en-US");
 
   let REAL_MIN = 0;
@@ -643,7 +656,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const matchDays = !selectedDay || days === selectedDay;
 
       card.style.display =
-        matchPrice && matchAirline && matchDays ? "block" : "none";
+        matchPrice && matchAirline && matchDays ? "flex" : "none";
     });
   }
 
@@ -732,6 +745,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+// filter hotel-list card
 document.addEventListener("DOMContentLoaded", () => {
   const hotelCards = document.querySelectorAll(".hotel-card");
   const hotelNameFilterInput = document.getElementById("hotelNameFilter");
@@ -770,17 +784,25 @@ document.addEventListener("DOMContentLoaded", () => {
     hotelCards.forEach((card) => {
       const price = parsePrice(card.dataset.price || "0");
       const star = card.dataset.rating;
-      const service = card.dataset.servies;
+      const service = card.dataset.services;
       const name = card.dataset.hotel?.toLowerCase() || "";
 
       const matchName = name.includes(hotelNameFilter);
       const matchStar = selectedStars.size === 0 || selectedStars.has(star);
+      const normalize = (val) => (val || "").replace(/\W/g, "").toLowerCase();
+
       const matchService =
-        selectedServices.size === 0 || selectedServices.has(service);
+        selectedServices.size === 0 ||
+        Array.from(selectedServices).every((selected) =>
+          (service || "")
+            .split(",")
+            .map((s) => normalize(s.trim()))
+            .includes(normalize(selected))
+        );
       const matchPrice = price >= realMin && price <= realMax;
 
       card.style.display =
-        matchName && matchStar && matchService && matchPrice ? "block" : "none";
+        matchName && matchStar && matchService && matchPrice ? "flex" : "none";
     });
   }
 
@@ -848,7 +870,7 @@ document.addEventListener("DOMContentLoaded", () => {
     clearFiltersBtnHotel.addEventListener("click", () => {
       if (hotelNameFilterInput) {
         hotelNameFilterInput.value = "";
-        selectedHotelName = "";
+        hotelNameFilter = "";
       }
 
       selectedStars.clear();

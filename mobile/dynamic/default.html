@@ -86,6 +86,7 @@
   <basis core="call" file="pwa.inc" lid="2" pageindex="[##cms.cms.pageindex##]" />
 
   <!-- Preload high-priority image -->
+  <link rel="preload" as="image" href="[##cms.cms.cdn##]/images/default-back.jpg" />
   <link rel="preload" as="image" imagesrcset="image address" fetchpriority="high" />
 
   <!-- Common styles -->
@@ -96,6 +97,7 @@
 <body>
   <basis core="call" file="header.inc" pageindex="[##cms.cms.pageindex##]" lid="2" />
   <main>
+    <h1 class="h1-tag">Tbibooking</h1>
     <section class="bg-defaultBg bg-center bg-cover pt-16 pb-10">
       <div class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl">
         <div class="pt-16">
@@ -310,12 +312,12 @@
           </a>
         </layout>
         <face>
-          <a href="/@link" class="hotel-card block rounded-xl overflow-hidden" data-hotel="@prp_3087994"
+          <a href="/@link" class="hotel-card flex flex-col rounded-xl overflow-hidden" data-hotel="@prp_3087994"
             data-price="@prp_3087995" data-rating="@prp_3087993">
             <img src="@00260X00176prp" class="w-full h-44 object-cover" alt="@title" width="260" height="176"
               loading="lazy" />
             <div
-              class="flex flex-col gap-2 bg-white rounded-b-xl p-4 border-x border-b border-solid border-zinc-400 divide-y divide-zinc-400">
+              class="flex flex-col justify-between flex-grow gap-2 bg-white rounded-b-xl p-4 border-x border-b border-solid border-zinc-400 divide-y divide-zinc-400">
               <div>
                 <div
                   class="flex items-center gap-1 text-sm font-medium text-zinc-600 p-2 bg-white shadow-boxStar rounded mb-2">
@@ -353,20 +355,20 @@
         </section>
       </layout>
       <face filter="@prp_3087996 is null">
-        <div class="relative rounded-2xl overflow-hidden">
+        <a href="/@link" class="relative rounded-2xl overflow-hidden">
           <img src="@00288X00224prp" class="w-full h-56 object-cover" alt="@title" width="288" height="224"
             loading="lazy" />
           <div class="absolute top-5 left-0 right-0 mx-auto w-[73%]">
             <div class="bg-secondary-500 px-3 rounded mb-1">
               <h2 class="font-bold text-2xl">@title</h2>
             </div>
-            <a href="/@link" class="w-max flex justify-center bg-secondary-600 text-zinc-900 px-4 rounded-[50px]">View
-              More</a>
+            <button class="w-max flex justify-center bg-secondary-600 text-zinc-900 px-4 rounded-[50px]">View
+              More</button>
           </div>
-        </div>
+        </a>
       </face>
       <face>
-        <div class="relative rounded-2xl overflow-hidden">
+        <a href="/@link" class="relative rounded-2xl overflow-hidden">
           <img src="@00288X00224prp" class="w-full h-56 object-cover" alt="@title" width="288" height="224"
             loading="lazy" />
           <div class="absolute top-5 left-0 right-0 mx-auto w-[73%]">
@@ -376,10 +378,10 @@
             <div class="w-max bg-secondary-500 px-3 py-1 rounded mb-3">
               <h3 class="font-bold">@prp_3087996</h3>
             </div>
-            <a href="/@link" class="w-max flex justify-center bg-secondary-600 text-zinc-900 px-4 rounded-[50px]">View
-              More</a>
+            <button class="w-max flex justify-center bg-secondary-600 text-zinc-900 px-4 rounded-[50px]">View
+              More</button>
           </div>
-        </div>
+        </a>
       </face>
     </basis>
 
@@ -572,7 +574,7 @@
     <section class="flex items-center mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-7 mb-20">
       <basis core="list" datamembername="exclusive-travel-deals.cat">
         <face filter="link is null">
-          <div class="flex items-center">
+          <a href="/article-list.bc?catid=@catid" class="flex items-center">
             <img src="@image" class="w-1/5 h-[356px] object-cover object-left" alt="@title" width="57" height="356"
               loading="lazy" />
             <div class="w-4/5 relative">
@@ -580,21 +582,21 @@
               <img src="[##cms.cms.cdn##]/images/offer.jpg" class="w-full h-[356px] object-cover" alt="offer"
                 width="288" height="356" loading="lazy" />
             </div>
-          </div>
+          </a>
           <div class="absolute px-6">
             <h2 class="text-xs text-white mb-5">@title</h2>
             <div class="text-xl font-bold text-white mb-12">@urldescription</div>
-            <a href="/article-list.bc?catid=@catid"
+            <button 
               class="inline-flex items-center gap-5 bg-secondary-600 px-6 py-3 rounded-[50px]">
               View More
               <svg width="11" height="11" class="flex-shrink-0">
                 <use xlink:href="/images/sprite-icons.svg#icon-chevron-right"></use>
               </svg>
-            </a>
+            </button>
           </div>
         </face>
         <face>
-          <div class="flex items-center">
+          <a href="/@link" class="flex items-center">
             <img src="@image" class="w-1/5 h-[356px] object-cover object-left" alt="@title" width="57" height="356"
               loading="lazy" />
             <div class="w-4/5 relative">
@@ -602,16 +604,16 @@
               <img src="[##cms.cms.cdn##]/images/offer.jpg" class="w-full h-[356px] object-cover" alt="offer"
                 width="288" height="356" loading="lazy" />
             </div>
-          </div>
+          </a>
           <div class="absolute px-6">
             <h2 class="text-xs text-white mb-5">@title</h2>
             <div class="text-xl font-bold text-white mb-12">@urldescription</div>
-            <a href="/@link" class="inline-flex items-center gap-5 bg-secondary-600 px-6 py-3 rounded-[50px]">
+            <button class="inline-flex items-center gap-5 bg-secondary-600 px-6 py-3 rounded-[50px]">
               View More
               <svg width="11" height="11" class="flex-shrink-0">
                 <use xlink:href="/images/sprite-icons.svg#icon-chevron-right"></use>
               </svg>
-            </a>
+            </button>
           </div>
         </face>
       </basis>

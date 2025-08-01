@@ -55,6 +55,7 @@
       <meta property="@key" content="@value" />
     </face>
   </basis>
+  <link rel="preload" as="image" href="[##cms.cms.cdn##]/images/tour-list-back.jpg" />
   <!-- pwa metatags -->
   <basis core="call" file="pwa.inc" pageindex="[##cms.cms.pageindex##]" lid="2" />
   <!-- common styles for all page -->
@@ -167,22 +168,22 @@
                   <div class="range-container">
                     <div class="range-values flex justify-between mb-3">
                       <span class="text-xs font-light">
-                        <span id="minValue">۱۰۰,۰۰۰,۰۰۰</span>
+                        <span id="minValue-tourL">۱۰۰,۰۰۰,۰۰۰</span>
                         $
                       </span>
                       <span class="text-xs font-light">
-                        <span id="maxValue">100،100،100</span>
+                        <span id="maxValue-tourL">100،100،100</span>
                         $
                       </span>
                     </div>
 
                     <div class="slider-wrapper relative h-8">
                       <div class="absolute top-4 left-0 right-0 h-1 bg-zinc-200 rounded-full z-0"></div>
-                      <input type="range" id="minRange" min="0" max="100" value="0"
+                      <input type="range" id="minRange-tourL" min="0" max="100" value="0"
                         class="absolute w-full top-0 pointer-events-none appearance-none bg-transparent" />
-                      <input type="range" id="maxRange" min="0" max="100" value="100"
+                      <input type="range" id="maxRange-tourL" min="0" max="100" value="100"
                         class="absolute w-full top-0 pointer-events-none appearance-none bg-transparent" />
-                      <div id="rangeTrack" class="absolute h-1 rounded-full top-4 z-10 bg-primary-800"></div>
+                      <div id="rangeTrack-tourL" class="absolute h-1 rounded-full top-4 z-10 bg-primary-800"></div>
                     </div>
                   </div>
                 </div>
@@ -210,8 +211,8 @@
           <p class="text-xl font-medium text-primary-800">No tours found at the moment.</p>
         </else-layout>
         <face>
-          <a href="/@db.tour-list.link" class="tourL-tour-card block rounded-xl overflow-hidden"
-            data-price="@db.tour-list.prp_8181" data-days="@prp_8076" data-airline="@list.airline.pic"
+          <a href="/@db.tour-list.link" class="tourL-tour-card flex flex-col rounded-xl overflow-hidden"
+            data-price="@db.tour-list.prp_8181" data-days="@db.tour-list.prp_8076" data-airline="@list.airline.pic"
             data-airline-name="@list.airline.name">
             <img src="@db.tour-list.00289X00176prp" class="w-full h-44 object-cover" alt="@db.tour-list.title"
               width="289" height="176" loading="lazy" />
@@ -384,7 +385,7 @@
     <section class="flex items-center mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-7 mb-20">
       <basis core="list" datamembername="exclusive-travel-deals.cat">
         <face filter="link is null">
-          <div class="flex items-center">
+          <a href="/article-list.bc?catid=@catid" class="flex items-center">
             <img src="@image" class="w-1/5 h-[356px] object-cover object-left" alt="@title" width="57" height="356"
               loading="lazy" />
             <div class="w-4/5 relative">
@@ -392,21 +393,21 @@
               <img src="[##cms.cms.cdn##]/images/offer.jpg" class="w-full h-[356px] object-cover" alt="offer"
                 width="288" height="356" loading="lazy" />
             </div>
-          </div>
+          </a>
           <div class="absolute px-6">
             <h2 class="text-xs text-white mb-5">@title</h2>
             <div class="text-xl font-bold text-white mb-12">@urldescription</div>
-            <a href="/article-list.bc?catid=@catid"
+            <button 
               class="inline-flex items-center gap-5 bg-secondary-600 px-6 py-3 rounded-[50px]">
               View More
               <svg width="11" height="11" class="flex-shrink-0">
                 <use xlink:href="/images/sprite-icons.svg#icon-chevron-right"></use>
               </svg>
-            </a>
+            </button>
           </div>
         </face>
         <face>
-          <div class="flex items-center">
+          <a href="/@link" class="flex items-center">
             <img src="@image" class="w-1/5 h-[356px] object-cover object-left" alt="@title" width="57" height="356"
               loading="lazy" />
             <div class="w-4/5 relative">
@@ -414,16 +415,16 @@
               <img src="[##cms.cms.cdn##]/images/offer.jpg" class="w-full h-[356px] object-cover" alt="offer"
                 width="288" height="356" loading="lazy" />
             </div>
-          </div>
+          </a>
           <div class="absolute px-6">
             <h2 class="text-xs text-white mb-5">@title</h2>
             <div class="text-xl font-bold text-white mb-12">@urldescription</div>
-            <a href="/@link" class="inline-flex items-center gap-5 bg-secondary-600 px-6 py-3 rounded-[50px]">
+            <button class="inline-flex items-center gap-5 bg-secondary-600 px-6 py-3 rounded-[50px]">
               View More
               <svg width="11" height="11" class="flex-shrink-0">
                 <use xlink:href="/images/sprite-icons.svg#icon-chevron-right"></use>
               </svg>
-            </a>
+            </button>
           </div>
         </face>
       </basis>

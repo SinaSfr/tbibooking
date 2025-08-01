@@ -112,7 +112,7 @@
     <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-20">
       <h2 class="text-2xl font-medium text-primary-800">Hotel list</h2>
 
-      <div class="flex gap-3 justify-between mt-6">
+      <div class="flex gap-3 items-start justify-between mt-6">
         <basis core="list" datamembername="db.hotel-list">
           <layout>
             <div class="flex-1 hotel-card-wrapper grid grid-cols-3 gap-3">
@@ -125,7 +125,7 @@
                 <button id="clearFiltersBtnHotel" class="text-red-600">Remove all filters</button>
               </div>
               <div class="bg-white rounded-xl px-3 pt-3 pb-6">
-                <div class="accordion-toggle flex items-center justify-between pr-5 cursor-pointe">
+                <div class="accordion-toggle flex items-center justify-between pr-5 cursor-pointer">
                   <h3 class="text-zinc-900 font-bold">Hotel Name</h3>
                   <svg width="11" height="10" class="chevron-icon transition-transform duration-300 flex-shrink-0">
                     <use xlink:href="/images/sprite-icons.svg#icon-chevron-down"></use>
@@ -193,14 +193,19 @@
                     <label for="service-fb" class="text-zinc-500 text-sm cursor-pointer">Full Board (F.B)</label>
                   </div>
                   <div class="flex items-center gap-5">
-                    <input type="checkbox" name="services" id="service-ai" value="A.I"
+                    <input type="checkbox" name="services" id="service-ai" value="ALL"
                       class="w-5 h-5 custom-checkbox" />
-                    <label for="service-ai" class="text-zinc-500 text-sm cursor-pointer">All Inclusive (A.I)</label>
+                    <label for="service-ai" class="text-zinc-500 text-sm cursor-pointer">All Inclusive (ALL)</label>
+                  </div>
+                  <div class="flex items-center gap-5">
+                    <input type="checkbox" name="services" id="service-uai" value="U.ALL"
+                      class="w-5 h-5 custom-checkbox" />
+                    <label for="service-uai" class="text-zinc-500 text-sm cursor-pointer">Ultra All Inclusive (U.ALL)</label>
                   </div>
                 </div>
               </div>
               <div class="bg-white rounded-xl p-3 mt-3">
-                <div class="accordion-toggle flex items-center justify-between pr-5 cursor-pointe">
+                <div class="accordion-toggle flex items-center justify-between pr-5 cursor-pointer">
                   <h3 class="text-zinc-900 font-bold">Price range</h3>
                   <svg width="11" height="10" class="chevron-icon transition-transform duration-300 flex-shrink-0">
                     <use xlink:href="/images/sprite-icons.svg#icon-chevron-down"></use>
@@ -236,14 +241,13 @@
             <p class="text-2xl font-medium text-primary-800">No hotels found at the moment.</p>
           </else-layout>
           <face>
-            <div>
-              <a href="/@link" class="hotel-card group block rounded-xl overflow-hidden" data-hotel="@title"
-                data-price="@prp_3087995" data-rating="@prp_3087993" data-servies="@prp_3087998">
+              <a href="/@link" class="hotel-card group flex flex-col rounded-xl overflow-hidden" data-hotel="@title"
+                data-price="@prp_3087995" data-rating="@prp_3087993" data-services="@prp_3087998">
                 <img src="@00418X00176prp"
                   class="w-full h-44 object-cover transition-all duration-300 group-hover:sepia" alt="@title"
                   width="260" height="176" loading="lazy" />
                 <div
-                  class="flex flex-col gap-2 bg-white rounded-b-xl p-4 border-x border-b border-solid border-zinc-400 divide-y divide-zinc-400 transition-all duration-300 group-hover:border-secondary-600 group-hover:divide-secondary-600">
+                  class="flex flex-col justify-between flex-grow gap-2 bg-white rounded-b-xl p-4 border-x border-b border-solid border-zinc-400 divide-y divide-zinc-400 transition-all duration-300 group-hover:border-secondary-600 group-hover:divide-secondary-600">
                   <div>
                     <div
                       class="flex items-center gap-1 text-sm font-medium text-zinc-600 p-2 bg-white shadow-boxStar rounded mb-2">
@@ -268,7 +272,6 @@
                   </div>
                 </div>
               </a>
-            </div>
           </face>
         </basis>
 
@@ -423,7 +426,7 @@
     <section class="flex items-center mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-20 mb-20">
       <basis core="list" datamembername="exclusive-travel-deals.cat">
         <face filter="link is null">
-          <div class="group flex items-center w-full transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+          <a href="/article-list.bc?catid=@catid" class="group flex items-center w-full transition-all duration-300 hover:scale-105 hover:shadow-2xl">
             <img src="@image" class="w-1/5 h-60 object-cover object-left" alt="@title" width="256" height="240"
               loading="lazy" />
             <div class="flex items-center justify-center w-4/5 relative">
@@ -435,19 +438,19 @@
                   <h2 class="text-white mb-5">@title</h2>
                   <div class="text-[36px] font-bold text-white">@urldescription</div>
                 </div>
-                <a href="/article-list.bc?catid=@catid"
+                <button
                   class="inline-flex items-center gap-5 flex-shrink-0 self-end bg-secondary-600 px-6 py-3 rounded-[50px] transition-all duration-300 group-hover:bg-primary-100">
                   View More
                   <svg width="11" height="11" class="flex-shrink-0">
                     <use xlink:href="/images/sprite-icons.svg#icon-chevron-right"></use>
                   </svg>
-                </a>
+                </button>
               </div>
             </div>
-          </div>
+          </a>
         </face>
         <face>
-          <div class="group flex items-center w-full transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+          <a href="/@link" class="group flex items-center w-full transition-all duration-300 hover:scale-105 hover:shadow-2xl">
             <img src="@image" class="w-1/5 h-60 object-cover object-left" alt="@title" width="256" height="240"
               loading="lazy" />
             <div class="flex items-center justify-center w-4/5 relative">
@@ -459,16 +462,16 @@
                   <h2 class="text-white mb-5">@title</h2>
                   <div class="text-[36px] font-bold text-white">@urldescription</div>
                 </div>
-                <a href="/@link"
+                <button
                   class="inline-flex items-center gap-5 flex-shrink-0 self-end bg-secondary-600 px-6 py-3 rounded-[50px] transition-all duration-300 group-hover:bg-primary-100">
                   View More
                   <svg width="11" height="11" class="flex-shrink-0">
                     <use xlink:href="/images/sprite-icons.svg#icon-chevron-right"></use>
                   </svg>
-                </a>
+                </button>
               </div>
             </div>
-          </div>
+          </a>
         </face>
       </basis>
     </section>

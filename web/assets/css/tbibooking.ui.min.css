@@ -1669,8 +1669,17 @@ section.gallery-about > img:nth-child(5) {
   background-color: var(--primary-100);
 }
 
+.group:hover .group-hover\:bg-primary-900 {
+  background-color: var(--primary-900);
+}
+
 .group:hover .group-hover\:bg-secondary-50 {
   background-color: var(--secondary-50);
+}
+
+.group:hover .group-hover\:text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1)) /* #ffffff */;
 }
 
 .group:hover .group-hover\:fill-primary-900 {

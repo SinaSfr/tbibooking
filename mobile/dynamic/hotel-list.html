@@ -46,6 +46,7 @@
       <meta property="@key" content="@value" />
     </face>
   </basis>
+  <link rel="preload" as="image" href="[##cms.cms.cdn##]/images/hotel-list-back.jpg" />
   <!-- pwa metatags -->
   <basis core="call" file="pwa.inc" pageindex="[##cms.cms.pageindex##]" lid="2" />
   <!-- common styles for all page -->
@@ -200,9 +201,14 @@
                     <label for="service-fb" class="text-zinc-500 text-sm cursor-pointer">Full Board (F.B)</label>
                   </div>
                   <div class="flex items-center gap-5">
-                    <input type="checkbox" name="services" id="service-ai" value="A.I"
+                    <input type="checkbox" name="services" id="service-ai" value="ALL"
                       class="w-5 h-5 custom-checkbox" />
-                    <label for="service-ai" class="text-zinc-500 text-sm cursor-pointer">All Inclusive (A.I)</label>
+                    <label for="service-ai" class="text-zinc-500 text-sm cursor-pointer">All Inclusive (ALL)</label>
+                  </div>
+                  <div class="flex items-center gap-5">
+                    <input type="checkbox" name="services" id="service-uai" value="U.ALL"
+                      class="w-5 h-5 custom-checkbox" />
+                    <label for="service-uai" class="text-zinc-500 text-sm cursor-pointer">Ultra All Inclusive (U.ALL)</label>
                   </div>
                 </div>
               </div>
@@ -246,7 +252,7 @@
         </layout>
         <face>
           <div>
-            <a href="/@link" class="hotel-card block rounded-xl overflow-hidden" data-hotel="@title"
+            <a href="/@link" class="hotel-card flex flex-col rounded-xl overflow-hidden" data-hotel="@title"
               data-price="@prp_3087995" data-rating="@prp_3087993" data-servies="@prp_3087998">
               <img src="@00289X00176prp" class="w-full h-44 object-cover" alt="@title" width="289" height="176"
                 loading="lazy" />
@@ -419,7 +425,7 @@
     <section class="flex items-center mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-7 mb-20">
       <basis core="list" datamembername="exclusive-travel-deals.cat">
         <face filter="link is null">
-          <div class="flex items-center">
+          <a href="/article-list.bc?catid=@catid" class="flex items-center">
             <img src="@image" class="w-1/5 h-[356px] object-cover object-left" alt="@title" width="57" height="356"
               loading="lazy" />
             <div class="w-4/5 relative">
@@ -427,21 +433,21 @@
               <img src="[##cms.cms.cdn##]/images/offer.jpg" class="w-full h-[356px] object-cover" alt="offer"
                 width="288" height="356" loading="lazy" />
             </div>
-          </div>
+          </a>
           <div class="absolute px-6">
             <h2 class="text-xs text-white mb-5">@title</h2>
             <div class="text-xl font-bold text-white mb-12">@urldescription</div>
-            <a href="/article-list.bc?catid=@catid"
+            <button 
               class="inline-flex items-center gap-5 bg-secondary-600 px-6 py-3 rounded-[50px]">
               View More
               <svg width="11" height="11" class="flex-shrink-0">
                 <use xlink:href="/images/sprite-icons.svg#icon-chevron-right"></use>
               </svg>
-            </a>
+            </button>
           </div>
         </face>
         <face>
-          <div class="flex items-center">
+          <a href="/@link" class="flex items-center">
             <img src="@image" class="w-1/5 h-[356px] object-cover object-left" alt="@title" width="57" height="356"
               loading="lazy" />
             <div class="w-4/5 relative">
@@ -449,16 +455,16 @@
               <img src="[##cms.cms.cdn##]/images/offer.jpg" class="w-full h-[356px] object-cover" alt="offer"
                 width="288" height="356" loading="lazy" />
             </div>
-          </div>
+          </a>
           <div class="absolute px-6">
             <h2 class="text-xs text-white mb-5">@title</h2>
             <div class="text-xl font-bold text-white mb-12">@urldescription</div>
-            <a href="/@link" class="inline-flex items-center gap-5 bg-secondary-600 px-6 py-3 rounded-[50px]">
+            <button class="inline-flex items-center gap-5 bg-secondary-600 px-6 py-3 rounded-[50px]">
               View More
               <svg width="11" height="11" class="flex-shrink-0">
                 <use xlink:href="/images/sprite-icons.svg#icon-chevron-right"></use>
               </svg>
-            </a>
+            </button>
           </div>
         </face>
       </basis>

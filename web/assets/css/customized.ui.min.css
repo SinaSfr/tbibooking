@@ -788,6 +788,10 @@ body {
     flex-grow: 0;
 }
 
+.flex-grow {
+  flex-grow: 1;
+}
+
 .basis-\[292px\] {
     flex-basis: 292px;
 }
@@ -851,6 +855,10 @@ body {
 
 .items-center {
   align-items: center;
+}
+
+.items-start {
+  align-items: flex-start;
 }
 
 .justify-center {

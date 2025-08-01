@@ -93,6 +93,7 @@
 <body>
   <basis core="call" file="header.inc" lid="2" />
   <main>
+    <h1 class="h1-tag">Tbibooking</h1>
     <section class="bg-defaultBg bg-cover bg-center bg-fixed pt-36 pb-32 module-banner">
       <div class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl">
         <div>
@@ -292,13 +293,13 @@
           </a>
         </layout>
         <face>
-          <a href="/@link" class="hotel-card group block rounded-xl border border-solid border-zinc-400 overflow-hidden"
+          <a href="/@link" class="hotel-card group flex flex-col rounded-xl border border-solid border-zinc-400 overflow-hidden"
             data-hotel="@prp_3087994" data-price="@prp_3087995" data-rating="@prp_3087993">
             <img src="@00418X00176prp"
               class="block w-full h-44 object-cover transition-all duration-300 group-hover:sepia" alt="@title"
               width="418" height="176" loading="lazy" />
             <div
-              class="flex flex-col gap-2 bg-white rounded-b-xl p-4 divide-y divide-zinc-400 transition-all duration-300 group-hover:border-secondary-600 group-hover:divide-secondary-600">
+              class="flex flex-col justify-between flex-grow gap-2 bg-white rounded-b-xl p-4 divide-y divide-zinc-400 transition-all duration-300 group-hover:border-secondary-600 group-hover:divide-secondary-600">
               <div>
                 <div
                   class="flex items-center gap-1 text-sm font-medium text-zinc-600 p-2 bg-white shadow-boxStar rounded mb-2">
@@ -336,7 +337,7 @@
         </section>
       </layout>
       <face filter="@prp_3087996 is null">
-        <div class="group relative rounded-2xl overflow-hidden transition-all duration-300 hover:scale-95">
+        <a href="/@link" class="group block relative rounded-2xl overflow-hidden transition-all duration-300 hover:scale-95">
           <img src="@00421X00224prp"
             class="block w-full h-56 object-cover transition-all duration-300 group-hover:grayscale" alt="@title"
             width="421" height="224" loading="lazy" />
@@ -344,14 +345,14 @@
             <div class="bg-secondary-500 px-3 rounded mb-1">
               <h2 class="font-bold text-2xl">@title</h2>
             </div>
-            <a href="/@link"
-              class="w-max flex justify-center bg-secondary-600 text-zinc-900 px-4 rounded-[50px] transition-all duration-300 hover:bg-primary-900 hover:text-white">View
-              More</a>
+            <button
+              class="w-max flex justify-center bg-secondary-600 text-zinc-900 px-4 rounded-[50px] transition-all duration-300 group-hover:bg-primary-900 group-hover:text-white">View
+              More</button>
           </div>
-        </div>
+        </a>
       </face>
       <face>
-        <div class="group relative rounded-2xl overflow-hidden transition-all duration-300 group-hover:scale-95">
+        <a href="/@link" class="group block relative rounded-2xl overflow-hidden transition-all duration-300 group-hover:scale-95">
           <img src="@00421X00224prp"
             class="block w-full h-56 object-cover transition-all duration-300 group-hover:grayscale" alt="@title"
             width="421" height="224" loading="lazy" />
@@ -362,11 +363,11 @@
             <div class="w-max bg-secondary-500 px-3 py-1 rounded mb-3">
               <h3 class="font-bold">@prp_3087996</h3>
             </div>
-            <a href="/@link"
-              class="w-max flex justify-center bg-secondary-600 text-zinc-900 px-4 rounded-[50px] transition-all duration-300 hover:bg-primary-900 hover:text-white">View
-              More</a>
+            <button 
+              class="w-max flex justify-center bg-secondary-600 text-zinc-900 px-4 rounded-[50px] transition-all duration-300 group-hover:bg-primary-900 group-hover:text-white">View
+              More</button>
           </div>
-        </div>
+        </a>
       </face>
     </basis>
 
@@ -577,7 +578,7 @@
     <section class="flex items-center mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-20 mb-20">
       <basis core="list" datamembername="exclusive-travel-deals.cat">
         <face filter="link is null">
-          <div class="group flex items-center w-full transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+          <a href="/article-list.bc?catid=@catid" class="group flex items-center w-full transition-all duration-300 hover:scale-105 hover:shadow-2xl">
             <img src="@image" class="w-1/5 h-60 object-cover object-left" alt="@title" width="256" height="240"
               loading="lazy" />
             <div class="flex items-center justify-center w-4/5 relative">
@@ -589,19 +590,19 @@
                   <h2 class="text-white mb-5">@title</h2>
                   <div class="text-[36px] font-bold text-white">@urldescription</div>
                 </div>
-                <a href="/article-list.bc?catid=@catid"
+                <button
                   class="inline-flex items-center gap-5 flex-shrink-0 self-end bg-secondary-600 px-6 py-3 rounded-[50px] transition-all duration-300 group-hover:bg-primary-100">
                   View More
                   <svg width="11" height="11" class="flex-shrink-0">
                     <use xlink:href="/images/sprite-icons.svg#icon-chevron-right"></use>
                   </svg>
-                </a>
+                </button>
               </div>
             </div>
-          </div>
+          </a>
         </face>
         <face>
-          <div class="group flex items-center w-full transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+          <a href="/@link" class="group flex items-center w-full transition-all duration-300 hover:scale-105 hover:shadow-2xl">
             <img src="@image" class="w-1/5 h-60 object-cover object-left" alt="@title" width="256" height="240"
               loading="lazy" />
             <div class="flex items-center justify-center w-4/5 relative">
@@ -613,16 +614,16 @@
                   <h2 class="text-white mb-5">@title</h2>
                   <div class="text-[36px] font-bold text-white">@urldescription</div>
                 </div>
-                <a href="/@link"
+                <button
                   class="inline-flex items-center gap-5 flex-shrink-0 self-end bg-secondary-600 px-6 py-3 rounded-[50px] transition-all duration-300 group-hover:bg-primary-100">
                   View More
                   <svg width="11" height="11" class="flex-shrink-0">
                     <use xlink:href="/images/sprite-icons.svg#icon-chevron-right"></use>
                   </svg>
-                </a>
+                </button>
               </div>
             </div>
-          </div>
+          </a>
         </face>
       </basis>
     </section>
