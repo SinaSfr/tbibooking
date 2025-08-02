@@ -1,0 +1,182 @@
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="[##cms.query.catid##]">
+    <member name="article-list" type="list" link="article.bc" propertyid="7249,3087997,3087996" perpage="9" order="ord"
+        pageno="[##cms.query.pagenum|(1)##]" size="418x240" />
+    <member name="paging" type="list" request="paging" count="3" parentname="article-list" />
+</basis>
+
+
+<basis core="list" datamembername="db.article-list">
+    <layout>
+        <div class="article-card-wrapper grid grid-cols-3 gap-3">
+            <!-- items -->
+            @child
+        </div>
+    </layout>
+    <else-layout>
+        <p class="text-2xl font-medium text-primary-800">No articles found at the moment.</p>
+    </else-layout>
+    <face filter="@prp_3087996 is null">
+        <a href="/@link" class="article-card group block rounded-xl overflow-hidden" data-article="@title">
+            <img src="@00418X00240prp" class="w-full h-60 object-cover transition-all duration-300 group-hover:sepia"
+                alt="@title" width="260" height="240" loading="lazy" />
+
+            <div
+                class="relative z-10 bg-white p-4 border border-solid border-zinc-300 rounded-3xl -mt-6 transition-all duration-300 group-hover:border-secondary-600">
+                <div>
+                    <div class="flex items-center gap-4 mb-2">
+                        <div class="flex items-center gap-2 text-xs text-zinc-900">
+                            <svg width="16" height="16" class="flex-shrink-0">
+                                <use xlink:href="/images/sprite-icons.svg#icon-calender-blog">
+                                </use>
+                            </svg>
+                            @prp_7249
+                        </div>
+                        <div class="flex items-center gap-2 text-xs text-zinc-900">
+                            <svg width="16" height="16" class="flex-shrink-0">
+                                <use xlink:href="/images/sprite-icons.svg#icon-clock-blog">
+                                </use>
+                            </svg>
+                            @prp_3087997
+                        </div>
+                    </div>
+                    <h2 class="text-zinc-900 font-bold">@title</h2>
+                </div>
+                <button
+                    class="bg-primary-50 text-primary-900 border border-solid border-primary-900 rounded-[40px] px-6 py-4 mt-3 transition-all duration-300 group-hover:bg-secondary-50 group-hover:border-secondary-900 group-hover:text-secondary-900">Keep
+                    Reading</button>
+            </div>
+        </a>
+    </face>
+    <face>
+        <a href="/@link" class="article-card group block rounded-xl overflow-hidden" data-article="@title">
+            <div class="relative">
+                <img src="@00418X00240prp"
+                    class="w-full h-60 object-cover transition-all duration-300 group-hover:sepia" alt="@title"
+                    width="260" height="240" loading="lazy" />
+                <div class="absolute top-3 left-3 bg-white text-sm font-medium px-6 py-4 rounded-[50px]">
+                    @prp_3087996</div>
+            </div>
+            <div
+                class="relative z-10 bg-white p-4 border border-solid border-zinc-300 rounded-3xl -mt-6 transition-all duration-300 group-hover:border-secondary-600">
+                <div>
+                    <div class="flex items-center gap-4 mb-2">
+                        <div class="flex items-center gap-2 text-xs text-zinc-900">
+                            <svg width="16" height="16" class="flex-shrink-0">
+                                <use xlink:href="/images/sprite-icons.svg#icon-calender-blog">
+                                </use>
+                            </svg>
+                            @prp_7249
+                        </div>
+                        <div class="flex items-center gap-2 text-xs text-zinc-900">
+                            <svg width="16" height="16" class="flex-shrink-0">
+                                <use xlink:href="/images/sprite-icons.svg#icon-clock-blog">
+                                </use>
+                            </svg>
+                            @prp_3087997
+                        </div>
+                    </div>
+                    <h2 class="text-zinc-900 font-bold">@title</h2>
+                </div>
+                <button
+                    class="bg-primary-50 text-primary-900 border border-solid border-primary-900 rounded-[40px] px-6 py-4 mt-3 transition-all duration-300 group-hover:bg-secondary-50 group-hover:border-secondary-900 group-hover:text-secondary-900">Keep
+                    Reading</button>
+            </div>
+        </a>
+    </face>
+
+</basis>
+
+<div id="paging" class="flex justify-center mt-20">
+    <ul class="flex items-center gap-2 cd-pagination no-space direction-ltr" id="wibpaging">
+        <basis core="print" datamembername="db.paging">
+            <face filter="(@sta='pre')and('[##cms.cms.pageurl##]'='')">
+                <li
+                    class="group flex items-center justify-center w-12 h-12 bg-secondary-100 rounded-full overflow-hidden mr-3 transition-all duration-300 hover:bg-secondary-800 page-no prev-page">
+                    <span class="flex items-center justify-center w-full cursor-pointer text-zinc-900"
+                        aria-label="angle-left" onclick="fetchArticlePage('@page')">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="transition-all duration-300 group-hover:stroke-primary-500"
+                                d="M8.00261 3.33203L3.33594 7.9987M3.33594 7.9987L8.00261 12.6654M3.33594 7.9987H12.6693"
+                                stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </span>
+                </li>
+            </face>
+            <face filter="(@sta='pre')and('[##cms.cms.pageurl##]'<>'')">
+                <li
+                    class="group flex items-center justify-center w-12 h-12 bg-secondary-100 rounded-full overflow-hidden mr-3 transition-all duration-300 hover:bg-secondary-800 page-no prev-page">
+                    <span class="flex items-center justify-center w-full cursor-pointer text-zinc-900"
+                        aria-label="angle-left" onclick="fetchArticlePage('@page')">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="transition-all duration-300 group-hover:stroke-primary-500"
+                                d="M8.00261 3.33203L3.33594 7.9987M3.33594 7.9987L8.00261 12.6654M3.33594 7.9987H12.6693"
+                                stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </span>
+                </li>
+            </face>
+        </basis>
+        <basis core="print" datamembername="db.paging">
+            <face filter="(@page=[##cms.query.pagenum|(1)##])and('[##cms.cms.pageurl##]'='')">
+                <li
+                    class="group flex items-center justify-center w-12 h-12 bg-secondary-800 rounded-full overflow-hidden page-no">
+                    <span
+                        class="flex items-center justify-center w-full h-full cursor-pointer page-number bg-secondary-800"
+                        onclick="fetchArticlePage('@page')">@page</span>
+                </li>
+            </face>
+            <face filter="(@page=[##cms.query.pagenum|(1)##])and('[##cms.cms.pageurl##]'<>'')">
+                <li
+                    class="group flex items-center justify-center w-12 h-12 bg-secondary-800 rounded-full overflow-hidden page-no">
+                    <span
+                        class="flex items-center justify-center w-full h-full cursor-pointer page-number bg-secondary-800"
+                        onclick="fetchArticlePage('@page')">@page</span>
+                </li>
+            </face>
+            <face
+                filter="(@page<>[##cms.query.pagenum|(1)##]) and (@page>0) and (@sta='no') and ('[##cms.cms.pageurl##]'='') ">
+                <li
+                    class="group flex items-center justify-center w-12 h-12 bg-zinc-100 rounded-full overflow-hidden transition-all duration-300 hover:bg-secondary-800 page-no">
+                    <span class="flex items-center justify-center w-full h-full cursor-pointer page-number"
+                        onclick="fetchArticlePage('@page')">@page</span>
+                </li>
+            </face>
+            <face
+                filter="(@page<>[##cms.query.pagenum|(1)##]) and (@page>0) and (@sta='no') and ('[##cms.cms.pageurl##]'<>'') ">
+                <li
+                    class="group flex items-center justify-center w-12 h-12 bg-zinc-100 rounded-full overflow-hidden transition-all duration-300 hover:bg-secondary-800 page-no">
+                    <span class="flex items-center justify-center w-full h-full cursor-pointer page-number"
+                        onclick="fetchArticlePage('@page')">@page</span>
+                </li>
+            </face>
+        </basis>
+        <basis core="print" datamembername="db.paging">
+            <face filter="(@sta='nex') and ('[##cms.cms.pageurl##]'='')">
+                <li
+                    class="group flex items-center justify-center w-12 h-12 bg-secondary-100 rounded-full overflow-hidden mr-3 transition-all duration-300 hover:bg-secondary-800 page-no next-page">
+                    <span class="flex items-center justify-center w-full h-full cursor-pointer text-zinc-900"
+                        aria-label="angle-right" onclick="fetchArticlePage('@page')">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M8.00228 12.6655L12.6689 7.99886M12.6689 7.99886L8.00228 3.33218M12.6689 7.99886L3.3356 7.99886"
+                                stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </span>
+                </li>
+            </face>
+            <face filter="(@sta='nex') and ('[##cms.cms.pageurl##]'<>'')">
+                <li
+                    class="group flex items-center justify-center w-12 h-12 bg-secondary-100 rounded-full overflow-hidden mr-3 transition-all duration-300 hover:bg-secondary-800 page-no next-page">
+                    <span class="flex items-center justify-center w-full h-full cursor-pointer text-zinc-900"
+                        aria-label="angle-right" onclick="fetchArticlePage('@page')">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M8.00228 12.6655L12.6689 7.99886M12.6689 7.99886L8.00228 3.33218M12.6689 7.99886L3.3356 7.99886"
+                                stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </span>
+                </li>
+            </face>
+        </basis>
+    </ul>
+</div>

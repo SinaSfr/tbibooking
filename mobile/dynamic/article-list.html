@@ -1,23 +1,22 @@
 <basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="[##cms.query.catid##]">
-  <member name="article-list" type="list" link="article.bc" propertyid="7249,3087997,3087996" perpage="6" order="ord"
-    pageno="[##cms.query.pagenum|(1)##]" size="289x240" />
-  <member name="paging" type="list" request="paging" count="3" parentname="article-list" />
-</basis>
-
-<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="[##cms.query.catid##]">
   <member name="navigation" type="tree" request="navcatid" parentid="[##cms.query.catid##]" />
 </basis>
+
 <basis core="dbsource" source="basiscore" lid="2" mid="18" name="db" usedforid="[##cms.query.catid##]">
   <member name="scalar" type="scalar" typeid="150" />
 </basis>
 
 <basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="215692">
-  <member name="our-featured-hotels" type="list" link="hotel.bc" propertyid="7244,3087993,3087994,3087995" perpage="6"
+  <member name="our-featured-hotels" type="list" link="hotel.bc" propertyid="7244,3087993,3087994,3087995,3088007" perpage="6"
     order="ord" size="260x176" />
 </basis>
 
 <basis core="dbsource" source="basiscore" lid="2" mid="1" name="exclusive-travel-deals">
   <member name="cat" type="tree" request="cat" parentid="215731" order="ord"></member>
+</basis>
+
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="articles">
+  <member name="cat" type="tree" request="cat" parentid="215683" order="ord"></member>
 </basis>
 
 <basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="215728">
@@ -48,7 +47,7 @@
       <meta property="@key" content="@value" />
     </face>
   </basis>
-  
+
   <!-- pwa metatags -->
   <basis core="call" file="pwa.inc" pageindex="[##cms.cms.pageindex##]" lid="2" />
   <!-- common styles for all page -->
@@ -119,203 +118,52 @@
     </section>
 
     <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-4">
-
-
-      <basis core="list" datamembername="db.article-list">
-        <layout>
-          <div class="flex items-center justify-between">
-            <a href="" class="text-sm font-medium text-primary-800">Other articles</a>
-            <button id="filterOpenBtn"
-              class="flex items-center gap-3 bg-primary-50 rounded-[32px] text-sm font-medium text-primary-800 py-4 px-3">
-              filter
-              <svg width="24" height="24" class="flex-shrink-0">
-                <use xlink:href="/images/sprite-icons.svg#icon-filter"></use>
+      <div class="flex items-center justify-between">
+        <a href="" class="text-sm font-medium text-primary-800">Other articles</a>
+        <button id="filterOpenBtn"
+          class="flex items-center gap-3 bg-primary-50 rounded-[32px] text-sm font-medium text-primary-800 py-4 px-3">
+          filter
+          <svg width="24" height="24" class="flex-shrink-0">
+            <use xlink:href="/images/sprite-icons.svg#icon-filter"></use>
+          </svg>
+        </button>
+        <div
+          class="filters-panel fixed z-30 bottom-0 left-0 h-full w-full bg-primary-50 px-3 py-5 overflow-y-auto transform translate-y-full transition-transform duration-300 ease-in-out">
+          <button id="filterCloseBtn" class="block bg-primary-800 p-3 rounded-lg mb-4 ml-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"
+              stroke-width="1.5" stroke="#fff">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+          </button>
+          <h2 class="font-bold text-zinc-900 mb-3">Required filters</h2>
+          <div class="bg-white rounded-xl px-3 pt-3 pb-6 mt-3">
+            <div class="accordion-toggle flex items-center justify-between pr-5">
+              <h3 class="text-zinc-900 font-medium">category</h3>
+              <svg width="11" height="10" class="chevron-icon transition-transform duration-300 flex-shrink-0">
+                <use xlink:href="/images/sprite-icons.svg#icon-chevron-down"></use>
               </svg>
-            </button>
-            <div
-              class="filters-panel fixed z-30 bottom-0 left-0 h-full w-full bg-primary-50 px-3 py-5 overflow-y-auto transform translate-y-full transition-transform duration-300 ease-in-out">
-              <button id="filterCloseBtn" class="block bg-primary-800 p-3 rounded-lg mb-4 ml-auto">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"
-                  stroke-width="1.5" stroke="#fff">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                </svg>
-              </button>
-              <h2 class="font-bold text-zinc-900 mb-3">Required filters</h2>
-              <div class="bg-white rounded-xl px-3 pt-3 pb-6 mt-3">
-                <div class="accordion-toggle flex items-center justify-between pr-5">
-                  <h3 class="text-zinc-900 font-medium">category</h3>
-                  <svg width="11" height="10" class="chevron-icon transition-transform duration-300 flex-shrink-0">
-                    <use xlink:href="/images/sprite-icons.svg#icon-chevron-down"></use>
-                  </svg>
-                </div>
-                <div
+            </div>
+            <basis core="tree" datamembername="articles.cat" idcol="catid" parentidcol="parentid" nullvalue="215683">
+              <layout>
+                <ul
                   class="accordion-content flex flex-col gap-9 pl-5 mt-5 overflow-hidden transition-all duration-300 ease-in-out max-h-0">
-                  <div class="flex items-center gap-5">
-                    <input type="radio" name="" id="" value="" class="w-5 h-5" />
-                    <label for="service-ro" class="text-zinc-900 text-xs cursor-pointer">Flight</label>
-                  </div>
-                </div>
-              </div>
-
-            </div>
+                  @child
+                </ul>
+              </layout>
+              <face>
+                <li class="article-li flex items-center gap-5">
+                  <input type="radio" name="article-category" id="catid" value="@catid"
+                    class="w-5 h-5 article-radio cursor-pointer" />
+                  <label for="catid" class="text-zinc-900 text-xs cursor-pointer">@title</label>
+                </li>
+              </face>
+            </basis>
           </div>
-          <div class="article-card-wrapper flex flex-col gap-3 mt-3">
-            <!-- items -->
-            @child
-          </div>
-        </layout>
-        <face>
-          <a href="/@link" class="article-card block rounded-xl overflow-hidden" data-article="@title">
-            <div class="relative">
-              <img src="@00289X00240prp" class="w-full h-60" alt="@title" width="289" height="240" loading="lazy" />
-              <div class="absolute top-3 left-3 bg-white text-sm font-medium px-6 py-4 rounded-[50px]">@prp_3087996
-              </div>
-            </div>
-            <div class="relative z-10 bg-white p-4 border border-solid border-zinc-300 rounded-3xl -mt-6">
-              <div>
-                <div class="flex items-center gap-4 mb-2">
-                  <div class="flex items-center gap-2 text-xs text-zinc-900">
-                    <svg width="16" height="16" class="flex-shrink-0">
-                      <use xlink:href="/images/sprite-icons.svg#icon-calender-blog"></use>
-                    </svg>
-                    @prp_7249
-                  </div>
-                  <div class="flex items-center gap-2 text-xs text-zinc-900">
-                    <svg width="16" height="16" class="flex-shrink-0">
-                      <use xlink:href="/images/sprite-icons.svg#icon-clock-blog"></use>
-                    </svg>
-                    @prp_3087997
-                  </div>
-                </div>
-                <h2 class="text-zinc-900 font-bold">@title</h2>
-              </div>
-              <button
-                class="bg-primary-50 text-primary-900 border border-solid border-primary-900 rounded-[40px] px-6 py-4 mt-3">Keep
-                Reading</button>
-            </div>
-          </a>
-        </face>
-        <face filter="@prp_3087996 is null">
-          <a href="/@link" class="article-card block rounded-xl overflow-hidden" data-article="@title">
-            <img src="@00289X00240prp" class="w-full h-60" alt="@title" width="289" height="240" loading="lazy" />
-            <div class="relative z-10 bg-white p-4 border border-solid border-zinc-300 rounded-3xl -mt-6">
-              <div>
-                <div class="flex items-center gap-4 mb-2">
-                  <div class="flex items-center gap-2 text-xs text-zinc-900">
-                    <svg width="16" height="16" class="flex-shrink-0">
-                      <use xlink:href="/images/sprite-icons.svg#icon-calender-blog"></use>
-                    </svg>
-                    @prp_7249
-                  </div>
-                  <div class="flex items-center gap-2 text-xs text-zinc-900">
-                    <svg width="16" height="16" class="flex-shrink-0">
-                      <use xlink:href="/images/sprite-icons.svg#icon-clock-blog"></use>
-                    </svg>
-                    @prp_3087997
-                  </div>
-                </div>
-                <h2 class="text-zinc-900 font-bold">@title</h2>
-              </div>
-              <button
-                class="bg-primary-50 text-primary-900 border border-solid border-primary-900 rounded-[40px] px-6 py-4 mt-3">Keep
-                Reading</button>
-            </div>
-          </a>
-        </face>
-      </basis>
 
+        </div>
+      </div>
+      <div class="fetch-content-article">
 
-      <div id="paging" class="flex justify-center mt-20">
-        <ul class="flex items-center gap-2 cd-pagination no-space direction-ltr" id="wibpaging">
-          <basis core="print" datamembername="db.paging">
-            <face filter="(@sta='pre')and('[##cms.cms.pageurl##]'='')">
-              <li
-                class="group flex items-center justify-center w-12 h-12 bg-secondary-100 rounded-full overflow-hidden mr-3 transition-all duration-300 hover:bg-secondary-800 page-no prev-page">
-                <a class="flex items-center justify-center w-full cursor-pointer text-zinc-900" aria-label="angle-left"
-                  href="/[##cms.cms.link_page##]&pagenum=@page">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path class="transition-all duration-300 group-hover:stroke-primary-500"
-                      d="M8.00261 3.33203L3.33594 7.9987M3.33594 7.9987L8.00261 12.6654M3.33594 7.9987H12.6693"
-                      stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </a>
-              </li>
-            </face>
-            <face filter="(@sta='pre')and('[##cms.cms.pageurl##]'<>'')">
-              <li
-                class="group flex items-center justify-center w-12 h-12 bg-secondary-100 rounded-full overflow-hidden mr-3 transition-all duration-300 hover:bg-secondary-800 page-no prev-page">
-                <a class="flex items-center justify-center w-full cursor-pointer text-zinc-900" aria-label="angle-left"
-                  href="/[##cms.cms.pageurl##]?pagenum=@page">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path class="transition-all duration-300 group-hover:stroke-primary-500"
-                      d="M8.00261 3.33203L3.33594 7.9987M3.33594 7.9987L8.00261 12.6654M3.33594 7.9987H12.6693"
-                      stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </a>
-              </li>
-            </face>
-          </basis>
-          <basis core="print" datamembername="db.paging">
-            <face filter="(@page=[##cms.query.pagenum|(1)##])and('[##cms.cms.pageurl##]'='')">
-              <li
-                class="group flex items-center justify-center w-12 h-12 bg-secondary-800 rounded-full overflow-hidden page-no">
-                <a class="flex items-center justify-center w-full h-full cursor-pointer page-number bg-secondary-800"
-                  href="/[##cms.cms.link_page##]&pagenum=@page">@page</a>
-              </li>
-            </face>
-            <face filter="(@page=[##cms.query.pagenum|(1)##])and('[##cms.cms.pageurl##]'<>'')">
-              <li
-                class="group flex items-center justify-center w-12 h-12 bg-secondary-800 rounded-full overflow-hidden page-no">
-                <a class="flex items-center justify-center w-full h-full cursor-pointer page-number bg-secondary-800"
-                  href="/[##cms.cms.pageurl##]?pagenum=@page">@page</a>
-              </li>
-            </face>
-            <face
-              filter="(@page<>[##cms.query.pagenum|(1)##]) and (@page>0) and (@sta='no') and ('[##cms.cms.pageurl##]'='') ">
-              <li
-                class="group flex items-center justify-center w-12 h-12 bg-zinc-100 rounded-full overflow-hidden transition-all duration-300 hover:bg-secondary-800 page-no">
-                <a class="flex items-center justify-center w-full h-full cursor-pointer page-number"
-                  href="/[##cms.cms.link_page##]&pagenum=@page">@page</a>
-              </li>
-            </face>
-            <face
-              filter="(@page<>[##cms.query.pagenum|(1)##]) and (@page>0) and (@sta='no') and ('[##cms.cms.pageurl##]'<>'') ">
-              <li
-                class="group flex items-center justify-center w-12 h-12 bg-zinc-100 rounded-full overflow-hidden transition-all duration-300 hover:bg-secondary-800 page-no">
-                <a class="flex items-center justify-center w-full h-full cursor-pointer page-number"
-                  href="/[##cms.cms.pageurl##]?pagenum=@page">@page</a>
-              </li>
-            </face>
-          </basis>
-          <basis core="print" datamembername="db.paging">
-            <face filter="(@sta='nex') and ('[##cms.cms.pageurl##]'='')">
-              <li
-                class="group flex items-center justify-center w-12 h-12 bg-secondary-100 rounded-full overflow-hidden mr-3 transition-all duration-300 hover:bg-secondary-800 page-no next-page">
-                <a class="flex items-center justify-center w-full h-full cursor-pointer text-zinc-900"
-                  aria-label="angle-right" href="/[##cms.cms.link_page##]&pagenum=@page">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M8.00228 12.6655L12.6689 7.99886M12.6689 7.99886L8.00228 3.33218M12.6689 7.99886L3.3356 7.99886"
-                      stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </a>
-              </li>
-            </face>
-            <face filter="(@sta='nex') and ('[##cms.cms.pageurl##]'<>'')">
-              <li
-                class="group flex items-center justify-center w-12 h-12 bg-secondary-100 rounded-full overflow-hidden mr-3 transition-all duration-300 hover:bg-secondary-800 page-no next-page">
-                <a class="flex items-center justify-center w-full h-full cursor-pointer text-zinc-900"
-                  aria-label="angle-right" href="/[##cms.cms.pageurl##]?pagenum=@page">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M8.00228 12.6655L12.6689 7.99886M12.6689 7.99886L8.00228 3.33218M12.6689 7.99886L3.3356 7.99886"
-                      stroke="black" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </a>
-              </li>
-            </face>
-          </basis>
-        </ul>
       </div>
     </section>
 
@@ -359,7 +207,7 @@
                 <span
                   class="flex items-center gap-3 text-sm font-bold transition-all duration-300 group-hover:text-primary-500">
                   <span
-                    class="price-check-icon flex items-center justify-center w-4 h-4 border border-primary-100 rounded">
+                    class="price-check-icon flex items-center justify-center w-4 h-4 border border-primary-100 rounded-full">
                     <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M3.48177 9.33333L5.38153 10.7582C5.81022 11.0797 6.41615 11.0061 6.75548 10.5914L12.1484 4"
@@ -374,7 +222,7 @@
                 <span
                   class="flex items-center gap-3 text-sm font-bold transition-all duration-300 group-hover:text-primary-500">
                   <span
-                    class="price-check-icon flex items-center justify-center w-4 h-4 border border-primary-100 rounded">
+                    class="price-check-icon flex items-center justify-center w-4 h-4 border border-primary-100 rounded-full">
                     <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M3.48177 9.33333L5.38153 10.7582C5.81022 11.0797 6.41615 11.0061 6.75548 10.5914L12.1484 4"
@@ -389,7 +237,7 @@
                 <span
                   class="flex items-center gap-3 text-sm font-bold transition-all duration-300 group-hover:text-primary-500">
                   <span
-                    class="price-check-icon flex items-center justify-center w-4 h-4 border border-primary-100 rounded">
+                    class="price-check-icon flex items-center justify-center w-4 h-4 border border-primary-100 rounded-full">
                     <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M3.48177 9.33333L5.38153 10.7582C5.81022 11.0797 6.41615 11.0061 6.75548 10.5914L12.1484 4"
@@ -423,7 +271,7 @@
         </else-layout>
         <face>
           <a href="/@link" class="hotel-card flex flex-col rounded-xl overflow-hidden" data-hotel="@prp_3087994"
-            data-price="@prp_3087995" data-rating="@prp_3087993">
+            data-price="@prp_3087995" data-rating="@prp_3087993" data-bestprice="@prp_3088007">
             <img src="@00260X00176prp" class="w-full h-44 object-cover" alt="@title" width="260" height="176"
               loading="lazy" />
             <div
@@ -499,8 +347,7 @@
           <div class="absolute px-6">
             <h2 class="text-xs text-white mb-5">@title</h2>
             <div class="text-xl font-bold text-white mb-12">@urldescription</div>
-            <button 
-              class="inline-flex items-center gap-5 bg-secondary-600 px-6 py-3 rounded-[50px]">
+            <button class="inline-flex items-center gap-5 bg-secondary-600 px-6 py-3 rounded-[50px]">
               View More
               <svg width="11" height="11" class="flex-shrink-0">
                 <use xlink:href="/images/sprite-icons.svg#icon-chevron-right"></use>

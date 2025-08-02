@@ -202,12 +202,53 @@
                         <p class="text-2xl font-medium text-primary-800">No tours found at the moment.</p>
                     </else-layout>
                     <face>
-                        <a href="/@db.tour-list.link" class="tourL-tour-card group flex flex-col rounded-xl overflow-hidden"
-                            data-price="@db.tour-list.prp_8181" data-days="@db.tour-list.prp_8076" data-airline="@list.airline.pic"
-                            data-airline-name="@list.airline.name">
-                            <img src="@db.tour-list.00311X00176prp" class="w-full h-44 object-cover transition-all duration-300 group-hover:sepia" alt="@db.tour-list.title"
-                                width="260" height="176" loading="lazy" />
-                            <div class="flex flex-col justify-between flex-grow bg-white p-4 rounded-b-xl border-x border-b border-solid border-zinc-400 transition-all duration-300 group-hover:border-secondary-600">
+                        <a href="/@db.tour-list.link"
+                            class="tourL-tour-card group flex flex-col rounded-xl overflow-hidden"
+                            data-price="@db.tour-list.prp_8181" data-days="@db.tour-list.prp_8076"
+                            data-airline="@list.airline.pic" data-airline-name="@list.airline.name">
+                            <img src="@db.tour-list.00311X00176prp"
+                                class="w-full h-44 object-cover transition-all duration-300 group-hover:sepia"
+                                alt="@db.tour-list.title" width="260" height="176" loading="lazy" />
+                            <div
+                                class="flex flex-col justify-between flex-grow bg-white p-4 rounded-b-xl border-x border-b border-solid border-zinc-400 transition-all duration-300 group-hover:border-secondary-600">
+                                <h2 class="text-zinc-900 font-bold mb-1">@db.tour-list.title</h2>
+                                <h3 class="text-xs text-zinc-900 mb-1">@db.tour-list.prp_10000503</h3>
+                                <span></span>
+                                <div class="flex items-center gap-1 text-zinc-900 text-sm mb-1">
+                                    <svg width="19" height="19" class="flex-shrink-0">
+                                        <use xlink:href="/images/sprite-icons.svg#icon-hotel"></use>
+                                    </svg>
+                                    @db.tour-list.prp_3087990 Stars - @db.tour-list.prp_3087991
+                                </div>
+                                <div class="flex items-center gap-1 text-zinc-900 text-sm mb-2">
+                                    <svg width="19" height="19" class="flex-shrink-0">
+                                        <use xlink:href="/images/sprite-icons.svg#icon-airplane"></use>
+                                    </svg>
+                                    @db.tour-list.prp_3087992
+                                </div>
+                                <div>
+                                    <div class="text-zinc-900 font-bold text-xl">@db.tour-list.prp_8181</div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-zinc-900 text-xs">Per traveler</span>
+                                        <img src="@list.airline.pic" class="h-8" alt="@list.airline.name" width="70"
+                                            height="30" loading="lazy" />
+                                    </div>
+                                </div>
+                                <button
+                                    class="self-start bg-primary-50 text-primary-900 border border-solid border-primary-900 rounded-[40px] px-6 py-3 mt-2 transition-all duration-300 group-hover:bg-secondary-50 group-hover:border-secondary-900 group-hover:text-secondary-900">Details</button>
+                            </div>
+                        </a>
+                    </face>
+                    <face>
+                        <a href="/@db.tour-list.link"
+                            class="tourL-tour-card group flex flex-col rounded-xl overflow-hidden"
+                            data-price="@db.tour-list.prp_8181" data-days="@db.tour-list.prp_8076"
+                            data-airline="@list.airline.pic" data-airline-name="@list.airline.name">
+                            <img src="@db.tour-list.00311X00176prp"
+                                class="w-full h-44 object-cover transition-all duration-300 group-hover:sepia"
+                                alt="@db.tour-list.title" width="260" height="176" loading="lazy" />
+                            <div
+                                class="flex flex-col justify-between flex-grow bg-white p-4 rounded-b-xl border-x border-b border-solid border-zinc-400 transition-all duration-300 group-hover:border-secondary-600">
                                 <h2 class="text-zinc-900 font-bold mb-1">@db.tour-list.title</h2>
                                 <h3 class="text-xs text-zinc-900 mb-1">@db.tour-list.prp_10000503</h3>
                                 <span></span>
@@ -392,56 +433,58 @@
 
         <section class="flex items-center mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-20 mb-20">
             <basis core="list" datamembername="exclusive-travel-deals.cat">
-              <face filter="link is null">
-                <a href="/article-list.bc?catid=@catid" class="group flex items-center w-full transition-all duration-300 hover:scale-105 hover:shadow-2xl">
-                  <img src="@image" class="w-1/5 h-60 object-cover object-left" alt="@title" width="256" height="240"
-                    loading="lazy" />
-                  <div class="flex items-center justify-center w-4/5 relative">
-                    <div class="absolute bg-specialcolor-6 inset-0 w-full h-full opacity-50"></div>
-                    <img src="[##cms.cms.cdn##]/images/offer.jpg" class="w-full h-60 object-cover object-bottom" alt="offer"
-                      width="1023" height="240" loading="lazy" />
-                    <div class="w-[85%] flex items-end justify-between gap-52 absolute z-10">
-                      <div>
-                        <h2 class="text-white mb-5">@title</h2>
-                        <div class="text-[36px] font-bold text-white">@urldescription</div>
-                      </div>
-                      <button
-                        class="inline-flex items-center gap-5 flex-shrink-0 self-end bg-secondary-600 px-6 py-3 rounded-[50px] transition-all duration-300 group-hover:bg-primary-100">
-                        View More
-                        <svg width="11" height="11" class="flex-shrink-0">
-                          <use xlink:href="/images/sprite-icons.svg#icon-chevron-right"></use>
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                </a>
-              </face>
-              <face>
-                <a href="/@link" class="group flex items-center w-full transition-all duration-300 hover:scale-105 hover:shadow-2xl">
-                  <img src="@image" class="w-1/5 h-60 object-cover object-left" alt="@title" width="256" height="240"
-                    loading="lazy" />
-                  <div class="flex items-center justify-center w-4/5 relative">
-                    <div class="absolute bg-specialcolor-6 inset-0 w-full h-full opacity-50"></div>
-                    <img src="[##cms.cms.cdn##]/images/offer.jpg" class="w-full h-60 object-cover object-bottom" alt="offer"
-                      width="1023" height="240" loading="lazy" />
-                    <div class="w-[85%] flex items-end justify-between gap-52 absolute z-10">
-                      <div>
-                        <h2 class="text-white mb-5">@title</h2>
-                        <div class="text-[36px] font-bold text-white">@urldescription</div>
-                      </div>
-                      <button
-                        class="inline-flex items-center gap-5 flex-shrink-0 self-end bg-secondary-600 px-6 py-3 rounded-[50px] transition-all duration-300 group-hover:bg-primary-100">
-                        View More
-                        <svg width="11" height="11" class="flex-shrink-0">
-                          <use xlink:href="/images/sprite-icons.svg#icon-chevron-right"></use>
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                </a>
-              </face>
+                <face filter="link is null">
+                    <a href="/article-list.bc?catid=@catid"
+                        class="group flex items-center w-full transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                        <img src="@image" class="w-1/5 h-60 object-cover object-left" alt="@title" width="256"
+                            height="240" loading="lazy" />
+                        <div class="flex items-center justify-center w-4/5 relative">
+                            <div class="absolute bg-specialcolor-6 inset-0 w-full h-full opacity-50"></div>
+                            <img src="[##cms.cms.cdn##]/images/offer.jpg" class="w-full h-60 object-cover object-bottom"
+                                alt="offer" width="1023" height="240" loading="lazy" />
+                            <div class="w-[85%] flex items-end justify-between gap-52 absolute z-10">
+                                <div>
+                                    <h2 class="text-white mb-5">@title</h2>
+                                    <div class="text-[36px] font-bold text-white">@urldescription</div>
+                                </div>
+                                <button
+                                    class="inline-flex items-center gap-5 flex-shrink-0 self-end bg-secondary-600 px-6 py-3 rounded-[50px] transition-all duration-300 group-hover:bg-primary-100">
+                                    View More
+                                    <svg width="11" height="11" class="flex-shrink-0">
+                                        <use xlink:href="/images/sprite-icons.svg#icon-chevron-right"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </a>
+                </face>
+                <face>
+                    <a href="/@link"
+                        class="group flex items-center w-full transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                        <img src="@image" class="w-1/5 h-60 object-cover object-left" alt="@title" width="256"
+                            height="240" loading="lazy" />
+                        <div class="flex items-center justify-center w-4/5 relative">
+                            <div class="absolute bg-specialcolor-6 inset-0 w-full h-full opacity-50"></div>
+                            <img src="[##cms.cms.cdn##]/images/offer.jpg" class="w-full h-60 object-cover object-bottom"
+                                alt="offer" width="1023" height="240" loading="lazy" />
+                            <div class="w-[85%] flex items-end justify-between gap-52 absolute z-10">
+                                <div>
+                                    <h2 class="text-white mb-5">@title</h2>
+                                    <div class="text-[36px] font-bold text-white">@urldescription</div>
+                                </div>
+                                <button
+                                    class="inline-flex items-center gap-5 flex-shrink-0 self-end bg-secondary-600 px-6 py-3 rounded-[50px] transition-all duration-300 group-hover:bg-primary-100">
+                                    View More
+                                    <svg width="11" height="11" class="flex-shrink-0">
+                                        <use xlink:href="/images/sprite-icons.svg#icon-chevron-right"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </a>
+                </face>
             </basis>
-          </section>
+        </section>
     </main>
     <basis core="call" file="footer.inc" lid="2" />
 </body>
