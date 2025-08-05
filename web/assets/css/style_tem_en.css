@@ -503,7 +503,7 @@ fieldset hr {
 #OpinioUser-box input,
 #OpinioUser-box textarea,
 .input-form select {
-  font-family: "Dana";
+  font-family: "Dana" !important;
 }
 .SecurityCodeLeft span::before {
   color: #fff;

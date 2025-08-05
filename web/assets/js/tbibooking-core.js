@@ -66,31 +66,33 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// document.addEventListener("DOMContentLoaded", function () {
-//   if (document.querySelector(".header-landing-items")) {
-//     const isHomePage = window.location.pathname === "/";
-//     const isNotHome = !isHomePage;
+document.addEventListener("DOMContentLoaded", function () {
+  if (document.querySelector(".header-landing-items")) {
+    const currentPath = window.location.pathname;
+    const services = ["flight", "hotel", "flighthotel", "tour", "insurance"];
 
-//     const services = ["flight", "hotel", "flighthotel", "tour", "insurance"];
+    const isBlockedPage = currentPath === "/" || services.some(service => currentPath === `/${service}`);
 
-//     services.forEach((service) => {
-//       const items = document.querySelectorAll(
-//         `li.landing-item[data-id="${service}"]`
-//       );
-//       if (items.length === 0) {
-//         console.log(`No items found for service: ${service}`);
-//       }
+    if (isBlockedPage) {
+      return;
+    }
 
-//       items.forEach((item) => {
-//         if (isNotHome) {
-//           item.addEventListener("click", function (e) {
-//             window.location.href = `/${service}`;
-//           });
-//         }
-//       });
-//     });
-//   }
-// });
+    services.forEach((service) => {
+      const items = document.querySelectorAll(
+        `li.landing-item[data-id="${service}"]`
+      );
+      if (items.length === 0) {
+        console.log(`No items found for service: ${service}`);
+      }
+
+      items.forEach((item) => {
+        item.addEventListener("click", function () {
+          window.location.href = `/${service}`;
+        });
+      });
+    });
+  }
+});
 
 document.addEventListener("DOMContentLoaded", function () {
   const headerMenu = document.querySelector(".header-menu");
@@ -930,24 +932,24 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// const fallbackSrc = "/images/no-img.jpg";
+const fallbackSrc = "/images/no-img.jpg";
 
-// function applyImageFallbacks(context = document) {
-//   context.querySelectorAll("img").forEach((img) => {
-//     if (!img.getAttribute("src")) {
-//       img.setAttribute("src", fallbackSrc);
-//     }
+function applyImageFallbacks(context = document) {
+  context.querySelectorAll("img").forEach((img) => {
+    if (!img.getAttribute("src")) {
+      img.setAttribute("src", fallbackSrc);
+    }
 
-//     img.onerror = function () {
-//       this.onerror = null;
-//       this.src = fallbackSrc;
-//     };
-//   });
-// }
+    img.onerror = function () {
+      this.onerror = null;
+      this.src = fallbackSrc;
+    };
+  });
+}
 
-// document.addEventListener("DOMContentLoaded", function () {
-//   applyImageFallbacks();
-// });
+document.addEventListener("DOMContentLoaded", function () {
+  applyImageFallbacks();
+});
 
 // fetch tour default
 document.addEventListener("DOMContentLoaded", function () {
@@ -1000,7 +1002,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const firstData = await firstResponse.text();
         fetchContentTour.innerHTML = firstData;
 
-        // applyImageFallbacks(fetchContentTour);
+        applyImageFallbacks(fetchContentTour);
         initSwiperIfMobile();
         updateLoadMoreLink(firstDataId);
       } catch (error) {
@@ -1041,7 +1043,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const firstData = await firstResponse.text();
             fetchContentTour.innerHTML = firstData;
 
-            // applyImageFallbacks(fetchContentTour);
+            applyImageFallbacks(fetchContentTour);
             initSwiperIfMobile();
             updateLoadMoreLink(cmsQuery);
           } catch (error) {
@@ -1126,9 +1128,9 @@ document.addEventListener("DOMContentLoaded", function () {
       const data = await response.text();
       fetchContentArticle.innerHTML = data;
 
-      // if (typeof applyImageFallbacks === "function") {
-      //   applyImageFallbacks(fetchContentArticle);
-      // }
+      if (typeof applyImageFallbacks === "function") {
+        applyImageFallbacks(fetchContentArticle);
+      }
 
       setupArticleSearch();
     } catch (error) {

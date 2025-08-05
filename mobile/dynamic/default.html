@@ -65,7 +65,7 @@
   <meta property="og:url" content="[##cms.request.:scheme##]://[##cms.request.full-url##]" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Tbibooking Travel Agency" />
-  <meta property="og:image" content="https://Tbibooking.com/images/custom_image_1200x630.png" />
+  <meta property="og:image" content="[##cms.request.:scheme##]://[##cms.request.full-url##]/images/custom_image_1200x630.png" />
   <meta property="og:image:alt" content="Tbibooking logo - Your trusted travel agency" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:width" content="1200" />
@@ -77,7 +77,7 @@
   <meta name="twitter:creator" content="" />
   <meta name="twitter:title" content="" />
   <meta name="twitter:description" content="" />
-  <meta name="twitter:image" content="https://Tbibooking.com/images/custom_image_1200x630.png" />
+  <meta name="twitter:image" content="[##cms.request.:scheme##]://[##cms.request.full-url##]/images/custom_image_1200x630.png" />
 
   <!-- SEO Robots -->
   <meta name="robots" content="index, follow" />
@@ -574,7 +574,7 @@
     <section class="flex items-center mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-7 mb-20">
       <basis core="list" datamembername="exclusive-travel-deals.cat">
         <face filter="link is null">
-          <a href="/article-list.bc?catid=@catid" class="flex items-center">
+          <a href="/article-list.bc?catid=@catid" class="relative flex items-center">
             <img src="@image" class="w-1/5 h-[356px] object-cover object-left" alt="@title" width="57" height="356"
               loading="lazy" />
             <div class="w-4/5 relative">
@@ -582,21 +582,20 @@
               <img src="[##cms.cms.cdn##]/images/offer.jpg" class="w-full h-[356px] object-cover" alt="offer"
                 width="288" height="356" loading="lazy" />
             </div>
+            <div class="absolute px-6">
+              <h2 class="text-xs text-white mb-5">@title</h2>
+              <div class="text-xl font-bold text-white mb-12">@urldescription</div>
+              <button class="inline-flex items-center gap-5 bg-secondary-600 px-6 py-3 rounded-[50px]">
+                View More
+                <svg width="11" height="11" class="flex-shrink-0">
+                  <use xlink:href="/images/sprite-icons.svg#icon-chevron-right"></use>
+                </svg>
+              </button>
+            </div>
           </a>
-          <div class="absolute px-6">
-            <h2 class="text-xs text-white mb-5">@title</h2>
-            <div class="text-xl font-bold text-white mb-12">@urldescription</div>
-            <button 
-              class="inline-flex items-center gap-5 bg-secondary-600 px-6 py-3 rounded-[50px]">
-              View More
-              <svg width="11" height="11" class="flex-shrink-0">
-                <use xlink:href="/images/sprite-icons.svg#icon-chevron-right"></use>
-              </svg>
-            </button>
-          </div>
         </face>
         <face>
-          <a href="/@link" class="flex items-center">
+          <a href="/@link" class="relative flex items-center">
             <img src="@image" class="w-1/5 h-[356px] object-cover object-left" alt="@title" width="57" height="356"
               loading="lazy" />
             <div class="w-4/5 relative">
@@ -604,17 +603,17 @@
               <img src="[##cms.cms.cdn##]/images/offer.jpg" class="w-full h-[356px] object-cover" alt="offer"
                 width="288" height="356" loading="lazy" />
             </div>
+            <div class="absolute px-6">
+              <h2 class="text-xs text-white mb-5">@title</h2>
+              <div class="text-xl font-bold text-white mb-12">@urldescription</div>
+              <button class="inline-flex items-center gap-5 bg-secondary-600 px-6 py-3 rounded-[50px]">
+                View More
+                <svg width="11" height="11" class="flex-shrink-0">
+                  <use xlink:href="/images/sprite-icons.svg#icon-chevron-right"></use>
+                </svg>
+              </button>
+            </div>
           </a>
-          <div class="absolute px-6">
-            <h2 class="text-xs text-white mb-5">@title</h2>
-            <div class="text-xl font-bold text-white mb-12">@urldescription</div>
-            <button class="inline-flex items-center gap-5 bg-secondary-600 px-6 py-3 rounded-[50px]">
-              View More
-              <svg width="11" height="11" class="flex-shrink-0">
-                <use xlink:href="/images/sprite-icons.svg#icon-chevron-right"></use>
-              </svg>
-            </button>
-          </div>
         </face>
       </basis>
     </section>
