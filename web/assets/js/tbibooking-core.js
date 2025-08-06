@@ -1197,7 +1197,7 @@ async function OnProcessedEditObjectFooter(args) {
   if (errorid == "6") {
     document.querySelector("#footer-form .Loading_Form").style.display = "none";
     document.querySelector("#footer-form .message-api").innerHTML =
-      "درخواست شما با موفقیت ثبت شد.";
+      "Your request has been successfully submitted.";
     document.querySelector("#footer-form .message-api").style.color =
       "rgb(10 240 10)";
   } else {
@@ -1249,7 +1249,7 @@ async function OnProcessedEditObjectAbout(args) {
   if (errorid == "6") {
     document.querySelector("#about-form .Loading_Form").style.display = "none";
     document.querySelector("#about-form .message-api").innerHTML =
-      "درخواست شما با موفقیت ثبت شد.";
+      "Your request has been successfully submitted.";
     document.querySelector("#about-form .message-api").style.color =
       "rgb(10 240 10)";
   } else {
@@ -1258,7 +1258,7 @@ async function OnProcessedEditObjectAbout(args) {
       document.querySelector("#about-form .Loading_Form").style.display =
         "none";
       document.querySelector("#about-form .message-api").innerHTML =
-        "خطایی رخ داده, لطفا مجدد اقدام کنید.";
+        "An error occurred. Please try again.";
       document.querySelector("#about-form .message-api").style.color =
         "rgb(220 38 38)";
     }, 2000);

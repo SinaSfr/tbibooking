@@ -1930,7 +1930,7 @@ section.gallery-about > img:nth-child(5) {
 
 .flight-routes,
 .reserve-field.departure-route {
-  height: 55px !important;
+  height: 58px !important;
 }
 
 .Basis_Date_Box,
@@ -1988,8 +1988,12 @@ section.gallery-about > img:nth-child(5) {
   position: static !important;
   padding: 0 !important;
   font-size: 12px;
-  color: #52525b;
+  color: #52525b !important;
   flex: 1;
+}
+
+.passenger-counts{
+  color: #52525b !important;
 }
 
 .reserve-field.departure-route label svg,
@@ -2023,7 +2027,7 @@ section.gallery-about > img:nth-child(5) {
 .departure,
 .destination {
   font-size: 12px;
-  color: #52525b;
+  color: #52525b !important;
 }
 
 .search-flight,
@@ -2407,6 +2411,10 @@ section.gallery-about > img:nth-child(5) {
 .removeroute-icon {
   width: 24px !important;
   height: 24px !important;
+}
+
+.multi-route-tlt{
+  font-weight: bold;
 }
 
 .exchangeRoute svg {

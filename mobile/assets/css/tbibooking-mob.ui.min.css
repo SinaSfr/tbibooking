@@ -1407,11 +1407,28 @@ section.gallery-about > img:nth-child(5) {
   padding: 19px 8px;
 }
 
+.Basis_Calendar {
+  position: fixed !important;
+  height: 100vh !important;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.close-passenger-box svg{
+ width: 24px !important;
+ height: 24px !important;
+}
+
 .search-nav {
   margin-bottom: 23px !important;
 }
 .reservation-item {
-  display: flex;
+  display: flex !important;
   align-items: center;
   flex-wrap: wrap;
   gap: 4px;
@@ -1826,10 +1843,10 @@ section.gallery-about > img:nth-child(5) {
   line-height: 2rem;
   font-size: 1rem;
   text-align: left;
-  display: block;
+  display: flex;
   margin: 5px 0;
   border: unset;
-  padding: 6px;
+  padding: 16px;
 }
 
 .search-box-container .active-r-btn,
@@ -1966,6 +1983,10 @@ section.gallery-about > img:nth-child(5) {
 .removeroute-icon {
   width: 24px !important;
   height: 24px !important;
+}
+
+.multi-route-tlt{
+  font-weight: bold;
 }
 
 .exchangeRoute svg {
