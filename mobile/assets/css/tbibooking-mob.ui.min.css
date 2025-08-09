@@ -2028,10 +2028,10 @@ section.gallery-about > img:nth-child(5) {
   width: 100%;
 }
 .about-form [data-bc-answer-container] input[type="text"]::placeholder {
-  color: #000000 !important;
+  color: #A1A1AA !important;
 }
 .about-form [data-bc-answer-container] textarea::placeholder {
-  color: #000000 !important;
+  color: #A1A1AA !important;
 }
 .about-form [data-bc-answer-container] {
   width: 100% !important;

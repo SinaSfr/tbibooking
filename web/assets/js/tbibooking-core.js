@@ -639,8 +639,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let selectedAirline = null;
   let selectedDay = null;
+  let filtersActive = false; 
 
   function filterCards() {
+    if (!filtersActive) return;
     cards.forEach((card) => {
       const price = parsePrice(card.dataset.price || "0");
       const airline = normalizeText(card.dataset.airlineName || "");
@@ -677,15 +679,27 @@ document.addEventListener("DOMContentLoaded", () => {
     filterCards();
   }
 
+ 
   if (minInput && maxInput) {
-    minInput.addEventListener("input", updatePriceRange);
-    maxInput.addEventListener("input", updatePriceRange);
-    updatePriceRange();
+    minInput.value = 0;
+    maxInput.value = 100;
+
+    minInput.addEventListener("input", () => {
+      filtersActive = true;
+      updatePriceRange();
+    });
+    maxInput.addEventListener("input", () => {
+      filtersActive = true;
+      updatePriceRange();
+    });
+
+    updatePriceRange(); 
   }
 
   if (airlineFilterContainer) {
     airlineFilterContainer.addEventListener("change", (e) => {
       if (e.target.classList.contains("airline-input")) {
+        filtersActive = true;
         selectedAirline = e.target.checked ? e.target.value : null;
         filterCards();
       }
@@ -695,12 +709,14 @@ document.addEventListener("DOMContentLoaded", () => {
   if (daysFilterContainer) {
     daysFilterContainer.addEventListener("change", (e) => {
       if (e.target.classList.contains("days-input")) {
+        filtersActive = true;
         selectedDay = e.target.checked ? e.target.value : null;
         filterCards();
       }
     });
   }
 
+  
   if (filterBtn && filterPanel) {
     filterBtn.addEventListener("click", () => {
       filterPanel.classList.remove("translate-y-full");
@@ -717,6 +733,7 @@ document.addEventListener("DOMContentLoaded", () => {
     removeFiltersBtn.addEventListener("click", () => {
       selectedAirline = null;
       selectedDay = null;
+      filtersActive = false; 
 
       if (airlineFilterContainer) {
         airlineFilterContainer
@@ -735,7 +752,8 @@ document.addEventListener("DOMContentLoaded", () => {
         updatePriceRange();
       }
 
-      filterCards();
+     
+      cards.forEach((card) => (card.style.display = "flex"));
     });
   }
 });
@@ -887,10 +905,13 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.querySelectorAll(".accordion-toggle").forEach((toggle) => {
-  toggle.addEventListener("click", () => {
-    const content = toggle.nextElementSibling;
-    const icon = toggle.querySelector(".chevron-icon");
+  const content = toggle.nextElementSibling;
+  const icon = toggle.querySelector(".chevron-icon");
 
+  content.classList.add("max-h-[500px]");
+  icon.classList.add("rotate-180");
+
+  toggle.addEventListener("click", () => {
     content.classList.toggle("max-h-[500px]");
     icon.classList.toggle("rotate-180");
   });
