@@ -98,7 +98,7 @@
   <basis core="call" file="header.inc" pageindex="[##cms.cms.pageindex##]" lid="2" />
   <main>
     <h1 class="h1-tag">Tbibooking</h1>
-    <section class="bg-defaultBg bg-center bg-cover pt-16 pb-10 module-banner-background">
+    <section class="bg-defaultBg bg-top bg-cover bg-fixed pt-16 pb-10 module-banner-background">
       <div class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl">
         <div class="pt-16">
           <div class="relative">
@@ -132,7 +132,7 @@
           </layout>
           <face filter="link is null">
             <div class="relative swiper-slide slide-auto-width rounded-xl overflow-hidden">
-              <div class="bg-fade-black absolute inset-0 w-full h-full"></div>
+              <div class="bg-fade-black pointer-events-none absolute inset-0 w-full h-full"></div>
               <a href="/tour-list.bc?catid=@catid" class="flex">
                 <img src="@image" class="h-52 object-cover" alt="@title" width="172" height="208" loading="lazy" />
               </a>
@@ -141,7 +141,7 @@
           </face>
           <face>
             <div class="relative swiper-slide slide-auto-width rounded-xl overflow-hidden">
-              <div class="bg-fade-black absolute inset-0 w-full h-full"></div>
+              <div class="bg-fade-black pointer-events-none absolute inset-0 w-full h-full"></div>
               <a href="/@link" class="flex">
                 <img src="@image" class="h-52 object-cover" alt="@title" width="172" height="208" loading="lazy" />
               </a>

@@ -1227,7 +1227,7 @@ async function OnProcessedEditObjectFooter(args) {
       document.querySelector("#footer-form .Loading_Form").style.display =
         "none";
       document.querySelector("#footer-form .message-api").innerHTML =
-        "خطایی رخ داده, لطفا مجدد اقدام کنید.";
+        "An error occurred, please try again.";
       document.querySelector("#footer-form .message-api").style.color =
         "rgb(220 38 38)";
     }, 2000);

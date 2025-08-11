@@ -804,6 +804,18 @@ body {
   background-position: center;
 }
 
+.bg-top {
+  background-position: top;
+}
+
+.bg-fixed {
+  background-attachment: fixed;
+}
+
+.pointer-events-none {
+  pointer-events: none;
+}
+
 .object-cover {
   -o-object-fit: cover;
   object-fit: cover;
@@ -1512,6 +1524,11 @@ section.gallery-about > img:nth-child(5) {
   display: none;
 }
 
+.reserve-field.departure-date label,
+.reserve-field.return-date label {
+  width: auto;
+}
+
 .Basis_Date_ExteraHoteldate {
   padding: 8px 16px !important;
 }
@@ -1686,6 +1703,7 @@ section.gallery-about > img:nth-child(5) {
 
 .flighttype-dropDown-text {
   margin-bottom: 0 !important;
+  z-index: 0 !important;
 }
 
 .flighttype-field-icon {
@@ -1973,6 +1991,7 @@ section.gallery-about > img:nth-child(5) {
   width: auto !important;
   position: absolute;
   display: flex;
+  justify-content: end;
   line-height: normal !important;
 }
 
