@@ -796,6 +796,10 @@ body {
     flex-basis: 311px;
 }
 
+.basis-\[350px\] {
+  flex-basis: 350px;
+}
+
 .basis-\[368px\] {
     flex-basis: 368px;
 }
